@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Samuel Schapiro"
+title                    : "Homepage"
 title_separator          : "-"
 name                     : &name "Samuel Schapiro"
 description              : &description "personal description"
