@@ -8,3 +8,8 @@ redirect_from:
   - /about.html
 ---
 
+
+## Bio
+
+I am a third year undergraduate student at in the [University of Illinois, Urbana-Champaign](https://www.illinois.edu) [Department of Computer Science](https://www.cs.illinois.edu).
+
