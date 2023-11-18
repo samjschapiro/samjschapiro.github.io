@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a third year undergraduate in the [Department of Computer Science](https://www.cs.illinois.edu) at the [University of Illinois, Urbana-Champaign](https://www.illinois.edu), where I am advised by [Prof. Han Zhao](https://hanzhaoml.github.io/) 
+I am a third year undergraduate in the [Department of Computer Science](https://www.cs.illinois.edu) at the [University of Illinois, Urbana-Champaign](https://www.illinois.edu), where I am fortunate to be advised by [Prof. Han Zhao](https://hanzhaoml.github.io/). 
 
 My research interests are broadly in machine learning theory, domain adaptation, and generalization. My overarching goal is to close the gap between the theory and practice of generalization
 
