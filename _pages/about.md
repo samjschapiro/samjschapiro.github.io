@@ -18,7 +18,11 @@ I study the theoretical foundations of machine learning. Currently, I am working
 ## Publications
 
 ### Transfer Learning/Generalization
-Coming soon!
+#### Sharpness-Aware Generalization Bounds for Gradual Domain Adaptation
+Samuel Schapiro, Han Zhao 
+1. *Generalization in gradual domain adaptation depends on sharpness, the norm of the model weights, and how much the weights change along the adaptation path.*
+2. *Sharpness-aware minimization improves generalization for GDA and leads to flatter solutions whose weights change less than those obtained by Adam.* 
+
 
 ### Deep Learning Theory
-Coming later.
+Coming soon!
