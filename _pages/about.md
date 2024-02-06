@@ -21,7 +21,7 @@ I study the theoretical foundations of machine learning. Currently, I am working
 
 Sharpness-Aware Generalization Bounds for Gradual Domain Adaptation 
 
-Samuel Schapiro, Han Zhao $|$ Under Review
+Samuel Schapiro, Han Zhao - Under Review
 
 ### Deep Learning Theory
 Coming soon!
