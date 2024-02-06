@@ -18,7 +18,10 @@ I study the theoretical foundations of machine learning. Currently, I am working
 ## Publications
 
 ### Transfer Learning/Generalization
-Coming soon!
+
+Sharpness-Aware Generalization Bounds for Gradual Domain Adaptation 
+
+Samuel Schapiro, Han Zhao | Under Review
 
 ### Deep Learning Theory
 Coming soon!
