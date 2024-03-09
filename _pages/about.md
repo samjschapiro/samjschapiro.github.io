@@ -9,12 +9,12 @@ redirect_from:
 ---
 
 I am a third-year undergraduate at the [Department of Computer Science](https://www.cs.illinois.edu), [University of Illinois, Urbana-Champaign](https://www.illinois.edu), where I am fortunate to work with [Prof. Han Zhao](https://hanzhaoml.github.io/) and [Prof. Arindam Banerjee](https://arindam.cs.illinois.edu/) on advancing the theoretical foundations of machine learning. My current focus is on:
-- **Transfer Learning/Generalization:** Generalization theory and algorithms for the non i.i.d. setting.
+- **Transfer Learning:** Generalization theory and algorithms for the non i.i.d. setting.
 - **Deep Learning Theory:** Understanding the dynamics of neural network optimization techniques and their impact on generalization performance.
 
 ## Publications
 
-### Transfer Learning/Generalization
+### Transfer Learning
 
 *Sharpness-Aware Generalization Bounds for Gradual Domain Adaptation* 
 
