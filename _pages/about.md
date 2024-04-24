@@ -16,7 +16,7 @@ I am a student at the [Department of Computer Science](https://www.cs.illinois.e
 
 ## Publications
 
-### Transfer Learning
+### Transfer Learning/Generalization
 
 *Sharpness-Aware Generalization Bounds for Gradual Domain Adaptation* 
 
