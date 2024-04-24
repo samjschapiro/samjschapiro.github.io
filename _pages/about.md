@@ -27,3 +27,7 @@ I am a student at the [Department of Computer Science](https://www.cs.illinois.e
 *Sharpness-Aware Minimization: Implicit Biases and Feature Selection*
 
 <ins>Samuel Schapiro</ins>, Ruicheng Xian, Arindam Banerjee, Han Zhao - Appearing in Princeton Workshop on Optimization, Learning, and Control 2024
+
+## Misc
+
+In my free time, I enjoy running, weightlifting, and playing the piano.
