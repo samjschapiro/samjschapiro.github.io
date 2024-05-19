@@ -7,29 +7,22 @@ redirect_from:
   - /about/
   - /about.html
 ---
-*I will be visiting the [Simons Institute for the Theory of the Computing](https://simons.berkeley.edu/homepage), [University of California, Berkeley](https://www.berkeley.edu/) to study [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization) during Fall 2024.*
 
 ## Bio
 
-I am a student at the [Department of Computer Science](https://www.cs.illinois.edu), [University of Illinois, Urbana-Champaign](https://www.illinois.edu), where I am fortunate to work with [Prof. Han Zhao](https://hanzhaoml.github.io/) and [Prof. Arindam Banerjee](https://arindam.cs.illinois.edu/) on
-- **Transfer Learning/Generalization:** Theory and algorithms for emerging generalization settings.
-- **Deep Learning Theory:** Studying the interplay between optimization algorithms and generalization for neural networks.
+
+I am interested in the **foundations of machine learning** and the **science of intelligence**, both from an academic and commercial perspective. 
+
+I am fortunate to work with [Prof. Han Zhao](https://hanzhaoml.github.io/) and [Prof. Arindam Banerjee](https://arindam.cs.illinois.edu/) in the [Department of Computer Science](https://www.cs.illinois.edu), [University of Illinois, Urbana-Champaign](https://www.illinois.edu). I will be visting the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/homepage), [UC Berkeley](https://www.berkeley.edu/) during Fall 2024 to study [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization).
+
 
 
 ## Publications
 
-### Transfer Learning/Generalization
-
-*Sharpness-Aware Generalization Bounds for Gradual Domain Adaptation* 
-
-<ins>Samuel Schapiro</ins>, Han Zhao - Submitted to International Conference on Machine Learning (**ICML**) 2024
+### Transfer Learning & Generalization 
+*Sharpness-Aware Generalization Bounds for Gradual Domain Adaptation*: <ins>Samuel Schapiro</ins>, Han Zhao - Submitted to International Conference on Machine Learning (**ICML**) 2024
 
 ### Deep Learning Theory
 
-*Sharpness-Aware Minimization: Implicit Biases and Feature Selection*
+*Sharpness-Aware Minimization: Implicit Biases and Feature Selection*: <ins>Samuel Schapiro</ins>, Ruicheng Xian, Arindam Banerjee, Han Zhao - Appearing in Princeton Workshop on Optimization, Learning, and Control 2024
 
-<ins>Samuel Schapiro</ins>, Ruicheng Xian, Arindam Banerjee, Han Zhao - Appearing in Princeton Workshop on Optimization, Learning, and Control 2024
-
-## Personal
-
-In my free time, I enjoy running, weightlifting, and playing the piano.
