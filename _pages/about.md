@@ -15,7 +15,7 @@ I am interested in the **foundations of machine learning** and the **science of 
 
 I will be visting the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/homepage), [UC Berkeley](https://www.berkeley.edu/) during Fall 2024 to study [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization). I am very fortunate to work with [Prof. Han Zhao](https://hanzhaoml.github.io/) and [Prof. Arindam Banerjee](https://arindam.cs.illinois.edu/) in the [Department of Computer Science](https://www.cs.illinois.edu), [University of Illinois, Urbana-Champaign](https://www.illinois.edu).
 
-Outside of academia, I previously co-founded a biotech startup called [Nephra](https://nephramed.wordpress.com/) and a student-run quantitative investment fund named [Quant](https://www.quantillinois.com/). I'm currently working on an exciting application of foundation models to understand intelligence... more on this soon!
+Outside of academia, I previously co-founded a biotech startup called [Nephra](https://nephramed.wordpress.com/) and a student-run quantitative investment fund named [Quant](https://www.quantillinois.com/). I'm currently working on an exciting application of LLMs to perform creativity... more on this soon!
 
 
 ## Publications
