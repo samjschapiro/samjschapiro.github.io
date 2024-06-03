@@ -19,4 +19,5 @@ Let $z \in \mathcal{Z}$ be an open problem in the zeitgeist, $E$ be a semantic e
 
 
 ## A Theory of Human Scientific Creativity 
-Evidently, the number of ideas $N_\mathcal{I}$ an individual has is a bottleneck to scientific creativity. The facet _openness to ideas_ of trait openness to experience facilitates the rate of integration of new ideas into an individuals set of ideas $\mathcal{I}$. The facet _openness to fantasy_ of trait openness to experience is known to be linked closely to human creativity.
+Evidently, the number of ideas $N_\mathcal{I}$ an individual has is a bottleneck to scientific creativity. The facet _openness to ideas_ of trait openness to experience facilitates the rate of integration of new ideas into an individuals set of ideas $\mathcal{I}$. A linear differential equation modeling the rate of acquisition of new scientific ideas can be given by $$\frac{\mathrm{d} N_\mathcal{I}}{\mathrm{d} t} = r N_\mathcal{I}, ~~ r > 0$$
+The facet _openness to fantasy_ of trait openness to experience is known to be linked closely to human creativity.
