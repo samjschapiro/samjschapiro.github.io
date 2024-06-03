@@ -1,6 +1,6 @@
 ---
 title: 'A Mathematical Theory of Scientific Creativity'
-date: 2012-08-14
+date: 2024-06-03
 permalink: /posts/2024/06/a-mathematical-theory-of-scientific-creativity/
 tags:
   - psychology
