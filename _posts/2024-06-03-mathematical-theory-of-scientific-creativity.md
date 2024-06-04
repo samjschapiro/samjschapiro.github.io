@@ -25,7 +25,7 @@ Let $z \in \mathcal{Z}$ be an open problem in the zeitgeist, $E_\mathcal{D}$ be 
 
 ### Novelty, Utility, and Surprise in the Scientific Creativity Setting
 
-The difficulty of most open problems is that their solutions are non-obvious (or "surprising") with respect to that discipline's body of knowledge $\mathcal{D}$. Otherwise, experts of that discipline would have already solved it. Given an open problem $z \in \mathcal{Z}$ and an idea $d^\star$ or permutation of ideas $[d_1^\star, \dots, d_k^\star]$ that solves problem $z$, we can take non-obviousness to mean that $E_\mathcal{D}(z, d^\star)$ is small or $E_\mathcal{D}(z, d_j^\star)$ is small for all $j \in [k]$. 
+The difficulty of most open problems is that their solutions are non-obvious (or "surprising") with respect to that discipline's body of knowledge $\mathcal{D}$. Otherwise, those problems would have already been solved by experts of that discipline. Given an open problem $z \in \mathcal{Z}$ and an idea $d^\star$ or permutation of ideas $[d_1^\star, \dots, d_k^\star]$ that solves problem $z$, we can take non-obviousness to mean that $E_\mathcal{D}(z, d^\star)$ is small or $E_\mathcal{D}(z, d_j^\star)$ is small for all $j \in [k]$. 
 
 Note, however, that within the encompassing scientific enterprise $\mathcal{E}$, a creative idea may cease to be surprising because $E_\mathcal{E}(z, d^\star)$ may be large or $E_\mathcal{E}(z, d_j^\star)$ may not be small for all $j \in [k]$.
 
