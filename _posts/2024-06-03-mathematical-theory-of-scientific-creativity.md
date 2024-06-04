@@ -14,7 +14,7 @@ The zeitgeist of the AI revolution is the spirit that any intelligent behavior o
 
 ## Background on Creativity
 
-Creativity is broadly defined to be the process by which novel, useful, and surprising ideas are generated. 
+Creativity is the process by which novel, useful, and surprising ideas are generated. 
 
 
 ## Scientific Creativity Setting
