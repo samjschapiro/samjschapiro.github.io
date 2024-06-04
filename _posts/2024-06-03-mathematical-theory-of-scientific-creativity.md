@@ -14,7 +14,7 @@ The zeitgeist of the AI revolution is the spirit that any intelligent behavior o
 
 ## Existing Formulations of Creativity
 
-Creativity is the process by which novel, useful, and surprising ideas are generated. Ideas can be characterized by their _novelty_ in the form of the initial generation probability $p \in [0, 1]$, their _utility_ $u \in [0, 1]$, and the person's prior knowledge of that final utility $v \in [0, 1]$, so that the inverse $(1 - v)$ represents _surprise_. 
+Creativity is the process by which novel, useful, and surprising ideas are generated. Ideas can be characterized by their _novelty_ in the form of the initial generation probability $p \in [0, 1]$, their _utility_ $u \in [0, 1]$, and the person's prior knowledge of that final utility $v \in [0, 1]$, representing the inverse of _surprise_ $(1 - v)$. 
 
 
 ## Scientific Creativity Setting
