@@ -25,7 +25,7 @@ Let $z \in \mathcal{Z}$ be an open problem in the zeitgeist, $E$ be a semantic e
 
 ### Novelty, Utility, and Surprise in the Scientific Creativity Setting
 
-The difficulty of most open problems is that their solutions are non-obvious (or "surprising") with respect to that discipline's body of knowledge $\mathcal{D}$. Given an open problem $z \in \mathcal{Z}$ and an idea $i$ or permutation of ideas $[i_1, \dots, i_k]$ that solves problem $z$, we can take non-obviousness to mean that $E(z, i)$ is small or $E(z, i_j$ is small for all $j \in [k]$.  
+The difficulty of most open problems is that their solutions are non-obvious (or "surprising") with respect to that discipline's body of knowledge $\mathcal{D}$. Given an open problem $z \in \mathcal{Z}$ and an idea $d$ or permutation of ideas $[d_1, \dots, d_k]$ that solves problem $z$, we can take non-obviousness to mean that $E(z, d)$ is small or $E(z, d_j$ is small for all $j \in [k]$.  
 
 
 
