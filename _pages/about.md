@@ -16,3 +16,12 @@ I am interested in the **foundations of machine learning** (deep learning theory
 I will be visting the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/homepage), [UC Berkeley](https://www.berkeley.edu/) during Fall 2024 to study [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization). I am very fortunate to work with [Prof. Han Zhao](https://hanzhaoml.github.io/) and [Prof. Arindam Banerjee](https://arindam.cs.illinois.edu/) in the [Department of Computer Science](https://www.cs.illinois.edu), [University of Illinois, Urbana-Champaign](https://www.illinois.edu).
 
 Outside of academia, I previously co-founded a biotech startup called [Nephra](https://nephramed.wordpress.com/) and a student-run quantitative investment fund named [Quant](https://www.quantillinois.com/). 
+
+## Publications
+
+### Transfer Learning & Generalization 
+*Sharpness-Aware Generalization Bounds for Gradual Domain Adaptation*: <ins>Samuel Schapiro</ins>, Han Zhao - Submitted to International Conference on Machine Learning (**ICML**) 2024
+
+### Deep Learning Theory
+
+*Sharpness-Aware Minimization: Implicit Biases and Feature Selection*: <ins>Samuel Schapiro</ins>, Ruicheng Xian, Arindam Banerjee, Han Zhao - Appearing in Princeton Workshop on Optimization, Learning, and Control 2024
