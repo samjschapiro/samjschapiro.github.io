@@ -26,4 +26,4 @@ I previously co-founded a biotech startup called [Nephra](https://nephramed.word
 
 ### Deep Learning Theory
 
-[*Sharpness-Aware Minimization: Implicit Biases and Feature Selection*](https://samjschapiro.github.io/files/SAM_poster%20(2).pdf): <ins>Samuel Schapiro</ins>, Ruicheng Xian, Arindam Banerjee, Han Zhao - Appearing in Princeton Workshop on Optimization, Learning, and Control 2024
+[*Sharpness-Aware Minimization: Implicit Biases and Feature Selection*](https://samjschapiro.github.io/files/SAM_poster%20(2).pdf): <ins>Samuel Schapiro</ins>, Ruicheng Xian, Arindam Banerjee, Han Zhao - Princeton Workshop on Optimization, Learning, and Control 2024
