@@ -10,12 +10,14 @@ redirect_from:
 
 ## Bio
 
+I am a student in the [Department of Computer Science](https://www.cs.illinois.edu), [University of Illinois, Urbana-Champaign](https://www.illinois.edu), where I am fortunate to study theoretical machine learning with [Prof. Han Zhao](https://hanzhaoml.github.io/) and [Prof. Arindam Banerjee](https://arindam.cs.illinois.edu/); a visiting researcher at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/homepage), [UC Berkeley](https://www.berkeley.edu/) studying [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization); and a research scientist at [Spiral Works](https://spiralworks.ai/) working on the foundations of computational creativity.
 
-I am interested in the **foundations of machine learning** (deep learning theory, transfer learning, generalization) and the **science of intelligence** (mathematical theories of creativity, the unconscious mind and intelligence), both from an academic and commercial perspective. 
+My research aims to: 
+1. understand intelligence by synthesizing perspectives from philosophy, theoretical computer science, math, and cognitive science into consilient, non-embodied theories
+2. explain the successes of modern machine learning (deep learning, foundation models), and
+3. build AI models with improved generalization and robustness.
 
-I will be visting the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/homepage), [UC Berkeley](https://www.berkeley.edu/) during Fall 2024 to study [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization). I am very fortunate to work with [Prof. Han Zhao](https://hanzhaoml.github.io/) and [Prof. Arindam Banerjee](https://arindam.cs.illinois.edu/) in the [Department of Computer Science](https://www.cs.illinois.edu), [University of Illinois, Urbana-Champaign](https://www.illinois.edu).
-
-Outside of academia, I previously co-founded a biotech startup called [Nephra](https://nephramed.wordpress.com/) and a student-run quantitative investment fund named [Quant](https://www.quantillinois.com/). 
+I previously co-founded a biotech startup called [Nephra](https://nephramed.wordpress.com/) and a student-run quantitative investment fund named [Quant](https://www.quantillinois.com/). 
 
 ## Publications
 
@@ -24,4 +26,4 @@ Outside of academia, I previously co-founded a biotech startup called [Nephra](h
 
 ### Deep Learning Theory
 
-[*Sharpness-Aware Minimization: Implicit Biases and Feature Selection*](https://samjschapiro.github.io/files/SAM_poster%20(1).pdf): <ins>Samuel Schapiro</ins>, Ruicheng Xian, Arindam Banerjee, Han Zhao - Appearing in Princeton Workshop on Optimization, Learning, and Control 2024
+[*Sharpness-Aware Minimization: Implicit Biases and Feature Selection*](https://samjschapiro.github.io/files/SAM_poster%20(2).pdf): <ins>Samuel Schapiro</ins>, Ruicheng Xian, Arindam Banerjee, Han Zhao - Appearing in Princeton Workshop on Optimization, Learning, and Control 2024
