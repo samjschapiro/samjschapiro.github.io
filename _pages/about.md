@@ -15,7 +15,7 @@ I am a student in the [Department of Computer Science](https://www.cs.illinois.e
 My research aims to: 
 1. scientifically understand intelligence by synthesizing perspectives from philosophy, theoretical computer science, math, and cognitive science into consilient, normative theories;
 2. mathematically explain the successes of modern machine learning (deep learning, foundation models); and
-3. build learning systems with improved generalization and robustness
+3. build learning systems with improved generalization and robustness.
 
 I previously co-founded a biotech startup called [Nephra](https://nephramed.wordpress.com/) and a student-run quantitative investment fund named [Quant](https://www.quantillinois.com/). 
 
