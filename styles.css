@@ -57,10 +57,11 @@ a {
   top: 0;
   background: var(--white);
   display: flex;
-  justify-content: space-between;
+  flex-flow: row nowrap; /* single row */
+  justify-content: space-between; /* brand on left, links on right */
   align-items: center;
-  padding: 0.75rem 2rem; /* slightly less padding for a tighter feel */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* smaller shadow for minimalism */
+  padding: 0.75rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 
@@ -70,25 +71,29 @@ a {
   color: var(--secondary);
   transition: color 0.3s ease;
 }
+
 .nav-brand:hover {
   color: var(--primary);
 }
 
 .nav-links {
-  display: flex;
+  display: flex;      /* horizontal layout */
+  flex-flow: row nowrap; 
   list-style: none;
-  gap: 1.25rem; 
+  gap: 1.25rem;       /* spacing between links */
+  margin: 0; 
+  padding: 0;
 }
 
 .nav-links li {
-  position: relative;
+  display: inline-block; /* ensures each link is in-line */
 }
 
 .nav-links li a {
   font-weight: 500;
   color: var(--dark);
   padding: 0.5rem 0.75rem;
-  border-radius: 4px; /* slight rounding for a modern look */
+  border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
