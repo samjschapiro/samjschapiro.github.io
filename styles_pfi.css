@@ -1,0 +1,276 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background: #F7FAFC;
+    color: #333;
+}
+
+/* Sections */
+section {
+    padding: 2rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+section:hover {
+    transform: translateY(-10px); /* Lift the section slightly */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a deeper shadow */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #2B6CB0, #63B3ED);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.5rem 2rem;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+}
+
+.nav-list a {
+    font-family: 'Poppins', sans-serif;
+    color: #2B6CB0;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.nav-list a:hover {
+    background: #E2E8F0;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.4rem;   
+    color: white;
+    margin: 0;
+}
+
+main p {
+    font-size: 1.4rem; /* Increased font size for better readability */
+    line-height: 1.8;  /* Maintain good spacing between lines */
+    margin-bottom: 1.5rem; /* Ensure space between paragraphs */
+    color: #333; /* Retain a dark, readable color */
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #2B6CB0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Blockquote Styling */
+blockquote {
+    border-left: 6px solid #2B6CB0;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: #f5f7fa;
+    font-style: italic;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+blockquote:before {
+    content: "“";
+    font-size: 2rem;
+    line-height: 0;
+    margin-right: 0.3rem;
+    color: #2B6CB0;
+    vertical-align: -0.4rem;
+}
+
+blockquote:after {
+    content: "”";
+    font-size: 2rem;
+    line-height: 0;
+    margin-left: 0.3rem;
+    color: #2B6CB0;
+    vertical-align: -0.4rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #2B6CB0;
+    color: white;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+
+    /* Bookshelf Grid */
+    .bookshelf {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+   /* Book Card Styles */
+    .book-card {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        color: white;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'Lora', serif;
+        overflow: hidden; /* Prevents overflow from any child elements */
+    }
+    
+    /* Book Card Image Wrapper */
+    .image-wrapper {
+        position: relative; /* Creates a stacking context for the badge */
+        display: flex;
+        justify-content: flex-start; /* Aligns badge in the top-left */
+        align-items: flex-start; /* Aligns badge in the top-left */
+    }
+    
+    /* Book Card Image */
+    .image-wrapper img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        display: block;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Hover Effect */
+    .image-wrapper img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+
+    /* CODE TO MODIFY IS BELOW /*
+    /* Book Card Image */
+    .book-card {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff; /* White background */
+        border: 1px solid #ddd; /* Light border for separation */
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'Roboto', sans-serif; /* Consistent with site font */
+        overflow: hidden; /* Prevents overflow from any child elements */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+    .book-card img {
+        width: 100%; /* Full width of the card */
+        border-radius: 8px; /* Matches the card's rounded corners */
+        object-fit: cover; /* Ensures image fits neatly */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        margin-bottom: 10px; /* Space between the image and content */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+    }
+    
+    /* Book Card Image Hover */
+    .book-card img:hover {
+        transform: scale(1.05); /* Slight zoom-in on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    }
+    
+    .book-card:hover {
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
+    }
+    
+    .book-card h3 {
+        font-family: 'Poppins', sans-serif; /* Matches overall title font style */
+        font-size: 1.3rem;
+        color: #2B6CB0; /* Primary color for consistency */
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    
+    .book-card p {
+        font-family: 'Roboto', sans-serif; /* Matches body font style */
+        font-size: 1rem;
+        color: #333; /* Consistent readable color */
+        margin: 3px 0;
+    }
+    
+    .category {
+        font-family: 'Roboto', sans-serif; /* Matches body font style */
+        font-size: 0.9rem;
+        color: #888; /* Subtle secondary text color */
+        margin-top: 5px;
+        font-style: italic;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 2.5rem;
+        }
+        .book-card img {
+            max-height: 180px;
+        }
+    }
