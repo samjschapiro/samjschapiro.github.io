@@ -9,6 +9,10 @@ Description: Custom theme: MIT Physics
 
 /* =================== COLOR VARIABLES =================== */
 :root {
+
+  --primary: #4A8CAB;      /* Softer teal-blue */
+  --secondary: #F08679;    /* Subtle coral/peach */
+  
   --blue: #006eec;
   --red: #e61e50;
   --orange: #fd7e14;
@@ -19,8 +23,6 @@ Description: Custom theme: MIT Physics
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #006eec;
-  --secondary: #e61e50;
   --light: #f8f9fa;
   --dark: #343a40;
 }
