@@ -1,273 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Schapiro - Personal Website</title>
- <style>
-       /* Global Styles */
-/* Import the new font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* Global Styles */
-body {
-    font-family: 'Inter-Tight', sans-serif; /* Change font to Inter */
-    line-height: 1.6;
-    color: #333;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Header Text */
-.header-text h1 {
-    font-size: 2.5em;
-    font-weight: 600; /* Use a bold but clean weight */
-    color: #444;
-    margin: 0;
-}
-
-h2 {
-    font-size: 1.8em;
-    font-weight: 500; /* Slightly lighter for section titles */
-    color: #444;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-p {
-    font-size: 1.1em;
-    font-weight: 300; /* Light font weight for sleekness */
-    color: #555; /* Slightly softer color for text */
-}
-
-.contact-icons a {
-    font-weight: 400; /* Medium weight for icons/text links */
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Header Styles */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    padding-top: 50px;
-}
-
-.location {
-    color: #666;
-    margin-top: 5px; /* Adjust vertical spacing above */
-    margin-bottom: 15px; /* Add space between location and icons */
-}
-
-.contact-icons {
-    margin-top: 10px; /* Ensure some spacing above the icons */
-    margin-bottom: 20px; /* Optional: Extra spacing below the icons */
-}
-
-.contact-icons a {
-    margin-right: 15px; /* Space between icons */
-    text-decoration: none;
-    color: #444;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.photo-of-JP {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.photo-of-JP img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.photo-of-JP:hover {
-    transform: scale(1.1);
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #007bff;
-    margin-top: 10px;
-}
-
-p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-}
-
-/* Research Section */
-.research-item {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.research-item:last-child {
-    border-bottom: none;
-}
-
-.research-item a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.research-item a:hover {
-    color: #0056b3;
-}
-.quote-section {
-    text-align: center;
-    font-style: italic;
-    font-size: 1.2em; /* Reduced from 1.5em */
-    color: #444;
-    margin: 30px auto;
-    padding: 15px;
-    max-width: 500px;
-    border-left: 4px solid #555;
-    background-color: #f9f9f9;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.quote-section blockquote {
-    margin: 0;
-    padding: 8px;
-}
-
-.quote-section cite {
-    display: block;
-    font-size: 0.9em; /* Reduced font size for the author */
-    font-style: normal;
-    color: #666;
-    margin-top: 8px;
-}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physics & AI Research</title>
+  <!-- Example Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" 
+    rel="stylesheet"
+  >
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header class="header-container">
-        <div class="header-text">
-            <h1>Samuel Schapiro</h1>
-            <div class="contact-icons">
-                <a href="https://twitter.com/samschapiro">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="Twitter" width="20" height="20">
-                </a>
-                <a href="mailto:sjs17@illinois.edu">
-                    <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-1024.png" alt="Email" width="20" height="20">
-                </a>
-                <a href="https://scholar.google.com/citations?user=B2UNU6EAAAAJ&hl=en">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/512px-Google_Scholar_logo.svg.png?20200110094142" alt="GS" width="20" height="20">
-                </a>
-                <a href="https://github.com/samjschapiro">
-                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="20" height="20">
-                </a>
-                <a href="https://www.linkedin.com/in/samuel-schapiro/">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" height="20">
-                </a>
-            </div>
-        </div>
-        <div class="photo-of-JP">
-            <img src="images/headshot.jpeg" alt="Samuel Schapiro" width="96" height="96">
-        </div>
-    </header>
-    <main>
-        <section class="bio-section">
-            <p>My name is Sam. I am studying the science of intelligence using mathematics, computer science, philosophy, and psychology.</p>  
-            <p>I am currently the founding research scientist of <a href="https://spiralworks.ai">Spiral Works</a>, where we are working to develop provably creative AI. </p>
-            <p>Most of what I know I have learned from <a href="bookshelf.html">books</a>. If you want to connect, the best way is just to ask me
-            something about one of the books I've read.</p>
-            <p>The scientific and philosophical ideas that have been central to my work and life I write about <a href="https://samuelschapiro.substack.com/">here</a>. 
-            You'll enjoy what I write if you are interested in any of the following: political philosophy, moral philosophy, theoretical psychology, metaphysics, epistemology, or the philosophy of science.</p>
-            <p>Lastly, my first philosophical treatise <i>Groundwork for the Awakening of Mankind</i> will be out soon.</p>
-        </section>
-    </main>
-<!--     <section class="quote-section">
-        <blockquote>
-            <p>"It was all mere accident and nothing more! You tend to regard everything as you are today as that which had to occur, by some appeal to a granite of spiritual fate, 
-                of predetermined decision and answer to predetermined, chosen questions. Yet it was actually through the vicissitudes of circumstance that your character began to 
-                mold—not according to any fixed destination—and that character today could have taken innumerably many forms. You envisioned your identity as the result of a CHISELING 
-                away at a marble to reveal the sculpture of a figure that always lied within–! It was not! The only mandate was, at every step, you acted to equilibrate your needs, but 
-                it was never set in stone HOW. You let circumstance dictate your life, fell into habits out of false necessity, relationships out of convenience. Whenever you could have 
-                transgressed the accident of your existence you resigned to the spider web of habit. But you could have looked to something greater, you could have become something else 
-                entirely—the person that OUGHT to exist—not the one that formed by mere vicissitudes of fate. The identity you believe was fixed and so destined was all mere accident and 
-                nothing more! And still you, the free spirit, have the liberty to transvaluate all of your values as a rewriting of the legislation itself which assigns the worth of 
-                everything in your life—the free spirit to determine what ought to exist tomorrow! Can there be anything more liberating than this?"</p>
-        </blockquote>
-    </section>
-     -->
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-logo">AI Physics Lab</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title animate-in-left">Max Tegmark</h1>
+        <h2 class="hero-subtitle animate-in-left-delayed">Professor of Physics</h2>
+        <p class="hero-description animate-in-left-more">
+          Exploring the cutting edge of AI for physics &amp; physics for AI
+        </p>
+      </div>
+      <div class="hero-image-container animate-fade-in">
+        <img
+          src="https://via.placeholder.com/350x350"
+          alt="Portrait of Professor"
+          class="hero-image"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="research-section">
+    <h2 class="section-title">Research Focus</h2>
+    <div class="research-text">
+      <p>
+        My work centers on bridging physics and machine learning&mdash;
+        harnessing AI to further our understanding of the universe,
+        while applying physical insights to advance AI safety and efficiency.
+      </p>
+      <p>
+        In particular, I’m interested in how physical laws can inspire
+        next-generation neural networks, and how advanced AI can deepen
+        our grasp of fundamental cosmic structures.
+      </p>
+    </div>
+
+    <div class="research-list">
+      <div class="research-item animate-pop">
+        <h3>Biophysics</h3>
+        <p>
+          Investigating how machine learning principles can model complex,
+          emergent behaviors in living systems.
+        </p>
+      </div>
+      <div class="research-item animate-pop">
+        <h3>Astrophysics Theory</h3>
+        <p>
+          Using large-scale data and AI approaches to study dark matter,
+          cosmic structures, and the origins of our universe.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Info Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-card animate-in-up">
+      <h2 class="contact-title">Contact Info</h2>
+      <ul>
+        <li><strong>Email:</strong> tegmark@mit.edu</li>
+        <li><strong>Phone:</strong> (617) 452-4627</li>
+        <li><strong>Office:</strong> Ronald McNair Building, 37-582G</li>
+      </ul>
+      <p>
+        Lab(s): <a href="#">Tegmark AI Safety Group</a>
+      </p>
+      <p>
+        Affiliated Centers:
+        <br />
+        <a href="#">MIT Kavli Institute for Astrophysics &amp; Space Research</a><br/>
+        <a href="#">Physics of Living Systems @ MIT</a><br/>
+        <a href="#">The NSF AI Institute for Artificial Intelligence &amp; Fundamental Interactions (IAIFI)</a>
+      </p>
+      <p><strong>Assistant:</strong> Ty’Shauna Ross</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 AI Physics Lab | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
-
-
-<!-- 
-        </section>
-        <section class="research-section">
-            <h2>Research</h2>
-            <h3>Creativity</h3>
-            <p>Towards Understanding Creativity in Language Models: Algorithms and Theory<br>
-                <u>Samuel Schapiro</u>, Royce Moon, Aishik Sanyal <br>
-                <i>Manuscript in Progress</i>
-            </p>
-             <p><a href="files/A Mathematical Framework for Evaluating the Creativity of Ideas.pdf">A Mathematical Framework for Evaluating the Creativity of Ideas</a><br>
-                <u>Samuel Schapiro</u>, Royce Moon, Aishik Sanyal <br>
-            </p>
-    
-            <h3> Transfer Learning and Deep Learning Theory</h3>
-            <p><a href="https://arxiv.org/pdf/2412.05169">Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization</a><br>
-                <u>Samuel Schapiro,</u> Han Zhao<br>
-                Under Review at <i>Transactions on Machine Learning Research 2024</i>
-            </p>
-            <p>Sharpness-Aware Minimization: Feature Selection and Implicit Biases <br>
-                <u>Samuel Schapiro,</u> Erin Zhang, Han Zhao, Arindam Banerjee <br>
-                <i>Princeton Workshop on Optimization, Learning, and Control 2024</i></p>
-        </section>
-        
-        <section class="philosophical-work-section">
-        <h2>Philosophical Work</h2>
-        <div id="substack-feed-embed"></div>
-
-        <script>
-          window.SubstackFeedWidget = {
-            substackUrl: "samuelschapiro.substack.com",
-            posts: 3,
-            layout: "right"
-          };
-        </script>
-        <script src="https://substackapi.com/embeds/feed.js" async></script>
-        </section>
-        
-        <h2>Reading Groups</h2>
-        <p>Fall 2024: <a href="https://sites.google.com/berkeley.edu/generalization-phil-and-psych/">Philosophy and Psychology of Generalization and Creativity</a></p>
-        <p>Spring 2025: <a href="pfi-reading-group.html">Philosophical Foundations of Intelligence </a></p>
-        <p>Summer 2025: <a href="https://spiralworks.ai/#/reading-group">Algorithmic and Theoretical Foundations of Creativity</a>.</p>
- -->
