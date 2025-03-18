@@ -54,13 +54,14 @@ a {
 }
 
 /* =================== NAVBAR (PROFESSIONAL, MINIMAL) =================== */
+/* ====== NAVBAR BASE ====== */
 .navbar {
   position: sticky;
   top: 0;
   background: var(--white);
   display: flex;
-  flex-flow: row nowrap; /* single row */
-  justify-content: space-between; /* brand on left, links on right */
+  flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: center;
   padding: 0.75rem 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -78,17 +79,36 @@ a {
   color: var(--primary);
 }
 
+/* ====== NAV TOGGLE (Hamburger) ====== */
+.nav-toggle {
+  display: none; /* Hidden on desktop by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--dark);
+  border-radius: 2px;
+}
+
+/* ====== NAV LINKS (Desktop) ====== */
 .nav-links {
-  display: flex;      /* horizontal layout */
-  flex-flow: row nowrap; 
+  display: flex;
+  flex-flow: row nowrap;
   list-style: none;
-  gap: 1.25rem;       /* spacing between links */
+  gap: 1.25rem;
   margin: 0; 
   padding: 0;
 }
 
 .nav-links li {
-  display: inline-block; /* ensures each link is in-line */
+  display: inline-block;
 }
 
 .nav-links li a {
@@ -102,6 +122,37 @@ a {
 .nav-links li a:hover {
   color: var(--primary);
   background-color: var(--light);
+}
+
+/* ====== MOBILE RESPONSIVE ====== */
+@media (max-width: 768px) {
+  /* Show hamburger, hide normal nav layout */
+  .nav-toggle {
+    display: flex; /* Show the hamburger icon */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px; /* just below the navbar */
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    width: 200px;
+    transform: translateX(100%); /* hidden by default */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+    display: block; /* full width clickable */
+    text-align: center;
+  }
+
+  /* When .nav-active is toggled, show the menu */
+  .nav-links.nav-active {
+    transform: translateX(0);
+  }
 }
 
 /* =================== HERO SECTION =================== */
