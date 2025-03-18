@@ -5,8 +5,6 @@ Description: Custom theme: MIT Physics
 */
 
 /* =================== IMPORT A SLEEK FONT =================== */
-/* Inter is a versatile, minimalistic sans-serif */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
 
 /* =================== COLOR VARIABLES =================== */
@@ -34,7 +32,6 @@ Description: Custom theme: MIT Physics
   box-sizing: border-box;
 }
 
-/* Use Inter as the single font family for both headings and body */
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--light);
@@ -42,10 +39,10 @@ body {
   line-height: 1.6;
 }
 
-/* Headings can use heavier Inter weights (e.g., 700 or 900) */
+/* Headings use heavier Inter weights */
 h1, h2, h3, .hero-title, .contact-title, .card-title {
   font-weight: 700;
-  letter-spacing: 0.5px; /* subtle spacing for a sleek look */
+  letter-spacing: 0.5px; 
 }
 
 /* Links reset */
@@ -54,7 +51,7 @@ a {
   color: inherit;
 }
 
-/* =================== NAVBAR =================== */
+/* =================== NAVBAR (PROFESSIONAL, MINIMAL) =================== */
 .navbar {
   position: sticky;
   top: 0;
@@ -62,8 +59,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 2rem; /* slightly less padding for a tighter feel */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* smaller shadow for minimalism */
   z-index: 10;
 }
 
@@ -71,51 +68,38 @@ a {
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--secondary);
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
-
 .nav-brand:hover {
   color: var(--primary);
-  transform: scale(1.05);
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: 1.25rem; 
+}
+
+.nav-links li {
+  position: relative;
 }
 
 .nav-links li a {
   font-weight: 500;
   color: var(--dark);
-  position: relative; /* for the underline effect */
-  transition: color 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px; /* slight rounding for a modern look */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Slide-up underline effect on hover */
-.nav-links li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--secondary);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.3s ease;
-}
 .nav-links li a:hover {
-  color: var(--secondary);
-}
-.nav-links li a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left center;
+  color: var(--primary);
+  background-color: var(--light);
 }
 
 /* =================== HERO SECTION =================== */
 .hero {
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  background: linear-gradient(45deg, var(--blue), var(--teal));
   color: var(--white);
   padding: 4rem 2rem;
   display: flex;
@@ -205,6 +189,7 @@ a {
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .research-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
