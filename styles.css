@@ -99,7 +99,7 @@ a {
 
 /* =================== HERO SECTION =================== */
 .hero {
-  background: linear-gradient(45deg, var(--blue), var(--teal));
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
   color: var(--white);
   padding: 4rem 2rem;
   display: flex;
