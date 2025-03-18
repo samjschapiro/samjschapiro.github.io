@@ -4,29 +4,10 @@ Theme Name: MIT Physics
 Description: Custom theme: MIT Physics
 */
 
-/* =================== FONTS =================== */
-/* Make sure these paths match your local folder structure */
+/* =================== IMPORT A SLEEK FONT =================== */
+/* Inter is a versatile, minimalistic sans-serif */
 
-/* Example (from your snippet):
-@font-face {
-  font-family: "RobotoSlab";
-  src: url("assets/fonts/roboto-slab/roboto-slab.woff2") format("woff2"),
-       url("assets/fonts/roboto-slab/roboto-slab.woff") format("woff");
-  font-weight: normal;
-}
-@font-face {
-  font-family: "RobotoSlab";
-  src: url("assets/fonts/roboto-slab/roboto-slab-bold.woff2") format("woff2"),
-       url("assets/fonts/roboto-slab/roboto-slab-bold.woff") format("woff");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "Heebo";
-  src: url("assets/fonts/heebo/heebo-black-webfont.woff2") format("woff2"),
-       url("assets/fonts/heebo/heebo-black-webfont.woff") format("woff");
-  font-weight: 900;
-}
-/* ... etc. for each weight ... */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
 
 /* =================== COLOR VARIABLES =================== */
 :root {
@@ -44,8 +25,6 @@ Description: Custom theme: MIT Physics
   --secondary: #e61e50;
   --light: #f8f9fa;
   --dark: #343a40;
-
-  --font-family-sans-serif: "RobotoSlab", Helvetica, Arial, sans-serif;
 }
 
 /* =================== GLOBAL STYLES =================== */
@@ -55,17 +34,18 @@ Description: Custom theme: MIT Physics
   box-sizing: border-box;
 }
 
-/* Let's use Heebo for headings, Roboto Slab for body text */
+/* Use Inter as the single font family for both headings and body */
 body {
-  font-family: "RobotoSlab", serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;
 }
 
-/* Headings (Heebo) */
+/* Headings can use heavier Inter weights (e.g., 700 or 900) */
 h1, h2, h3, .hero-title, .contact-title, .card-title {
-  font-family: "Heebo", var(--font-family-sans-serif);
+  font-weight: 700;
+  letter-spacing: 0.5px; /* subtle spacing for a sleek look */
 }
 
 /* Links reset */
@@ -93,6 +73,7 @@ a {
   color: var(--secondary);
   transition: transform 0.3s ease, color 0.3s ease;
 }
+
 .nav-brand:hover {
   color: var(--primary);
   transform: scale(1.05);
@@ -107,7 +88,7 @@ a {
 .nav-links li a {
   font-weight: 500;
   color: var(--dark);
-  position: relative; /* For the underline effect */
+  position: relative; /* for the underline effect */
   transition: color 0.3s ease;
 }
 
@@ -157,7 +138,6 @@ a {
 
 .hero-title {
   font-size: 2.5rem;
-  font-weight: 900; /* Heebo black weight */
   margin-bottom: 0.5rem;
 }
 
@@ -262,7 +242,6 @@ a {
   font-size: 1.8rem;
   color: var(--secondary);
   margin-bottom: 1rem;
-  font-weight: 700;
 }
 
 .contact-info {
@@ -270,7 +249,6 @@ a {
   line-height: 1.8;
 }
 
-/* Example link hover in contact-info (if you'd like) */
 .contact-info a {
   color: var(--dark);
   transition: color 0.3s ease, transform 0.3s ease;
@@ -310,7 +288,6 @@ a {
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Utility classes to attach animations */
 .animate-in-left {
   animation: slideInLeft 0.6s ease forwards;
 }
