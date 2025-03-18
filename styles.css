@@ -1,276 +1,240 @@
-/* General Styles */
+/* Reset (optional but recommended) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font & Body */
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    background: #F7FAFC;
-    color: #333;
+  font-family: 'Montserrat', sans-serif;
+  background: #F3F3F3;
+  color: #333;
 }
 
-/* Sections */
-section {
-    padding: 2rem 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 999;
 }
 
-section:hover {
-    transform: translateY(-10px); /* Lift the section slightly */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a deeper shadow */
+.nav-logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #EA4C4C;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+  color: #EA4C4C;
 }
 
 /* Hero Section */
 .hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(to right, #2B6CB0, #63B3ED);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(45deg, #EA4C4C, #FFC046);
+  border-bottom: 5px solid #FF8243;
 }
 
-/* Navigation Bar */
-nav {
-    position: sticky;
-    top: 0;
-    background: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    padding: 0.5rem 2rem;
+.hero-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap; /* for responsiveness */
 }
 
-.nav-list {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.hero-text {
+  flex: 1;
+  color: #ffffff;
+  min-width: 280px;
 }
 
-.nav-list li {
-    margin: 0 1rem;
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.nav-list a {
-    font-family: 'Poppins', sans-serif;
-    color: #2B6CB0;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background 0.3s;
+.hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
 }
 
-.nav-list a:hover {
-    background: #E2E8F0;
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-.hero h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.hero p {
-    font-size: 1.4rem;   
-    color: white;
-    margin: 0;
+.hero-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
 }
 
-main p {
-    font-size: 1.4rem; /* Increased font size for better readability */
-    line-height: 1.8;  /* Maintain good spacing between lines */
-    margin-bottom: 1.5rem; /* Ensure space between paragraphs */
-    color: #333; /* Retain a dark, readable color */
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #2B6CB0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+/* Research Section */
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2F2F2F;
 }
 
-/* Blockquote Styling */
-blockquote {
-    border-left: 6px solid #2B6CB0;
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    background: #f5f7fa;
-    font-style: italic;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.8;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.research-text {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.8;
 }
 
-blockquote:before {
-    content: "“";
-    font-size: 2rem;
-    line-height: 0;
-    margin-right: 0.3rem;
-    color: #2B6CB0;
-    vertical-align: -0.4rem;
+.research-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-blockquote:after {
-    content: "”";
-    font-size: 2rem;
-    line-height: 0;
-    margin-left: 0.3rem;
-    color: #2B6CB0;
-    vertical-align: -0.4rem;
+.research-item {
+  background: #fff;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  min-width: 250px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.research-item:hover {
+  transform: translateY(-5px);
+}
+
+.research-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #EA4C4C;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #F9F9F9;
+}
+
+.contact-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #EA4C4C;
+  text-align: center;
+}
+
+.contact-card ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.contact-card ul li {
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
-footer {
-    text-align: center;
-    background: #2B6CB0;
-    color: white;
-    padding: 1rem 0;
-    font-size: 0.9rem;
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2F2F2F;
+  color: #FFFFFF;
+  margin-top: 2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
+/* ============= ANIMATIONS ============= */
 
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    section {
-        padding: 2rem 1rem;
-    }
+/* Keyframes */
+@keyframes slideInLeft {
+  0% { transform: translateX(-50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
+@keyframes slideInUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
 
-    /* Bookshelf Grid */
-    .bookshelf {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
-   /* Book Card Styles */
-    .book-card {
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        color: white;
-        border: 1px solid #333;
-        border-radius: 8px;
-        padding: 15px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        font-family: 'Lora', serif;
-        overflow: hidden; /* Prevents overflow from any child elements */
-    }
-    
-    /* Book Card Image Wrapper */
-    .image-wrapper {
-        position: relative; /* Creates a stacking context for the badge */
-        display: flex;
-        justify-content: flex-start; /* Aligns badge in the top-left */
-        align-items: flex-start; /* Aligns badge in the top-left */
-    }
-    
-    /* Book Card Image */
-    .image-wrapper img {
-        width: 100%;
-        border-radius: 8px;
-        object-fit: cover;
-        display: block;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    /* Hover Effect */
-    .image-wrapper img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
 
-
-    /* CODE TO MODIFY IS BELOW /*
-    /* Book Card Image */
-    .book-card {
-        display: flex;
-        flex-direction: column;
-        background-color: #ffffff; /* White background */
-        border: 1px solid #ddd; /* Light border for separation */
-        border-radius: 8px;
-        padding: 15px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        font-family: 'Roboto', sans-serif; /* Consistent with site font */
-        overflow: hidden; /* Prevents overflow from any child elements */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    }
-    .book-card img {
-        width: 100%; /* Full width of the card */
-        border-radius: 8px; /* Matches the card's rounded corners */
-        object-fit: cover; /* Ensures image fits neatly */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        margin-bottom: 10px; /* Space between the image and content */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
-    }
-    
-    /* Book Card Image Hover */
-    .book-card img:hover {
-        transform: scale(1.05); /* Slight zoom-in on hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-    }
-    
-    .book-card:hover {
-        transform: translateY(-5px); /* Slight lift on hover */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
-    }
-    
-    .book-card h3 {
-        font-family: 'Poppins', sans-serif; /* Matches overall title font style */
-        font-size: 1.3rem;
-        color: #2B6CB0; /* Primary color for consistency */
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
-    
-    .book-card p {
-        font-family: 'Roboto', sans-serif; /* Matches body font style */
-        font-size: 1rem;
-        color: #333; /* Consistent readable color */
-        margin: 3px 0;
-    }
-    
-    .category {
-        font-family: 'Roboto', sans-serif; /* Matches body font style */
-        font-size: 0.9rem;
-        color: #888; /* Subtle secondary text color */
-        margin-top: 5px;
-        font-style: italic;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-        header h1 {
-            font-size: 2.5rem;
-        }
-        .book-card img {
-            max-height: 180px;
-        }
-    }
+/* Attach animations via utility classes */
+.animate-in-left {
+  animation: slideInLeft 0.7s ease forwards; 
+}
+.animate-in-left-delayed {
+  animation: slideInLeft 0.7s ease forwards;
+  animation-delay: 0.3s;
+}
+.animate-in-left-more {
+  animation: slideInLeft 0.7s ease forwards;
+  animation-delay: 0.6s;
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+.animate-in-up {
+  animation: slideInUp 0.7s ease forwards;
+}
+.animate-pop {
+  animation: popIn 0.7s ease forwards;
+}
