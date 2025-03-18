@@ -15,15 +15,37 @@
   <!-- Navigation Bar -->
 <nav class="navbar">
   <div class="nav-brand">Samuel Schapiro</div>
-  <ul class="nav-links">
+
+  <!-- Hamburger icon (hidden on desktop, shown on mobile) -->
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navMenu">
     <li><a href="#home">Home</a></li>
     <li><a href="#research">Research</a></li>
-    <li><a href="bookshelf.html">Library</a></li>
-    <li><a href="https://samuelschapiro.substack.com/" target="_blank">Essays</a></li>
+    <li><a href="bookshelf.html">Books</a></li>
+    <li><a href="https://samuelschapiro.substack.com/" target="_blank">Writing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
+<!-- Toggle Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+      // Toggle a class that shows/hides the menu on mobile
+      navMenu.classList.toggle('nav-active');
+    });
+  });
+</script>
+  
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
