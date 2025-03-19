@@ -5,7 +5,7 @@ Description: Custom theme: MIT Physics
 */
 
 /* =================== IMPORT A SLEEK FONT =================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap');
 
 /* =================== COLOR VARIABLES =================== */
 :root {
@@ -34,15 +34,17 @@ Description: Custom theme: MIT Physics
   box-sizing: border-box;
 }
 
+/* =============== GLOBAL STYLES =============== */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; /* Body text uses Inter */
   background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;
 }
 
-/* Headings use heavier Inter weights */
+/* Headings and Titles use Playfair Display for an artistic look */
 h1, h2, h3, .hero-title, .contact-title, .card-title {
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   letter-spacing: 0.5px; 
 }
