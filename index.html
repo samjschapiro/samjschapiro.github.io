@@ -314,7 +314,6 @@
             <div class="book-card project-card" data-title="Groundwork for the Awakening of Mankind" data-category="Philosophy" data-date="202502">
                 <div class="image-wrapper">
                      <div class="date-badge">02/2025</div>
-                    <!-- Replace with your project image -->
                     <img src="images/berk_for.jpeg" alt="Groundwork for the Awakening of Mankind">
                 </div>
                 <h3>Groundwork for the Awakening of Mankind</h3>
@@ -788,7 +787,9 @@
         const sortedProjects = projectCards.sort((a, b) => {
           if (sortBy === 'date') {
             // Assume data-date is a numeric string (e.g., "202405")
-            return parseInt(a.dataset.date) - parseInt(b.dataset.date);
+            const aValue = parseFloat(a.dataset.date);
+            const bValue = parseFloat(b.dataset.date);
+            return aValue - bValue; // Descending order
           } else if (sortBy === 'category') {
             const aCat = a.dataset.category.toLowerCase();
             const bCat = b.dataset.category.toLowerCase();
