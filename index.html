@@ -61,6 +61,30 @@
         margin-bottom: 20px;
         text-align: center;
     }
+
+    /* Projects Sort Section */
+    .projects-sort-section {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 20px 0;
+        font-family: 'Lora', serif;
+    }
+
+    .projects-sort-section label {
+        margin-right: 10px;
+        font-weight: 600;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .projects-sort-section select {
+        background-color: #1e1e1e;
+        color: #eaeaea;
+        border: 1px solid #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-family: 'Lora', serif;
+    }
         
     /* Header */
     header {
@@ -71,6 +95,14 @@
     header h1 {
         font-family: 'Playfair Display', serif; /* Romantic and fantasy-like heading */
         font-size: 3rem;
+        color: #f5f5f5;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    header h2 {
+        font-family: 'Playfair Display', serif; /* Romantic and fantasy-like heading */
+        font-size: 2rem;
         color: #f5f5f5;
         font-weight: 700;
         letter-spacing: 1px;
@@ -108,6 +140,14 @@
         font-family: 'Lora', serif;
     }
 
+    .bookshelf.section h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        color: #f5f5f5;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+        
     /* Bookshelf Grid */
     .bookshelf {
         display: grid;
@@ -313,11 +353,12 @@
         </div>
     </section>
 
-
-    <h2>Sam's Bookshelf</h2>
-    <p>"Pour inventer, il faut penser à côté."</p>
-
-    <!-- Sort Section -->
+    <header>
+      <h2>Sam's Bookshelf</h2>
+      <p>"Pour inventer, il faut penser à côté."</p>
+    </header>
+    
+     <!-- Sort Section -->
     <div class="sort-section">
         <label for="sort">Sort by:</label>
         <select id="sort">
@@ -331,6 +372,7 @@
 
     <!-- Bookshelf -->
     <div class="bookshelf" id="bookshelf">
+      
         <!-- Book Cards -->
        <div class="book-card" data-title="The Critique of Pure Reason" data-author="Immanuel Kant" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating=10 data-date="202409">
             <div class="image-wrapper">
