@@ -23,16 +23,21 @@
         line-height: 1.6;
         padding: 20px;
     }
-
-   /* Bio Section Styling */
-    .bio-section {
-      margin-bottom: 40px;
-      padding: 20px;
-      border: 1px solid #333;
+    
+    section {
+      margin: 40px 0;
+      padding: 30px 20px;
       border-radius: 8px;
-      background-color: #1e1e1e;
+    }
+    
+    /* Bio Section: Lightest gray */
+    .bio-section {
+      border: 1px solid #393939;
+      background-color: #2e2e2e;  /* Lighter dark gray */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       text-align: center;
     }
+
     
     /* Bio Card Styling */
     .bio-card {
@@ -76,12 +81,14 @@
         margin: 0 auto;
         text-align: center;
     }
-    
-    /* Projects Section (same style as Bookshelf) */
+        
+    /* Projects Section: Medium-dark gray */
     .projects-section {
-        margin-bottom: 40px;
+      border: 1px solid #2e2e2e;
+      background-color: #242424;  /* Medium-dark gray */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
-    
+        
     .projects-section h2 {
         font-family: 'Playfair Display', serif;
         font-size: 2rem;
@@ -182,6 +189,14 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
     }
+    
+    /* Bookshelf Section: Darkest gray */
+    .bookshelf-section {
+      border: 1px solid #2a2a2a;
+      background-color: #1c1c1c;  /* Darkest gray */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
 
    /* Book Card Styles */
     .book-card {
@@ -320,9 +335,6 @@
         <p>Chief Scientist, Spiral Works</p>
         <p class="category">sjs17@illinois.edu</p>
       </div>
-      <p>
-        I study connections between mathematics, computer science, philosophy, and psychology.
-      </p>
     </section>
 
     
@@ -409,6 +421,7 @@
     </div>
 
     <!-- Bookshelf -->
+    <section class="bookshelf-section">
     <div class="bookshelf" id="bookshelf">
       
         <!-- Book Cards -->
@@ -811,6 +824,7 @@
 
         
     </div>
+    </section>
 
     <script>
       // Get the projects sort dropdown, projects container, and all project cards
