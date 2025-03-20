@@ -294,10 +294,18 @@
     <!-- Projects Section (Styled like Bookshelf) -->
     <section class="projects-section">
         <h2>Projects</h2>
-        <div class="bookshelf">
+        <div class="projects-sort-section">
+        <label for="projectSort">Sort by:</label>
+        <select id="projectSort">
+          <option value="date">Date</option>
+          <option value="category">Category</option>
+        </select>
+      </div>
+        <div class="bookshelf" id="projects">
             <!-- Example Project Card -->
-            <div class="book-card" data-title="Spiral Works" data-author="Description" data-category="Artificial Intelligence">
+            <div class="book-card" data-title="Spiral Works" data-author="Description" data-category="Artificial Intelligence" data-date="202406">
                 <div class="image-wrapper">
+                     <div class="date-badge">09/2024</div>
                     <!-- Replace with your project image -->
                     <img src="images/project-alpha.jpg" alt="Project Alpha">
                 </div>
@@ -305,8 +313,9 @@
                 <p>Chief Scientist</p>
                 <p class="category">Artificial Intelligence</p>
             </div>
-            <div class="book-card" data-title="Groundwork for the Awakening of Mankind" data-author="Description" data-category="Philosophy, Science">
+            <div class="book-card" data-title="Groundwork for the Awakening of Mankind" data-author="Description" data-category="Philosophy, Science" data-date="202502">
                 <div class="image-wrapper">
+                     <div class="date-badge">09/2024</div>
                     <!-- Replace with your project image -->
                     <img src="images/project-beta.jpg" alt="Project Beta">
                 </div>
@@ -316,6 +325,7 @@
             </div>
             <div class="book-card" data-title="Project Beta" data-author="Description" data-category="Philosophy, Science">
                 <div class="image-wrapper">
+                     <div class="date-badge">09/2024</div>
                     <!-- Replace with your project image -->
                     <img src="images/project-beta.jpg" alt="Project Beta">
                 </div>
@@ -325,6 +335,7 @@
             </div>
             <div class="book-card" data-title="Project Beta" data-author="Description" data-category="Philosophy, Science">
                 <div class="image-wrapper">
+                     <div class="date-badge">09/2024</div>
                     <!-- Replace with your project image -->
                     <img src="images/project-beta.jpg" alt="Project Beta">
                 </div>
@@ -334,6 +345,7 @@
             </div>
             <div class="book-card" data-title="Project Beta" data-author="Description" data-category="Philosophy, Science">
                 <div class="image-wrapper">
+                     <div class="date-badge">09/2024</div>
                     <!-- Replace with your project image -->
                     <img src="images/project-beta.jpg" alt="Project Beta">
                 </div>
@@ -343,6 +355,7 @@
             </div>
             <div class="book-card" data-title="Project Beta" data-author="Description" data-category="Philosophy, Science">
                 <div class="image-wrapper">
+                     <div class="date-badge">09/2024</div>
                     <!-- Replace with your project image -->
                     <img src="images/project-beta.jpg" alt="Project Beta">
                 </div>
@@ -774,6 +787,33 @@
         
     </div>
 
+    <script>
+      // Get the projects sort dropdown, projects container, and all project cards
+      const projectSortDropdown = document.getElementById('projectSort');
+      const projectsContainer = document.getElementById('projects');
+      const projectCards = Array.from(document.querySelectorAll('.project-card'));
+    
+      projectSortDropdown.addEventListener('change', () => {
+        const sortBy = projectSortDropdown.value;
+    
+        // Sort project cards based on selected option
+        const sortedProjects = projectCards.sort((a, b) => {
+          if (sortBy === 'date') {
+            // Assume data-date is a numeric string (e.g., "202405")
+            return parseInt(a.dataset.date) - parseInt(b.dataset.date);
+          } else if (sortBy === 'category') {
+            const aCat = a.dataset.category.toLowerCase();
+            const bCat = b.dataset.category.toLowerCase();
+            return aCat.localeCompare(bCat);
+          }
+        });
+    
+        // Clear the projects container and re-append sorted cards
+        projectsContainer.innerHTML = '';
+        sortedProjects.forEach(card => projectsContainer.appendChild(card));
+      });
+    </script>
+    
     <script>
         // Sorting Functionality
         const sortDropdown = document.getElementById('sort');
