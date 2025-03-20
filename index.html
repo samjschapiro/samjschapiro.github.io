@@ -1,128 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Samuel Schapiro</title>
-
-  <!-- Link to your custom CSS file -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="images/berk_for.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sam Schapiro - Avant-Garde</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Vertical Navigation Bar -->
+  <nav class="vertical-nav">
+    <div class="nav-brand">Sam Schapiro</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="bookshelf.html">Books</a></li>
+      <li><a href="https://samuelschapiro.substack.com/" target="_blank">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="nav-brand">Samuel Schapiro</div>
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Hero Section with Diagonal Overlay -->
+    <section id="hero" class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Sam Schapiro</h1>
+          <h2 class="hero-subtitle">Provably Creative AI &amp; Philosophy</h2>
+          <p class="hero-description">
+            Exploring the interplay of advanced AI, creative methodologies, and the deep questions of philosophy.
+          </p>
+        </div>
+        <div class="hero-image-container">
+          <img src="images/headshot.jpeg" alt="Sam Schapiro" class="hero-image">
+        </div>
+      </div>
+    </section>
 
-  <!-- Hamburger icon (hidden on desktop, shown on mobile) -->
-  <div class="nav-toggle" id="navToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+      <h2 class="section-title">Research Areas</h2>
+      <p class="section-intro">
+        My work spans rigorous frameworks in AI creativity, creative applications in science and philosophy, and fundamental philosophical inquiry.
+      </p>
+      <div class="research-grid">
+        <div class="research-card">
+          <h3 class="card-title">Provably Creative AI</h3>
+          <p class="card-desc">
+            Developing rigorous frameworks and algorithms to measure, validate, and enhance the creative capabilities of AI systems.
+          </p>
+        </div>
+        <div class="research-card">
+          <h3 class="card-title">Applications of Creativity in Science and Philosophy</h3>
+          <p class="card-desc">
+            Investigating how creative methodologies drive breakthroughs in scientific inquiry and philosophical exploration.
+          </p>
+        </div>
+        <div class="research-card">
+          <h3 class="card-title">Philosophy Itself</h3>
+          <p class="card-desc">
+            Examining fundamental questions in metaphysics, epistemology, and moral philosophy to illuminate principles of human thought.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Navigation Links -->
-  <ul class="nav-links" id="navMenu">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="bookshelf.html">Library</a></li>
-    <li><a href="https://samuelschapiro.substack.com/" target="_blank">Writing</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Toggle Script -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    navToggle.addEventListener('click', () => {
-      // Toggle a class that shows/hides the menu on mobile
-      navMenu.classList.toggle('nav-active');
-    });
-  });
-</script>
-  
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title animate-in-left">Samuel Schapiro</h1>
-        <h2 class="hero-subtitle animate-in-left-delayed">Chief Scientist, Spiral Works</h2>
-        <p class="hero-description animate-in-left-more">
-          I study the science of intelligence by integrating philosophy and psychology with computer science and mathematics.
-          Currently, I'm working to develop provably creative AI. 
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <h2 class="contact-title">Get in Touch</h2>
+        <p class="contact-info">
+          <strong>Email:</strong> <a href="mailto:sjs17@illinois.edu">sjs17@illinois.edu</a><br>
+          <strong>Location:</strong> Chicago, IL<br>
+          <strong>Affiliations:</strong> <a href="https://spiralworks.ai" target="_blank">Spiral Works</a>, 
+          <a href="https://scholar.google.com/citations?user=B2UNU6EAAAAJ" target="_blank">Google Scholar</a>
         </p>
-        <br>
-        <h2 class="hero-subtitle animate-in-left-delayed">Philosopher</h2>
-         <p class="hero-description animate-in-left-more">
-          Outside of this, I am a philosopher addressing questions in metaphysics and morality. 
-          My first philosophical treatise <a href="">Groundwork for the Awakening of Mankind</a> will be available Fall 2025. 
+        <p class="contact-info">
+          <strong>Connect:</strong> <a href="https://twitter.com/samschapiro" target="_blank">Twitter</a> | 
+          <a href="https://github.com/samjschapiro" target="_blank">GitHub</a> | 
+          <a href="https://www.linkedin.com/in/samuel-schapiro/" target="_blank">LinkedIn</a>
         </p>
       </div>
-      <div class="hero-image-container animate-fade-in">
-        <!-- Replace with your actual headshot path if desired -->
-        <img src="images/headshot.jpeg" alt="Sam Schapiro" class="hero-image" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Research Section -->
-<section id="research" class="research-section">
-  <h2 class="section-title">Research Areas</h2>
-  <div class="research-grid">
-    <div class="research-card animate-pop">
-      <h3 class="card-title">Mathematical Theories for Creativity</h3>
-      <p class="card-desc">
-        Developing mathematical frameworks and algorithms to provably enhance the creative capabilities of AI systems.
-      </p>
-    </div>
-    <div class="research-card animate-pop">
-      <h3 class="card-title">Creativity for Science and Philosophy</h3>
-      <p class="card-desc">
-        Building creative systems that can drive breakthroughs in science and philosophical exploration.
-      </p>
-    </div>
-    <div class="research-card animate-pop">
-      <h3 class="card-title">Metaphysics and Moral Philosophy</h3>
-      <p class="card-desc">
-        Addressing the principles guiding human experience, thought, and behavior.
-      </p>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Sam Schapiro. All Rights Reserved.</p>
+    </footer>
   </div>
-</section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section animate-in-up">
-    <div class="contact-container">
-      <h2 class="contact-title">Contact &amp; Location</h2>
-      <p class="contact-info">
-        <strong>Email:</strong> <a href="mailto:sjs17@illinois.edu">sjs17@illinois.edu</a><br/>
-        <strong>Location:</strong> Philadelphia, PA <br/>
-      </p>
-      <p class="contact-info">
-        <strong>Affiliations:</strong><br/>
-        <a href="https://spiralworks.ai" target="_blank">Spiral Works</a><br/>
-        <a href="https://scholar.google.com/citations?user=B2UNU6EAAAAJ&hl=en" target="_blank">
-          Google Scholar Profile
-        </a>
-      </p>
-      <p class="contact-info">
-        <strong>Connect on:</strong><br/>
-        <a href="https://twitter.com/samschapiro" target="_blank">Twitter</a> &nbsp;|&nbsp;
-        <a href="https://github.com/samjschapiro" target="_blank">GitHub</a> &nbsp;|&nbsp;
-        <a href="https://www.linkedin.com/in/samuel-schapiro/" target="_blank">LinkedIn</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Sam Schapiro. All Rights Reserved.</p>
-  </footer>
-
 </body>
 </html>
