@@ -16,6 +16,32 @@
         padding: 0;
     }
 
+
+        .ascii-diagram {
+      font-family: monospace;
+      white-space: pre;      /* Preserve the ASCII layout */
+      overflow-x: auto;      /* Enable horizontal scrolling on small screens */
+      margin: 20px auto;
+      max-width: 100%;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background-color: #1e1e1e;
+    }
+    
+    .diagram-description {
+      font-size: 1rem;
+      color: #bdbdbd;
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    /* Optional: reduce font-size for smaller screens */
+    @media (max-width: 600px) {
+      .ascii-diagram {
+        font-size: 0.8rem;
+      }
+    }
         
          .navbar {
       display: flex;
@@ -377,10 +403,40 @@
   <nav class="navbar">
     <div class="nav-brand">Samuel Schapiro</div>
     <ul class="nav-links">
+      <li><a href="#bio">About</a></li>
       <li><a href="#bookshelf">Bookshelf</a></li>
-      <li><a href="essays.html">Essays</a></li>
+      <li><a href="https://samuelschapiro.substack.com/">Essays</a></li>
     </ul>
   </nav>
+
+    <!-- Bio Section with Responsive ASCII Diagram -->
+<section id="bio" class="bio-section">
+  <h2>About My Work</h2>
+  <pre class="ascii-diagram">
+   +----------------+
+   |  Mathematics   |
+   +----------------+
+           |
+           v
+   +---------------------+
+   | Computer Science    |
+   +---------------------+
+           |
+           v
+   +---------------------+
+   |    Creative AI      |
+   +---------------------+
+        ^           ^
+       /             \
+      /               \
++---------------+   +---------------+
+|  Philosophy   |   |  Psychology   |
++---------------+   +---------------+
+  </pre>
+  <p class="diagram-description">
+    I integrate mathematics, computer science, philosophy, and psychology to develop provably creative AI.
+  </p>
+</section>
 
 <!--     
     <section class="bio-section">
