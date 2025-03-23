@@ -1,470 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/headshot.jpeg" type="image/jpeg">
     <title>Samuel Schapiro</title>
-      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-      <script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
         mermaid.initialize({
-          startOnLoad: true,
-          theme: 'dark',
-          securityLevel: 'loose',
-          flowchart: {
-            curve: 'basis',     // Makes edges more curved
-            nodeSpacing: 75,   // Increase node spacing
-            rankSpacing: 75    // Increase rank spacing
-          },
+            startOnLoad: true,
+            theme: 'dark',
+            securityLevel: 'loose',
+            flowchart: {
+                curve: 'basis',     // Makes edges more curved
+                nodeSpacing: 75,   // Increase node spacing
+                rankSpacing: 75    // Increase rank spacing
+            },
             themeVariables: {
-              fontFamily: 'Playfair Display, serif'
+                fontFamily: 'Playfair Display, serif'
             }
         });
-      </script>
+    </script>
     <style>
-    /* Google Fonts Import */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
 
-    /* General Reset */
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .mermaid {
-      margin-top: 20pt;
-    }
-        
+        .mermaid {
+            margin-top: 20pt;
+        }
+
         .ascii-diagram {
-      font-family: monospace;
-      white-space: pre;      /* Preserve the ASCII layout */
-      overflow-x: auto;      /* Enable horizontal scrolling on small screens */
-      margin: 20px auto;
-      max-width: 100%;
-      padding: 10px;
-      border: 1px solid #333;
-      border-radius: 4px;
-      background-color: #1e1e1e;
-    }
-    
-    .diagram-description {
-      font-size: 1rem;
-      color: #bdbdbd;
-      text-align: center;
-      margin-top: 10px;
-    }
-    
-    /* Optional: reduce font-size for smaller screens */
-    @media (max-width: 600px) {
-      .ascii-diagram {
-        font-size: 0.8rem;
-      }
-    }
-    .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1e1e1e;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+            font-family: monospace;
+            white-space: pre;
+            /* Preserve the ASCII layout */
+            overflow-x: auto;
+            /* Enable horizontal scrolling on small screens */
+            margin: 20px auto;
+            max-width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #1e1e1e;
+        }
 
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Space between photo and text */
-}
-        
-.brand-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none; /* No underline */
-  color: inherit;        /* Inherit text color from parent */
-}
+        .diagram-description {
+            font-size: 1rem;
+            color: #bdbdbd;
+            text-align: center;
+            margin-top: 10px;
+        }
 
-        
-.brand-photo {
-  width: 1.5em;
-  height: 1.5em;
-  object-fit: cover;    /* Ensures the image is cropped if needed */
-  border-radius: 2px;   /* Slight rounding of corners (optional) */
-    margin-right: 12px; /* Adjust this for more/less space */
-  vertical-align: middle;
-}
+        /* Optional: reduce font-size for smaller screens */
+        @media (max-width: 600px) {
+            .ascii-diagram {
+                font-size: 0.8rem;
+            }
+        }
 
-.nav-brand span {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;    /* Adjust to your desired text size */
-  color: #f5f5f5;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e1e1e;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-/* Example nav-links styling (adjust as needed) */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            /* Space between photo and text */
+        }
 
-.nav-links li a {
-  font-family: 'Lora', serif;
-  color: #eaeaea;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease, background 0.3s ease;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-
-.nav-links li a:hover {
-  background-color: #2a2a2a;
-  color: #f5f5f5;
-}
-    /* Mobile adjustments */
-    @media (max-width: 600px) {
-      .nav-brand {
-        font-size: 1.3rem;
-      }
-      .nav-links li a {
-        font-size: 0.9rem;
-        padding: 5px 8px;
-      }
-    }
-
-    /* Body Styling */
-    body {
-        font-family: 'Lora', serif; /* Elegant serif for body text */
-        background-color: #121212;
-        color: #eaeaea;
-        line-height: 1.6;
-        padding: 20px;
-    }
-    
-    section {
-      margin: 40px 0;
-      padding: 30px 20px;
-      border-radius: 8px;
-    }
-    
-    /* Bio Section: Lightest gray */
-    .bio-section {
-      border: 1px solid #393939;
-      background-color: #2e2e2e;  /* Lighter dark gray */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      text-align: center;
-    }
-
-    
-    /* Bio Card Styling */
-    .bio-card {
-      max-width: 400px;       /* Bounded width */
-      margin: 20px auto;      /* Centered horizontally with auto margins */
-      background-color: #2a2a2a;
-      border: 1px solid #444;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    /* Bio Photo Styling */
-    .bio-card .bio-photo {
-      width: 100%;
-      max-width: 150px;      /* Limit photo size */
-      border-radius: 50%;    /* Circular image */
-      margin-bottom: 15px;
-    }
-    
-    /* Optional: Category Text Styling */
-    .bio-card .category {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.9rem;
-      color: #888;
-      margin-top: 10px;
-    }
-
-    .bio-section h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        color: #f5f5f5;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .bio-section p {
-        font-size: 1rem;
-        color: #bdbdbd;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
-        
-    /* Projects Section: Medium-dark gray */
-    .projects-section {
-      border: 1px solid #2e2e2e;
-      background-color: #242424;  /* Medium-dark gray */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-        
-    .projects-section h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        color: #f5f5f5;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    /* Projects Sort Section */
-    .projects-sort-section {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 20px 0;
-        font-family: 'Lora', serif;
-    }
-
-    .projects-sort-section label {
-        margin-right: 10px;
-        font-weight: 600;
-        font-family: 'Playfair Display', serif;
-    }
-
-    .projects-sort-section select {
-        background-color: #1e1e1e;
-        color: #eaeaea;
-        border: 1px solid #333;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-family: 'Lora', serif;
-    }
-        
-    /* Header */
-    header {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    header h1 {
-        font-family: 'Playfair Display', serif; /* Romantic and fantasy-like heading */
-        font-size: 3rem;
-        color: #f5f5f5;
-        font-weight: 700;
-        letter-spacing: 1px;
-    }
-
-    header h2 {
-        font-family: 'Playfair Display', serif; /* Romantic and fantasy-like heading */
-        font-size: 2rem;
-        color: #f5f5f5;
-        font-weight: 700;
-        letter-spacing: 1px;
-    }
-
-    header p {
-        font-family: 'Lora', serif; /* Elegant serif for subtext */
-        font-size: 1.1rem;
-        color: #aaaaaa;
-        max-width: 700px;
-        margin: 10px auto;
-    }
-
-    /* Sort Section */
-    .sort-section {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 20px 0;
-        font-family: 'Lora', serif;
-    }
-
-    .sort-section label {
-        margin-right: 10px;
-        font-weight: 600;
-        font-family: 'Playfair Display', serif;
-    }
-
-    .sort-section select {
-        background-color: #1e1e1e;
-        color: #eaeaea;
-        border: 1px solid #333;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-family: 'Lora', serif;
-    }
-
-    .bookshelf.section h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        color: #f5f5f5;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-        
-    /* Bookshelf Grid */
-    .bookshelf {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
-    
-    /* Bookshelf Section: Darkest gray */
-    .bookshelf-section {
-      border: 1px solid #2a2a2a;
-      background-color: #1c1c1c;  /* Darkest gray */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
+        .brand-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            /* No underline */
+            color: inherit;
+            /* Inherit text color from parent */
+        }
 
 
-   /* Book Card Styles */
-    .book-card {
-        display: flex;
-        flex-direction: column;
-        background-color: #1e1e1e;
-        border: 1px solid #333;
-        border-radius: 8px;
-        padding: 15px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        font-family: 'Lora', serif;
-        overflow: hidden; /* Prevents overflow from any child elements */
-    }
-    
-    /* Book Card Image Wrapper */
-    .image-wrapper {
-        position: relative; /* Creates a stacking context for the badge */
-        display: flex;
-        justify-content: flex-start; /* Aligns badge in the top-left */
-        align-items: flex-start; /* Aligns badge in the top-left */
-    }
-    
-    /* Book Card Image */
-    .image-wrapper img {
-        width: 100%;
-        border-radius: 8px;
-        object-fit: cover;
-        display: block;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    /* Hover Effect */
-    .image-wrapper img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Date Badge */
-    .date-badge {
-        position: absolute;
-        top: 10px; /* Position the badge in the top-left corner */
-        left: 10px;
-        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-        color: #fff; /* White text for readability */
-        padding: 5px 10px; /* Inner padding */
-        border-radius: 4px; /* Subtle rounded corners */
-        font-size: 0.8rem; /* Small, readable text */
-        font-weight: bold;
-        z-index: 2; /* Ensures the badge is on top of the image */
-        pointer-events: none; /* Prevents badge from interfering with hover effects */
-    }
+        .brand-photo {
+            width: 1.5em;
+            height: 1.5em;
+            object-fit: cover;
+            /* Ensures the image is cropped if needed */
+            border-radius: 2px;
+            /* Slight rounding of corners (optional) */
+            margin-right: 12px;
+            /* Adjust this for more/less space */
+            vertical-align: middle;
+        }
 
-    .image-wrapper:hover .date-badge {
-        transform: scale(1.05);
-    }
-        
-    /* Book Card Image */
-    .book-card img {
-        width: 100%; /* Full width of the card */
-        border-radius: 8px; /* Matches the card's rounded corners */
-        object-fit: cover; /* Ensures image fits neatly */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-        margin-bottom: 10px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    /* Book Card Image Hover */
-    .book-card img:hover {
-        transform: scale(1.05); /* Zoom-in effect */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-    }
+        .nav-brand span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            /* Adjust to your desired text size */
+            color: #f5f5f5;
+        }
 
-    .book-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    }
+        /* Example nav-links styling (adjust as needed) */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
 
-    .book-card img {
-        width: 100%; /* Ensure the image takes up the full width of the card */
-        border-radius: 8px; /* Add rounded corners for a polished look */
-        object-fit: contain;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
-        margin-bottom: 10px; /* Add space between the image and the content below */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
-    }
-    
-    .book-card img:hover {
-        transform: scale(1.05); /* Slight zoom-in on hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-    }
+        .nav-links li a {
+            font-family: 'Lora', serif;
+            color: #eaeaea;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease, background 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
 
-    .book-card h3 {
-        font-family: 'Playfair Display', serif; /* Fantasy feel for titles */
-        font-size: 1.3rem;
-        color: #f5f5f5;
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
+        .nav-links li a:hover {
+            background-color: #2a2a2a;
+            color: #f5f5f5;
+        }
 
-    .book-card p {
-        font-family: 'Lora', serif;
-        font-size: 1rem;
-        color: #bdbdbd;
-        margin: 3px 0;
-    }
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .nav-brand {
+                font-size: 1.3rem;
+            }
 
-    .category {
-        font-family: 'Playfair Display', serif;
-        font-size: 0.9rem;
-        color: #888;
-        margin-top: 5px;
-        font-style: italic;
-    }
+            .nav-links li a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+        }
 
-    /* Responsive */
-    @media (max-width: 600px) {
+        /* Body Styling */
+        body {
+            font-family: 'Lora', serif;
+            /* Elegant serif for body text */
+            background-color: #121212;
+            color: #eaeaea;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        section {
+            margin: 40px 0;
+            padding: 30px 20px;
+            border-radius: 8px;
+        }
+
+        /* Bio Section: Lightest gray */
+        .bio-section {
+            border: 1px solid #393939;
+            background-color: #2e2e2e;
+            /* Lighter dark gray */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+
+        /* Bio Card Styling */
+        .bio-card {
+            max-width: 400px;
+            /* Bounded width */
+            margin: 20px auto;
+            /* Centered horizontally with auto margins */
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Bio Photo Styling */
+        .bio-card .bio-photo {
+            width: 100%;
+            max-width: 150px;
+            /* Limit photo size */
+            border-radius: 50%;
+            /* Circular image */
+            margin-bottom: 15px;
+        }
+
+        /* Optional: Category Text Styling */
+        .bio-card .category {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .bio-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #f5f5f5;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .bio-section p {
+            font-size: 1rem;
+            color: #bdbdbd;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Projects Section: Medium-dark gray */
+        .projects-section {
+            border: 1px solid #2e2e2e;
+            background-color: #242424;
+            /* Medium-dark gray */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .projects-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #f5f5f5;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Projects Sort Section */
+        .projects-sort-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 20px 0;
+            font-family: 'Lora', serif;
+        }
+
+        .projects-sort-section label {
+            margin-right: 10px;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .projects-sort-section select {
+            background-color: #1e1e1e;
+            color: #eaeaea;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Lora', serif;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
         header h1 {
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            /* Romantic and fantasy-like heading */
+            font-size: 3rem;
+            color: #f5f5f5;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
+
+        header h2 {
+            font-family: 'Playfair Display', serif;
+            /* Romantic and fantasy-like heading */
+            font-size: 2rem;
+            color: #f5f5f5;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-family: 'Lora', serif;
+            /* Elegant serif for subtext */
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            max-width: 700px;
+            margin: 10px auto;
+        }
+
+        /* Sort Section */
+        .sort-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 20px 0;
+            font-family: 'Lora', serif;
+        }
+
+        .sort-section label {
+            margin-right: 10px;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .sort-section select {
+            background-color: #1e1e1e;
+            color: #eaeaea;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Lora', serif;
+        }
+
+        .bookshelf.section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #f5f5f5;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Bookshelf Grid */
+        .bookshelf {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        /* Bookshelf Section: Darkest gray */
+        .bookshelf-section {
+            border: 1px solid #2a2a2a;
+            background-color: #1c1c1c;
+            /* Darkest gray */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* Book Card Styles */
+        .book-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Lora', serif;
+            overflow: hidden;
+            /* Prevents overflow from any child elements */
+        }
+
+        /* Book Card Image Wrapper */
+        .image-wrapper {
+            position: relative;
+            /* Creates a stacking context for the badge */
+            display: flex;
+            justify-content: flex-start;
+            /* Aligns badge in the top-left */
+            align-items: flex-start;
+            /* Aligns badge in the top-left */
+        }
+
+        /* Book Card Image */
+        .image-wrapper img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effect */
+        .image-wrapper img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Date Badge */
+        .date-badge {
+            position: absolute;
+            top: 10px;
+            /* Position the badge in the top-left corner */
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Semi-transparent black background */
+            color: #fff;
+            /* White text for readability */
+            padding: 5px 10px;
+            /* Inner padding */
+            border-radius: 4px;
+            /* Subtle rounded corners */
+            font-size: 0.8rem;
+            /* Small, readable text */
+            font-weight: bold;
+            z-index: 2;
+            /* Ensures the badge is on top of the image */
+            pointer-events: none;
+            /* Prevents badge from interfering with hover effects */
+        }
+
+        .image-wrapper:hover .date-badge {
+            transform: scale(1.05);
+        }
+
+        /* Book Card Image */
         .book-card img {
-            max-height: 180px;
+            width: 100%;
+            /* Full width of the card */
+            border-radius: 8px;
+            /* Matches the card's rounded corners */
+            object-fit: cover;
+            /* Ensures image fits neatly */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow for depth */
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-    }
-</style>
+
+        /* Book Card Image Hover */
+        .book-card img:hover {
+            transform: scale(1.05);
+            /* Zoom-in effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            /* Enhance shadow on hover */
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .book-card img {
+            width: 100%;
+            /* Ensure the image takes up the full width of the card */
+            border-radius: 8px;
+            /* Add rounded corners for a polished look */
+            object-fit: contain;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Add subtle shadow for depth */
+            margin-bottom: 10px;
+            /* Add space between the image and the content below */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Smooth hover animation */
+        }
+
+        .book-card img:hover {
+            transform: scale(1.05);
+            /* Slight zoom-in on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            /* Enhance shadow on hover */
+        }
+
+        .book-card h3 {
+            font-family: 'Playfair Display', serif;
+            /* Fantasy feel for titles */
+            font-size: 1.3rem;
+            color: #f5f5f5;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .book-card p {
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: #bdbdbd;
+            margin: 3px 0;
+        }
+
+        .category {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .book-card img {
+                max-height: 180px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-      <div class="nav-brand">
-        <a href="https://schapiro.ai" class="brand-link">
-          <img src="images/headshot.jpeg" alt="Samuel Schapiro" class="brand-photo">
-          <span>Samuel Schapiro</span>
-        </a>
-      </div>
-    <ul class="nav-links">
-      <li><a href="#bookshelf">Library</a></li>
-      <li><a href="https://samuelschapiro.substack.com/">Essays</a></li>
-      <li><a href="#mermaid">About</a></li>
-        
-    </ul>
-  </nav>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="https://schapiro.ai" class="brand-link">
+                <img src="images/headshot.jpeg" alt="Samuel Schapiro" class="brand-photo">
+                <span>Samuel Schapiro</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#bookshelf">Library</a></li>
+            <li><a href="https://samuelschapiro.substack.com/">Essays</a></li>
+            <li><a href="#mermaid">About</a></li>
+
+        </ul>
+    </nav>
 
 
-<div class="mermaid">
-      graph TD
+    <div class="mermaid">
+        graph TD
         classDef hyperedge fill:#ffffff,stroke:#ffffff,stroke-width:0px,shape:circle,font-size:0;
 
         %% Philosophy hyperedge
@@ -487,7 +539,7 @@
         PC(( ))
         G@{ shape: procs, label: "Theoretical Psychology" }
         I@{ shape: procs, label: "Cognitive Science" }
-        H@{ shape: procs, label: "Creativity" }
+        H@{ shape: procs, label: "fa:fa-lightbulb Creativity" }
         G --- PC
         H --- PC
         I --- PC
@@ -495,7 +547,7 @@
 
         %% STEM hyperedge
         ST(( ))
-        J@{ shape: procs, label: "Computer Science" }
+        J@{ shape: procs, label: "fa:fa-laptop-code Computer Science" }
         K("<div style='max-width: 400px; 
                    margin: 0 auto; 
                    display: inline-block;
@@ -510,9 +562,10 @@
                    border: 2px solid #444; 
                    border-radius: 6px; 
                    background: #2e2e2e;'>
-                I am currently the Chief Scientist at <a href="https://spiralworks.ai" style='text-decoration:none;color:inherit;'>Spiral Works</a>, 
-                where we are automating creativity, science, and philosophy.
-              </div>") 
+            I am currently the Chief Scientist at <a href="https://spiralworks.ai"
+                style='text-decoration:none;color:inherit;'>Spiral Works</a>,
+            where we are automating creativity, science, and philosophy.
+        </div>")
         J --- ST
         K --- ST
         class ST hyperedge
@@ -520,13 +573,13 @@
         %% Connect hyperedges
         PH --- PC
         PC --- ST
-  </div>
+    </div>
 
     <header style="margin-top: 20px;">
-      <h2>Library</h2>
-      <p>"Pour inventer, il faut penser à côté."</p>
+        <h2>Library</h2>
+        <p>"Pour inventer, il faut penser à côté."</p>
     </header>
-    
+
     <div class="sort-section">
         <label for="sort">Sort by:</label>
         <select id="sort">
@@ -540,300 +593,356 @@
 
     <!-- Bookshelf -->
     <section class="bookshelf-section">
-    <div class="bookshelf" id="bookshelf">
-      
-        <!-- Book Cards -->
-       <div class="book-card" data-title="The Critique of Pure Reason" data-author="Immanuel Kant" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating=10 data-date="202409">
-            <div class="image-wrapper">
-               <div class="date-badge">09/2024</div>
-                <img src="https://m.media-amazon.com/images/I/81HFexTeoXL._AC_UF1000,1000_QL80_.jpg" alt="The Critique of Pure Reason">
-            </div>
-            <h3>The Critique of Pure Reason</h3>
-            <p>Immanuel Kant</p>
-            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
-        </div>
-        
-        <div class="book-card" data-title="The World as Will and Representation" data-author="Arthur Schopenhauer" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="8" data-date="202410">
-            <div class="image-wrapper">
-                <div class="date-badge">10/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/41ixw9l+t0L._SY445_SX342_.jpg" alt="The World as Will">
-            </div>
-            <h3>The World as Will and Representation</h3>
-            <p>Arthur Schopenhauer</p>
-            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
-        </div>
-        
-        <div class="book-card" data-title="The Principles of Genetic Epistemology" data-author="Jean Piaget" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="9" data-date="202407">
-            <div class="image-wrapper">
-                <div class="date-badge">07/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/51f6vAE6rVL._AC_UF1000,1000_QL80_.jpg" alt="Principles of Genetic Epistemology">
-            </div>
-            <h3>The Principles of Genetic Epistemology</h3>
-            <p>Jean Piaget</p>
-            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
-        </div>
-        
-        <div class="book-card" data-title="Computational Philosophy of Science" data-author="Paul Thagard" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="5" data-date="202406">
-            <div class="image-wrapper">
-                <div class="date-badge">06/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/614rftNyAaL._AC_UF350,350_QL50_.jpg" alt="Computational Philosophy of Science">
-            </div>
-            <h3>Computational Philosophy of Science</h3>
-            <p>Paul Thagard</p>
-            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
-        </div>
-        
-        <div class="book-card" data-title="The Foundations of Scientific Inference" data-author="Wesley Salmon" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="5" data-date="202410">
-            <div class="image-wrapper">
-                <div class="date-badge">10/2024</div> <!-- Date Badge -->
-                <img src="https://upittpress.org/wp-content/uploads/2022/02/9780822964568-scaled-381x555.jpg" alt="The Foundations of Scientific Inference">
-            </div>
-            <h3>The Foundations of Scientific Inference</h3>
-            <p>Wesley Salmon</p>
-            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
-        </div>
-        
-        <div class="book-card" data-title="The Structure of Scientific Revolutions" data-author="Thomas Kuhn" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="8" data-date="202412">
-            <div class="image-wrapper">
-                <div class="date-badge">12/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/419z9fGWvtL._AC_UF1000,1000_QL80_.jpg" alt="The Structure of Scientific Revolutions">
-            </div>
-            <h3>The Structure of Scientific Revolutions</h3>
-            <p>Thomas Kuhn</p>
-            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
-        </div>
-        
-        <div class="book-card" data-title="Propaganda" data-author="Edward Bernays" data-category="Political Philosophy" data-rating="2" data-date="202411">
-            <div class="image-wrapper">
-                <div class="date-badge">11/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/41kq+uNSq0L._SY445_SX342_.jpg" alt="Propaganda">
-            </div>
-            <h3>Propaganda</h3>
-            <p>Edward Bernays</p>
-            <p class="category">Political Philosophy</p>
-        </div>
-        
-        <div class="book-card" data-title="The Social Contract" data-author="Jean-Jacques Rousseau" data-category="Political Philosophy" data-rating="10" data-date="202411">
-            <div class="image-wrapper">
-                <div class="date-badge">11/2024</div> <!-- Date Badge -->
-                <img src="https://book-assets.openroadmedia.com/9781504035460.jpg" alt="The Social Contract">
-            </div>
-            <h3>The Social Contract</h3>
-            <p>Jean-Jacques Rousseau</p>
-            <p class="category">Political Philosophy</p>
-        </div>
-        
-        <div class="book-card" data-title="The Declaration of Independence" data-author="The Founding Fathers" data-category="Political Philosophy" data-rating="7" data-date="202411">
-            <div class="image-wrapper">
-                <div class="date-badge">11/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/71Zd1ixazOL._SY522_.jpg" alt="Declaration of Independence">
-            </div>
-            <h3>The Declaration of Independence, Constitution, and Bill of Rights</h3>
-            <p>The Founding Fathers</p>
-            <p class="category">Political Philosophy</p>
-        </div>
-        
-        <div class="book-card" data-title="On the Genealogy of Morality" data-author="Friedrich Nietzsche" data-category="Philosophy of Morality and Culture" data-rating="10" data-date="202410">
-            <div class="image-wrapper">
-                <div class="date-badge">10/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/81pjGZRGaeL._AC_UY436_FMwebp_QL65_.jpg" alt="Genealogy of Morals">
-            </div>
-            <h3>On the Genealogy of Morality</h3>
-            <p>Friedrich Nietzsche</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="Beyond Good and Evil" data-author="Friedrich Nietzsche" data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202408">
-            <div class="image-wrapper">
-                <div class="date-badge">08/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/41szolWxmgL._SY580_.jpg" alt="Beyond Good and Evil">
-            </div>
-            <h3>Beyond Good and Evil</h3>
-            <p>Friedrich Nietzsche</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="Human, All Too Human" data-author="Friedrich Nietzsche" data-category="Philosophy of Morality and Culture" data-rating="8" data-date="202410">
-            <div class="image-wrapper">
-                <div class="date-badge">10/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/61MAIDlBseL._AC_UF1000,1000_QL80_.jpg" alt="Human, All Too Human">
-            </div>
-            <h3>Human, All Too Human</h3>
-            <p>Friedrich Nietzsche</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="Civilization and Its Discontents" data-author="Sigmund Freud" data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202407">
-            <div class="image-wrapper">
-                <div class="date-badge">07/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/61K0H9NMqDL._AC_UF1000,1000_QL80_.jpg" alt="Civilization and Its Discontents">
-            </div>
-            <h3>Civilization and Its Discontents</h3>
-            <p>Sigmund Freud</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="The Future of an Illusion" data-author="Sigmund Freud" data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202411">
-            <div class="image-wrapper">
-                <div class="date-badge">11/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/51oMlfPgTGL._SY445_SX342_.jpg" alt="The Future of an Illusion">
-            </div>
-            <h3>The Future of an Illusion</h3>
-            <p>Sigmund Freud</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="Twilight of the Idols" data-author="Friedrich Nietzsche" data-category="Philosophy of Morality and Culture" data-rating="8" data-date="202409">
-            <div class="image-wrapper">
-                <div class="date-badge">09/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/51AdOCIDPjL._SY445_SX342_.jpg" alt="Twilight of the Idols">
-            </div>
-            <h3>Twilight of the Idols</h3>
-            <p>Friedrich Nietzsche</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="The Gay Science" data-author="Friedrich Nietzsche" data-category="Philosophy of Morality and Culture" data-rating="7" data-date="202410">
-            <div class="image-wrapper">
-                <div class="date-badge">10/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/716huk49RJL._AC_UY436_FMwebp_QL65_.jpg" alt="The Gay Science">
-            </div>
-            <h3>The Gay Science</h3>
-            <p>Friedrich Nietzsche</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="The Antichrist" data-author="Friedrich Nietzsche" data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202411">
-            <div class="image-wrapper">
-                <div class="date-badge">11/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/51yYOdbGjLL._AC_UY218_.jpg" alt="The Antichrist">
-            </div>
-            <h3>The Antichrist</h3>
-            <p>Friedrich Nietzsche</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="Industrial Society and Its Future" data-author="Theodore Kaczynski" data-category="Philosophy of Morality and Culture" data-rating="7" data-date="202412">
-            <div class="image-wrapper">
-                <div class="date-badge">12/2024</div> <!-- Date Badge -->
-                <img src="https://assets.lulu.com/cover_thumbs/1/2/125ggy-front-shortedge-384.jpg" alt="Industrial Society and Its Future">
-            </div>
-            <h3>Industrial Society and Its Future</h3>
-            <p>Theodore Kaczynski</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="Group Psychology and Analysis of the Ego" data-author="Sigmund Freud" data-category="Theoretical Psychology" data-rating="7" data-date="202407">
-            <div class="image-wrapper">
-                <div class="date-badge">07/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/71H17eYwwTL._AC_UF1000,1000_QL80_.jpg" alt="Group Psychology and Analysis of the Ego">
-            </div>
-            <h3>Group Psychology and Analysis of the Ego</h3>
-            <p>Sigmund Freud</p>
-            <p class="category">Theoretical Psychology</p>
-        </div>
-                
-        <div class="book-card" data-title="Psychology of the Unconscious" data-author="Carl Jung" data-category="Theoretical Psychology" data-rating="6" data-date="202405">
-            <div class="image-wrapper">
-                <div class="date-badge">05/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg" alt="Psychology of the Unconscious">
-            </div>
-            <h3>Psychology of the Unconscious</h3>
-            <p>Carl Jung</p>
-            <p class="category">Theoretical Psychology</p>
-        </div>
-        
-        <div class="book-card" data-title="A Theory of Human Motivation" data-author="Abraham Maslow" data-category="Theoretical Psychology" data-rating="6" data-date="202407">
-            <div class="image-wrapper">
-                <div class="date-badge">07/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/61qJ0faL5-L._AC_UF1000,1000_QL80_.jpg" alt="A Theory of Human Motivation">
-            </div>
-            <h3>A Theory of Human Motivation</h3>
-            <p>Abraham Maslow</p>
-            <p class="category">Theoretical Psychology</p>
-        </div>
-        
-        <div class="book-card" data-title="The Ego and the Id" data-author="Sigmund Freud" data-category="Theoretical Psychology" data-rating="7" data-date="202407">
-            <div class="image-wrapper">
-                <div class="date-badge">07/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/61DvlUS31dL._AC_UF1000,1000_QL80_.jpg" alt="The Ego and the Id">
-            </div>
-            <h3>The Ego and the Id</h3>
-            <p>Sigmund Freud</p>
-            <p class="category">Theoretical Psychology</p>
-        </div>
-        
-        <div class="book-card" data-title="Creativity in Science: Chance, Logic, Genius, and Zeitgeist" data-author="Dean Keith Simonton" data-category="Creativity and Cognitive Science" data-rating="8" data-date="202405">
-            <div class="image-wrapper">
-                <div class="date-badge">05/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg" alt="Creativity in Science">
-            </div>
-            <h3>Creativity in Science: Chance, Logic, Genius, and Zeitgeist</h3>
-            <p>Dean Keith Simonton</p>
-            <p class="category">Creativity and Cognitive Science</p>
-        </div>
-        
-        <div class="book-card" data-title="The Act of Creation" data-author="Arthur Koestler" data-category="Creativity and Cognitive Science" data-rating="8" data-date="202406">
-            <div class="image-wrapper">
-                <div class="date-badge">06/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/71+Ta7tEZ+L._AC_UF1000,1000_QL80_.jpg" alt="The Act of Creation">
-            </div>
-            <h3>The Act of Creation</h3>
-            <p>Arthur Koestler</p>
-            <p class="category">Creativity and Cognitive Science</p>
-        </div>
-        
-        <div class="book-card" data-title="The Creative Mind: Myths and Mechanisms" data-author="Margaret A. Boden" data-category="Creativity and Cognitive Science" data-rating="6" data-date="202408">
-            <div class="image-wrapper">
-                <div class="date-badge">08/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg" alt="The Creative Mind">
-            </div>
-            <h3>The Creative Mind: Myths and Mechanisms</h3>
-            <p>Margaret A. Boden</p>
-            <p class="category">Creativity and Cognitive Science</p>
-        </div>
-        
-        <div class="book-card" data-title="Flight From Wonder: An Investigation into Scientific Creativity" data-author="Albert Rothenberg" data-category="Creativity and Cognitive Science" data-rating="3" data-date="202409">
-            <div class="image-wrapper">
-                <div class="date-badge">09/2024</div> <!-- Date Badge -->
-                <img src="https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg" alt="Flight From Wonder">
-            </div>
-            <h3>Flight From Wonder: An Investigation into Scientific Creativity</h3>
-            <p>Albert Rothenberg</p>
-            <p class="category">Creativity and Cognitive Science</p>
-        </div>
-        
-        <div class="book-card" data-title="Prolegomena to any Future Metaphysics" data-author="Immanuel Kant" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="10" data-date="202501">
-            <div class="image-wrapper">
-                <div class="date-badge">01/2025</div>
-                <img src="https://m.media-amazon.com/images/I/51jZwr1bjUL._SY445_SX342_.jpg" alt="Prolegomena">
-            </div>
-            <h3>Prolegomena to any Future Metaphysics</h3>
-            <p>Immanuel Kant</p>
-            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
-        </div>
+        <div class="bookshelf" id="bookshelf">
 
-        <div class="book-card" data-title="Discourse on the Origin of Inequality" data-author="Jean-Jacques Rousseau" data-category="Political Philosophy" data-rating="8" data-date="202501">
-            <div class="image-wrapper">
-                <div class="date-badge">01/2025</div>
-                <img src="https://m.media-amazon.com/images/I/41btamn2qqL._SY445_SX342_.jpg" alt="Discourse on the Origin of Inequality">
+            <!-- Book Cards -->
+            <div class="book-card" data-title="The Critique of Pure Reason" data-author="Immanuel Kant"
+                data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating=10 data-date="202409">
+                <div class="image-wrapper">
+                    <div class="date-badge">09/2024</div>
+                    <img src="https://m.media-amazon.com/images/I/81HFexTeoXL._AC_UF1000,1000_QL80_.jpg"
+                        alt="The Critique of Pure Reason">
+                </div>
+                <h3>The Critique of Pure Reason</h3>
+                <p>Immanuel Kant</p>
+                <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
             </div>
-            <h3>Discourse on the Origin of Inequality</h3>
-            <p>Jean-Jacques Rousseau</p>
-            <p class="category">Political Philosophy</p>
-        </div>
 
-         <div class="book-card" data-title="Groundwork for the Metaphysics of Morals" data-author="Immanuel Kant" data-category="Philosophy of Morality and Culture" data-date="202501" data-rating="7">
-            <div class="image-wrapper">
-                <div class="date-badge">01/2025</div>
-                <img src="https://m.media-amazon.com/images/I/7134slNBRKL._AC_UY218_.jpg" alt="Groundwork for the Metaphysics of Morals">
+            <div class="book-card" data-title="The World as Will and Representation" data-author="Arthur Schopenhauer"
+                data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="8" data-date="202410">
+                <div class="image-wrapper">
+                    <div class="date-badge">10/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/41ixw9l+t0L._SY445_SX342_.jpg"
+                        alt="The World as Will">
+                </div>
+                <h3>The World as Will and Representation</h3>
+                <p>Arthur Schopenhauer</p>
+                <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
             </div>
-            <h3>Groundwork of the Metaphysics of Morals</h3>
-            <p>Immanuel Kant</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
 
-<!--         <div class="book-card" data-title="Fact, Fiction, and Forecast" data-author="Nelson Goodman" data-category="Philosophy of Science, Metaphysics, Epistemology" data-date="">
+            <div class="book-card" data-title="The Principles of Genetic Epistemology" data-author="Jean Piaget"
+                data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="9" data-date="202407">
+                <div class="image-wrapper">
+                    <div class="date-badge">07/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/51f6vAE6rVL._AC_UF1000,1000_QL80_.jpg"
+                        alt="Principles of Genetic Epistemology">
+                </div>
+                <h3>The Principles of Genetic Epistemology</h3>
+                <p>Jean Piaget</p>
+                <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
+            </div>
+
+            <div class="book-card" data-title="Computational Philosophy of Science" data-author="Paul Thagard"
+                data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="5" data-date="202406">
+                <div class="image-wrapper">
+                    <div class="date-badge">06/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/614rftNyAaL._AC_UF350,350_QL50_.jpg"
+                        alt="Computational Philosophy of Science">
+                </div>
+                <h3>Computational Philosophy of Science</h3>
+                <p>Paul Thagard</p>
+                <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
+            </div>
+
+            <div class="book-card" data-title="The Foundations of Scientific Inference" data-author="Wesley Salmon"
+                data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="5" data-date="202410">
+                <div class="image-wrapper">
+                    <div class="date-badge">10/2024</div> <!-- Date Badge -->
+                    <img src="https://upittpress.org/wp-content/uploads/2022/02/9780822964568-scaled-381x555.jpg"
+                        alt="The Foundations of Scientific Inference">
+                </div>
+                <h3>The Foundations of Scientific Inference</h3>
+                <p>Wesley Salmon</p>
+                <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
+            </div>
+
+            <div class="book-card" data-title="The Structure of Scientific Revolutions" data-author="Thomas Kuhn"
+                data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="8" data-date="202412">
+                <div class="image-wrapper">
+                    <div class="date-badge">12/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/419z9fGWvtL._AC_UF1000,1000_QL80_.jpg"
+                        alt="The Structure of Scientific Revolutions">
+                </div>
+                <h3>The Structure of Scientific Revolutions</h3>
+                <p>Thomas Kuhn</p>
+                <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
+            </div>
+
+            <div class="book-card" data-title="Propaganda" data-author="Edward Bernays"
+                data-category="Political Philosophy" data-rating="2" data-date="202411">
+                <div class="image-wrapper">
+                    <div class="date-badge">11/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/41kq+uNSq0L._SY445_SX342_.jpg" alt="Propaganda">
+                </div>
+                <h3>Propaganda</h3>
+                <p>Edward Bernays</p>
+                <p class="category">Political Philosophy</p>
+            </div>
+
+            <div class="book-card" data-title="The Social Contract" data-author="Jean-Jacques Rousseau"
+                data-category="Political Philosophy" data-rating="10" data-date="202411">
+                <div class="image-wrapper">
+                    <div class="date-badge">11/2024</div> <!-- Date Badge -->
+                    <img src="https://book-assets.openroadmedia.com/9781504035460.jpg" alt="The Social Contract">
+                </div>
+                <h3>The Social Contract</h3>
+                <p>Jean-Jacques Rousseau</p>
+                <p class="category">Political Philosophy</p>
+            </div>
+
+            <div class="book-card" data-title="The Declaration of Independence" data-author="The Founding Fathers"
+                data-category="Political Philosophy" data-rating="7" data-date="202411">
+                <div class="image-wrapper">
+                    <div class="date-badge">11/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/71Zd1ixazOL._SY522_.jpg"
+                        alt="Declaration of Independence">
+                </div>
+                <h3>The Declaration of Independence, Constitution, and Bill of Rights</h3>
+                <p>The Founding Fathers</p>
+                <p class="category">Political Philosophy</p>
+            </div>
+
+            <div class="book-card" data-title="On the Genealogy of Morality" data-author="Friedrich Nietzsche"
+                data-category="Philosophy of Morality and Culture" data-rating="10" data-date="202410">
+                <div class="image-wrapper">
+                    <div class="date-badge">10/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/81pjGZRGaeL._AC_UY436_FMwebp_QL65_.jpg"
+                        alt="Genealogy of Morals">
+                </div>
+                <h3>On the Genealogy of Morality</h3>
+                <p>Friedrich Nietzsche</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="Beyond Good and Evil" data-author="Friedrich Nietzsche"
+                data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202408">
+                <div class="image-wrapper">
+                    <div class="date-badge">08/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/41szolWxmgL._SY580_.jpg" alt="Beyond Good and Evil">
+                </div>
+                <h3>Beyond Good and Evil</h3>
+                <p>Friedrich Nietzsche</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="Human, All Too Human" data-author="Friedrich Nietzsche"
+                data-category="Philosophy of Morality and Culture" data-rating="8" data-date="202410">
+                <div class="image-wrapper">
+                    <div class="date-badge">10/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/61MAIDlBseL._AC_UF1000,1000_QL80_.jpg"
+                        alt="Human, All Too Human">
+                </div>
+                <h3>Human, All Too Human</h3>
+                <p>Friedrich Nietzsche</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="Civilization and Its Discontents" data-author="Sigmund Freud"
+                data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202407">
+                <div class="image-wrapper">
+                    <div class="date-badge">07/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/61K0H9NMqDL._AC_UF1000,1000_QL80_.jpg"
+                        alt="Civilization and Its Discontents">
+                </div>
+                <h3>Civilization and Its Discontents</h3>
+                <p>Sigmund Freud</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="The Future of an Illusion" data-author="Sigmund Freud"
+                data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202411">
+                <div class="image-wrapper">
+                    <div class="date-badge">11/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/51oMlfPgTGL._SY445_SX342_.jpg"
+                        alt="The Future of an Illusion">
+                </div>
+                <h3>The Future of an Illusion</h3>
+                <p>Sigmund Freud</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="Twilight of the Idols" data-author="Friedrich Nietzsche"
+                data-category="Philosophy of Morality and Culture" data-rating="8" data-date="202409">
+                <div class="image-wrapper">
+                    <div class="date-badge">09/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/51AdOCIDPjL._SY445_SX342_.jpg"
+                        alt="Twilight of the Idols">
+                </div>
+                <h3>Twilight of the Idols</h3>
+                <p>Friedrich Nietzsche</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="The Gay Science" data-author="Friedrich Nietzsche"
+                data-category="Philosophy of Morality and Culture" data-rating="7" data-date="202410">
+                <div class="image-wrapper">
+                    <div class="date-badge">10/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/716huk49RJL._AC_UY436_FMwebp_QL65_.jpg"
+                        alt="The Gay Science">
+                </div>
+                <h3>The Gay Science</h3>
+                <p>Friedrich Nietzsche</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="The Antichrist" data-author="Friedrich Nietzsche"
+                data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202411">
+                <div class="image-wrapper">
+                    <div class="date-badge">11/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/51yYOdbGjLL._AC_UY218_.jpg" alt="The Antichrist">
+                </div>
+                <h3>The Antichrist</h3>
+                <p>Friedrich Nietzsche</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="Industrial Society and Its Future" data-author="Theodore Kaczynski"
+                data-category="Philosophy of Morality and Culture" data-rating="7" data-date="202412">
+                <div class="image-wrapper">
+                    <div class="date-badge">12/2024</div> <!-- Date Badge -->
+                    <img src="https://assets.lulu.com/cover_thumbs/1/2/125ggy-front-shortedge-384.jpg"
+                        alt="Industrial Society and Its Future">
+                </div>
+                <h3>Industrial Society and Its Future</h3>
+                <p>Theodore Kaczynski</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <div class="book-card" data-title="Group Psychology and Analysis of the Ego" data-author="Sigmund Freud"
+                data-category="Theoretical Psychology" data-rating="7" data-date="202407">
+                <div class="image-wrapper">
+                    <div class="date-badge">07/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/71H17eYwwTL._AC_UF1000,1000_QL80_.jpg"
+                        alt="Group Psychology and Analysis of the Ego">
+                </div>
+                <h3>Group Psychology and Analysis of the Ego</h3>
+                <p>Sigmund Freud</p>
+                <p class="category">Theoretical Psychology</p>
+            </div>
+
+            <div class="book-card" data-title="Psychology of the Unconscious" data-author="Carl Jung"
+                data-category="Theoretical Psychology" data-rating="6" data-date="202405">
+                <div class="image-wrapper">
+                    <div class="date-badge">05/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg"
+                        alt="Psychology of the Unconscious">
+                </div>
+                <h3>Psychology of the Unconscious</h3>
+                <p>Carl Jung</p>
+                <p class="category">Theoretical Psychology</p>
+            </div>
+
+            <div class="book-card" data-title="A Theory of Human Motivation" data-author="Abraham Maslow"
+                data-category="Theoretical Psychology" data-rating="6" data-date="202407">
+                <div class="image-wrapper">
+                    <div class="date-badge">07/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/61qJ0faL5-L._AC_UF1000,1000_QL80_.jpg"
+                        alt="A Theory of Human Motivation">
+                </div>
+                <h3>A Theory of Human Motivation</h3>
+                <p>Abraham Maslow</p>
+                <p class="category">Theoretical Psychology</p>
+            </div>
+
+            <div class="book-card" data-title="The Ego and the Id" data-author="Sigmund Freud"
+                data-category="Theoretical Psychology" data-rating="7" data-date="202407">
+                <div class="image-wrapper">
+                    <div class="date-badge">07/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/61DvlUS31dL._AC_UF1000,1000_QL80_.jpg"
+                        alt="The Ego and the Id">
+                </div>
+                <h3>The Ego and the Id</h3>
+                <p>Sigmund Freud</p>
+                <p class="category">Theoretical Psychology</p>
+            </div>
+
+            <div class="book-card" data-title="Creativity in Science: Chance, Logic, Genius, and Zeitgeist"
+                data-author="Dean Keith Simonton" data-category="Creativity and Cognitive Science" data-rating="8"
+                data-date="202405">
+                <div class="image-wrapper">
+                    <div class="date-badge">05/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg"
+                        alt="Creativity in Science">
+                </div>
+                <h3>Creativity in Science: Chance, Logic, Genius, and Zeitgeist</h3>
+                <p>Dean Keith Simonton</p>
+                <p class="category">Creativity and Cognitive Science</p>
+            </div>
+
+            <div class="book-card" data-title="The Act of Creation" data-author="Arthur Koestler"
+                data-category="Creativity and Cognitive Science" data-rating="8" data-date="202406">
+                <div class="image-wrapper">
+                    <div class="date-badge">06/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/71+Ta7tEZ+L._AC_UF1000,1000_QL80_.jpg"
+                        alt="The Act of Creation">
+                </div>
+                <h3>The Act of Creation</h3>
+                <p>Arthur Koestler</p>
+                <p class="category">Creativity and Cognitive Science</p>
+            </div>
+
+            <div class="book-card" data-title="The Creative Mind: Myths and Mechanisms" data-author="Margaret A. Boden"
+                data-category="Creativity and Cognitive Science" data-rating="6" data-date="202408">
+                <div class="image-wrapper">
+                    <div class="date-badge">08/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg"
+                        alt="The Creative Mind">
+                </div>
+                <h3>The Creative Mind: Myths and Mechanisms</h3>
+                <p>Margaret A. Boden</p>
+                <p class="category">Creativity and Cognitive Science</p>
+            </div>
+
+            <div class="book-card" data-title="Flight From Wonder: An Investigation into Scientific Creativity"
+                data-author="Albert Rothenberg" data-category="Creativity and Cognitive Science" data-rating="3"
+                data-date="202409">
+                <div class="image-wrapper">
+                    <div class="date-badge">09/2024</div> <!-- Date Badge -->
+                    <img src="https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg"
+                        alt="Flight From Wonder">
+                </div>
+                <h3>Flight From Wonder: An Investigation into Scientific Creativity</h3>
+                <p>Albert Rothenberg</p>
+                <p class="category">Creativity and Cognitive Science</p>
+            </div>
+
+            <div class="book-card" data-title="Prolegomena to any Future Metaphysics" data-author="Immanuel Kant"
+                data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating="10" data-date="202501">
+                <div class="image-wrapper">
+                    <div class="date-badge">01/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/51jZwr1bjUL._SY445_SX342_.jpg" alt="Prolegomena">
+                </div>
+                <h3>Prolegomena to any Future Metaphysics</h3>
+                <p>Immanuel Kant</p>
+                <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
+            </div>
+
+            <div class="book-card" data-title="Discourse on the Origin of Inequality"
+                data-author="Jean-Jacques Rousseau" data-category="Political Philosophy" data-rating="8"
+                data-date="202501">
+                <div class="image-wrapper">
+                    <div class="date-badge">01/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/41btamn2qqL._SY445_SX342_.jpg"
+                        alt="Discourse on the Origin of Inequality">
+                </div>
+                <h3>Discourse on the Origin of Inequality</h3>
+                <p>Jean-Jacques Rousseau</p>
+                <p class="category">Political Philosophy</p>
+            </div>
+
+            <div class="book-card" data-title="Groundwork for the Metaphysics of Morals" data-author="Immanuel Kant"
+                data-category="Philosophy of Morality and Culture" data-date="202501" data-rating="7">
+                <div class="image-wrapper">
+                    <div class="date-badge">01/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/7134slNBRKL._AC_UY218_.jpg"
+                        alt="Groundwork for the Metaphysics of Morals">
+                </div>
+                <h3>Groundwork of the Metaphysics of Morals</h3>
+                <p>Immanuel Kant</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+            <!--         <div class="book-card" data-title="Fact, Fiction, and Forecast" data-author="Nelson Goodman" data-category="Philosophy of Science, Metaphysics, Epistemology" data-date="">
             <div class="image-wrapper">
                 <img src="https://m.media-amazon.com/images/I/31ORIJQv0yL._SY445_SX342_PQ25_.jpg" alt="Fact, Fiction, and Forecast">
             </div>
@@ -842,57 +951,67 @@
             <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
         </div> -->
 
-        <div class="book-card" data-title="The Undiscovered Self" data-author="Carl Jung" data-category="Philosophy of Morality and Culture" data-rating="7" data-date="202501">
-            <div class="image-wrapper">
-                <div class="date-badge">01/2025</div>
-                <img src="https://m.media-amazon.com/images/I/812F1fXCtbL._SL1500_.jpg" alt="The Undiscovered Self">
+            <div class="book-card" data-title="The Undiscovered Self" data-author="Carl Jung"
+                data-category="Philosophy of Morality and Culture" data-rating="7" data-date="202501">
+                <div class="image-wrapper">
+                    <div class="date-badge">01/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/812F1fXCtbL._SL1500_.jpg" alt="The Undiscovered Self">
+                </div>
+                <h3>The Undiscovered Self</h3>
+                <p>Carl Jung</p>
+                <p class="category">Philosophy of Morality and Culture</p>
             </div>
-            <h3>The Undiscovered Self</h3>
-            <p>Carl Jung</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="The Dawn of Day: Thoughts on the Prejudices of Morality" data-author="Friedrich Nietzsche" data-category="Philosophy of Morality and Culture" data-rating="9" data-date="202501">
-            <div class="image-wrapper">
-                <div class="date-badge">01/2025</div>
-                <img src="https://m.media-amazon.com/images/I/41Ljdh2R10L._SY445_SX342_PQ25_.jpg" alt="The Dawn of Day">
-            </div>
-            <h3>The Dawn of Day: Thoughts on the Prejudices of Morality</h3>
-            <p>Friedrich Nietzsche</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
 
-        <div class="book-card" data-title="On Liberty" data-author="John Stuart Mill" data-category="Political Philosophy" data-date="202502" data-rating=9>
-            <div class="image-wrapper">
-                <div class="date-badge">02/2025</div>
-                <img src="https://m.media-amazon.com/images/I/71jY9z9z+hL._AC_UY436_FMwebp_QL65_.jpg" alt="On Liberty">
+            <div class="book-card" data-title="The Dawn of Day: Thoughts on the Prejudices of Morality"
+                data-author="Friedrich Nietzsche" data-category="Philosophy of Morality and Culture" data-rating="9"
+                data-date="202501">
+                <div class="image-wrapper">
+                    <div class="date-badge">01/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/41Ljdh2R10L._SY445_SX342_PQ25_.jpg"
+                        alt="The Dawn of Day">
+                </div>
+                <h3>The Dawn of Day: Thoughts on the Prejudices of Morality</h3>
+                <p>Friedrich Nietzsche</p>
+                <p class="category">Philosophy of Morality and Culture</p>
             </div>
-            <h3>On Liberty</h3>
-            <p>John Stuart Mill</p>
-            <p class="category">Political Philosophy</p>
-        </div>
 
-        <div class="book-card" data-title="The Critique of Practical Reason" data-author="Immanuel Kant" data-category="Philosophy of Morality and Culture" data-rating=9 data-date="202503">
-            <div class="image-wrapper">
-                <div class="date-badge">03/2025</div>
-                <img src="https://m.media-amazon.com/images/I/41yajhkUCTL._SY445_SX342_.jpg" alt="The Critique of Practical Reason">
+            <div class="book-card" data-title="On Liberty" data-author="John Stuart Mill"
+                data-category="Political Philosophy" data-date="202502" data-rating=9>
+                <div class="image-wrapper">
+                    <div class="date-badge">02/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/71jY9z9z+hL._AC_UY436_FMwebp_QL65_.jpg"
+                        alt="On Liberty">
+                </div>
+                <h3>On Liberty</h3>
+                <p>John Stuart Mill</p>
+                <p class="category">Political Philosophy</p>
             </div>
-            <h3>The Critique of Practical Reason</h3>
-            <p>Immanuel Kant</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
 
-        <div class="book-card" data-title="Religions, Values, and Peak Experiences" data-author="Abraham Maslow" data-category="Theoretical Psychology" data-rating=8 data-date="202503">
-            <div class="image-wrapper">
-                <div class="date-badge">03/2025</div>
-                <img src="https://m.media-amazon.com/images/I/716kKs0kkoL._SL1500_.jpg" alt="Religions, Values, and Peak Experiences">
+            <div class="book-card" data-title="The Critique of Practical Reason" data-author="Immanuel Kant"
+                data-category="Philosophy of Morality and Culture" data-rating=9 data-date="202503">
+                <div class="image-wrapper">
+                    <div class="date-badge">03/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/41yajhkUCTL._SY445_SX342_.jpg"
+                        alt="The Critique of Practical Reason">
+                </div>
+                <h3>The Critique of Practical Reason</h3>
+                <p>Immanuel Kant</p>
+                <p class="category">Philosophy of Morality and Culture</p>
             </div>
-            <h3>Religions, Values, and Peak Experiences</h3>
-            <p>Abraham Maslow</p>
-            <p class="category">Theoretical Psychology</p>
-        </div>
-        
-<!--         <div class="book-card" data-title="An Introduction to the Principles of Morals and Legislation" data-author="Jeremy Bentham" data-category="Political Philosophy">
+
+            <div class="book-card" data-title="Religions, Values, and Peak Experiences" data-author="Abraham Maslow"
+                data-category="Theoretical Psychology" data-rating=8 data-date="202503">
+                <div class="image-wrapper">
+                    <div class="date-badge">03/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/716kKs0kkoL._SL1500_.jpg"
+                        alt="Religions, Values, and Peak Experiences">
+                </div>
+                <h3>Religions, Values, and Peak Experiences</h3>
+                <p>Abraham Maslow</p>
+                <p class="category">Theoretical Psychology</p>
+            </div>
+
+            <!--         <div class="book-card" data-title="An Introduction to the Principles of Morals and Legislation" data-author="Jeremy Bentham" data-category="Political Philosophy">
             <div class="image-wrapper">
                 <img src="https://m.media-amazon.com/images/I/41wle+WpSDL._SY445_SX342_.jpg" alt="On Liberty">
             </div>
@@ -901,87 +1020,95 @@
             <p class="category">Political Philosophy</p>
         </div> -->
 
-        
-        <div class="book-card" data-title="When These Things Begin" data-author="René Girard" data-category="Philosophy of Morality and Culture" data-rating=8 data-date="202503">
-            <div class="image-wrapper">
-                <div class="date-badge">03/2025</div>
-                <img src="https://m.media-amazon.com/images/I/51Sb1KRTc5L._SY445_SX342_.jpg" alt="When These Things Begin">
+
+            <div class="book-card" data-title="When These Things Begin" data-author="René Girard"
+                data-category="Philosophy of Morality and Culture" data-rating=8 data-date="202503">
+                <div class="image-wrapper">
+                    <div class="date-badge">03/2025</div>
+                    <img src="https://m.media-amazon.com/images/I/51Sb1KRTc5L._SY445_SX342_.jpg"
+                        alt="When These Things Begin">
+                </div>
+                <h3>When These Things Begin</h3>
+                <p>René Girard</p>
+                <p class="category">Philosophy of Morality and Culture</p>
             </div>
-            <h3>When These Things Begin</h3>
-            <p>René Girard</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-         <div class="book-card" data-title="Flight From Wonder: An Investigation into Scientific Creativity" data-author="Gilles Fauconnier and Mark Turner" data-category="Creativity and Cognitive Science" data-date="">
-            <div class="image-wrapper">
-                <img src="https://m.media-amazon.com/images/I/51-cC40nYjL._SY445_SX342_.jpg" alt="The Way We Think">
+
+            <div class="book-card" data-title="Flight From Wonder: An Investigation into Scientific Creativity"
+                data-author="Gilles Fauconnier and Mark Turner" data-category="Creativity and Cognitive Science"
+                data-date="">
+                <div class="image-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/51-cC40nYjL._SY445_SX342_.jpg" alt="The Way We Think">
+                </div>
+                <h3>The Way We Think: Conceptual Blending And The Mind's Hidden Complexities</h3>
+                <p>Gilles Fauconnier and Mark Turner</p>
+                <p class="category">Creativity and Cognitive Science</p>
             </div>
-            <h3>The Way We Think: Conceptual Blending And The Mind's Hidden Complexities</h3>
-            <p>Gilles Fauconnier and Mark Turner</p>
-            <p class="category">Creativity and Cognitive Science</p>
-        </div>
 
 
-         <div class="book-card" data-title="Things Hidden Since the Foundation of the World" data-author="René Girard" data-category="Philosophy of Morality and Culture" data-date="">
-            <div class="image-wrapper">
-                <img src="https://m.media-amazon.com/images/I/41iaesNerKL._SY445_SX342_.jpg" alt="Things Hidden Since the Foundation of the World">
+            <div class="book-card" data-title="Things Hidden Since the Foundation of the World"
+                data-author="René Girard" data-category="Philosophy of Morality and Culture" data-date="">
+                <div class="image-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/41iaesNerKL._SY445_SX342_.jpg"
+                        alt="Things Hidden Since the Foundation of the World">
+                </div>
+                <h3>Things Hidden Since the Foundation of the World</h3>
+                <p>René Girard</p>
+                <p class="category">Philosophy of Morality and Culture</p>
             </div>
-            <h3>Things Hidden Since the Foundation of the World</h3>
-            <p>René Girard</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
-        
-        <div class="book-card" data-title="The Metaphysics of Morals" data-author="Immanuel Kant" data-category="Philosophy of Morality and Culture" data-date="">
-            <div class="image-wrapper">
-                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388764209i/72066.jpg" alt="The Metaphysics of Morals">
-            </div>
-            <h3>The Metaphysics of Morals</h3>
-            <p>Immanuel Kant</p>
-            <p class="category">Philosophy of Morality and Culture</p>
-        </div>
 
-        
-    </div>
+            <div class="book-card" data-title="The Metaphysics of Morals" data-author="Immanuel Kant"
+                data-category="Philosophy of Morality and Culture" data-date="">
+                <div class="image-wrapper">
+                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388764209i/72066.jpg"
+                        alt="The Metaphysics of Morals">
+                </div>
+                <h3>The Metaphysics of Morals</h3>
+                <p>Immanuel Kant</p>
+                <p class="category">Philosophy of Morality and Culture</p>
+            </div>
+
+
+        </div>
     </section>
 
     <script>
-      // Get the projects sort dropdown, projects container, and all project cards
-      const projectSortDropdown = document.getElementById('projectSort');
-      const projectsContainer = document.getElementById('projects');
-      const projectCards = Array.from(document.querySelectorAll('.project-card'));
-    
-      projectSortDropdown.addEventListener('change', () => {
-        const sortBy = projectSortDropdown.value;
-    
-        // Sort project cards based on selected option
-        const sortedProjects = projectCards.sort((a, b) => {
-          if (sortBy === 'date') {
-            // Assume data-date is a numeric string (e.g., "202405")
-            const aValue = parseFloat(a.dataset.date);
-            const bValue = parseFloat(b.dataset.date);
-            return aValue - bValue; // Descending order
-          } else if (sortBy === 'category') {
-            const aCat = a.dataset.category.toLowerCase();
-            const bCat = b.dataset.category.toLowerCase();
-            return aCat.localeCompare(bCat);
-          }
+        // Get the projects sort dropdown, projects container, and all project cards
+        const projectSortDropdown = document.getElementById('projectSort');
+        const projectsContainer = document.getElementById('projects');
+        const projectCards = Array.from(document.querySelectorAll('.project-card'));
+
+        projectSortDropdown.addEventListener('change', () => {
+            const sortBy = projectSortDropdown.value;
+
+            // Sort project cards based on selected option
+            const sortedProjects = projectCards.sort((a, b) => {
+                if (sortBy === 'date') {
+                    // Assume data-date is a numeric string (e.g., "202405")
+                    const aValue = parseFloat(a.dataset.date);
+                    const bValue = parseFloat(b.dataset.date);
+                    return aValue - bValue; // Descending order
+                } else if (sortBy === 'category') {
+                    const aCat = a.dataset.category.toLowerCase();
+                    const bCat = b.dataset.category.toLowerCase();
+                    return aCat.localeCompare(bCat);
+                }
+            });
+
+            // Clear the projects container and re-append sorted cards
+            projectsContainer.innerHTML = '';
+            sortedProjects.forEach(card => projectsContainer.appendChild(card));
         });
-    
-        // Clear the projects container and re-append sorted cards
-        projectsContainer.innerHTML = '';
-        sortedProjects.forEach(card => projectsContainer.appendChild(card));
-      });
     </script>
-    
+
     <script>
         // Sorting Functionality
         const sortDropdown = document.getElementById('sort');
         const bookshelf = document.getElementById('bookshelf');
         const books = Array.from(document.querySelectorAll('.book-card'));
-    
+
         sortDropdown.addEventListener('change', () => {
             const sortBy = sortDropdown.value;
-    
+
             // Sort the books array
             const sortedBooks = books.sort((a, b) => {
                 if (sortBy === 'rating') {
@@ -1002,11 +1129,12 @@
                     return aValue.localeCompare(bValue);
                 }
             });
-    
+
             // Clear the bookshelf and append sorted books
             bookshelf.innerHTML = '';
             sortedBooks.forEach(book => bookshelf.appendChild(book));
         });
     </script>
 </body>
+
 </html>
