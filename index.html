@@ -495,14 +495,12 @@
       J --- ST
       class ST hyperedge
 
-      %% Bio Node (replaces "Creativity" with embedded HTML)
-      %% Requires securityLevel: 'loose' to display the image
-      H["<div style='text-align:center;'><img src='images/headshot.jpeg' style='width:50px;border-radius:50%;'><br/><strong>Sam Schapiro</strong><br/>Chief Scientist,<br/>Spiral Works</div>"]
-
-      %% Connect the hyperedges and Bio node
-      PH --- PC
-      PC --- ST
-      H --- PC  %% Bio node is connected to the Psychology cluster
+      %% H1 contains only the image, H2 contains plain text
+      H1[<img src='images/headshot.jpeg' width='40' height='40' />]
+      H2[Samuel Schapiro, Chief Scientist, Spiral Works]
+      H1 --- H2
+      %% Connect the bio to the Psychology cluster for example
+      H2 --- PC
   </div>
 
     <header style="margin-top: 20px;">
