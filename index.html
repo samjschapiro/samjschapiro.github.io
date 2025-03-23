@@ -16,6 +16,51 @@
         padding: 0;
     }
 
+        
+         .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e1e1e;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #f5f5f5;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links li a {
+      font-family: 'Lora', serif;
+      color: #eaeaea;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease, background 0.3s ease;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    .nav-links li a:hover {
+      background-color: #2a2a2a;
+      color: #f5f5f5;
+    }
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .nav-brand {
+        font-size: 1.3rem;
+      }
+      .nav-links li a {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+      }
+    }
+
     /* Body Styling */
     body {
         font-family: 'Lora', serif; /* Elegant serif for body text */
@@ -326,6 +371,15 @@
 </style>
 </head>
 <body>
+
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-brand">Samuel Schapiro</div>
+    <ul class="nav-links">
+      <li><a href="#bookshelf">Bookshelf</a></li>
+    </ul>
+  </nav>
 
 <!--     
     <section class="bio-section">
