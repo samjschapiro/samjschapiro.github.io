@@ -459,39 +459,45 @@
 
 <div class="mermaid">
       graph TD
-      %% Define a "hyperedge" style that hides the nodes
-      classDef hyperedge fill:#ffffff,stroke:#ffffff,stroke-width:0px,shape:circle,font-size:0;
+        classDef hyperedge fill:#ffffff,stroke:#ffffff,stroke-width:0px,shape:circle,font-size:0;
 
-      %% Philosophy hyperedge
-      PH(( ))
-      A[Philosophy of Science]
-      B[Metaphysics]
-      C[Epistemology]
-      D[Political Philosophy]
-      E[Moral Philosophy]
-      F[Philosophy of Culture]
-      A --- PH
-      B --- PH
-      C --- PH
-      D --- PH
-      E --- PH
-      F --- PH
-      class PH hyperedge
+        %% Philosophy hyperedge
+        PH(( ))
+        A[Philosophy of Science]
+        B[Metaphysics]
+        C[Epistemology]
+        D[Political Philosophy]
+        E[Moral Philosophy]
+        F[Philosophy of Culture]
+        A --- PH
+        B --- PH
+        C --- PH
+        D --- PH
+        E --- PH
+        F --- PH
+        class PH hyperedge
 
-      %% Psychology & Creativity hyperedge
-      PC(( ))
-      G[Theoretical Psychology]
-      H[I am currently the Chief Scientist at Spiral Works, working on automating creativity, science, and philosophy.]
-      I[Cognitive Science]
-      J[Machine Learning]
-      G --- PC
-      H --- PC
-      I --- PC
-      J -- PC
-      class PC hyperedge
+        %% Psychology & Creativity hyperedge
+        PC(( ))
+        G[Theoretical Psychology]
+        H[Creativity]
+        I[Cognitive Science]
+        G --- PC
+        H --- PC
+        I --- PC
+        class PC hyperedge
 
-      %% STEM hyperedge
-      PH --- PC
+        %% STEM hyperedge
+        ST(( ))
+        J[Computer Science]
+        K["`About me: I am currently the Chief Scientist at Spiral Works, where we are automating creativity, science, and philosophy.`"]
+        J --- ST
+        K --- ST
+        class ST hyperedge
+
+        %% Connect hyperedges
+        PH --- PC
+        PC --- ST
   </div>
 
     <header style="margin-top: 20px;">
