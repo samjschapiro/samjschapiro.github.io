@@ -47,14 +47,14 @@
       margin: 10px auto;
     }
 
-    /* Essays Grid */
+    /* Essays Grid (similar to Bookshelf Grid) */
     .essays-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
-    /* Essay Card Styling */
+    /* Essay Card Styling (similar to Book Card) */
     .essay-card {
       display: flex;
       flex-direction: column;
@@ -109,12 +109,8 @@
   </div>
 
   <script>
-    // The Substack feed URL
-    const feedUrl = "https://samuelschapiro.substack.com/feed";
-    // Using Thingproxy to bypass CORS restrictions
-    const proxyUrl = "https://thingproxy.freeboard.io/fetch/" + feedUrl;
-    
-    fetch(proxyUrl)
+    // Use your own server-side proxy (proxy.php) to fetch the Substack feed
+    fetch('proxy.php')
       .then(response => response.text())
       .then(str => {
         const parser = new DOMParser();
@@ -142,6 +138,7 @@
           const card = document.createElement("div");
           card.classList.add("essay-card");
 
+          // Title as clickable link
           const h3 = document.createElement("h3");
           const a = document.createElement("a");
           a.href = link;
@@ -149,11 +146,13 @@
           a.textContent = title;
           h3.appendChild(a);
 
+          // Publication date
           const pDate = document.createElement("p");
           if (pubDate) {
             pDate.textContent = pubDate;
           }
 
+          // Essay excerpt/description
           const pDesc = document.createElement("p");
           pDesc.innerHTML = description;
 
