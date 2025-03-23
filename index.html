@@ -58,7 +58,15 @@
   align-items: center;
   gap: 8px; /* Space between photo and text */
 }
+        
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* No underline */
+  color: inherit;        /* Inherit text color from parent */
+}
 
+        
 .brand-photo {
   width: 1.5em;
   height: 1.5em;
@@ -422,8 +430,10 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
       <div class="nav-brand">
-        <img src="images/headshot.jpeg" alt="Samuel Schapiro" class="brand-photo">
-        <span>Samuel Schapiro</span>
+        <a href="https://schapiro.ai" class="brand-link">
+          <img src="images/headshot.jpeg" alt="Samuel Schapiro" class="brand-photo">
+          <span>Samuel Schapiro</span>
+        </a>
       </div>
     <ul class="nav-links">
       <li><a href="#bookshelf">Bookshelf</a></li>
