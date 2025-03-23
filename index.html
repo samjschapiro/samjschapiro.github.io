@@ -9,11 +9,12 @@
       <script>
         mermaid.initialize({
           startOnLoad: true,
+          securityLevel: 'loose',
           theme: 'dark',
           flowchart: {
             curve: 'basis',     // Makes edges more curved
-            nodeSpacing: 150,   // Increase node spacing
-            rankSpacing: 150    // Increase rank spacing
+            nodeSpacing: 100,   // Increase node spacing
+            rankSpacing: 100    // Increase rank spacing
           }
         });
       </script>
@@ -458,10 +459,14 @@
 
 
 <div class="mermaid">
-    %% Hypergraph using invisible hyperedge nodes
-    graph TD
-      %% Philosophy hyperedge connector
-      PH(( ))
+     %% Left-to-right orientation
+      graph LR
+
+      %% A 'hyperedge' style to hide the special nodes
+      classDef hyperedge fill:#ffffff,stroke:#ffffff,stroke-width:0px,shape:circle,font-size:0;
+
+      %% Philosophy hyperedge
+      PH(( ))  %% Invisible node
       A[Philosophy of Science]
       B[Metaphysics]
       C[Epistemology]
@@ -474,30 +479,30 @@
       D --- PH
       E --- PH
       F --- PH
+      class PH hyperedge
 
-      %% Psychology & Creativity hyperedge connector
+      %% Psychology hyperedge
       PC(( ))
       G[Theoretical Psychology]
-      H[Creativity]
       I[Cognitive Science]
       G --- PC
-      H --- PC
       I --- PC
+      class PC hyperedge
 
-      %% STEM hyperedge connector
+      %% STEM hyperedge
       ST(( ))
       J[Computer Science]
-      K[Mathematical Analysis]
       J --- ST
-      K --- ST
+      class ST hyperedge
 
-      %% Optional: Connect hyperedge nodes to indicate overall interaction
+      %% Bio Node (replaces "Creativity" with embedded HTML)
+      %% Requires securityLevel: 'loose' to display the image
+      H[<img src='images/headshot.jpeg' style='width:50px;border-radius:50%;'/><br/><strong>Sam Schapiro</strong><br/>Chief Scientist,<br/>Spiral Works]
+
+      %% Connect the hyperedges and Bio node
       PH --- PC
       PC --- ST
-
-    %% Style the hyperedge nodes so they are essentially invisible
-    class PH,PC,ST hyperedge;
-    classDef hyperedge fill:#121212,stroke:#121212,stroke-width:0px,shape:circle,font-size:0;
+      H --- PC  %% Bio node is connected to the Psychology cluster
   </div>
 
     <header style="margin-top: 20px;">
