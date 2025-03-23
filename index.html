@@ -9,7 +9,12 @@
       <script>
         mermaid.initialize({
           startOnLoad: true,
-          theme: 'dark'
+          theme: 'dark',
+          flowchart: {
+            curve: 'basis',     // Makes edges more curved
+            nodeSpacing: 150,   // Increase node spacing
+            rankSpacing: 150    // Increase rank spacing
+          }
         });
       </script>
     <style>
@@ -437,28 +442,6 @@
 </head>
 <body>
 
-  <!-- Attempting to autoplay Mozart's Symphony No. 41 -->
-  <audio id="mozartAudio" style="display: none;">
-    <source src="https://upload.wikimedia.org/wikipedia/commons/0/05/Mozart_-_Symphony_No._41_in_C_major%2C_K._551_4._Molto_allegro.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <script>
-    /* 
-      Once the user scrolls for the first time, we attempt to play the audio. 
-      If autoplay is blocked, the user must manually allow or unmute the site. 
-    */
-    let hasPlayed = false;
-    window.addEventListener('scroll', function() {
-      if (!hasPlayed) {
-        const audioEl = document.getElementById('mozartAudio');
-        audioEl.play().catch(err => {
-          console.log("Autoplay blocked or user gesture required:", err);
-        });
-        hasPlayed = true;
-      }
-    });
-  </script>
   <!-- Navigation Bar -->
   <nav class="navbar">
       <div class="nav-brand">
