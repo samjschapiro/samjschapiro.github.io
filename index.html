@@ -10,6 +10,9 @@
         mermaid.initialize({
           startOnLoad: true,
           theme: 'dark'
+          flowchart: {
+            curve: 'basis'
+          }
         });
       </script>
     <style>
@@ -23,7 +26,20 @@
         padding: 0;
     }
 
-
+    /* Container for the Mermaid diagram */
+    .mermaid-container {
+      margin-top: 20pt; /* 20pt spacing above the diagram */
+      max-width: 100%;
+      overflow-x: auto;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background-color: #1e1e1e;
+      padding: 15px;
+    }
+    /* Style the Mermaid graph within the container */
+    .mermaid {
+      /* Additional styling or overrides can go here if desired */
+    }
         .ascii-diagram {
       font-family: monospace;
       white-space: pre;      /* Preserve the ASCII layout */
@@ -434,6 +450,10 @@
 </head>
 <body>
 
+  <audio autoplay>
+    <source src="https://upload.wikimedia.org/wikipedia/commons/0/05/Mozart_-_Symphony_No._41_in_C_major%2C_K._551_4._Molto_allegro.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
 
   <!-- Navigation Bar -->
   <nav class="navbar">
