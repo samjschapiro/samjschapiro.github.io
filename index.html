@@ -26,6 +26,41 @@
         /* Google Fonts Import */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
 
+        .announcement-banner {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #1e1e1e;
+            border-bottom: 1px solid #444;
+            color: #f5f5f5;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            padding: 8px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .scrolling-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 15s linear infinite;
+        }
+        .scrolling-text a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
         /* Wrapper that holds both the diagram and the floating bio card */
         .diagram-wrapper {
             position: relative;
@@ -53,7 +88,8 @@
             bottom: 20px;
             right: 20px;
             width: 400px;
-            background-color: inherit; /* Inherits #121212 from parent */
+            background-color: inherit;
+            /* Inherits #121212 from parent */
             /* Same style as your site */
             padding: 15px;
             z-index: 10;
@@ -452,6 +488,9 @@
 </head>
 
 <body>
+    <div class="announcement-banner">
+        <div class="scrolling-text"><a href="">Groundwork for the Autonomy of Cognition</a> - now released!</div>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -541,8 +580,8 @@
             <p><a href="mailto:sam@spiralworks.ai">sam@spiralworks.ai</a></p>
             <p>San Francisco Bay Area</p>
             <p>Chief Scientist, Spiral Works</p>
-          </div>
         </div>
+    </div>
 
     <header style="margin-top: 20px;">
         <h2>Library</h2>
