@@ -52,8 +52,7 @@
             bottom: 20px;
             right: 20px;
             width: 250px;
-            /* Adjust width as desired */
-            background-color: #2e2e2e;
+            background-color: inherit; /* Inherits #121212 from parent */
             /* Same style as your site */
             border: 1px solid #333;
             border-radius: 8px;
@@ -68,6 +67,7 @@
             object-fit: cover;
             border-radius: 50%;
             display: block;
+            margin: 0 auto; /* Center the image horizontally */
             margin-bottom: 10px;
         }
 
@@ -239,6 +239,7 @@
             border-radius: 8px;
             padding: 20px;
             text-align: center;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         /* Bio Photo Styling */
@@ -249,14 +250,6 @@
             border-radius: 50%;
             /* Circular image */
             margin-bottom: 15px;
-        }
-
-        /* Optional: Category Text Styling */
-        .bio-card .category {
-            font-family: 'Playfair Display', serif;
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 10px;
         }
 
         .bio-section h2 {
@@ -637,12 +630,12 @@
         <div class="bio-card">
             <img src="images/headshot.jpeg" alt="Samuel Schapiro">
             <p><strong>Samuel Schapiro</strong></p>
-            <p>Email: <a href="mailto:sjs17@illinois.edu">sjs17@illinois.edu</a></p>
-            <p>Location: San Francisco Bay Area</p>
+            <p><a href="mailto:sjs17@illinois.edu">sjs17@illinois.edu</a></p>
+            <p>San Francisco Bay Area</p>
             <p>Chief Scientist,<br/>Spiral Works</p>
           </div>
         </div>
-        
+
     <header style="margin-top: 20px;">
         <h2>Library</h2>
         <p>"Pour inventer, il faut penser à côté."</p>
