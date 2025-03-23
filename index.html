@@ -23,7 +23,10 @@
         padding: 0;
     }
 
-
+    .mermaid {
+      margin-top: 20pt;
+    }
+        
         .ascii-diagram {
       font-family: monospace;
       white-space: pre;      /* Preserve the ASCII layout */
@@ -435,19 +438,25 @@
 <body>
 
   <!-- Attempting to autoplay Mozart's Symphony No. 41 -->
-  <audio id="mozartAudio" autoplay controls style="display:none;">
+  <audio id="mozartAudio" style="display: none;">
     <source src="https://upload.wikimedia.org/wikipedia/commons/0/05/Mozart_-_Symphony_No._41_in_C_major%2C_K._551_4._Molto_allegro.ogg" type="audio/ogg">
     Your browser does not support the audio element.
   </audio>
+
   <script>
-    /* Some browsers block autoplay with sound. We attempt to play anyway. */
-    window.addEventListener('DOMContentLoaded', function() {
-      const audioEl = document.getElementById('mozartAudio');
-      audioEl.play().catch(err => {
-        console.log("Autoplay blocked or no user interaction. Audio might require a click to play:", err);
-        // Show controls so user can manually play
-        audioEl.style.display = 'block';
-      });
+    /* 
+      Once the user scrolls for the first time, we attempt to play the audio. 
+      If autoplay is blocked, the user must manually allow or unmute the site. 
+    */
+    let hasPlayed = false;
+    window.addEventListener('scroll', function() {
+      if (!hasPlayed) {
+        const audioEl = document.getElementById('mozartAudio');
+        audioEl.play().catch(err => {
+          console.log("Autoplay blocked or user gesture required:", err);
+        });
+        hasPlayed = true;
+      }
     });
   </script>
   <!-- Navigation Bar -->
