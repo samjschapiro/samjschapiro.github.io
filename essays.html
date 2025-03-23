@@ -109,13 +109,14 @@
   </div>
 
   <script>
-    // Use your own server-side proxy (proxy.php) to fetch the Substack feed
+    // Fetch the feed using your server-side proxy (proxy.php)
     fetch('proxy.php')
       .then(response => response.text())
       .then(str => {
         const parser = new DOMParser();
         const xml = parser.parseFromString(str, "application/xml");
-        const items = xml.querySelectorAll("item");
+        // Try both <item> and <entry>
+        const items = xml.querySelectorAll("item, entry");
         const grid = document.getElementById("essays-grid");
 
         if (!items.length) {
@@ -126,11 +127,19 @@
         items.forEach(item => {
           const titleElem = item.querySelector("title");
           const linkElem = item.querySelector("link");
-          const pubDateElem = item.querySelector("pubDate");
-          const descElem = item.querySelector("description");
+          const pubDateElem = item.querySelector("pubDate") || item.querySelector("updated");
+          const descElem = item.querySelector("description") || item.querySelector("content");
 
           const title = titleElem ? titleElem.textContent : "No title";
-          const link = linkElem ? linkElem.textContent : "#";
+          // For Atom feeds, sometimes the link is in a <link> element with rel="alternate"
+          let link = "#";
+          if(linkElem) {
+            if(linkElem.getAttribute("href")) {
+              link = linkElem.getAttribute("href");
+            } else {
+              link = linkElem.textContent;
+            }
+          }
           const pubDate = pubDateElem ? new Date(pubDateElem.textContent).toLocaleDateString() : "";
           const description = descElem ? descElem.textContent : "";
 
@@ -148,7 +157,7 @@
 
           // Publication date
           const pDate = document.createElement("p");
-          if (pubDate) {
+          if(pubDate) {
             pDate.textContent = pubDate;
           }
 
@@ -157,7 +166,7 @@
           pDesc.innerHTML = description;
 
           card.appendChild(h3);
-          if (pubDate) card.appendChild(pDate);
+          if(pubDate) card.appendChild(pDate);
           card.appendChild(pDesc);
 
           grid.appendChild(card);
