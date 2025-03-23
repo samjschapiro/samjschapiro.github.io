@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/headshot.jpeg" type="image/jpeg">
     <title>Samuel Schapiro</title>
+      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <script>
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: 'dark'
+        });
+      </script>
     <style>
     /* Google Fonts Import */
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
@@ -443,7 +450,48 @@
   </nav>
 
 
+<div class="mermaid">
+    %% Hypergraph using invisible hyperedge nodes
+    graph TD
+      %% Philosophy hyperedge connector
+      PH(( ))
+      A[Philosophy of Science]
+      B[Metaphysics]
+      C[Epistemology]
+      D[Political Philosophy]
+      E[Moral Philosophy]
+      F[Philosophy of Culture]
+      A --- PH
+      B --- PH
+      C --- PH
+      D --- PH
+      E --- PH
+      F --- PH
 
+      %% Psychology & Creativity hyperedge connector
+      PC(( ))
+      G[Theoretical Psychology]
+      H[Creativity]
+      I[Cognitive Science]
+      G --- PC
+      H --- PC
+      I --- PC
+
+      %% STEM hyperedge connector
+      ST(( ))
+      J[Computer Science]
+      K[Mathematical Analysis]
+      J --- ST
+      K --- ST
+
+      %% Optional: Connect hyperedge nodes to indicate overall interaction
+      PH --- PC
+      PC --- ST
+
+    %% Style the hyperedge nodes so they are essentially invisible
+    class PH,PC,ST hyperedge;
+    classDef hyperedge fill:#121212,stroke:#121212,stroke-width:0px,shape:circle,font-size:0;
+  </div>
 
     <header style="margin-top: 20px;">
       <h2 >Bookshelf</h2>
