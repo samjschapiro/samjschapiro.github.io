@@ -47,14 +47,14 @@
       margin: 10px auto;
     }
 
-    /* Essays Grid (similar to Bookshelf Grid) */
+    /* Essays Grid */
     .essays-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
-    /* Essay Card Styling (similar to Book Card) */
+    /* Essay Card Styling */
     .essay-card {
       display: flex;
       flex-direction: column;
@@ -109,32 +109,39 @@
   </div>
 
   <script>
-    // Use AllOrigins to bypass CORS issues.
-    // AllOrigins URL structure: 
-    // https://api.allorigins.hexocode.repl.co/get?disableCache=true&url=[ENCODED_URL]
-    const feedUrl = encodeURIComponent("https://samuelschapiro.substack.com/feed");
-    const proxyUrl = `https://api.allorigins.hexocode.repl.co/get?disableCache=true&url=${feedUrl}`;
-
+    // The Substack feed URL
+    const feedUrl = "https://samuelschapiro.substack.com/feed";
+    // Using Thingproxy to bypass CORS restrictions
+    const proxyUrl = "https://thingproxy.freeboard.io/fetch/" + feedUrl;
+    
     fetch(proxyUrl)
-      .then(response => response.json())
-      .then(data => {
-        // data.contents contains the feed XML as a string
+      .then(response => response.text())
+      .then(str => {
         const parser = new DOMParser();
-        const xml = parser.parseFromString(data.contents, "application/xml");
+        const xml = parser.parseFromString(str, "application/xml");
         const items = xml.querySelectorAll("item");
         const grid = document.getElementById("essays-grid");
 
+        if (!items.length) {
+          grid.innerHTML = "<p>No posts found. Please check your Substack feed.</p>";
+          return;
+        }
+
         items.forEach(item => {
-          const title = item.querySelector("title").textContent;
-          const link = item.querySelector("link").textContent;
-          const pubDate = item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : "";
-          const description = item.querySelector("description") ? item.querySelector("description").textContent : "";
+          const titleElem = item.querySelector("title");
+          const linkElem = item.querySelector("link");
+          const pubDateElem = item.querySelector("pubDate");
+          const descElem = item.querySelector("description");
+
+          const title = titleElem ? titleElem.textContent : "No title";
+          const link = linkElem ? linkElem.textContent : "#";
+          const pubDate = pubDateElem ? new Date(pubDateElem.textContent).toLocaleDateString() : "";
+          const description = descElem ? descElem.textContent : "";
 
           // Create the essay card
           const card = document.createElement("div");
           card.classList.add("essay-card");
 
-          // Title with clickable link
           const h3 = document.createElement("h3");
           const a = document.createElement("a");
           a.href = link;
@@ -142,26 +149,25 @@
           a.textContent = title;
           h3.appendChild(a);
 
-          // Publication date
           const pDate = document.createElement("p");
-          if(pubDate) {
-            pDate.textContent = new Date(pubDate).toLocaleDateString();
+          if (pubDate) {
+            pDate.textContent = pubDate;
           }
 
-          // Essay excerpt/description
           const pDesc = document.createElement("p");
           pDesc.innerHTML = description;
 
-          // Append elements to the card
           card.appendChild(h3);
-          if(pubDate) card.appendChild(pDate);
+          if (pubDate) card.appendChild(pDate);
           card.appendChild(pDesc);
 
-          // Append card to grid
           grid.appendChild(card);
         });
       })
-      .catch(err => console.error("Error fetching or parsing feed: ", err));
+      .catch(err => {
+        console.error("Error fetching or parsing feed:", err);
+        document.getElementById("essays-grid").innerHTML = "<p>Error loading posts.</p>";
+      });
   </script>
 </body>
 </html>
