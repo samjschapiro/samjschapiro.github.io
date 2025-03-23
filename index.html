@@ -9,7 +9,6 @@
       <script>
         mermaid.initialize({
           startOnLoad: true,
-          securityLevel: 'loose',
           theme: 'dark',
           flowchart: {
             curve: 'basis',     // Makes edges more curved
@@ -459,14 +458,14 @@
 
 
 <div class="mermaid">
-     %% Left-to-right orientation
+      %% Change orientation to left-right with "graph LR" 
       graph LR
 
-      %% A 'hyperedge' style to hide the special nodes
+      %% Define a "hyperedge" style that hides the nodes
       classDef hyperedge fill:#ffffff,stroke:#ffffff,stroke-width:0px,shape:circle,font-size:0;
 
       %% Philosophy hyperedge
-      PH(( ))  %% Invisible node
+      PH(( ))
       A[Philosophy of Science]
       B[Metaphysics]
       C[Epistemology]
@@ -481,11 +480,13 @@
       F --- PH
       class PH hyperedge
 
-      %% Psychology hyperedge
+      %% Psychology & Creativity hyperedge
       PC(( ))
       G[Theoretical Psychology]
+      H[Creativity]
       I[Cognitive Science]
       G --- PC
+      H --- PC
       I --- PC
       class PC hyperedge
 
@@ -495,12 +496,9 @@
       J --- ST
       class ST hyperedge
 
-      %% H1 contains only the image, H2 contains plain text
-      H1[<img src='images/headshot.jpeg' width='40' height='40' />]
-      H2[Samuel Schapiro, Chief Scientist, Spiral Works]
-      H1 --- H2
-      %% Connect the bio to the Psychology cluster for example
-      H2 --- PC
+      %% Connect hyperedges
+      PH --- PC
+      PC --- ST
   </div>
 
     <header style="margin-top: 20px;">
