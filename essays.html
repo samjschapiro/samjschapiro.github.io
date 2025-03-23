@@ -109,14 +109,18 @@
   </div>
 
   <script>
-    // Fetch the Substack RSS feed
-    fetch('https://samuelschapiro.substack.com/feed')
-      .then(response => response.text())
-      .then(str => {
-        // Parse the XML feed
+    // Use AllOrigins to bypass CORS issues.
+    // AllOrigins URL structure: 
+    // https://api.allorigins.hexocode.repl.co/get?disableCache=true&url=[ENCODED_URL]
+    const feedUrl = encodeURIComponent("https://samuelschapiro.substack.com/feed");
+    const proxyUrl = `https://api.allorigins.hexocode.repl.co/get?disableCache=true&url=${feedUrl}`;
+
+    fetch(proxyUrl)
+      .then(response => response.json())
+      .then(data => {
+        // data.contents contains the feed XML as a string
         const parser = new DOMParser();
-        const xml = parser.parseFromString(str, "application/xml");
-        // Typically, RSS items are contained in <item> elements
+        const xml = parser.parseFromString(data.contents, "application/xml");
         const items = xml.querySelectorAll("item");
         const grid = document.getElementById("essays-grid");
 
@@ -124,14 +128,13 @@
           const title = item.querySelector("title").textContent;
           const link = item.querySelector("link").textContent;
           const pubDate = item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : "";
-          // Some feeds may use <description> for summary; you might also check for <content:encoded>
           const description = item.querySelector("description") ? item.querySelector("description").textContent : "";
 
-          // Create a card element
+          // Create the essay card
           const card = document.createElement("div");
           card.classList.add("essay-card");
 
-          // Title as a clickable link
+          // Title with clickable link
           const h3 = document.createElement("h3");
           const a = document.createElement("a");
           a.href = link;
@@ -145,14 +148,16 @@
             pDate.textContent = new Date(pubDate).toLocaleDateString();
           }
 
-          // Excerpt/description
+          // Essay excerpt/description
           const pDesc = document.createElement("p");
           pDesc.innerHTML = description;
 
+          // Append elements to the card
           card.appendChild(h3);
           if(pubDate) card.appendChild(pDate);
           card.appendChild(pDesc);
 
+          // Append card to grid
           grid.appendChild(card);
         });
       })
