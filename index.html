@@ -466,12 +466,12 @@
 
         %% Philosophy hyperedge
         PH(( ))
-        A(Philosophy of Science)
-        B(Metaphysics)
-        C(Epistemology)
-        D(Political Philosophy)
-        E(Moral Philosophy)
-        F(Philosophy of Culture)
+        A@{ shape: procs, label: "Philosophy of Science" }
+        B@{ shape: procs, label: "Metaphysics" }
+        C@{ shape: procs, label: "Epistemology" }
+        D@{ shape: procs, label: "Political Philosophy" }
+        E@{ shape: procs, label: "Moral Philosophy" }
+        F@{ shape: procs, label: "Philosophy of Culture" }
         A --- PH
         B --- PH
         C --- PH
@@ -482,9 +482,9 @@
 
         %% Psychology & Creativity hyperedge
         PC(( ))
-        G(Theoretical Psychology)
-        H(Creativity)
-        I(Cognitive Science)
+        G@{ shape: procs, label: "Theoretical Psychology" }
+        I@{ shape: procs, label: "Cognitive Science" }
+        H@{ shape: procs, label: "Creativity" }
         G --- PC
         H --- PC
         I --- PC
@@ -492,7 +492,7 @@
 
         %% STEM hyperedge
         ST(( ))
-        J(Computer Science)
+        J@{ shape: procs, label: "Computer Science" }
         K["<div style='max-width: 400px; 
                    margin: 0 auto; 
                    display: inline-block;
