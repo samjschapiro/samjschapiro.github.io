@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/headshot.jpeg" type="image/jpeg">
+  <title>Essays by Samuel Schapiro</title>
+  <style>
+    /* Google Fonts Import */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
+
+    /* General Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Lora', serif;
+      background-color: #121212;
+      color: #eaeaea;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #f5f5f5;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      color: #aaaaaa;
+      max-width: 700px;
+      margin: 10px auto;
+    }
+
+    /* Essays Grid (similar to Bookshelf Grid) */
+    .essays-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Essay Card Styling (similar to Book Card) */
+    .essay-card {
+      display: flex;
+      flex-direction: column;
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Lora', serif;
+      overflow: hidden;
+    }
+    
+    .essay-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .essay-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #f5f5f5;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    
+    .essay-card p {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: #bdbdbd;
+      margin: 5px 0;
+    }
+    
+    .essay-card a {
+      color: #f5f5f5;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .essay-card a:hover {
+      color: #F08679;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Essays</h1>
+    <p>Read my latest essays from Substack</p>
+  </header>
+  <div class="essays-grid" id="essays-grid">
+    <!-- Essay cards will be dynamically inserted here -->
+  </div>
+
+  <script>
+    // Fetch the Substack RSS feed
+    fetch('https://samuelschapiro.substack.com/feed')
+      .then(response => response.text())
+      .then(str => {
+        // Parse the XML feed
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(str, "application/xml");
+        // Typically, RSS items are contained in <item> elements
+        const items = xml.querySelectorAll("item");
+        const grid = document.getElementById("essays-grid");
+
+        items.forEach(item => {
+          const title = item.querySelector("title").textContent;
+          const link = item.querySelector("link").textContent;
+          const pubDate = item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : "";
+          // Some feeds may use <description> for summary; you might also check for <content:encoded>
+          const description = item.querySelector("description") ? item.querySelector("description").textContent : "";
+
+          // Create a card element
+          const card = document.createElement("div");
+          card.classList.add("essay-card");
+
+          // Title as a clickable link
+          const h3 = document.createElement("h3");
+          const a = document.createElement("a");
+          a.href = link;
+          a.target = "_blank";
+          a.textContent = title;
+          h3.appendChild(a);
+
+          // Publication date
+          const pDate = document.createElement("p");
+          if(pubDate) {
+            pDate.textContent = new Date(pubDate).toLocaleDateString();
+          }
+
+          // Excerpt/description
+          const pDesc = document.createElement("p");
+          pDesc.innerHTML = description;
+
+          card.appendChild(h3);
+          if(pubDate) card.appendChild(pDate);
+          card.appendChild(pDesc);
+
+          grid.appendChild(card);
+        });
+      })
+      .catch(err => console.error("Error fetching or parsing feed: ", err));
+  </script>
+</body>
+</html>
