@@ -459,3 +459,136 @@
          max-height: 180px;
      }
  }
+
+ /* New section */
+
+ * Topic Section Container */
+.topic-section {
+  margin-bottom: 40px;
+}
+
+/* Topic Header (title + see all link) */
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.topic-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.topic-header a {
+  font-size: 1rem;
+  color: #eaeaea;
+  text-decoration: none;
+  border-bottom: 1px dotted #888; /* subtle underline style, optional */
+}
+
+.topic-header a:hover {
+  color: #f5f5f5;
+  border-bottom-color: #f5f5f5;
+}
+
+/* Content Flex Container */
+.topic-content {
+  display: flex;
+  gap: 20px; /* space between left and right columns */
+}
+
+/* Left Column with multiple items */
+.topic-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right Column with highlight + recommendations */
+.topic-right {
+  width: 300px; /* fixed or flexible, your choice */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards */
+.item-card,
+.highlight-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.item-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.item-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.item-card p {
+  margin-bottom: 8px;
+}
+
+.item-card .date {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Highlight Card */
+.highlight-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.highlight-card p {
+  margin: 0;
+}
+
+/* Recommendations */
+.recommendations {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.recommendations h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+}
+
+.recommendations ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recommendations li {
+  margin-bottom: 5px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .topic-content {
+    flex-direction: column;
+  }
+  .topic-right {
+    width: 100%; /* stack under the left column */
+  }
+}
