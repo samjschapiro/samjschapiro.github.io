@@ -126,19 +126,19 @@
         <div class="topic-content">
             <!-- Left column: multiple items -->
             <div class="topic-left">
-                <div class="item-card">
+                <div class="item-card" data-url="https://example.com/project1">
                     <img src="images/autonomous_cognition.jpg" alt="Groundwork Cover">
                     <h3>Groundwork for the Autonomy of Cognition</h3>
                     <p>A formal explanation of the forces that antecede cognition.</p>
                     <span class="date">Mar 23, 2025</span>
                 </div>
-                <div class="item-card">
+                <div class="item-card" data-url="https://example.com/project1">
                     <img src="images/book-cover2.jpg" alt="Object and Mimetic Cathexes">
                     <h3>Object and Mimetic Cathexes</h3>
                     <p>A mimetic process elaboration. How do we ...</p>
                     <span class="date">Oct 15, 2024</span>
                 </div>
-                <div class="item-card">
+                <div class="item-card" data-url="https://example.com/project1">
                     <img src="images/book-cover3.jpg" alt="Aphorisms on Intelligence">
                     <h3>Aphorisms On Intelligence, Science, and Causality</h3>
                     <p>The hallmark of a science is how much it can ...</p>
@@ -171,7 +171,7 @@
         <div class="topic-content">
             <!-- Left column: multiple items -->
             <div class="topic-left">
-                <div class="item-card">
+                <div class="item-card" data-url="https://example.com/project1">
                     <img src="images/sam_gda.png" alt="SAM GDA">
                     <h3>Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Gradual Domain
                         Adaptation</h3>
@@ -679,6 +679,19 @@
 
         </div>
     </section>
+
+    <script>
+        // Attach click event listeners to all item cards
+        document.querySelectorAll('.item-card').forEach(card => {
+          card.style.cursor = 'pointer'; // show pointer cursor
+          card.addEventListener('click', function() {
+            const url = this.dataset.url;
+            if (url) {
+              window.location.href = url;
+            }
+          });
+        });
+      </script>
 
     <script>
         // Get the projects sort dropdown, projects container, and all project cards
