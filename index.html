@@ -173,7 +173,8 @@
             <div class="topic-left">
                 <div class="item-card">
                     <img src="images/sam_gda.png" alt="SAM GDA">
-                    <h3>Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Gradual Domain Adaptation</h3>
+                    <h3>Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Gradual Domain
+                        Adaptation</h3>
                     <p>A formal explanation of the forces that antecede cognition.</p>
                     <span class="date">Mar 23, 2025</span>
                 </div>
@@ -678,6 +679,26 @@
 
         </div>
     </section>
+
+    <script>
+        // Intersection Observer to fade-in each topic section upon scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.topic-section');
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        obs.unobserve(entry.target); // animate only once
+                    }
+                });
+            }, {
+                threshold: 0.1 // trigger when 10% of section is visible
+            });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
 
     <script>
         // Get the projects sort dropdown, projects container, and all project cards
