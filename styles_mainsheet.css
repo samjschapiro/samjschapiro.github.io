@@ -512,7 +512,7 @@
  .topic-left {
      flex: 1;
      display: grid;
-     grid-template-columns: repeat(auto-fill, 300px);
+     grid-template-columns: repeat(auto-fill, 330px);
      gap: 20px;
      justify-content: start;
      /* or center if you want them centered in leftover space */
@@ -520,7 +520,7 @@
 
  /* Each item card in the left column */
  .item-card {
-     width: 350px;
+     width: 330px;
      /* Ensure the card is exactly 300px wide */
      background-color: #1e1e1e;
      border: 1px solid #333;
