@@ -532,6 +532,7 @@
      border: 1px solid #333;
      border-radius: 6px;
      padding: 10px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
 
  .item-card img {
@@ -551,6 +552,7 @@
      overflow: hidden;
      /* hide any overflow */
      margin-bottom: 8px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
 
  .item-card h3 {
