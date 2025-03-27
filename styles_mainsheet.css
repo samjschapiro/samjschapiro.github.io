@@ -520,7 +520,7 @@
 
  /* Each item card in the left column */
  .item-card {
-     width: 300px;
+     width: 350px;
      /* Ensure the card is exactly 300px wide */
      background-color: #1e1e1e;
      border: 1px solid #333;
