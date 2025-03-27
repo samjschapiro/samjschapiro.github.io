@@ -534,39 +534,25 @@
      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
  }
 
-
- .item-card img {
-     width: 100%;
-     /* fills the 300px container */
-     height: auto;
-     border-radius: 6px;
-     margin-bottom: 8px;
-     object-fit: cover;
- }
-
-
- image-container {
-     width: 100%;
-     /* Matches .item-card’s 300px width */
-     height: 200px;
-     /* Fixed height to enforce aspect ratio */
-     overflow: hidden;
-     /* Hide any overflow */
-     border-radius: 6px;
-     /* Optional: match the card’s rounding */
-     margin-bottom: 8px;
-     position: relative;
-     /* (Optional) if you want absolutely positioned children */
- }
-
- .image-container img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     /* Crop & zoom to fill container */
-     display: block;
- }
-
+ .image-container {
+    width: 300px;        /* Match item-card width */
+    height: 200px;       /* Fixed height for consistent ratio */
+    position: relative;  /* So we can absolutely position the img */
+    overflow: hidden;    /* Hide any cropped parts of the image */
+    border-radius: 6px;  /* If you want the same rounding as the card */
+    margin-bottom: 8px;
+  }
+  
+  /* The image is absolutely positioned to fill the container */
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;        /* Force it to fill horizontally */
+    height: 100%;       /* Force it to fill vertically */
+    object-fit: cover;  /* Crop/zoom to fill the container area */
+    display: block;
+  }
 
  /* Hover Effect */
  .image-container:hover {
