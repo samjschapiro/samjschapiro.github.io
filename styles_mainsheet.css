@@ -419,12 +419,6 @@
      /* Smooth hover animation */
  }
 
- .book-card img:hover {
-     transform: scale(1.05);
-     /* Slight zoom-in on hover */
-     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-     /* Enhance shadow on hover */
- }
 
  .book-card h3 {
      font-family: 'Playfair Display', serif;
@@ -535,6 +529,12 @@
      transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
 
+ .item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
  .item-card img {
      width: 100%;
      /* fills the 300px container */
@@ -553,7 +553,16 @@
      /* hide any overflow */
      margin-bottom: 8px;
      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
  }
+
+
+/* Hover Effect */
+.image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
 
  .item-card h3 {
      font-family: 'Playfair Display', serif;
