@@ -1,0 +1,461 @@
+ /* Google Fonts Import */
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
+
+ .announcement-banner {
+     width: 100%;
+     overflow: hidden;
+     white-space: nowrap;
+     background-color: #1e1e1e;
+     border-bottom: 1px solid #444;
+     color: #f5f5f5;
+     font-family: 'Playfair Display', serif;
+     font-size: 1rem;
+     padding: 8px 0;
+     position: relative;
+     z-index: 1000;
+ }
+
+ .scrolling-text {
+     display: inline-block;
+     padding-left: 100%;
+     animation: scroll-left 15s linear infinite;
+ }
+ .scrolling-text a {
+     text-decoration: none;
+     color: inherit;
+     cursor: pointer;
+ }
+
+ @keyframes scroll-left {
+     from {
+         transform: translateX(0);
+     }
+
+     to {
+         transform: translateX(-100%);
+     }
+ }
+
+ /* Wrapper that holds both the diagram and the floating bio card */
+ .diagram-wrapper {
+     position: relative;
+     /* So we can absolutely position the bio card within it */
+     min-height: 600px;
+     /* Ensure there's enough vertical space for the diagram */
+     text-align: left;
+     /* Left-align content */
+     background: transparent;
+ }
+
+ /* Mermaid container with transparent background (inherit page color) */
+ .mermaid-container {
+     background: transparent;
+     border: none;
+     border-radius: 0;
+     padding: 0;
+     max-width: 100%;
+     overflow-x: auto;
+ }
+
+ /* Absolutely positioned bio card in bottom-right corner */
+ .bio-card {
+     position: absolute;
+     bottom: 20px;
+     right: 20px;
+     width: 400px;
+     background-color: inherit;
+     /* Inherits #121212 from parent */
+     /* Same style as your site */
+     padding: 15px;
+     z-index: 10;
+     /* Ensure it floats on top of diagram */
+     font-family: 'Courier New', Courier, monospace;
+ }
+
+ .bio-card img {
+     width: 60px;
+     height: 60px;
+     object-fit: cover;
+     display: block;
+     margin-bottom: 10px;
+ }
+
+ .bio-card p {
+     margin: 5px 0;
+ }
+
+ .bio-card a {
+     color: inherit;
+     text-decoration: none;
+ }
+
+ /* General Reset */
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ .mermaid {
+     margin-top: 20pt;
+ }
+
+ .ascii-diagram {
+     font-family: monospace;
+     white-space: pre;
+     /* Preserve the ASCII layout */
+     overflow-x: auto;
+     /* Enable horizontal scrolling on small screens */
+     margin: 20px auto;
+     max-width: 100%;
+     padding: 10px;
+     border: 1px solid #333;
+     border-radius: 4px;
+     background-color: #1e1e1e;
+ }
+
+ .diagram-description {
+     font-size: 1rem;
+     color: #bdbdbd;
+     text-align: center;
+     margin-top: 10px;
+ }
+
+ /* Optional: reduce font-size for smaller screens */
+ @media (max-width: 600px) {
+     .ascii-diagram {
+         font-size: 0.8rem;
+     }
+ }
+
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #1e1e1e;
+     padding: 10px 20px;
+     position: sticky;
+     top: 0;
+     z-index: 100;
+ }
+
+ .nav-brand {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     /* Space between photo and text */
+ }
+
+ .brand-link {
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     /* No underline */
+     color: inherit;
+     /* Inherit text color from parent */
+ }
+
+
+ .brand-photo {
+     width: 1.5em;
+     height: 1.5em;
+     object-fit: cover;
+     /* Ensures the image is cropped if needed */
+     border-radius: 2px;
+     /* Slight rounding of corners (optional) */
+     margin-right: 12px;
+     /* Adjust this for more/less space */
+     vertical-align: middle;
+ }
+
+ .nav-brand span {
+     font-family: 'Playfair Display', serif;
+     font-size: 1.5rem;
+     /* Adjust to your desired text size */
+     color: #f5f5f5;
+ }
+
+ /* Example nav-links styling (adjust as needed) */
+ .nav-links {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+     margin: 0;
+     padding: 0;
+ }
+
+ .nav-links li a {
+     font-family: 'Lora', serif;
+     color: #eaeaea;
+     text-decoration: none;
+     font-size: 1rem;
+     transition: color 0.3s ease, background 0.3s ease;
+     padding: 5px 10px;
+     border-radius: 4px;
+ }
+
+ .nav-links li a:hover {
+     background-color: #2a2a2a;
+     color: #f5f5f5;
+ }
+
+ /* Mobile adjustments */
+ @media (max-width: 600px) {
+     .nav-brand {
+         font-size: 1.3rem;
+     }
+
+     .nav-links li a {
+         font-size: 0.9rem;
+         padding: 5px 8px;
+     }
+ }
+
+ /* Body Styling */
+ body {
+     font-family: 'Lora', serif;
+     /* Elegant serif for body text */
+     background-color: #121212;
+     color: #eaeaea;
+     line-height: 1.6;
+     padding: 20px;
+ }
+
+ section {
+     margin: 40px 0;
+     padding: 30px 20px;
+     border-radius: 8px;
+ }
+
+ /* Header */
+ header {
+     text-align: center;
+     margin-bottom: 30px;
+ }
+
+ header h1 {
+     font-family: 'Playfair Display', serif;
+     /* Romantic and fantasy-like heading */
+     font-size: 3rem;
+     color: #f5f5f5;
+     font-weight: 700;
+     letter-spacing: 1px;
+ }
+
+ header h2 {
+     font-family: 'Playfair Display', serif;
+     /* Romantic and fantasy-like heading */
+     font-size: 2rem;
+     color: #f5f5f5;
+     font-weight: 700;
+     letter-spacing: 1px;
+ }
+
+ header p {
+     font-family: 'Lora', serif;
+     /* Elegant serif for subtext */
+     font-size: 1.1rem;
+     color: #aaaaaa;
+     max-width: 700px;
+     margin: 10px auto;
+ }
+
+ /* Sort Section */
+ .sort-section {
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     margin: 20px 0;
+     font-family: 'Lora', serif;
+ }
+
+ .sort-section label {
+     margin-right: 10px;
+     font-weight: 600;
+     font-family: 'Playfair Display', serif;
+ }
+
+ .sort-section select {
+     background-color: #1e1e1e;
+     color: #eaeaea;
+     border: 1px solid #333;
+     padding: 5px 10px;
+     border-radius: 5px;
+     font-family: 'Lora', serif;
+ }
+
+ .bookshelf.section h2 {
+     font-family: 'Playfair Display', serif;
+     font-size: 2rem;
+     color: #f5f5f5;
+     margin-bottom: 20px;
+     text-align: center;
+ }
+
+ /* Bookshelf Grid */
+ .bookshelf {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     gap: 20px;
+ }
+
+ /* Bookshelf Section: Darkest gray */
+ .bookshelf-section {
+     border: 1px solid #2a2a2a;
+     background-color: #1c1c1c;
+     /* Darkest gray */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ }
+
+
+ /* Book Card Styles */
+ .book-card {
+     display: flex;
+     flex-direction: column;
+     background-color: #1e1e1e;
+     border: 1px solid #333;
+     border-radius: 8px;
+     padding: 15px;
+     text-align: center;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     font-family: 'Lora', serif;
+     overflow: hidden;
+     /* Prevents overflow from any child elements */
+ }
+
+ /* Book Card Image Wrapper */
+ .image-wrapper {
+     position: relative;
+     /* Creates a stacking context for the badge */
+     display: flex;
+     justify-content: flex-start;
+     /* Aligns badge in the top-left */
+     align-items: flex-start;
+     /* Aligns badge in the top-left */
+ }
+
+ /* Book Card Image */
+ .image-wrapper img {
+     width: 100%;
+     border-radius: 8px;
+     object-fit: cover;
+     display: block;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ /* Hover Effect */
+ .image-wrapper img:hover {
+     transform: scale(1.05);
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+ }
+
+ /* Date Badge */
+ .date-badge {
+     position: absolute;
+     top: 10px;
+     /* Position the badge in the top-left corner */
+     left: 10px;
+     background-color: rgba(0, 0, 0, 0.8);
+     /* Semi-transparent black background */
+     color: #fff;
+     /* White text for readability */
+     padding: 5px 10px;
+     /* Inner padding */
+     border-radius: 4px;
+     /* Subtle rounded corners */
+     font-size: 0.8rem;
+     /* Small, readable text */
+     font-weight: bold;
+     z-index: 2;
+     /* Ensures the badge is on top of the image */
+     pointer-events: none;
+     /* Prevents badge from interfering with hover effects */
+ }
+
+ .image-wrapper:hover .date-badge {
+     transform: scale(1.05);
+ }
+
+ /* Book Card Image */
+ .book-card img {
+     width: 100%;
+     /* Full width of the card */
+     border-radius: 8px;
+     /* Matches the card's rounded corners */
+     object-fit: cover;
+     /* Ensures image fits neatly */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     /* Subtle shadow for depth */
+     margin-bottom: 10px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ /* Book Card Image Hover */
+ .book-card img:hover {
+     transform: scale(1.05);
+     /* Zoom-in effect */
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+     /* Enhance shadow on hover */
+ }
+
+ .book-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+ }
+
+ .book-card img {
+     width: 100%;
+     /* Ensure the image takes up the full width of the card */
+     border-radius: 8px;
+     /* Add rounded corners for a polished look */
+     object-fit: contain;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     /* Add subtle shadow for depth */
+     margin-bottom: 10px;
+     /* Add space between the image and the content below */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     /* Smooth hover animation */
+ }
+
+ .book-card img:hover {
+     transform: scale(1.05);
+     /* Slight zoom-in on hover */
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+     /* Enhance shadow on hover */
+ }
+
+ .book-card h3 {
+     font-family: 'Playfair Display', serif;
+     /* Fantasy feel for titles */
+     font-size: 1.3rem;
+     color: #f5f5f5;
+     margin-bottom: 5px;
+     font-weight: 600;
+ }
+
+ .book-card p {
+     font-family: 'Lora', serif;
+     font-size: 1rem;
+     color: #bdbdbd;
+     margin: 3px 0;
+ }
+
+ .category {
+     font-family: 'Playfair Display', serif;
+     font-size: 0.9rem;
+     color: #888;
+     margin-top: 5px;
+     font-style: italic;
+ }
+
+ /* Responsive */
+ @media (max-width: 600px) {
+     header h1 {
+         font-size: 2.5rem;
+     }
+
+     .book-card img {
+         max-height: 180px;
+     }
+ }
