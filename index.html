@@ -173,14 +173,15 @@
             <div class="topic-left">
                 <div class="item-card" data-url="https://arxiv.org/abs/2412.05169">
                     <img src="images/sam_gda.png" alt="SAM GDA">
-                    <h3>Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization</h3>
-                    <p>Empirical and theoretical investigation of the properties of SAM variants in OOD generalization settings.</p>
+                    <h3>Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for
+                        Out-of-Distribution Generalization</h3>
+                    <p>Empirical and theoretical investigation of the properties of SAM variants in OOD generalization
+                        settings.</p>
                     <span class="date">Under Review at TMLR 2025</span>
                 </div>
-            </div>
-            <div class="topic-left">
-                <div class="item-card" data-url="https://samuelschapiro.substack.com/p/artificial-creativity-and-todays">
-                    <img src="images/creativity_photo.webp" alt="SAM GDA">
+                <div class="item-card"
+                    data-url="https://samuelschapiro.substack.com/p/artificial-creativity-and-todays">
+                    <img src="images/creativity_photo.webp" alt="Artifical Creativity">
                     <h3>Artificial Creativity and Today's AI</h3>
                     <p>The hardest skill for AI to learn is the "autonomous determination of ends."</p>
                     <span class="date">Feb 22, 2025</span>
@@ -690,15 +691,15 @@
     <script>
         // Attach click event listeners to all item cards
         document.querySelectorAll('.item-card').forEach(card => {
-          card.style.cursor = 'pointer'; // show pointer cursor
-          card.addEventListener('click', function() {
-            const url = this.dataset.url;
-            if (url) {
-              window.location.href = url;
-            }
-          });
+            card.style.cursor = 'pointer'; // show pointer cursor
+            card.addEventListener('click', function () {
+                const url = this.dataset.url;
+                if (url) {
+                    window.location.href = url;
+                }
+            });
         });
-      </script>
+    </script>
 
     <script>
         // Get the projects sort dropdown, projects container, and all project cards
