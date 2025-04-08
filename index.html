@@ -707,8 +707,6 @@
                 <p class="category">Philosophy of Morality and Culture</p>
             </div>
 
-            
-
             <div class="book-card" data-title="Self Reliance" data-author="Ralph Waldo Emerson"
                 data-category="Philosophy of Morality and Culture" data-rating=8 data-date="202504">
                 <div class="image-wrapper">
@@ -769,35 +767,6 @@
                     window.location.href = url;
                 }
             });
-        });
-    </script>
-
-    <script>
-        // Get the projects sort dropdown, projects container, and all project cards
-        const projectSortDropdown = document.getElementById('projectSort');
-        const projectsContainer = document.getElementById('projects');
-        const projectCards = Array.from(document.querySelectorAll('.project-card'));
-
-        projectSortDropdown.addEventListener('change', () => {
-            const sortBy = projectSortDropdown.value;
-
-            // Sort project cards based on selected option
-            const sortedProjects = projectCards.sort((a, b) => {
-                if (sortBy === 'date') {
-                    // Assume data-date is a numeric string (e.g., "202405")
-                    const aValue = parseFloat(a.dataset.date);
-                    const bValue = parseFloat(b.dataset.date);
-                    return aValue - bValue; // Descending order
-                } else if (sortBy === 'category') {
-                    const aCat = a.dataset.category.toLowerCase();
-                    const bCat = b.dataset.category.toLowerCase();
-                    return aCat.localeCompare(bCat);
-                }
-            });
-
-            // Clear the projects container and re-append sorted cards
-            projectsContainer.innerHTML = '';
-            sortedProjects.forEach(card => projectsContainer.appendChild(card));
         });
     </script>
 
