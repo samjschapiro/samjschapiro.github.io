@@ -1,11 +1,11 @@
 ---
-title: "Teaching"
-subtitle: "I teach."
+title: "Bookshelf"
+subtitle: "Pour inventer, il faut penser à côté."
 title-block-banner: false
 ---
 
 
-## Class 1
+## Philosophy of Science, Epistemology, and Metaphysics
 
 ::: {.grid}
 
@@ -18,14 +18,28 @@ title-block-banner: false
 
 [Fall 2024](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
 
-Class 1 introduction.
+Conjectures and Refutations: The Growth of Scientific Knowledge, _Karl Popper_
 
 :::
 
+::: {.g-col-12 .g-col-md-2}
+![](files/images/placeholder1.jpg)
+
+:::
+
+::: {.g-col-12 .g-col-md-10}
+
+[Fall 2024](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
+
+Conceptual Revolutions, _Paul Thagard_
+
 :::
 
 
-## Class 2
+:::
+
+
+## Creativity and Cognitive Science
 
 ::: {.grid}
 
@@ -44,8 +58,13 @@ Class 2 introduction.
 
 :::
 
+## Mathematics
 
-## Class 3
+
+## Political Philosophy
+
+
+## Philosophy of Morality and Culture
 
 ::: {.grid}
 

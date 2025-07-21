@@ -12,6 +12,6 @@ image: "/files/images/placeholder2.JPG"
 [![](/files/images/placeholder2.JPG){width="90%"}](https://drganghe.github.io/quarto-academic-website-template/)
 
 
-<!--Include social share buttons-->
+<!--Include social share buttons
 
-{{< include /files/includes/_socialshare.qmd >}}
+{{< include /files/includes/_socialshare.qmd >}} -->
