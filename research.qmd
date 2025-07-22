@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+title: "Research"
 description-meta: "Information, pdfs, and social metrics of papers"
 #page-layout: full
 #back-to-top-navigation: true

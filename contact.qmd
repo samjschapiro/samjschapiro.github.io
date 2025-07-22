@@ -8,17 +8,14 @@ title-block-banner: false
 
 **Quarto Academic**
 
-School
+Spiral Works
 
-College
-
-University
 
 Address: 
 
 Phone: 
 
-E-mail: 
+E-mail: sam@spiralworks.ai
 
 
 </center>

@@ -17,18 +17,16 @@ website:
     left:   # You can comment out all navigation items here if you just like to keep the index page only
 #      - text: Home
 #        href: index.qmd
-      - text: About
-        menu:
-          # - text: News
-          #   href: posts.qmd#category=news
-          # - text: Events
-          #   href: posts.qmd#category=event      
-          - text: Contact
-            href: contact.qmd             
-      - text: Research
-        menu:
-          - text: List of Publications
-            href: publications.qmd
+      # - text: About
+      #   menu:
+      #     # - text: News
+      #     #   href: posts.qmd#category=news
+      #     # - text: Events
+      #     #   href: posts.qmd#category=event      
+      #     - text: Contact
+      #       href: contact.qmd             
+      # - text: Research
+      #   href: research.qmd
           # - text: Selected Papers
           #   href: posts.qmd#category=paper
           # - text: Grants
