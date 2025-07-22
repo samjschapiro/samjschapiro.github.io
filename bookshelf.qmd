@@ -279,6 +279,62 @@ Rating: 8/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71jY9z9z+hL._AC_UY436_FMwebp_QL65_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O5: On Liberty**
+
+John Stuart Mill
+
+Date Read: 02/2025
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41btamn2qqL._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O4: Discourse on the Origin of Inequality**
+
+Jean-Jacques Rousseau
+
+Date Read: 01/2025
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71Zd1ixazOL._SY522_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O3: The Declaration of Independence, Constitution, and Bill of Rights**
+
+The Founding Fathers
+
+Date Read: 11/2024
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://book-assets.openroadmedia.com/9781504035460.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O2: The Social Contract**
+
+Jean-Jacques Rousseau
+
+Date Read: 11/2024
+
+Rating: 10/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/41kq+uNSq0L._SY445_SX342_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
@@ -303,11 +359,235 @@ Rating: 2/10
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**The Technological Republic**
+**N17: The Technological Republic**
 
 Alex Karp
 
 Date Read: Ongoing
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61zrzqHfhvL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N16: The Birth of Tragedy**
+
+Friedrich Nietzsche
+
+Date Read: 06/2025
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61OgaWLePZL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N15: Self Reliance**
+
+Ralph Waldo Emerson
+
+Date Read: 04/2025
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51Sb1KRTc5L._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N14: When These Things Begin**
+
+René Girard
+
+Date Read: 03/2025
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41yajhkUCTL._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N13: The Critique of Practical Reason**
+
+Immanuel Kant
+
+Date Read: 03/2025
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/812F1fXCtbL._SL1500_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N12: The Undiscovered Self**
+
+Carl Jung
+
+Date Read: 01/2025
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41Ljdh2R10L._SY445_SX342_PQ25_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N11: The Dawn of Day: Thoughts on the Prejudices of Morality**
+
+Friedrich Nietzsche
+
+Date Read: 01/2025
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/7134slNBRKL._AC_UY218_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N10: Groundwork of the Metaphysics of Morals**
+
+Immanuel Kant
+
+Date Read: 01/2025
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://assets.lulu.com/cover_thumbs/1/2/125ggy-front-shortedge-384.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N9: Industrial Society and its Future**
+
+Theodore Kacszynski
+
+Date Read: 12/2025
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51oMlfPgTGL._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N8: The Future of an Illusion**
+
+Sigmund Freud
+
+Date Read: 11/2024
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51yYOdbGjLL._AC_UY218_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N7: The Antichrist**
+
+Friedrich Nietzsche
+
+Date Read: 11/2024
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/716huk49RJL._AC_UY436_FMwebp_QL65_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N6: The Gay Science**
+
+Friedrich Nietzsche
+
+Date Read: 10/2024
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61MAIDlBseL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N5: Human, All Too Human**
+
+Friedrich Nietzsche
+
+Date Read: 10/2024
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/81pjGZRGaeL._AC_UY436_FMwebp_QL65_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N4: The Genealogy of Morals**
+
+Friedrich Nietzsche
+
+Date Read: 10/2024
+
+Rating: 10/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51AdOCIDPjL._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N3: Twilight of the Idols**
+
+Friedrich Nietzsche
+
+Date Read: 09/2024
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41szolWxmgL._SY580_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N2: Beyond Good and Evil**
+
+Friedrich Nietzsche
+
+Date Read: 08/2024
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61K0H9NMqDL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N1: Civilization and its Discontents**
+
+Sigmund Freud
+
+Date Read: 07/2024
 
 Rating: 9/10
 
@@ -317,6 +597,76 @@ Rating: 9/10
 ## Theoretical Psychology
 
 ::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41vFB4lW+6L._SY466_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**T6: The Problem of Anxiety**
+
+Sigmund Freud
+
+Date Read: 06/2025
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/716kKs0kkoL._SL1500_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**T5: Religions, Values, and Peak Experiences**
+
+Abraham Maslow
+
+Date Read: 03/2025
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71H17eYwwTL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**T4: Group Psychology and Analysis of the Ego**
+
+Sigmund Freud
+
+Date Read: 07/2024
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61qJ0faL5-L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**T3: A Theory of Human Motivation**
+
+Abraham Maslow
+
+Date Read: 07/2024
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61DvlUS31dL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**T2: The Ego and the Id**
+
+Sigmund Freud
+
+Date Read: 07/2024
+
+Rating: 7/10
+
+:::
 ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg)
 :::
@@ -332,4 +682,3 @@ Rating: 6/10
 
 :::
 :::
-
