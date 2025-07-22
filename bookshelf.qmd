@@ -8,79 +8,328 @@ title-block-banner: false
 ## Philosophy of Science, Epistemology, and Metaphysics
 
 ::: {.grid}
-
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder1.jpg)
-
+![](https://m.media-amazon.com/images/I/61eM66jXpFL._SY466_.jpg)
 :::
-
 ::: {.g-col-12 .g-col-md-10}
 
-[Fall 2024](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
+**E10: Conjectures and Refutations: The Growth of Scientific Knowledge**
 
-Conjectures and Refutations: The Growth of Scientific Knowledge, _Karl Popper_
+Karl Popper
+
+Date Read: Ongoing
+
+Rating: 10/10
 
 :::
-
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder1.jpg)
-
+![](https://pup-assets.imgix.net/onix/images/9780691024905.jpg)
 :::
-
 ::: {.g-col-12 .g-col-md-10}
 
-[Fall 2024](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
+**E9: Conceptual Revolutions**
 
-Conceptual Revolutions, _Paul Thagard_
+Paul Thagard
+
+Date Read: 06/2025
+
+Rating: 9/10
 
 :::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/81c1E-S6wtL._SY466_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
 
+**E8: Incommensurability in Science**
+
+Thomas S. Kuhn
+
+Date Read: 06/2025
+
+Rating: 6/10
 
 :::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51jZwr1bjUL._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
 
+**E7: Prolegomena to Any Future Metaphysics**
+
+Immanuel Kant
+
+Date Read: 01/2025
+
+Rating: 10/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/419z9fGWvtL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+
+**E6: The Structure of Scientific Revolutions**
+
+Thomas S. Kuhn
+
+Date Read: 12/2024
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://upittpress.org/wp-content/uploads/2022/02/9780822964568-scaled-381x555.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+
+**E5: The Foundations of Scientific Inference**
+
+Wesley Salmon
+
+Date Read: 10/2024
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41ixw9l+t0L._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**E4: The World as Will and Representation**
+
+Arthur Schopenhauer
+
+Date Read: 10/2024
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/81HFexTeoXL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**E3: The Critique of Pure Reason**
+
+Immanuel Kant
+
+Date Read: 09/2024
+
+Rating: 10/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51f6vAE6rVL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**E2: The Principles of Genetic Epistemology**
+
+Jean Piaget
+
+Date Read: 07/2024
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/614rftNyAaL._AC_UF350,350_QL50_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**E1: Computational Philosophy of Science**
+
+Paul Thagard
+
+Date Read: 06/2024
+
+Rating: 6/10
+
+:::
+:::
 
 ## Creativity and Cognitive Science
 
 ::: {.grid}
-
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder2.JPG)
-
+![](https://m.media-amazon.com/images/I/51-cC40nYjL._SY445_SX342_.jpg)
 :::
-
 ::: {.g-col-12 .g-col-md-10}
 
-[Spring 2025](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
+**C5: The Way We Think: Conceptual Blending**
 
-Class 2 introduction.
+Gilles Fauconnier and Mark Turner
+
+Date Read: 05/2025
+
+Rating: 7/10
 
 :::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
 
+**C4: Flight From Wonder: An Investigation into Scientific Creativity**
+
+Albert Rothenberg
+
+Date Read: 09/2024
+
+Rating: 3/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C3: The Creative Mind: Myths and Mechanisms**
+
+Margaret Boden
+
+Date Read: 09/2024
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387703037i/30676.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C2: The Act of Creation**
+
+Arthur Koestler
+
+Date Read: 06/2024
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C1: Creativity in Science: Chance, Logic, Genius, and Zeitgeist**
+
+Dean Keith Simonton
+
+Date Read: 05/2024
+
+Rating: 8/10
+
+:::
 :::
 
 ## Mathematics
 
+::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61Pig8o8BvL._SY425_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**M3: Information Theory, Inference, and Learning Algorithms**
+
+David MacKay
+
+Date Read: Ongoing
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71ger1O8m8L._SY522_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**M2: High Dimensional Probability**
+
+Roman Vershynin
+
+Date Read: 11/2023
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61EAVnULjUL._SY522_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**M1: Understanding Machine Learning: From Theory to Algorithms**
+
+Shai Shalev-Shwartz and Shai Ben-David
+
+Date Read: 08/2023
+
+Rating: 8/10
+
+:::
+:::
+
 
 ## Political Philosophy
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41kq+uNSq0L._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O1: Propaganda**
+
+Edward Bernays
+
+Date Read: 11/2024
+
+Rating: 2/10
+
+:::
+:::
 
 
 ## Philosophy of Morality and Culture
 
 ::: {.grid}
-
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder3.JPG)
-
+![](https://m.media-amazon.com/images/I/81l0O6Sz6dL._SY466_.jpg)
 :::
-
 ::: {.g-col-12 .g-col-md-10}
 
-[Spring 2025](https://www.google.com), &nbsp; [Spring 2024](https://www.google.com)
+**The Technological Republic**
 
-Class 3 introduction. 
+Alex Karp
+
+Date Read: Ongoing
+
+Rating: 9/10
 
 :::
-
 :::
 
+## Theoretical Psychology
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**T1: Psychology of the Unconscious**
+
+Carl Jung
+
+Date Read: 05/2024
+
+Rating: 6/10
+
+:::
+:::
 
