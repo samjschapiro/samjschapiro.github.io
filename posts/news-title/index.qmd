@@ -1,10 +1,10 @@
 ---
-title: "2 Papers Accepted at ICCC"
-description: "Campinas, Brazil"
-author: ""
+title: "2 Papers Accepted at ICCC 2025"
+description: "International Conference on Computational Creativity"
+author: "Campinas, Brazil"
 date: "2024-05-13"
 categories: [news]
-image: "/files/images/iccc2025.svg"
+image: "/files/images/iccc-2025.png"
 #css: /custom.css
 #draft: true
 ---
