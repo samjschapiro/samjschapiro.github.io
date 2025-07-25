@@ -1,0 +1,46 @@
+---
+title: "Spark: A System for Scientifically Creative Idea Generation"
+description: "An idea generation system that couples retrieval-augmented idea generation with a reviewer model trained on 600K scientific reviews from OpenReview"
+subtitle: "*Proceedings of the 16th International Conference on Computational Creativity*"
+author: 
+  - name: Aishik Sanyal
+  - name: Samuel Schapiro
+  - name: Sumuk Shashidhar
+  - name: Royce Moon
+  - name: Lav R. Varshney
+  - name: Dilek Hakkani-Tur
+date: "2025-04-18"
+categories: [paper]
+image: "spark_photo.png"
+citation:
+  type: article-journal
+  container-title: "Proceedings of the 16th International Conference on Computational Creativity"
+  doi: ""
+  available-date: ""
+  issued: ""
+  volume: ""
+  issue: ""
+  page: ""
+  url: https://arxiv.org/abs/2504.20090
+google-scholar: true
+---
+
+<!--Include academic icons or bottons-->
+
+{{< include /files/includes/_academic.qmd >}}
+
+
+## Abstract
+
+Recently, large language models (LLMs) have shown promising abilities to generate novel research ideas in science, a direction which coincides with many foundational principles in computational creativity (CC). In light of these developments, we present an idea generation system named Spark that couples retrieval-augmented idea generation using LLMs with a reviewer model named Judge trained on 600K scientific reviews from OpenReview. Our work is both a system demonstration and intended to inspire other CC researchers to explore grounding the generation and evaluation of scientific ideas within foundational CC principles. To this end, we release the annotated dataset used to train Judge, inviting other researchers to explore the use of LLMs for idea generation and creative evaluations.
+
+## Links
+
+Published [paper](https://arxiv.org/abs/2504.20090)
+
+
+<!-- ```{=html}
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div class="altmetric-embed" data-badge-popover="right" data-badge-type="donut" data-doi="10.1103/PhysRev.47.777"></div>
+
+<span class="__dimensions_badge_embed__" data-doi="10.1103/PhysRev.47.777" data-hide-zero-citations="true" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+``` -->

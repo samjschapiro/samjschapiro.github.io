@@ -3,7 +3,8 @@
     "listing": "/posts.html",
     "items": [
       "/posts/news-title/index.html",
-      "/posts/paper-title/index.html"
+      "/posts/paper-title/spark.html",
+      "/posts/paper-title/trans.html"
     ]
   },
   {
@@ -18,7 +19,8 @@
     "listing": "/index.html",
     "items": [
       "/posts/news-title/index.html",
-      "/posts/paper-title/index.html"
+      "/posts/paper-title/spark.html",
+      "/posts/paper-title/trans.html"
     ]
   }
 ]
