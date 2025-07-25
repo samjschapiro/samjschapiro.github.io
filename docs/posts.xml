@@ -28,30 +28,8 @@
   <media:content url="https://drganghe.github.io/quarto-academic-website-template/files/images/metaphysics_photo.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>Event item</title>
-  <dc:creator>Event </dc:creator>
-  <link>https://drganghe.github.io/quarto-academic-website-template/posts/event-title/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><a href="https://drganghe.github.io/quarto-academic-website-template/"><img src="https://drganghe.github.io/quarto-academic-website-template/files/images/placeholder2.JPG" class="img-fluid" style="width:90.0%"></a></p>
-<!--Include social share buttons
-
-{{< include /files/includes/_socialshare.qmd >}} -->
-
-
-
- ]]></description>
-  <category>event</category>
-  <category>presentation</category>
-  <guid>https://drganghe.github.io/quarto-academic-website-template/posts/event-title/</guid>
-  <pubDate>Tue, 03 Sep 2024 05:00:00 GMT</pubDate>
-  <media:content url="https://drganghe.github.io/quarto-academic-website-template/files/images/placeholder2.JPG" medium="image"/>
-</item>
-<item>
-  <title>2 Papers Accepted at ICCC</title>
+  <title>2 Papers Accepted at ICCC 2025</title>
+  <dc:creator>Campinas, Brazil</dc:creator>
   <link>https://drganghe.github.io/quarto-academic-website-template/posts/news-title/</link>
   <description><![CDATA[ 
 
@@ -79,7 +57,7 @@ https://quarto.org/docs/authoring/includes.html
   <category>news</category>
   <guid>https://drganghe.github.io/quarto-academic-website-template/posts/news-title/</guid>
   <pubDate>Mon, 13 May 2024 05:00:00 GMT</pubDate>
-  <media:content url="https://drganghe.github.io/quarto-academic-website-template/files/images/iccc2025.svg" medium="image" type="image/svg+xml"/>
+  <media:content url="https://drganghe.github.io/quarto-academic-website-template/files/images/iccc-2025.png" medium="image" type="image/png" height="100" width="144"/>
 </item>
 <item>
   <title>Can quantum-mechanical description of physical reality be considered complete?</title>
