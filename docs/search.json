@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "What’s New & Updated",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBook Draft: The Metaphysics of Modern Cognition\n\n\nA Guide for Free Thinkers and the Prelude to a Cultural Crusade\n\n\n\nnews\n\n\n\n\n\n\n\n\nJun 1, 2025\n\n\nSamuel Schapiro\n\n\n\n\n\n\n\n\n\n\n\n\n2 Papers Accepted at ICCC 2025\n\n\nInternational Conference on Computational Creativity\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMay 13, 2025\n\n\nCampinas, Brazil\n\n\n\n\n\n\n\n\n\n\n\n\nSpark: A System for Scientifically Creative Idea Generation\n\n\nProceedings of the 16th International Conference on Computational Creativity\n\n\n\npaper\n\n\n\nAn idea generation system that couples retrieval-augmented idea generation with a reviewer model trained on 600K scientific reviews from OpenReview\n\n\n\n\n\nApr 18, 2025\n\n\nAishik Sanyal, Samuel Schapiro, Sumuk Shashidhar, Royce Moon, Lav R. Varshney, Dilek Hakkani-Tur\n\n\n\n\n\n\n\n\n\n\n\n\nTransformational Creativity in Science: A Graphical Theory\n\n\nProceedings of the 16th International Conference on Computational Creativity\n\n\n\npaper\n\n\n\nA graphical theory of transformational scientific creativity that synthesizes the work of Boden and Kuhn.\n\n\n\n\n\nApr 18, 2025\n\n\nSamuel Schapiro, Jonah Black, Lav R. Varshney\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "People",
+    "section": "",
+    "text": "PhD Student\n\n\n\n\n\n\n\n\n\n\n\n\n\nMasters Student\n\n\n\n\n\n\n\n\n\n\n\n\n\nUndergraduate Student\n\n\n\n\n\n\n\n\n\n\n\n\n\nPI\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html#team",
+    "href": "people.html#team",
+    "title": "People",
+    "section": "",
+    "text": "PhD Student\n\n\n\n\n\n\n\n\n\n\n\n\n\nMasters Student\n\n\n\n\n\n\n\n\n\n\n\n\n\nUndergraduate Student\n\n\n\n\n\n\n\n\n\n\n\n\n\nPI\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html#alumni",
+    "href": "people.html#alumni",
+    "title": "People",
+    "section": "Alumni",
+    "text": "Alumni\n\n\n   \n    \n    \n      Order By\n      Default\n      \n      \n      \n        Name\n      \n      \n        Role\n      \n      \n        Started\n      \n      \n        Ended\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nName\n\n\n\nRole\n\n\n\nStarted\n\n\n\nEnded\n\n\n\n\n\n\n\n\n\n\n\nAlumni A\n\n\nPhD Alumni\n\n\n2024\n\n\n2025\n\n\n\n\n\n\n\n\n\nAlumni B\n\n\nMasters Alumni\n\n\n2024\n\n\n2025\n\n\n\n\n\n\n\n\n\nAlumni C\n\n\nUndergraduate Alumni\n\n\n2024\n\n\n2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Order By\n      Default\n      \n      \n      \n        Title\n      \n      \n        Team\n      \n      \n        Funder\n      \n      \n        Description\n      \n      \n        Start\n      \n      \n        End\n      \n      \n        Funding\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nTitle\n\n\n\nTeam\n\n\n\nFunder\n\n\n\nDescription\n\n\n\nFunding\n\n\n\nStart\n\n\n\nEnd\n\n\n\n\n\n\n\n\n\n\n\nExploring \n\n\nAcademic Website\n\n\nFunder\n\n\nThe goal of this project is to investigate .\n\n\n$0\n\n\n2024\n\n\n2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/paper-title/spark.html#abstract",
+    "href": "posts/paper-title/spark.html#abstract",
+    "title": "Spark: A System for Scientifically Creative Idea Generation",
+    "section": "Abstract",
+    "text": "Abstract\nRecently, large language models (LLMs) have shown promising abilities to generate novel research ideas in science, a direction which coincides with many foundational principles in computational creativity (CC). In light of these developments, we present an idea generation system named Spark that couples retrieval-augmented idea generation using LLMs with a reviewer model named Judge trained on 600K scientific reviews from OpenReview. Our work is both a system demonstration and intended to inspire other CC researchers to explore grounding the generation and evaluation of scientific ideas within foundational CC principles. To this end, we release the annotated dataset used to train Judge, inviting other researchers to explore the use of LLMs for idea generation and creative evaluations."
+  },
+  {
+    "objectID": "posts/paper-title/spark.html#links",
+    "href": "posts/paper-title/spark.html#links",
+    "title": "Spark: A System for Scientifically Creative Idea Generation",
+    "section": "Links",
+    "text": "Links\nPublished paper"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Notes: * corresponding author; GS graduate student advisee; VS visiting scholar;  ESI Highly Cited Paper (top 1%);  ESI Hot Paper (top 0.1%)\nTotal citations as of January 2025:"
+  },
+  {
+    "objectID": "research.html#selected-work",
+    "href": "research.html#selected-work",
+    "title": "Research",
+    "section": "Selected Work",
+    "text": "Selected Work\nEinstein, A., Podolsky, B., & Rosen, N. (1935). Can quantum-mechanical description of physical reality be considered complete?. Physical review, 47(10), 777. [pdf] [code and data]   \n\n\n\n\n\n\nEinstein, A. (1965). Concerning an heuristic point of view toward the emission and transformation of light. American Journal of Physics, 33(5), 367. [pdf]"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Quarto Academic\nSpiral Works\nAddress:\nPhone:\nE-mail: sam@spiralworks.ai"
+  },
+  {
+    "objectID": "posts/paper-title/trans.html#abstract",
+    "href": "posts/paper-title/trans.html#abstract",
+    "title": "Transformational Creativity in Science: A Graphical Theory",
+    "section": "Abstract",
+    "text": "Abstract\nCreative processes are typically divided into three types: combinatorial, exploratory, and transformational. Here, we provide a graphical theory of transformational scientific creativity, synthesizing Boden’s insight that transformational creativity arises from changes in the “enabling constraints” of a conceptual space and Kuhn’s structure of scientific revolutions as resulting from paradigm shifts. We prove that modifications made to axioms of our graphical model have the most transformative potential and then illustrate how several historical instances of transformational creativity can be captured by our framework."
+  },
+  {
+    "objectID": "posts/paper-title/trans.html#links",
+    "href": "posts/paper-title/trans.html#links",
+    "title": "Transformational Creativity in Science: A Graphical Theory",
+    "section": "Links",
+    "text": "Links\nPublished paper"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Samuel Schapiro",
+    "section": "",
+    "text": "Group\n  \n  \n    \n     Bio\n  \n  \n    \n     E-mail\n  \n  \n    \n     LinkedIn\n  \n  \n      Google Scholar\n  \n\n  \n  \nI am currently the Chief Scientist at Spiral Works.\nWe are an AI research organization bridging theory and practice to build creative AI systems that can automate AI R&D.\nOur research develops unified theories of intelligence and creativity across psychology, cognitive science, philosophy, and computer science.\n\n\n\nVisiting Researcher, Simons Institute for the Theory of Computing\n\n\n\n\n\nBS, Computer Science, University of Illinois, Urbana-Champaign\n\n\n\n\n\nS. Schapiro, J. Black, L. R. Varshney, Transformational Creativity in Science: A Graphical Theory, in the Proceedings of the 16th International Conference on Computational Creativity, Jun 23-27, Campinas, Brazil. [Best Short Paper Award]\nA. Sanyal, S. Schapiro, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, Spark: A System for Scientifically Creative Idea Generation, in the Proceedings of the 16th International Conference on Computational Creativity, Jun 23-27, Campinas, Brazil."
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Samuel Schapiro",
+    "section": "",
+    "text": "Visiting Researcher, Simons Institute for the Theory of Computing"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Samuel Schapiro",
+    "section": "",
+    "text": "BS, Computer Science, University of Illinois, Urbana-Champaign"
+  },
+  {
+    "objectID": "index.html#select-publications",
+    "href": "index.html#select-publications",
+    "title": "Samuel Schapiro",
+    "section": "",
+    "text": "S. Schapiro, J. Black, L. R. Varshney, Transformational Creativity in Science: A Graphical Theory, in the Proceedings of the 16th International Conference on Computational Creativity, Jun 23-27, Campinas, Brazil. [Best Short Paper Award]\nA. Sanyal, S. Schapiro, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, Spark: A System for Scientifically Creative Idea Generation, in the Proceedings of the 16th International Conference on Computational Creativity, Jun 23-27, Campinas, Brazil."
+  },
+  {
+    "objectID": "index.html#recent-posts",
+    "href": "index.html#recent-posts",
+    "title": "Samuel Schapiro",
+    "section": "Recent Posts",
+    "text": "Recent Posts\nCheck out the latest  Papers ,  News ,  Events , and  More »\n\n\n\n\n\n\n\n\n\n\nBook Draft: The Metaphysics of Modern Cognition\n\n\nA Guide for Free Thinkers and the Prelude to a Cultural Crusade\n\n\n\nJun 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n2 Papers Accepted at ICCC 2025\n\n\nInternational Conference on Computational Creativity\n\n\n\nMay 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpark: A System for Scientifically Creative Idea Generation\n\n\nProceedings of the 16th International Conference on Computational Creativity\n\n\n\nApr 18, 2025\n\n\n\n\n\n\nNo matching items\n\n\nAll Posts »"
+  },
+  {
+    "objectID": "bookshelf.html",
+    "href": "bookshelf.html",
+    "title": "Bookshelf",
+    "section": "",
+    "text": "E10: Conjectures and Refutations: The Growth of Scientific Knowledge\nKarl Popper\nDate Read: Ongoing\nRating: 10/10\n\n\n\n\n\nE9: Conceptual Revolutions\nPaul Thagard\nDate Read: 06/2025\nRating: 9/10\n\n\n\n\n\nE8: Incommensurability in Science\nThomas S. Kuhn\nDate Read: 06/2025\nRating: 6/10\n\n\n\n\n\nE7: Prolegomena to Any Future Metaphysics\nImmanuel Kant\nDate Read: 01/2025\nRating: 10/10\n\n\n\n\n\nE6: The Structure of Scientific Revolutions\nThomas S. Kuhn\nDate Read: 12/2024\nRating: 8/10\n\n\n\n\n\nE5: The Foundations of Scientific Inference\nWesley Salmon\nDate Read: 10/2024\nRating: 6/10\n\n\n\n\n\nE4: The World as Will and Representation\nArthur Schopenhauer\nDate Read: 10/2024\nRating: 8/10\n\n\n\n\n\nE3: The Critique of Pure Reason\nImmanuel Kant\nDate Read: 09/2024\nRating: 10/10\n\n\n\n\n\nE2: The Principles of Genetic Epistemology\nJean Piaget\nDate Read: 07/2024\nRating: 9/10\n\n\n\n\n\nE1: Computational Philosophy of Science\nPaul Thagard\nDate Read: 06/2024\nRating: 6/10"
+  },
+  {
+    "objectID": "bookshelf.html#philosophy-of-science-epistemology-and-metaphysics",
+    "href": "bookshelf.html#philosophy-of-science-epistemology-and-metaphysics",
+    "title": "Bookshelf",
+    "section": "",
+    "text": "E10: Conjectures and Refutations: The Growth of Scientific Knowledge\nKarl Popper\nDate Read: Ongoing\nRating: 10/10\n\n\n\n\n\nE9: Conceptual Revolutions\nPaul Thagard\nDate Read: 06/2025\nRating: 9/10\n\n\n\n\n\nE8: Incommensurability in Science\nThomas S. Kuhn\nDate Read: 06/2025\nRating: 6/10\n\n\n\n\n\nE7: Prolegomena to Any Future Metaphysics\nImmanuel Kant\nDate Read: 01/2025\nRating: 10/10\n\n\n\n\n\nE6: The Structure of Scientific Revolutions\nThomas S. Kuhn\nDate Read: 12/2024\nRating: 8/10\n\n\n\n\n\nE5: The Foundations of Scientific Inference\nWesley Salmon\nDate Read: 10/2024\nRating: 6/10\n\n\n\n\n\nE4: The World as Will and Representation\nArthur Schopenhauer\nDate Read: 10/2024\nRating: 8/10\n\n\n\n\n\nE3: The Critique of Pure Reason\nImmanuel Kant\nDate Read: 09/2024\nRating: 10/10\n\n\n\n\n\nE2: The Principles of Genetic Epistemology\nJean Piaget\nDate Read: 07/2024\nRating: 9/10\n\n\n\n\n\nE1: Computational Philosophy of Science\nPaul Thagard\nDate Read: 06/2024\nRating: 6/10"
+  },
+  {
+    "objectID": "bookshelf.html#creativity-and-cognitive-science",
+    "href": "bookshelf.html#creativity-and-cognitive-science",
+    "title": "Bookshelf",
+    "section": "Creativity and Cognitive Science",
+    "text": "Creativity and Cognitive Science\n\n\n\n\n\nC5: The Way We Think: Conceptual Blending\nGilles Fauconnier and Mark Turner\nDate Read: 05/2025\nRating: 7/10\n\n\n\n\n\nC4: Flight From Wonder: An Investigation into Scientific Creativity\nAlbert Rothenberg\nDate Read: 09/2024\nRating: 3/10\n\n\n\n\n\nC3: The Creative Mind: Myths and Mechanisms\nMargaret Boden\nDate Read: 09/2024\nRating: 6/10\n\n\n\n\n\nC2: The Act of Creation\nArthur Koestler\nDate Read: 06/2024\nRating: 8/10\n\n\n\n\n\nC1: Creativity in Science: Chance, Logic, Genius, and Zeitgeist\nDean Keith Simonton\nDate Read: 05/2024\nRating: 8/10"
+  },
+  {
+    "objectID": "bookshelf.html#mathematics",
+    "href": "bookshelf.html#mathematics",
+    "title": "Bookshelf",
+    "section": "Mathematics",
+    "text": "Mathematics\n\n\n\n\n\nM3: Information Theory, Inference, and Learning Algorithms\nDavid MacKay\nDate Read: Ongoing\nRating: 8/10\n\n\n\n\n\nM2: High Dimensional Probability\nRoman Vershynin\nDate Read: 11/2023\nRating: 8/10\n\n\n\n\n\nM1: Understanding Machine Learning: From Theory to Algorithms\nShai Shalev-Shwartz and Shai Ben-David\nDate Read: 08/2023\nRating: 8/10"
+  },
+  {
+    "objectID": "bookshelf.html#political-philosophy",
+    "href": "bookshelf.html#political-philosophy",
+    "title": "Bookshelf",
+    "section": "Political Philosophy",
+    "text": "Political Philosophy\n\n\n\n\n\nO5: On Liberty\nJohn Stuart Mill\nDate Read: 02/2025\nRating: 9/10\n\n\n\n\n\nO4: Discourse on the Origin of Inequality\nJean-Jacques Rousseau\nDate Read: 01/2025\nRating: 8/10\n\n\n\n\n\nO3: The Declaration of Independence, Constitution, and Bill of Rights\nThe Founding Fathers\nDate Read: 11/2024\nRating: 7/10\n\n\n\n\n\nO2: The Social Contract\nJean-Jacques Rousseau\nDate Read: 11/2024\nRating: 10/10\n\n\n\n\n\nO1: Propaganda\nEdward Bernays\nDate Read: 11/2024\nRating: 2/10"
+  },
+  {
+    "objectID": "bookshelf.html#philosophy-of-morality-and-culture",
+    "href": "bookshelf.html#philosophy-of-morality-and-culture",
+    "title": "Bookshelf",
+    "section": "Philosophy of Morality and Culture",
+    "text": "Philosophy of Morality and Culture\n\n\n\n\n\nN17: The Technological Republic\nAlex Karp\nDate Read: 07/2025\nRating: 7/10\n\n\n\n\n\nN16: The Birth of Tragedy\nFriedrich Nietzsche\nDate Read: 06/2025\nRating: 8/10\n\n\n\n\n\nN15: Self Reliance\nRalph Waldo Emerson\nDate Read: 04/2025\nRating: 8/10\n\n\n\n\n\nN14: When These Things Begin\nRené Girard\nDate Read: 03/2025\nRating: 8/10\n\n\n\n\n\nN13: The Critique of Practical Reason\nImmanuel Kant\nDate Read: 03/2025\nRating: 9/10\n\n\n\n\n\nN12: The Undiscovered Self\nCarl Jung\nDate Read: 01/2025\nRating: 7/10\n\n\n\n\n\nN11: The Dawn of Day: Thoughts on the Prejudices of Morality\nFriedrich Nietzsche\nDate Read: 01/2025\nRating: 9/10\n\n\n\n\n\nN10: Groundwork of the Metaphysics of Morals\nImmanuel Kant\nDate Read: 01/2025\nRating: 7/10\n\n\n\n\n\nN9: Industrial Society and its Future\nTheodore Kacszynski\nDate Read: 12/2025\nRating: 7/10\n\n\n\n\n\nN8: The Future of an Illusion\nSigmund Freud\nDate Read: 11/2024\nRating: 9/10\n\n\n\n\n\nN7: The Antichrist\nFriedrich Nietzsche\nDate Read: 11/2024\nRating: 9/10\n\n\n\n\n\nN6: The Gay Science\nFriedrich Nietzsche\nDate Read: 10/2024\nRating: 7/10\n\n\n\n\n\nN5: Human, All Too Human\nFriedrich Nietzsche\nDate Read: 10/2024\nRating: 8/10\n\n\n\n\n\nN4: The Genealogy of Morals\nFriedrich Nietzsche\nDate Read: 10/2024\nRating: 10/10\n\n\n\n\n\nN3: Twilight of the Idols\nFriedrich Nietzsche\nDate Read: 09/2024\nRating: 8/10\n\n\n\n\n\nN2: Beyond Good and Evil\nFriedrich Nietzsche\nDate Read: 08/2024\nRating: 9/10\n\n\n\n\n\nN1: Civilization and its Discontents\nSigmund Freud\nDate Read: 07/2024\nRating: 9/10"
+  },
+  {
+    "objectID": "bookshelf.html#theoretical-psychology",
+    "href": "bookshelf.html#theoretical-psychology",
+    "title": "Bookshelf",
+    "section": "Theoretical Psychology",
+    "text": "Theoretical Psychology\n\n\n\n\n\nT6: The Problem of Anxiety\nSigmund Freud\nDate Read: 06/2025\nRating: 6/10\n\n\n\n\n\nT5: Religions, Values, and Peak Experiences\nAbraham Maslow\nDate Read: 03/2025\nRating: 8/10\n\n\n\n\n\nT4: Group Psychology and Analysis of the Ego\nSigmund Freud\nDate Read: 07/2024\nRating: 7/10\n\n\n\n\n\nT3: A Theory of Human Motivation\nAbraham Maslow\nDate Read: 07/2024\nRating: 6/10\n\n\n\n\n\nT2: The Ego and the Id\nSigmund Freud\nDate Read: 07/2024\nRating: 7/10\n\n\n\n\n\nT1: Psychology of the Unconscious\nCarl Jung\nDate Read: 05/2024\nRating: 6/10"
+  }
+]
