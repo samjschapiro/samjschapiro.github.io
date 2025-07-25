@@ -1,10 +1,10 @@
 ---
 title: "2 Papers Accepted at ICCC"
-description: "About new item"
-author: "News"
-date: "2024-06-24"
+description: "Campinas, Brazil"
+author: ""
+date: "2024-05-13"
 categories: [news]
-image: "/files/images/placeholder3.JPG"
+image: "/files/images/iccc2025.svg"
 #css: /custom.css
 #draft: true
 ---
