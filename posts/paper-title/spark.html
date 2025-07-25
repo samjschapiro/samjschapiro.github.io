@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Samuel Schapiro">
-<meta name="description" content="Posts about papers, events, news, and more">
+<meta name="dcterms.date" content="2025-04-18">
+<meta name="description" content="Website">
 
-<title>What’s New &amp; Updated – Samuel Schapiro</title>
+<title>Spark: A System for Scientifically Creative Idea Generation – Samuel Schapiro</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f07a380226b71dccd824dee245407231.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f07a380226b71dccd824dee245407231.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id="></script>
 
 <script type="text/javascript">
@@ -129,45 +99,34 @@ https://badge.dimensions.ai/
 
 <script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Samuel Schapiro" href="posts.xml" data-external="1"><meta property="og:title" content="What’s New &amp; Updated – Samuel Schapiro">
-<meta property="og:description" content="Posts about papers, events, news, and more">
-<meta property="og:image" content="https://drganghe.github.io/quarto-academic-website-template/files/images/metaphysics_photo.jpg">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Spark: A System for Scientifically Creative Idea Generation – Samuel Schapiro">
+<meta property="og:description" content="An idea generation system that couples retrieval-augmented idea generation with a reviewer model trained on 600K scientific reviews from OpenReview">
+<meta property="og:image" content="https://drganghe.github.io/quarto-academic-website-template/posts/paper-title/spark_photo.png">
 <meta property="og:site_name" content="Samuel Schapiro">
-<meta name="twitter:title" content="What’s New &amp; Updated – Samuel Schapiro">
-<meta name="twitter:description" content="Posts about papers, events, news, and more">
-<meta name="twitter:image" content="https://drganghe.github.io/quarto-academic-website-template/files/images/metaphysics_photo.jpg">
+<meta property="og:image:height" content="972">
+<meta property="og:image:width" content="1781">
+<meta name="twitter:title" content="Spark: A System for Scientifically Creative Idea Generation – Samuel Schapiro">
+<meta name="twitter:description" content="An idea generation system that couples retrieval-augmented idea generation with a reviewer model trained on 600K scientific reviews from OpenReview">
+<meta name="twitter:image" content="https://drganghe.github.io/quarto-academic-website-template/posts/paper-title/spark_photo.png">
+<meta name="twitter:image-height" content="972">
+<meta name="twitter:image-width" content="1781">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="citation_title" content="Spark: A System for Scientifically Creative Idea Generation">
+<meta name="citation_author" content="Aishik Sanyal">
+<meta name="citation_author" content="Samuel Schapiro">
+<meta name="citation_author" content="Sumuk Shashidhar">
+<meta name="citation_author" content="Royce Moon">
+<meta name="citation_author" content="Lav R. Varshney">
+<meta name="citation_author" content="Dilek Hakkani-Tur">
+<meta name="citation_publication_date" content="2025-04-18">
+<meta name="citation_cover_date" content="2025-04-18">
+<meta name="citation_year" content="2025">
+<meta name="citation_online_date" content="2025-04-18">
+<meta name="citation_fulltext_html_url" content="https://arxiv.org/abs/2504.20090">
+<meta name="citation_language" content="en">
+<meta name="citation_journal_title" content="Proceedings of the 16th International Conference on Computational Creativity">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -177,7 +136,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Samuel Schapiro</span>
     </a>
   </div>
@@ -188,17 +147,17 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./bookshelf.html"> 
+    <a class="nav-link" href="../../bookshelf.html"> 
 <span class="menu-text">Bookshelf</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./files/nsf-biosketch.pdf"> 
+    <a class="nav-link" href="../../files/nsf-biosketch.pdf"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/drganghe/quarto-academic-website-template" target="_blank"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/samjschapiro" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -219,22 +178,54 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cGFwZXI=">paper <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">What’s New &amp; Updated</h1>
-<p class="subtitle lead">Posts about papers, events, news, and more</p>
-</div>
+<h1 class="title">Spark: A System for Scientifically Creative Idea Generation</h1>
+<p class="subtitle lead"><em>Proceedings of the 16th International Conference on Computational Creativity</em></p>
+  <div class="quarto-categories">
+    <div class="quarto-category">paper</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    An idea generation system that couples retrieval-augmented idea generation with a reviewer model trained on 600K scientific reviews from OpenReview
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aishik Sanyal </p>
+             <p>Samuel Schapiro </p>
+             <p>Sumuk Shashidhar </p>
+             <p>Royce Moon </p>
+             <p>Lav R. Varshney </p>
+             <p>Dilek Hakkani-Tur </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 18, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -244,174 +235,54 @@ window.Quarto = {
 </header>
 
 
-<div id="posts">
+<!--Include academic icons or bottons-->
+<!-- 
+Load Academicons v1: https://jpswalsh.github.io/academicons/
+-->
+<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></p>
+<p><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"></p>
+<!---
+The following code are needed to show dimension citation and altmetrics.
+https://api.altmetric.com/embeds.html
+https://badge.dimensions.ai/
+--->
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Recently, large language models (LLMs) have shown promising abilities to generate novel research ideas in science, a direction which coincides with many foundational principles in computational creativity (CC). In light of these developments, we present an idea generation system named Spark that couples retrieval-augmented idea generation using LLMs with a reviewer model named Judge trained on 600K scientific reviews from OpenReview. Our work is both a system demonstration and intended to inspire other CC researchers to explore grounding the generation and evaluation of scientific ideas within foundational CC principles. To this end, we release the annotated dataset used to train Judge, inviting other researchers to explore the use of LLMs for idea generation and creative evaluations.</p>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<p>Published <a href="https://arxiv.org/abs/2504.20090">paper</a></p>
+<!-- ```{=html}
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div class="altmetric-embed" data-badge-popover="right" data-badge-type="donut" data-doi="10.1103/PhysRev.47.777"></div>
 
-</div>
+<span class="__dimensions_badge_embed__" data-doi="10.1103/PhysRev.47.777" data-hide-zero-citations="true" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+``` -->
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-title" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Author
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bmV3cw==" data-listing-date-sort="1748754000000">
-<div class="thumbnail"><a href="https://samuelschapiro.substack.com/p/cognition-beyond-civilization" class="no-external">
-
-<img loading="lazy" src="./files/images/metaphysics_photo.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://samuelschapiro.substack.com/p/cognition-beyond-civilization" class="no-external">Book Draft: The Metaphysics of Modern Cognition</a>
-</h3>
-<div class="listing-subtitle">
-<a href="https://samuelschapiro.substack.com/p/cognition-beyond-civilization" class="no-external"><em>A Guide for Free Thinkers and the Prelude to a Cultural Crusade</em></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-</div>
-<div class="delink listing-description"><a href="https://samuelschapiro.substack.com/p/cognition-beyond-civilization" class="no-external">
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://samuelschapiro.substack.com/p/cognition-beyond-civilization" class="no-external">
-<div class="listing-date">
-Jun 1, 2025
-</div>
-<div class="listing-author">
-Samuel Schapiro
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1747112400000" data-listing-file-modified-sort="1753473257536" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
-<div class="thumbnail"><a href="./posts/news-title/index.html" class="no-external">
-
-<img loading="lazy" src="./files/images/iccc-2025.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/news-title/index.html" class="no-external">2 Papers Accepted at ICCC 2025</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/news-title/index.html" class="no-external"><em>International Conference on Computational Creativity</em></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/news-title/index.html" class="no-external">
-     
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/news-title/index.html" class="no-external">
-<div class="listing-date">
-May 13, 2025
-</div>
-<div class="listing-author">
-Campinas, Brazil
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="cGFwZXI=" data-listing-date-sort="1744952400000" data-listing-file-modified-sort="1753473082826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="140">
-<div class="thumbnail"><a href="./posts/paper-title/spark.html" class="no-external">
-
-<img loading="lazy" src="./posts/paper-title/spark_photo.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/paper-title/spark.html" class="no-external">Spark: A System for Scientifically Creative Idea Generation</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/paper-title/spark.html" class="no-external"><em>Proceedings of the 16th International Conference on Computational Creativity</em></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGFwZXI='); return false;">paper</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/paper-title/spark.html" class="no-external">
-<p>An idea generation system that couples retrieval-augmented idea generation with a reviewer model trained on 600K scientific reviews from OpenReview</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/paper-title/spark.html" class="no-external">
-<div class="listing-date">
-Apr 18, 2025
-</div>
-<div class="listing-author">
-Aishik Sanyal, Samuel Schapiro, Sumuk Shashidhar, Royce Moon, Lav R. Varshney, Dilek Hakkani-Tur
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="cGFwZXI=" data-listing-date-sort="1744952400000" data-listing-file-modified-sort="1753473248300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="106">
-<div class="thumbnail"><a href="./posts/paper-title/trans.html" class="no-external">
-
-<img loading="lazy" src="./posts/paper-title/trans_creativity_photo.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/paper-title/trans.html" class="no-external">Transformational Creativity in Science: A Graphical Theory</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/paper-title/trans.html" class="no-external"><em>Proceedings of the 16th International Conference on Computational Creativity</em></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGFwZXI='); return false;">paper</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/paper-title/trans.html" class="no-external">
-<p>A graphical theory of transformational scientific creativity that synthesizes the work of Boden and Kuhn.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/paper-title/trans.html" class="no-external">
-<div class="listing-date">
-Apr 18, 2025
-</div>
-<div class="listing-author">
-Samuel Schapiro, Jonah Black, Lav R. Varshney
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{sanyal2025,
+  author = {Sanyal, Aishik and Schapiro, Samuel and Shashidhar, Sumuk
+    and Moon, Royce and R. Varshney, Lav and Hakkani-Tur, Dilek},
+  title = {Spark: {A} {System} for {Scientifically} {Creative} {Idea}
+    {Generation}},
+  journal = {Proceedings of the 16th International Conference on
+    Computational Creativity},
+  date = {2025-04-18},
+  url = {https://arxiv.org/abs/2504.20090},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sanyal2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Sanyal, Aishik, Samuel Schapiro, Sumuk Shashidhar, Royce Moon, Lav R.
+Varshney, and Dilek Hakkani-Tur. 2025. <span>“Spark: A System for
+Scientifically Creative Idea Generation.”</span> <em>Proceedings of the
+16th International Conference on Computational Creativity</em>, April.
+<a href="https://arxiv.org/abs/2504.20090">https://arxiv.org/abs/2504.20090</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

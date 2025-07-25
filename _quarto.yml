@@ -44,7 +44,7 @@ website:
       - text: CV
         href: files/nsf-biosketch.pdf
       - icon: github
-        href: https://github.com/drganghe/quarto-academic-website-template
+        href: https://github.com/samjschapiro
         target: _blank
       # - text: "{{< fa brands bluesky >}}"
       #   href: https://bsky.app
