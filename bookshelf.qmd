@@ -9,6 +9,20 @@ title-block-banner: false
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41FsUhu6MIL._SY445_SX342_ControlCacheEqualizer_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**E11: Fact, Fiction, and Forecast**
+
+Nelson Goodman
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/61eM66jXpFL._SY466_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
@@ -278,6 +292,20 @@ Rating: 8/10
 ## Political Philosophy
 
 ::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41KvNKvrYfL._SY445_SX342_ControlCacheEqualizer_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O5: On Liberty**
+
+Karl Marx and Freidrick Engels
+
+Date Read: 08/2025
+
+Rating: 5/10
+
+:::
 ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/71jY9z9z+hL._AC_UY436_FMwebp_QL65_.jpg)
 :::
