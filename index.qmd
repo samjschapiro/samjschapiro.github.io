@@ -85,9 +85,9 @@ Reach out to join us at [join@spiralworks.ai](mailto:join@spiralworks.ai)
 ## Select Publications
 - **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, Jun 23-27, Campinas, Brazil. **[Best Short Paper Award]**
 - A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, Jun 23-27, Campinas, Brazil.
-- **S. Schapiro**, TBD, Uncovering the Limits of Large Language Models for Scientific Discovery, Forthcoming.
+<!-- - **S. Schapiro**, TBD, Uncovering the Limits of Large Language Models for Scientific Discovery, Forthcoming.
 - **S. Schapiro**, TBD, Combinatorial Creativity: A New Frontier in Generalization Abilities, Forthcoming.
-- **S. Schapiro**, TBD, Popper-1: Training General-Purpose Scientific Reviewer Models, Forthcoming.
+- **S. Schapiro**, TBD, Popper-1: Training General-Purpose Scientific Reviewer Models, Forthcoming. -->
 
 :::
 
