@@ -9,6 +9,20 @@ title-block-banner: false
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/717yvtRafsL._SY522_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**E12: The Logic of Scientific Discovery**
+
+Karl Popper
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/41FsUhu6MIL._SY445_SX342_ControlCacheEqualizer_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
