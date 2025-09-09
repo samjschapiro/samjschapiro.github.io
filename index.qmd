@@ -67,9 +67,9 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 
 :::{#hero-heading}
 
-I am the Chief Science Officer and co-founder of [Spiral Works](https://spiralworks.ai). I lead our research team studying the algorithmic and theoretical foundations of creativity.
+I am the Co-Founder and CEO of [Spiral Works](https://spiralworks.ai). We are an AI research lab developing creative superintelligence that can automate AI R&D. 
 
-We are an AI research lab developing creative superintelligence that can automate AI R&D.
+I lead our research team studying the algorithmic and theoretical foundations of creativity.
 
 Reach out to join us at [join@spiralworks.ai](mailto:join@spiralworks.ai)
 
