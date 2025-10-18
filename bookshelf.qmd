@@ -275,6 +275,20 @@ Rating: 8/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61lp5yERH9L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**M4: Algorithmic Game Theory**
+
+Roman Vershynin
+
+Date Read: Ongoing
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/61Pig8o8BvL._SY425_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
@@ -322,6 +336,20 @@ Rating: 8/10
 ## Political Philosophy
 
 ::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://broadviewpress.com/wp-content/uploads/2025/05/9781554813155.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O7: Utiliarianism**
+
+John Stuart Mill
+
+Date Read: Ongoing
+
+Rating: 8/10
+
+:::
 ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/41KvNKvrYfL._SY445_SX342_ControlCacheEqualizer_.jpg)
 :::
