@@ -281,7 +281,7 @@ Rating: 8/10
 
 **M4: Algorithmic Game Theory**
 
-Roman Vershynin
+Noam Nisan and Tim Roughgarden
 
 Date Read: Ongoing
 
