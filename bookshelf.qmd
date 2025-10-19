@@ -275,20 +275,6 @@ Rating: 8/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61lp5yERH9L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**M4: Algorithmic Game Theory**
-
-Noam Nisan and Tim Roughgarden
-
-Date Read: Ongoing
-
-Rating: 8/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/61Pig8o8BvL._SY425_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
