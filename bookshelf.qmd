@@ -9,6 +9,20 @@ title-block-banner: false
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71QUujDFcZL._UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**E13: On Truth and Lies in a Nonmoral Sense**
+
+Friedrich Nietzsche
+
+Date Read: 10/2025
+
+Rating: 9/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/717yvtRafsL._SY522_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
