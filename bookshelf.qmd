@@ -337,6 +337,20 @@ Rating: 8/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://press.uchicago.edu/.imaging/mte/ucp/medium/dam/ucp/books/jacket/978/02/26/77/9780226777108.jpg/jcr:content/9780226777108.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O8: History of Political Philosophy**
+
+Leo Strauss
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://broadviewpress.com/wp-content/uploads/2025/05/9781554813155.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
@@ -345,9 +359,9 @@ Rating: 8/10
 
 John Stuart Mill
 
-Date Read: Ongoing
+Date Read: 10/2025
 
-Rating: 8/10
+Rating: 6/10
 
 :::
 ::: {.g-col-12 .g-col-md-2}
