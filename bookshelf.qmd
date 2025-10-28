@@ -196,9 +196,21 @@ Rating: 6/10
 
 ## Creativity and Cognitive Science
 
-
-
 ::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://mit-press-new-us.imgix.net/covers/9780262049955.jpg?auto=format&w=298&dpr=1&q=80)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C7: What is Intelligence? Lessons from AI About Evolution, Computing, and Minds**
+
+Blaise Agüera y Arcas
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
 ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/61+yg2hY5XL.jpg)
 :::
@@ -361,7 +373,7 @@ John Stuart Mill
 
 Date Read: 10/2025
 
-Rating: 6/10
+Rating: 5/10
 
 :::
 ::: {.g-col-12 .g-col-md-2}
