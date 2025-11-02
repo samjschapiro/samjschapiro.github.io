@@ -68,7 +68,7 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 :::{#hero-heading}
 I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence. Currently, I am the Co-Founder \& CEO of [Spiral Works](https://spiralworks.ai/), an AI research lab studying creativity.
 
-Previously, I was a visiting scholar at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage), where I worked on the theoretical foundations of creativity. I received my undergradute degree in computer science at the [Siebel School of Computing and Data Science (UIUC)](https://siebelschool.illinois.edu/), where I was advised by [Prof. Han Zhao](https://hanzhaoml.github.io/).
+Previously, I was a visiting scholar at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage), where I worked on the theoretical foundations of creativity. I received my undergradute degree in computer science at the [Siebel School of Computing and Data Science, University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I was advised by [Prof. Han Zhao](https://hanzhaoml.github.io/).
 
 
 
