@@ -7,13 +7,13 @@
       date: "2025-06-01"
       categories: [news] 
 
-    - path: https://samuelschapiro.substack.com/p/towards-a-new-kind-of-science
-      image: "/files/images/new_kind_of_sci.png"
-      title: "Blog Post: Towards a New Kind of Science"
-      author: "Samuel Schapiro"
-      subtitle: "*How Spiral Works plans to change science forever*"
-      date: "2025-09-01"
-      categories: [news] 
+    # - path: https://samuelschapiro.substack.com/p/towards-a-new-kind-of-science
+    #   image: "/files/images/new_kind_of_sci.png"
+    #   title: "Blog Post: Towards a New Kind of Science"
+    #   author: "Samuel Schapiro"
+    #   subtitle: "*How Spiral Works plans to change science forever*"
+    #   date: "2025-09-01"
+    #   categories: [news] 
 
     - path: https://arxiv.org/abs/2509.21043
       image: "/files/images/einstein_graphic2.png"
