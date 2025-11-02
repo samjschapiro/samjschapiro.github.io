@@ -66,21 +66,11 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 ---
 
 :::{#hero-heading}
+I am currently the Co-Founder \& CEO of [Spiral Works](https://spiralworks.ai/), an AI research lab studying creativity.
 
-I am the Co-Founder and CEO of [Spiral Works](https://spiralworks.ai). We are an AI research lab developing creative superintelligence.
-
-I lead our research team studying the algorithmic and theoretical foundations of creativity.
-
-Reach out to join us at [join@spiralworks.ai](mailto:join@spiralworks.ai)
+Previously, I was a visiting scholar at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage), where I worked on the theoretical foundations of creativity. I received my undergradute degree in computer science at the [Siebel School of Computing and Data Science (UIUC)](https://siebelschool.illinois.edu/), where I was advised by [Prof. Han Zhao](https://hanzhaoml.github.io/).
 
 
-<!-- ## Experience
-
-- Visiting Researcher, Simons Institute for the Theory of Computing
-
-## Education
-
-- BS, Computer Science, University of Illinois, Urbana-Champaign -->
 
 ## Select Publications
 - **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
