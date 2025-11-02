@@ -383,29 +383,29 @@ Rating: 2/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
-![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1407812596i/337517.jpg)
+![](https://m.media-amazon.com/images/I/41l2ASPOdeL._SY445_SX342_ControlCacheEqualizer_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**N19: Things Hidden Since the Foundation of the World**
+**N19: Ecce Homo: How One Becomes What One Is**
 
-René Girard
+Friedrich Nietzsche
 
-Date Read: Ongoing
+Date Read: 10/2025
 
 Rating: 8/10
 
 :::
 ::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/41l2ASPOdeL._SY445_SX342_ControlCacheEqualizer_.jpg)
+![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1407812596i/337517.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**N18: Ecce Homo: How One Becomes What One Is**
+**N18: Things Hidden Since the Foundation of the World**
 
-Friedrich Nietzsche
+René Girard
 
-Date Read: 10/2025
+Date Read: 09/2025
 
 Rating: 8/10
 
