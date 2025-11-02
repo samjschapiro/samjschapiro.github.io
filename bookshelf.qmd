@@ -194,7 +194,7 @@ Rating: 6/10
 :::
 :::
 
-## Creativity and Cognitive Science
+## Biology, Neuroscience, and Physics
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
@@ -202,97 +202,13 @@ Rating: 6/10
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**C7: What is Intelligence? Lessons from AI About Evolution, Computing, and Minds**
+**C1: What is Intelligence? Lessons from AI About Evolution, Computing, and Minds**
 
 Blaise Agüera y Arcas
 
 Date Read: Ongoing
 
 Rating: 10/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61+yg2hY5XL.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C6: The Psychology of Invention in the Mathematical Field**
-
-Jacques Hadamard
-
-Date Read: 08/2025
-
-Rating: 6/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/51-cC40nYjL._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C5: The Way We Think: Conceptual Blending**
-
-Gilles Fauconnier and Mark Turner
-
-Date Read: 05/2025
-
-Rating: 7/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C4: Flight From Wonder: An Investigation into Scientific Creativity**
-
-Albert Rothenberg
-
-Date Read: 09/2024
-
-Rating: 3/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C3: The Creative Mind: Myths and Mechanisms**
-
-Margaret Boden
-
-Date Read: 09/2024
-
-Rating: 6/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387703037i/30676.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C2: The Act of Creation**
-
-Arthur Koestler
-
-Date Read: 06/2024
-
-Rating: 8/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C1: Creativity in Science: Chance, Logic, Genius, and Zeitgeist**
-
-Dean Keith Simonton
-
-Date Read: 05/2024
-
-Rating: 8/10
 
 :::
 :::
@@ -734,15 +650,29 @@ Rating: 9/10
 :::
 :::
 
-## Theoretical Psychology
+## Psychology and Cognitive Science
 
 ::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61+yg2hY5XL.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C12: The Psychology of Invention in the Mathematical Field**
+
+Jacques Hadamard
+
+Date Read: 08/2025
+
+Rating: 6/10
+
+:::
 ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/41vFB4lW+6L._SY466_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**T6: The Problem of Anxiety**
+**C11: The Problem of Anxiety**
 
 Sigmund Freud
 
@@ -752,11 +682,25 @@ Rating: 6/10
 
 :::
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51-cC40nYjL._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C10: The Way We Think: Conceptual Blending**
+
+Gilles Fauconnier and Mark Turner
+
+Date Read: 05/2025
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/716kKs0kkoL._SL1500_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**T5: Religions, Values, and Peak Experiences**
+**C9: Religions, Values, and Peak Experiences**
 
 Abraham Maslow
 
@@ -765,12 +709,41 @@ Date Read: 03/2025
 Rating: 8/10
 
 :::
+
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C8: Flight From Wonder: An Investigation into Scientific Creativity**
+
+Albert Rothenberg
+
+Date Read: 09/2024
+
+Rating: 3/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C7: The Creative Mind: Myths and Mechanisms**
+
+Margaret Boden
+
+Date Read: 09/2024
+
+Rating: 6/10
+
+:::
 ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/71H17eYwwTL._AC_UF1000,1000_QL80_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**T4: Group Psychology and Analysis of the Ego**
+**C6: Group Psychology and Analysis of the Ego**
 
 Sigmund Freud
 
@@ -784,7 +757,7 @@ Rating: 7/10
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**T3: A Theory of Human Motivation**
+**C5: A Theory of Human Motivation**
 
 Abraham Maslow
 
@@ -798,7 +771,7 @@ Rating: 6/10
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**T2: The Ego and the Id**
+**C4: The Ego and the Id**
 
 Sigmund Freud
 
@@ -808,17 +781,45 @@ Rating: 7/10
 
 :::
 ::: {.g-col-12 .g-col-md-2}
+![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387703037i/30676.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C3: The Act of Creation**
+
+Arthur Koestler
+
+Date Read: 06/2024
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**T1: Psychology of the Unconscious**
+**C2: Psychology of the Unconscious**
 
 Carl Jung
 
 Date Read: 05/2024
 
 Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C1: Creativity in Science: Chance, Logic, Genius, and Zeitgeist**
+
+Dean Keith Simonton
+
+Date Read: 05/2024
+
+Rating: 8/10
 
 :::
 :::
