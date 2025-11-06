@@ -4,6 +4,260 @@ subtitle: "Pour inventer, il faut penser à côté."
 title-block-banner: false
 ---
 
+## Psychology and Cognitive Science
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61+yg2hY5XL.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C12: The Psychology of Invention in the Mathematical Field**
+
+Jacques Hadamard
+
+Date Read: 08/2025
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41vFB4lW+6L._SY466_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C11: The Problem of Anxiety**
+
+Sigmund Freud
+
+Date Read: 06/2025
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51-cC40nYjL._SY445_SX342_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C10: The Way We Think: Conceptual Blending**
+
+Gilles Fauconnier and Mark Turner
+
+Date Read: 05/2025
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/716kKs0kkoL._SL1500_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C9: Religions, Values, and Peak Experiences**
+
+Abraham Maslow
+
+Date Read: 03/2025
+
+Rating: 8/10
+
+:::
+
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C8: Flight From Wonder: An Investigation into Scientific Creativity**
+
+Albert Rothenberg
+
+Date Read: 09/2024
+
+Rating: 3/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C7: The Creative Mind: Myths and Mechanisms**
+
+Margaret Boden
+
+Date Read: 09/2024
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71H17eYwwTL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C6: Group Psychology and Analysis of the Ego**
+
+Sigmund Freud
+
+Date Read: 07/2024
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61qJ0faL5-L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C5: A Theory of Human Motivation**
+
+Abraham Maslow
+
+Date Read: 07/2024
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61DvlUS31dL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C4: The Ego and the Id**
+
+Sigmund Freud
+
+Date Read: 07/2024
+
+Rating: 7/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387703037i/30676.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C3: The Act of Creation**
+
+Arthur Koestler
+
+Date Read: 06/2024
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C2: Psychology of the Unconscious**
+
+Carl Jung
+
+Date Read: 05/2024
+
+Rating: 6/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C1: Creativity in Science: Chance, Logic, Genius, and Zeitgeist**
+
+Dean Keith Simonton
+
+Date Read: 05/2024
+
+Rating: 8/10
+
+:::
+:::
+
+## Mathematics
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61Pig8o8BvL._SY425_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**M3: Information Theory, Inference, and Learning Algorithms**
+
+David MacKay
+
+Date Read: Ongoing
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71ger1O8m8L._SY522_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**M2: High Dimensional Probability**
+
+Roman Vershynin
+
+Date Read: 11/2023
+
+Rating: 8/10
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/61EAVnULjUL._SY522_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**M1: Understanding Machine Learning: From Theory to Algorithms**
+
+Shai Shalev-Shwartz and Shai Ben-David
+
+Date Read: 08/2023
+
+Rating: 8/10
+
+:::
+:::
+
+## Biology, Neuroscience, and Physics
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/81hraOuVHvL._SY385_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C2: An Introductory Course in Computational Neuroscience**
+
+Paul Miller
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://mit-press-new-us.imgix.net/covers/9780262049955.jpg?auto=format&w=298&dpr=1&q=80)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C1: What is Intelligence? Lessons from AI About Evolution, Computing, and Minds**
+
+Blaise Agüera y Arcas
+
+Date Read: Ongoing
+
+Rating: 10/10
+
+:::
+:::
+
 
 ## Philosophy of Science, Epistemology, and Metaphysics
 
@@ -190,86 +444,6 @@ Paul Thagard
 Date Read: 06/2024
 
 Rating: 6/10
-
-:::
-:::
-
-## Biology, Neuroscience, and Physics
-
-::: {.grid}
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/81hraOuVHvL._SY385_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C2: An Introductory Course in Computational Neuroscience**
-
-Paul Miller
-
-Date Read: Ongoing
-
-Rating: TBD
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://mit-press-new-us.imgix.net/covers/9780262049955.jpg?auto=format&w=298&dpr=1&q=80)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C1: What is Intelligence? Lessons from AI About Evolution, Computing, and Minds**
-
-Blaise Agüera y Arcas
-
-Date Read: Ongoing
-
-Rating: 10/10
-
-:::
-:::
-
-## Mathematics
-
-::: {.grid}
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61Pig8o8BvL._SY425_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**M3: Information Theory, Inference, and Learning Algorithms**
-
-David MacKay
-
-Date Read: Ongoing
-
-Rating: 8/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/71ger1O8m8L._SY522_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**M2: High Dimensional Probability**
-
-Roman Vershynin
-
-Date Read: 11/2023
-
-Rating: 8/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61EAVnULjUL._SY522_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**M1: Understanding Machine Learning: From Theory to Algorithms**
-
-Shai Shalev-Shwartz and Shai Ben-David
-
-Date Read: 08/2023
-
-Rating: 8/10
 
 :::
 :::
@@ -664,176 +838,3 @@ Rating: 9/10
 :::
 :::
 
-## Psychology and Cognitive Science
-
-::: {.grid}
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61+yg2hY5XL.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C12: The Psychology of Invention in the Mathematical Field**
-
-Jacques Hadamard
-
-Date Read: 08/2025
-
-Rating: 6/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/41vFB4lW+6L._SY466_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C11: The Problem of Anxiety**
-
-Sigmund Freud
-
-Date Read: 06/2025
-
-Rating: 6/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/51-cC40nYjL._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C10: The Way We Think: Conceptual Blending**
-
-Gilles Fauconnier and Mark Turner
-
-Date Read: 05/2025
-
-Rating: 7/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/716kKs0kkoL._SL1500_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C9: Religions, Values, and Peak Experiences**
-
-Abraham Maslow
-
-Date Read: 03/2025
-
-Rating: 8/10
-
-:::
-
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C8: Flight From Wonder: An Investigation into Scientific Creativity**
-
-Albert Rothenberg
-
-Date Read: 09/2024
-
-Rating: 3/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C7: The Creative Mind: Myths and Mechanisms**
-
-Margaret Boden
-
-Date Read: 09/2024
-
-Rating: 6/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/71H17eYwwTL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C6: Group Psychology and Analysis of the Ego**
-
-Sigmund Freud
-
-Date Read: 07/2024
-
-Rating: 7/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61qJ0faL5-L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C5: A Theory of Human Motivation**
-
-Abraham Maslow
-
-Date Read: 07/2024
-
-Rating: 6/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61DvlUS31dL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C4: The Ego and the Id**
-
-Sigmund Freud
-
-Date Read: 07/2024
-
-Rating: 7/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387703037i/30676.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C3: The Act of Creation**
-
-Arthur Koestler
-
-Date Read: 06/2024
-
-Rating: 8/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C2: Psychology of the Unconscious**
-
-Carl Jung
-
-Date Read: 05/2024
-
-Rating: 6/10
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C1: Creativity in Science: Chance, Logic, Genius, and Zeitgeist**
-
-Dean Keith Simonton
-
-Date Read: 05/2024
-
-Rating: 8/10
-
-:::
-:::
