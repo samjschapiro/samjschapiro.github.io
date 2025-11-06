@@ -198,6 +198,20 @@ Rating: 6/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/81hraOuVHvL._SY385_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C2: An Introductory Course in Computational Neuroscience**
+
+Paul Miller
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://mit-press-new-us.imgix.net/covers/9780262049955.jpg?auto=format&w=298&dpr=1&q=80)
 :::
 ::: {.g-col-12 .g-col-md-10}
@@ -264,7 +278,7 @@ Rating: 8/10
 ## Political Philosophy
 
 ::: {.grid}
-::: {.g-col-12 .g-col-md-2}
+<!-- ::: {.g-col-12 .g-col-md-2}
 ![](https://press.uchicago.edu/.imaging/mte/ucp/medium/dam/ucp/books/jacket/978/02/26/77/9780226777108.jpg/jcr:content/9780226777108.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
@@ -277,7 +291,7 @@ Date Read: Ongoing
 
 Rating: TBD
 
-:::
+::: -->
 ::: {.g-col-12 .g-col-md-2}
 ![](https://broadviewpress.com/wp-content/uploads/2025/05/9781554813155.jpg)
 :::
