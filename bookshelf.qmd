@@ -229,6 +229,20 @@ Rating: 8/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/71SQzw7iguL._SY425_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C3: Theoretical Neuroscience**
+
+Peter Dayan and Laurence Abbott
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/81hraOuVHvL._SY385_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
