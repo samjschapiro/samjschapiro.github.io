@@ -66,7 +66,7 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 ---
 
 :::{#hero-heading}
-I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence.
+I am an [interdisciplinary scholar](bookshelf.html) drawing upon computer science, neuroscience, philosophy, and psychology to study the science of intelligence. 
 
 Previously, I was a visiting scholar at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage), where I worked on the theoretical foundations of creativity. I received my undergradute degree in computer science at the [Siebel School of Computing and Data Science, University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I was advised by [Prof. Han Zhao](https://hanzhaoml.github.io/).
 
