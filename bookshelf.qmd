@@ -8,6 +8,20 @@ title-block-banner: false
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/A10VgUsIrQL._SL1500_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C13: Motivation and Personality**
+
+Abrahm Maslow
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/61+yg2hY5XL.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
