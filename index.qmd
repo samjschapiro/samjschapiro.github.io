@@ -1,7 +1,7 @@
 ---
 title: "Samuel Schapiro"
 description-meta: "Quarto Academic Website Template adapted by Dr. Gang He"
-image: "files/images/hshoot_zoomed.png"
+image: "files/images/headshot.png"
 page-navigation: false
 toc: false
 #sidebar: false
