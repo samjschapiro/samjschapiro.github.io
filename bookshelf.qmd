@@ -7,7 +7,7 @@ title-block-banner: false
 ## Psychology and Cognitive Science
 
 ::: {.grid}
-::: {.g-col-12 .g-col-md-2}
+<!-- ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/A10VgUsIrQL._SL1500_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
@@ -20,7 +20,7 @@ Date Read: Ongoing
 
 Rating: TBD
 
-:::
+::: -->
 ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/61+yg2hY5XL.jpg)
 :::

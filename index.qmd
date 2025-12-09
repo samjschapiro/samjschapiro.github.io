@@ -12,10 +12,10 @@ about:
   template: trestles
   image-width: 70%
   links:
-    - icon: sun
-      text: Group
-      href: https://spiralworks.ai
-      target: _blank
+    # - icon: sun
+    #   text: Group
+    #   href: https://spiralworks.ai
+    #   target: _blank
     - icon: globe
       text: Bio
       href: https://simons.berkeley.edu/people/sam-schapiro
@@ -66,13 +66,19 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 ---
 
 :::{#hero-heading}
-I am an [interdisciplinary scholar](bookshelf.html) drawing upon computer science, neuroscience, philosophy, and psychology to study the science of intelligence. 
 
-Previously, I was a visiting scholar at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage), where I worked on the theoretical foundations of creativity. I received my undergradute degree in computer science at the [Siebel School of Computing and Data Science, University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I was advised by [Prof. Han Zhao](https://hanzhaoml.github.io/).
+### Bio
+[Interdisciplinary scholar](bookshelf.html) studying the science of intelligence.
 
-In my free time, I enjoy sports performance training and studying exercise science. 
+### Currently
+Founding scientist at [Prior Computers](https://www.priorcomputers.ai), the machine psychology company.
 
-## Select Publications
+### Previously
+Researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage). 
+
+Undergrad in CS at [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/)
+
+### Select Publications
 - **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
 - **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, Jun 23-27, Campinas, Brazil. **[Best Short Paper Award]**
 - A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, Jun 23-27, Campinas, Brazil.
