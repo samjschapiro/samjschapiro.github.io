@@ -247,7 +247,7 @@ Rating: 8/10
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**C3: Theoretical Neuroscience**
+**C4: Theoretical Neuroscience**
 
 Peter Dayan and Laurence Abbott
 
@@ -261,13 +261,27 @@ Rating: TBD
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**C2: An Introductory Course in Computational Neuroscience**
+**C3: An Introductory Course in Computational Neuroscience**
 
 Paul Miller
 
 Date Read: Ongoing
 
 Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41cIrt+-4EL._SY445_SX342_ControlCacheEqualizer_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C2: Why Greatness Cannot Be Planned: The Myth of the Objective**
+
+Kenneth Stanley and Joel Lehman
+
+Date Read: 12/2025
+
+Rating: 7/10
 
 :::
 ::: {.g-col-12 .g-col-md-2}
