@@ -243,6 +243,20 @@ Rating: 8/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/81WOyVkjN-L._SY466_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C5: Complexity: A Guided Tour**
+
+Melanie Mitchell
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/71SQzw7iguL._SY425_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
@@ -609,9 +623,23 @@ Rating: 2/10
 :::
 
 
-## Philosophy of Morality and Culture
+## Anthropology and Moral Philosophy
 
 ::: {.grid}
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/51Lk70sQvzL._SY445_SX342_ControlCacheEqualizer_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**N20: How Institutions Think**
+
+Mary Douglas
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
 ::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/41l2ASPOdeL._SY445_SX342_ControlCacheEqualizer_.jpg)
 :::
