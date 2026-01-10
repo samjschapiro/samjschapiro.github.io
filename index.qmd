@@ -71,7 +71,7 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 [Interdisciplinary scholar](bookshelf.html) studying the science of intelligence.
 
 ### Currently
-Founding scientist at [Prior Computers](https://www.priorcomputers.ai), the machine psychology company.
+Founding member of technical staff at [Prior Computers](https://www.priorcomputers.ai), the machine psychology company.
 
 ### Previously
 Researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage). 
