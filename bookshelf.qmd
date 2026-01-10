@@ -243,11 +243,25 @@ Rating: 8/10
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/81WOyVkjN-L._SY466_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**C5: Complexity: A Guided Tour**
+
+Melanie Mitchell
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
+::: {.g-col-12 .g-col-md-2}
 ![](https://m.media-amazon.com/images/I/71SQzw7iguL._SY425_.jpg)
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**C5: Theoretical Neuroscience**
+**C4: Theoretical Neuroscience**
 
 Peter Dayan and Laurence Abbott
 
@@ -261,27 +275,13 @@ Rating: TBD
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**C4: An Introductory Course in Computational Neuroscience**
+**C3: An Introductory Course in Computational Neuroscience**
 
 Paul Miller
 
 Date Read: Ongoing
 
 Rating: TBD
-
-:::
-::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/81WOyVkjN-L._SY466_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C3: Complexity: A Guided Tour**
-
-Melanie Mitchell
-
-Date Read: 01/2026
-
-Rating: 8/10
 
 :::
 ::: {.g-col-12 .g-col-md-2}
