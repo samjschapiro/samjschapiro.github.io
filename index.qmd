@@ -85,7 +85,7 @@ Undergrad in TCS at [University of Illinois, Urbana-Champaign](https://siebelsch
 
 #### Understanding Creativity in Large Language Models
 - **S. Schapiro**, C. Francisco Park, S. Murthy, L. R. Varshney, F. Sosa, _CreativityNeuro: Discovering Controllable and Transferable Creativity Subspaces in LLMs_, Under Review at Third Conference on Language Modeling, 2026.
-- S. Murthy, P. Qian, E. Bigelow, J. Ward, **S. Schapiro**, C. Francisco Park, R. Hawkins, F. Sosa, _Looking for cognitive model parameters in the residual stream_, Under Review at Third Conference on Language Modeling, 2026.
+<!-- - S. Murthy, P. Qian, E. Bigelow, J. Ward, **S. Schapiro**, C. Francisco Park, R. Hawkins, F. Sosa, _Looking for cognitive model parameters in the residual stream_, Under Review at Third Conference on Language Modeling, 2026. -->
 - **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
 
 #### Computational Creativity Systems
