@@ -70,7 +70,7 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 ### Bio and Research Interests
 I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence. I am currently interested in 
 
-1. Understanding how creativity is implemented in minds and machines
+1. Understanding the **foundations of creativity**, such as how it is implemented in minds and machines
 2. Developing AI methods and systems that exhibit creative behavior
 
 Previously, I was a researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage). I did my undergrad at the [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I studied theoretical computer science.
@@ -80,17 +80,17 @@ Founding research scientist at [Prior Computers](https://www.priorcomputers.ai),
 
 ### Select Publications
 
-#### Theories of Creativity
+#### Foundations of Creativity
 - **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, 2025. **[Best Short Paper Award]**
-
-#### Understanding Creativity in Large Language Models
-- **S. Schapiro**, C. Francisco Park, S. Murthy, L. R. Varshney, F. Sosa, _CreativityNeuro: Discovering Controllable and Transferable Creativity Subspaces in LLMs_, Under Review at Third Conference on Language Modeling, 2026.
-<!-- - S. Murthy, P. Qian, E. Bigelow, J. Ward, **S. Schapiro**, C. Francisco Park, R. Hawkins, F. Sosa, _Looking for cognitive model parameters in the residual stream_, Under Review at Third Conference on Language Modeling, 2026. -->
 - **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
 
-#### Computational Creativity Systems
+#### Creative AI Systems
+- **S. Schapiro**, C. Francisco Park, S. Murthy, L. R. Varshney, F. Sosa, _CreativityNeuro: Discovering Controllable and Transferable Creativity Subspaces in LLMs_, Under Review at Third Conference on Language Modeling, 2026.
 - A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, 2025.
 
+### Service
+- Reviewer at ICML 2026
+- Reviewer at NeurIPS 2024, Workshop on Creativity & Generative AI
 
 :::
 
