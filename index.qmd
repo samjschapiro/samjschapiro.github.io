@@ -67,18 +67,18 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 
 :::{#hero-heading}
 
-### Bio
-[Interdisciplinary scholar](bookshelf.html) studying creativity and the science of intelligence.
+### Bio and Research Interests
+I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence. I am currently interested in 
+
+1. Understanding how creativity is implemented in minds and machines
+2. Developing AI methods and systems that exhibit creative behavior
+
+Previously, I was a researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage). I did my undergrad at the [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I studied theoretical computer science.
 
 <!-- ### Currently
 Founding research scientist at [Prior Computers](https://www.priorcomputers.ai), the machine psychology company. -->
 
-### Previously
-Researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage). 
-
-Undergrad in TCS at [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/)
-
-### Select Publications by Topic
+### Select Publications
 
 #### Theories of Creativity
 - **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, 2025. **[Best Short Paper Award]**
@@ -90,6 +90,7 @@ Undergrad in TCS at [University of Illinois, Urbana-Champaign](https://siebelsch
 
 #### Computational Creativity Systems
 - A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, 2025.
+
 
 :::
 
