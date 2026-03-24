@@ -1,11 +1,11 @@
 
-    - path: https://samuelschapiro.substack.com/p/cognition-beyond-civilization
-      image: "/files/images/metaphysics_photo.jpg"
-      title: "Book Draft: The Metaphysics of Modern Cognition"
-      author: "Samuel Schapiro"
-      subtitle: "*A Guide for Free Thinkers and the Prelude to a Cultural Crusade*"
-      date: "2025-06-01"
-      categories: [news] 
+    # - path: https://samuelschapiro.substack.com/p/cognition-beyond-civilization
+    #   image: "/files/images/metaphysics_photo.jpg"
+    #   title: "Book Draft: The Metaphysics of Modern Cognition"
+    #   author: "Samuel Schapiro"
+    #   subtitle: "*A Guide for Free Thinkers and the Prelude to a Cultural Crusade*"
+    #   date: "2025-06-01"
+    #   categories: [news] 
 
     # - path: https://samuelschapiro.substack.com/p/towards-a-new-kind-of-science
     #   image: "/files/images/new_kind_of_sci.png"
@@ -16,10 +16,19 @@
     #   categories: [news] 
 
     - path: https://arxiv.org/abs/2509.21043
-      image: "/files/images/einstein_graphic2.png"
-      title: "[Preprint] Combinatorial Creativity: A New Frontier in Generalization Abilities"
+      image: "files/images/best_paper.jpg"
+      title: "Best Short Paper Award at ICCC 2025"
       author: "Samuel Schapiro"
-      subtitle: "*Understanding the creativity of LLMs*"
-      date: "2025-09-25"
+      subtitle: "*Transformational Creativity in Science: A Graphical Theory*"
+      date: "2025-06-28"
       categories: [news] 
+
+    - path: https://arxiv.org/abs/2509.21043
+      image: "files/images/dat_trajectory_panels.png"
+      title: "New Preprint: Steering LLMs to Improve Divergent Thinking"
+      author: "Samuel Schapiro"
+      subtitle: "*CreativityNeuro: Steering Language Model Weights to Improve Divergent Thinking*"
+      date: "2026-03-31"
+      categories: [news] 
+
 
