@@ -70,8 +70,8 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 ### Bio and Research Interests
 I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence. I am currently interested in 
 
-1. Understanding the **foundations of creativity**, such as how it is implemented in minds and machines
-2. Developing AI methods and systems that exhibit creative behavior
+1. Understanding the **foundations of creativity**--namely, how it is implemented in minds and machines
+2. Developing **AI methods** and systems that exhibit creative behavior
 
 Previously, I was a researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage). I did my undergrad at the [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I studied theoretical computer science.
 
