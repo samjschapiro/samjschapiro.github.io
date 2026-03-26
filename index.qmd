@@ -90,6 +90,8 @@ Founding research scientist at [Prior Computers](https://www.priorcomputers.ai),
 
 ### Service
 - Reviewer at ICML 2026
+- Reviewer at COLM 2026
+- Reviewer at NeurIPS 2026
 - Reviewer at NeurIPS 2024, Workshop on Creativity & Generative AI
 
 :::
