@@ -541,7 +541,7 @@ Rating: 6/10
 :::
 ::: {.g-col-12 .g-col-md-10}
 
-**O8: History of Political Philosophy**
+**O9: History of Political Philosophy**
 
 Leo Strauss
 
@@ -550,6 +550,20 @@ Date Read: Ongoing
 Rating: TBD
 
 ::: -->
+::: {.g-col-12 .g-col-md-2}
+![](https://m.media-amazon.com/images/I/41rTM8OJQGL._SY445_SX342_QL70_FMwebp_.jpg)
+:::
+::: {.g-col-12 .g-col-md-10}
+
+**O8: Das Kapital**
+
+Karl Marx
+
+Date Read: Ongoing
+
+Rating: TBD
+
+:::
 ::: {.g-col-12 .g-col-md-2}
 ![](https://broadviewpress.com/wp-content/uploads/2026/03/9781554813155-600x917.jpg)
 :::
