@@ -83,9 +83,10 @@ Founding research scientist at [Prior Computers](https://www.priorcomputers.ai),
 #### Foundations of Creativity
 - **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, 2025. **[Best Short Paper Award]**
 - **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
+- **S. Schapiro**, [Do Semantic Distance Metrics _Actually_ Predict Creativity in LLMs?](), Under Review at the 17th International Conference on Computational Creativity, 2026.
 
 #### Creative AI Systems
-- **S. Schapiro**, C. Francisco Park, F. Sosa, L. R. Varshney, [CreativityNeuro: Discovering Controllable and Transferable Creativity Subspaces in LLMs](files/CN.pdf), Under Review at Third Conference on Language Modeling, 2026.
+- **S. Schapiro**, C. Francisco Park, F. Sosa, L. R. Varshney, [CreativityNeuro: Steering Large Language Weights to Improve Divergent Thinking](files/CN.pdf), Under Review at Third Conference on Language Modeling, 2026.
 - A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, 2025.
 
 ### Service
