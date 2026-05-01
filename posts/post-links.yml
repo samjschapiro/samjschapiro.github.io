@@ -23,12 +23,21 @@
       date: "2025-06-28"
       categories: [news] 
 
-    - path: https://arxiv.org/abs/2509.21043
+    - path: files/CN.pdf
       image: "files/images/dat_trajectory_panels.png"
       title: "New Preprint: Steering LLMs to Improve Divergent Thinking"
       author: "Samuel Schapiro"
       subtitle: "*CreativityNeuro: Steering Language Model Weights to Improve Divergent Thinking*"
       date: "2026-03-31"
       categories: [news] 
+
+    - path: files/SD.pdf
+      image: "files/images/fig_overview.png"
+      title: "New Preprint: Do Semantic Distance Tests *Actually* Predict Creativity in LLMs?"
+      author: "Samuel Schapiro"
+      subtitle: "*Do Semantic Distance Tests Actually Predict Creativity in LLMs*"
+      date: "2026-05-1"
+      categories: [news] 
+
 
 
