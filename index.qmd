@@ -67,29 +67,37 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 
 :::{#hero-heading}
 
-### Bio and Research Interests
+## Bio
 I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence. I am currently interested in 
 
-1. Understanding the **foundations of creativity**--namely, how it is implemented in minds and machines
-2. Developing **AI methods** and systems that exhibit creative behavior
+- Understanding the **foundations of creativity**--namely, how it emerges and manifests in minds and machines
+- Developing **AI methods** and systems that exhibit creative behavior
 
 Previously, I was a researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage). I did my undergrad at the [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I studied theoretical computer science.
 
 <!-- ### Currently
 Founding research scientist at [Prior Computers](https://www.priorcomputers.ai), the machine psychology company. -->
 
-### Select Publications
+## Research
 
-#### Foundations of Creativity
-- **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, 2025. **[Best Short Paper Award]**
-- **S. Schapiro**, A. Gladstone, J. Black, H. Ji. [Do Semantic Distance Tests _Actually_ Predict Creativity in LLMs?](files/SD.pdf), Under Review at the 43rd International Conference on Machine Learning, 2026.
-- **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
+### Foundations of Creativity
+Here, the goal is to uncover the **fundamental, scientific principles of creativity.** This involves conceptual and theoretical work [1], as well as large-scale empirical studies involving LLMs [2, 3].
 
-#### Creative AI Systems
-- **S. Schapiro**, C. Francisco Park, F. Sosa, L. R. Varshney, [CreativityNeuro: Steering Large Language Weights to Improve Divergent Thinking](files/CN.pdf), Under Review at Third Conference on Language Modeling, 2026.
-- A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, 2025.
+#### Recent Papers
 
-### Service
+1. **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, 2025. **[Best Short Paper Award]**
+2. **S. Schapiro**, A. Gladstone, J. Black, H. Ji. [Do Semantic Distance Tests _Actually_ Predict Creativity in LLMs?](files/SD.pdf), Under Review at the 43rd International Conference on Machine Learning, 2026.
+3. **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
+
+### Creative AI Systems
+The aim here is to develop methods that **make AI models more creative** [1], and to apply these systems to scientific discovery and other applications [2].
+
+#### Recent Papers
+
+1. **S. Schapiro**, C. Francisco Park, F. Sosa, L. R. Varshney, [CreativityNeuro: Steering Large Language Weights to Improve Divergent Thinking](files/CN.pdf), Under Review at Third Conference on Language Modeling, 2026.
+2. A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, 2025.
+
+## Service
 - Reviewer at ICML 2026, COLM 2026, NeurIPS 2026, NeurIPS 2024 (Workshop on Creativity & Generative AI)
 
 :::
