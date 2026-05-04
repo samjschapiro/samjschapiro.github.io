@@ -90,12 +90,12 @@ Here, the goal is to uncover the **fundamental, scientific principles of creativ
 3. **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
 
 ### Creative AI Systems
-The aim here is to develop methods that **make AI models more creative** [1], and to apply these systems to scientific discovery and other applications [2].
+The aim here is to develop methods that **make AI models more creative** [4], and to apply these systems to scientific discovery and other applications [5].
 
 #### Recent Papers
 
-1. **S. Schapiro**, C. Francisco Park, F. Sosa, L. R. Varshney, [CreativityNeuro: Steering Large Language Weights to Improve Divergent Thinking](files/CN.pdf), Under Review at Third Conference on Language Modeling, 2026.
-2. A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, 2025.
+4. **S. Schapiro**, C. Francisco Park, F. Sosa, L. R. Varshney, [CreativityNeuro: Steering Large Language Weights to Improve Divergent Thinking](files/CN.pdf), Under Review at Third Conference on Language Modeling, 2026.
+5. A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, 2025.
 
 ## Service
 - Reviewer at ICML 2026, COLM 2026, NeurIPS 2026, NeurIPS 2024 (Workshop on Creativity & Generative AI)
