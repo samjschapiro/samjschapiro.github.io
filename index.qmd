@@ -86,7 +86,7 @@ Here, the goal is to uncover the **fundamental, scientific principles of creativ
 #### Recent Papers
 
 1. **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, 2025. **[Best Short Paper Award]**
-2. **S. Schapiro**, A. Gladstone, J. Black, H. Ji. [Do Semantic Distance Tests _Actually_ Predict Creativity in LLMs?](files/SD.pdf), Under Review at the 43rd International Conference on Machine Learning, 2026.
+2. **S. Schapiro**, A. Gladstone, J. Black, H. Ji. [Do Semantic Distance Tests _Actually_ Predict Creativity in LLMs?](files/SD_NIPS.pdf), Under Review at the 43rd International Conference on Machine Learning, 2026.
 3. **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
 
 ### Creative AI Systems
