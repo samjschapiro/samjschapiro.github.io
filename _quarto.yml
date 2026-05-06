@@ -18,7 +18,8 @@ website:
   description: "Personal Website"
  
   navbar:
-    background: light  # You can change the background color here
+    background: light
+    pinned: true
 
     left:   # You can comment out all navigation items here if you just like to keep the index page only
 #      - text: Home
@@ -46,15 +47,9 @@ website:
       # - text: Group   # Comment the Group part out to remove the Group page
       #   href: people.qmd
 
-    right: 
-      - text: CV
-        href: files/nsf-biosketch.pdf
-      - icon: github
-        href: https://github.com/samjschapiro
-        target: _blank
       # - text: "{{< fa brands bluesky >}}"
       #   href: https://bsky.app
-      #   target: _blank      
+      #   target: _blank
       # - icon: rss
       #   href: posts.xml
       #   target: _blank
@@ -79,7 +74,7 @@ website:
     location: navbar
     type: textbox
   
-  reader-mode: true
+  reader-mode: false
 
   draft-mode: unlinked
   

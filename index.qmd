@@ -6,6 +6,82 @@ page-navigation: false
 toc: false
 #sidebar: false
 page-layout: full
+include-after-body:
+  text: |
+    <canvas id="bg-network" aria-hidden="true"></canvas>
+    <script>
+    (function() {
+      document.body.classList.add('home-page');
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const canvas = document.getElementById('bg-network');
+      const ctx = canvas.getContext('2d');
+      let W, H, dpr, particles = [];
+      const N = 55;
+      const LINK_DIST = 150;
+
+      function resize() {
+        dpr = window.devicePixelRatio || 1;
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
+        canvas.style.width = W + 'px';
+        canvas.style.height = H + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      for (let i = 0; i < N; i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          r: 1.2 + Math.random() * 1.0,
+        });
+      }
+
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+
+        for (const p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+        }
+
+        ctx.lineWidth = 0.7;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const d = Math.hypot(dx, dy);
+            if (d < LINK_DIST) {
+              ctx.strokeStyle = 'rgba(30, 58, 138, ' + (0.18 * (1 - d / LINK_DIST)).toFixed(3) + ')';
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        ctx.fillStyle = 'rgba(30, 58, 138, 0.55)';
+        for (const p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+    </script>
+
 
 about:
   id: hero-heading
@@ -67,21 +143,23 @@ listing:   # Comment the listing section and delete corresponding lines in the i
 
 :::{#hero-heading}
 
+### Currently
+Founding research scientist at a stealth AI company.
+
 ## Bio
 I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence. I am currently interested in 
 
-- Understanding the **foundations of creativity**--namely, how it emerges and manifests in minds and machines
+- Uncovering the **fundamental, scientific principles of creativity** governing minds and machines 
 - Developing **AI methods** and systems that exhibit creative behavior
 
 Previously, I was a researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage). I did my undergrad at the [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I studied theoretical computer science.
 
-<!-- ### Currently
-Founding research scientist at [Prior Computers](https://www.priorcomputers.ai), the machine psychology company. -->
+
 
 ## Research
 
 ### Foundations of Creativity
-Here, the goal is to uncover the **fundamental, scientific principles of creativity.** This involves conceptual and theoretical work [1], as well as large-scale empirical studies involving LLMs [2, 3].
+**Goal:** To uncover fundamental principles of creativity governing minds and machines. Achieved through a combination of conceptual and theoretical work [1], and empirical study of LLMs [2, 3].
 
 #### Recent Papers
 
@@ -90,7 +168,7 @@ Here, the goal is to uncover the **fundamental, scientific principles of creativ
 3. **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
 
 ### Creative AI Systems
-The aim here is to develop methods that **make AI models more creative** [4], and to apply these systems to scientific discovery and other applications [5].
+**Goal:** To develop methods that make AI models more creative [4], and to apply these techniques to scientific discovery [5].
 
 #### Recent Papers
 
