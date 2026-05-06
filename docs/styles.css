@@ -175,11 +175,15 @@ code {
 /* ---------- About / hero (trestles template) ---------- */
 
 /* Pin the headshot column while the bio scrolls past it. Releases when
-   the trestles container ends. Top offset = navbar height + breathing room. */
-.quarto-about-trestles .about-entity {
-  position: sticky;
-  top: 90px;
-  align-self: start;
+   the trestles container ends. Top offset = navbar height + breathing room.
+   Disabled on narrow viewports — trestles stacks vertically on mobile, so
+   sticky just makes the image lock at the top of the page. */
+@media (min-width: 768px) {
+  .quarto-about-trestles .about-entity {
+    position: sticky;
+    top: 90px;
+    align-self: start;
+  }
 }
 
 .quarto-about-trestles .about-entity .about-image {
