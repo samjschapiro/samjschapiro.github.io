@@ -26,7 +26,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -194,24 +193,8 @@ window.Quarto = {
 <span class="menu-text">Bookshelf</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./files/nsf-biosketch.pdf"> 
-<span class="menu-text">CV</span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/samjschapiro" target="_blank"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -257,16 +240,18 @@ window.Quarto = {
 </div>
   </div>
   <div class="about-contents"><div id="hero-heading">
+<section id="currently" class="level3">
+<h3 data-anchor-id="currently">Currently</h3>
+<p>Founding research scientist at a stealth AI company.</p>
+</section>
 <section id="bio" class="level2">
 <h2 data-anchor-id="bio">Bio</h2>
 <p>I am an <a href="bookshelf.html">interdisciplinary scholar</a> studying the science of intelligence. I am currently interested in</p>
 <ul>
-<li>Understanding the <strong>foundations of creativity</strong>–namely, how it emerges and manifests in minds and machines</li>
+<li>Uncovering the <strong>fundamental, scientific principles of creativity</strong> governing minds and machines</li>
 <li>Developing <strong>AI methods</strong> and systems that exhibit creative behavior</li>
 </ul>
 <p>Previously, I was a researcher at the <a href="https://simons.berkeley.edu/homepage">Simons Institute for the Theory of Computing, Berkeley</a>. I did my undergrad at the <a href="https://siebelschool.illinois.edu/">University of Illinois, Urbana-Champaign</a>, where I studied theoretical computer science.</p>
-<!-- ### Currently
-Founding research scientist at [Prior Computers](https://www.priorcomputers.ai), the machine psychology company. -->
 </section>
 <section id="research" class="level2">
 <h2 data-anchor-id="research">Research</h2>
@@ -804,6 +789,79 @@ Jun 28, 2025
     </div>
   </div>
 </footer>
+<canvas id="bg-network" aria-hidden="true"></canvas>
+<script>
+(function() {
+  document.body.classList.add('home-page');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const canvas = document.getElementById('bg-network');
+  const ctx = canvas.getContext('2d');
+  let W, H, dpr, particles = [];
+  const N = 55;
+  const LINK_DIST = 150;
+
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  for (let i = 0; i < N; i++) {
+    particles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
+      r: 1.2 + Math.random() * 1.0,
+    });
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+    }
+
+    ctx.lineWidth = 0.7;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const d = Math.hypot(dx, dy);
+        if (d < LINK_DIST) {
+          ctx.strokeStyle = 'rgba(30, 58, 138, ' + (0.18 * (1 - d / LINK_DIST)).toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    ctx.fillStyle = 'rgba(30, 58, 138, 0.55)';
+    for (const p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
 
 
 

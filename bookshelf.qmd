@@ -2,946 +2,974 @@
 title: "Bookshelf"
 subtitle: "Pour inventer, il faut penser à côté."
 title-block-banner: false
+page-layout: full
+toc: false
+include-after-body:
+  text: |
+    <script>
+    document.body.classList.add('bookshelf-page');
+    document.addEventListener('DOMContentLoaded', () => {
+      const books = Array.from(document.querySelectorAll('.book'));
+      const grid = document.querySelector('.grid');
+      if (!grid || !books.length) return;
+
+      const catShort = {
+        'Psychology and Cognitive Science': 'Psychology',
+        'Mathematics': 'Mathematics',
+        'Biology, Neuroscience, and Physics': 'Biology',
+        'Philosophy of Science, Epistemology, and Metaphysics': 'Philosophy',
+        'Political Philosophy': 'Politics',
+        'Anthropology and Moral Philosophy': 'Anthropology'
+      };
+
+      books.forEach(book => {
+        const text = book.textContent;
+        const dateStr = (text.match(/Date Read:\s*([^\n]+)/) || [,'Ongoing'])[1].trim();
+        const ratingStr = (text.match(/Rating:\s*([^\n]+)/) || [,'TBD'])[1].trim();
+        const category = (text.match(/Category:\s*([^\n]+)/) || [,''])[1].trim();
+
+        let dateNum;
+        if (/^ongoing$/i.test(dateStr)) {
+          dateNum = 999999;
+        } else {
+          const m = dateStr.match(/(\d{1,2})\/(\d{4})/);
+          dateNum = m ? parseInt(m[2]) * 12 + parseInt(m[1]) : 0;
+        }
+        let ratingNum;
+        if (/^tbd$/i.test(ratingStr)) {
+          ratingNum = -1;
+        } else {
+          const m = ratingStr.match(/(\d+(?:\.\d+)?)/);
+          ratingNum = m ? parseFloat(m[1]) : -1;
+        }
+        book.dataset.date = dateNum;
+        book.dataset.rating = ratingNum;
+        book.dataset.category = category;
+
+        // Replace the 3 metadata paragraphs with a single compact line
+        const ps = Array.from(book.querySelectorAll('p'));
+        const meta = ps.filter(p => /^(Category:|Date Read:|Rating:)/.test(p.textContent.trim()));
+        if (meta.length) {
+          const compact = document.createElement('p');
+          compact.className = 'book-meta';
+          const cat = catShort[category] || category;
+          compact.innerHTML = `<span class="meta-rating">${ratingStr}</span> · <span class="meta-date">${dateStr}</span> · <em class="meta-cat">${cat}</em>`;
+          meta[0].parentNode.insertBefore(compact, meta[0]);
+          meta.forEach(p => p.remove());
+        }
+      });
+
+      function sortBooks(key) {
+        books.sort((a, b) => {
+          if (key === 'category') {
+            const c = a.dataset.category.localeCompare(b.dataset.category);
+            if (c !== 0) return c;
+            return parseFloat(b.dataset.date) - parseFloat(a.dataset.date);
+          }
+          return parseFloat(b.dataset[key]) - parseFloat(a.dataset[key]);
+        });
+        books.forEach(b => grid.appendChild(b));
+      }
+
+      sortBooks('date');
+
+      document.querySelectorAll('.shelf-controls button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.shelf-controls button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          sortBooks(btn.dataset.sort);
+        });
+      });
+    });
+    </script>
 ---
 
-## Psychology and Cognitive Science
+<div class="shelf-controls">
+  <span class="shelf-controls-label">Sort by:</span>
+  <button data-sort="date" class="active">date</button>
+  <button data-sort="rating">rating</button>
+  <button data-sort="category">category</button>
+</div>
 
 ::: {.grid}
-<!-- ::: {.g-col-12 .g-col-md-2}
-![](https://m.media-amazon.com/images/I/A10VgUsIrQL._SL1500_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**C13: Motivation and Personality**
-
-Abrahm Maslow
-
-Date Read: Ongoing
-
-Rating: TBD
-
-::: -->
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61NokuMbWgL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C14: The Laws of Thought: The Quest for a Mathematical Theory of the Mind**
 
 Tom Griffiths
+
+Category: Psychology and Cognitive Science
 
 Date Read: 03/2026
 
 Rating: 07/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51hmPqUXLVL._SY445_SX342_FMwebp_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C13: The Social Animal**
 
 Elliot Aronson
+
+Category: Psychology and Cognitive Science
 
 Date Read: 02/2026
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61+yg2hY5XL.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C12: The Psychology of Invention in the Mathematical Field**
 
 Jacques Hadamard
+
+Category: Psychology and Cognitive Science
 
 Date Read: 08/2025
 
 Rating: 6/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41vFB4lW+6L._SY466_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C11: The Problem of Anxiety**
 
 Sigmund Freud
+
+Category: Psychology and Cognitive Science
 
 Date Read: 06/2025
 
 Rating: 6/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51-cC40nYjL._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C10: The Way We Think: Conceptual Blending**
 
 Gilles Fauconnier and Mark Turner
+
+Category: Psychology and Cognitive Science
 
 Date Read: 05/2025
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/716kKs0kkoL._SL1500_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C9: Religions, Values, and Peak Experiences**
 
 Abraham Maslow
+
+Category: Psychology and Cognitive Science
 
 Date Read: 03/2025
 
 Rating: 8/10
 
 :::
-
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C8: Flight From Wonder: An Investigation into Scientific Creativity**
 
 Albert Rothenberg
+
+Category: Psychology and Cognitive Science
 
 Date Read: 09/2024
 
 Rating: 3/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C7: The Creative Mind: Myths and Mechanisms**
 
 Margaret Boden
+
+Category: Psychology and Cognitive Science
 
 Date Read: 09/2024
 
 Rating: 6/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/71H17eYwwTL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C6: Group Psychology and Analysis of the Ego**
 
 Sigmund Freud
+
+Category: Psychology and Cognitive Science
 
 Date Read: 07/2024
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61qJ0faL5-L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C5: A Theory of Human Motivation**
 
 Abraham Maslow
+
+Category: Psychology and Cognitive Science
 
 Date Read: 07/2024
 
 Rating: 6/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61DvlUS31dL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C4: The Ego and the Id**
 
 Sigmund Freud
+
+Category: Psychology and Cognitive Science
 
 Date Read: 07/2024
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387703037i/30676.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C3: The Act of Creation**
 
 Arthur Koestler
+
+Category: Psychology and Cognitive Science
 
 Date Read: 06/2024
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C2: Psychology of the Unconscious**
 
 Carl Jung
+
+Category: Psychology and Cognitive Science
 
 Date Read: 05/2024
 
 Rating: 6/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C1: Creativity in Science: Chance, Logic, Genius, and Zeitgeist**
 
 Dean Keith Simonton
+
+Category: Psychology and Cognitive Science
 
 Date Read: 05/2024
 
 Rating: 8/10
 
 :::
-:::
-
-## Mathematics
-
-::: {.grid}
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61Pig8o8BvL._SY425_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **M3: Information Theory, Inference, and Learning Algorithms**
 
 David MacKay
+
+Category: Mathematics
 
 Date Read: Ongoing
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/71ger1O8m8L._SY522_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **M2: High Dimensional Probability**
 
 Roman Vershynin
+
+Category: Mathematics
 
 Date Read: 11/2023
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61EAVnULjUL._SY522_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **M1: Understanding Machine Learning: From Theory to Algorithms**
 
 Shai Shalev-Shwartz and Shai Ben-David
+
+Category: Mathematics
 
 Date Read: 08/2023
 
 Rating: 8/10
 
 :::
-:::
-
-## Biology, Neuroscience, and Physics
-
-::: {.grid}
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/71SQzw7iguL._SY425_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C5: Theoretical Neuroscience**
 
 Peter Dayan and Laurence Abbott
 
+Category: Biology, Neuroscience, and Physics
+
 Date Read: Ongoing
 
 Rating: TBD
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/81hraOuVHvL._SY385_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C4: An Introductory Course in Computational Neuroscience**
 
 Paul Miller
 
+Category: Biology, Neuroscience, and Physics
+
 Date Read: Ongoing
 
 Rating: TBD
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/81WOyVkjN-L._SY466_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C3: Complexity: A Guided Tour**
 
 Melanie Mitchell
+
+Category: Biology, Neuroscience, and Physics
 
 Date Read: 01/2026
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41cIrt+-4EL._SY445_SX342_ControlCacheEqualizer_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C2: Why Greatness Cannot Be Planned: The Myth of the Objective**
 
 Kenneth Stanley and Joel Lehman
+
+Category: Biology, Neuroscience, and Physics
 
 Date Read: 12/2025
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://mit-press-new-us.imgix.net/covers/9780262049955.jpg?auto=format&w=298&dpr=1&q=80)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **C1: What is Intelligence? Lessons from AI About Evolution, Computing, and Minds**
 
 Blaise Agüera y Arcas
+
+Category: Biology, Neuroscience, and Physics
 
 Date Read: 11/2025
 
 Rating: 6/10
 
 :::
-:::
-
-
-## Philosophy of Science, Epistemology, and Metaphysics
-
-::: {.grid}
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/71QUujDFcZL._UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E13: On Truth and Lies in a Nonmoral Sense**
 
 Friedrich Nietzsche
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 10/2025
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/717yvtRafsL._SY522_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E12: The Logic of Scientific Discovery**
 
 Karl Popper
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 10/2025
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41FsUhu6MIL._SY445_SX342_ControlCacheEqualizer_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E11: Fact, Fiction, and Forecast**
 
 Nelson Goodman
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 08/2025
 
 Rating: 5/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61eM66jXpFL._SY466_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E10: Conjectures and Refutations: The Growth of Scientific Knowledge**
 
 Karl Popper
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 08/2025
 
 Rating: 10/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://pup-assets.imgix.net/onix/images/9780691024905.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E9: Conceptual Revolutions**
 
 Paul Thagard
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 06/2025
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/81c1E-S6wtL._SY466_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E8: Incommensurability in Science**
 
 Thomas S. Kuhn
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 06/2025
 
 Rating: 6/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51jZwr1bjUL._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E7: Prolegomena to Any Future Metaphysics**
 
 Immanuel Kant
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 01/2025
 
 Rating: 10/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/419z9fGWvtL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 
 **E6: The Structure of Scientific Revolutions**
 
 Thomas S. Kuhn
 
+Category: Philosophy of Science, Epistemology, and Metaphysics
+
 Date Read: 12/2024
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://upittpress.org/wp-content/uploads/2022/02/9780822964568-scaled-381x555.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 
 **E5: The Foundations of Scientific Inference**
 
 Wesley Salmon
 
+Category: Philosophy of Science, Epistemology, and Metaphysics
+
 Date Read: 10/2024
 
 Rating: 6/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41ixw9l+t0L._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E4: The World as Will and Representation**
 
 Arthur Schopenhauer
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 10/2024
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/81HFexTeoXL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E3: The Critique of Pure Reason**
 
 Immanuel Kant
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 09/2024
 
 Rating: 10/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51f6vAE6rVL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E2: The Principles of Genetic Epistemology**
 
 Jean Piaget
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 07/2024
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/614rftNyAaL._AC_UF350,350_QL50_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **E1: Computational Philosophy of Science**
 
 Paul Thagard
+
+Category: Philosophy of Science, Epistemology, and Metaphysics
 
 Date Read: 06/2024
 
 Rating: 6/10
 
 :::
-:::
-
-
-## Political Philosophy
-
-::: {.grid}
-<!-- ::: {.g-col-12 .g-col-md-2}
-![](https://press.uchicago.edu/.imaging/mte/ucp/medium/dam/ucp/books/jacket/978/02/26/77/9780226777108.jpg/jcr:content/9780226777108.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
-
-**O9: History of Political Philosophy**
-
-Leo Strauss
-
-Date Read: Ongoing
-
-Rating: TBD
-
-::: -->
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41rTM8OJQGL._SY445_SX342_QL70_FMwebp_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **O8: Das Kapital**
 
 Karl Marx
 
+Category: Political Philosophy
+
 Date Read: Ongoing
 
 Rating: TBD
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://broadviewpress.com/wp-content/uploads/2026/03/9781554813155-600x917.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **O7: Utilitarianism**
 
 John Stuart Mill
+
+Category: Political Philosophy
 
 Date Read: 10/2025
 
 Rating: 5/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41KvNKvrYfL._SY445_SX342_ControlCacheEqualizer_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **O6: The Communist Manifesto**
 
 Karl Marx and Freidrick Engels
+
+Category: Political Philosophy
 
 Date Read: 08/2025
 
 Rating: 5/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/71jY9z9z+hL._AC_UY436_FMwebp_QL65_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **O5: On Liberty**
 
 John Stuart Mill
+
+Category: Political Philosophy
 
 Date Read: 02/2025
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41btamn2qqL._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **O4: Discourse on the Origin of Inequality**
 
 Jean-Jacques Rousseau
+
+Category: Political Philosophy
 
 Date Read: 01/2025
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/71Zd1ixazOL._SY522_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **O3: The Declaration of Independence, Constitution, and Bill of Rights**
 
 The Founding Fathers
+
+Category: Political Philosophy
 
 Date Read: 11/2024
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://book-assets.openroadmedia.com/9781504035460.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **O2: The Social Contract**
 
 Jean-Jacques Rousseau
+
+Category: Political Philosophy
 
 Date Read: 11/2024
 
 Rating: 10/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41kq+uNSq0L._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **O1: Propaganda**
 
 Edward Bernays
+
+Category: Political Philosophy
 
 Date Read: 11/2024
 
 Rating: 2/10
 
 :::
-:::
-
-
-## Anthropology and Moral Philosophy
-
-::: {.grid}
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51Lk70sQvzL._SY445_SX342_ControlCacheEqualizer_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N20: How Institutions Think**
 
 Mary Douglas
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 02/2026
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41l2ASPOdeL._SY445_SX342_ControlCacheEqualizer_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N19: Ecce Homo: How One Becomes What One Is**
 
 Friedrich Nietzsche
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 10/2025
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1407812596i/337517.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N18: Things Hidden Since the Foundation of the World**
 
 René Girard
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 09/2025
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/81l0O6Sz6dL._SY466_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N17: The Technological Republic**
 
 Alex Karp
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 07/2025
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61zrzqHfhvL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N16: The Birth of Tragedy**
 
 Friedrich Nietzsche
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 06/2025
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61OgaWLePZL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N15: Self Reliance**
 
 Ralph Waldo Emerson
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 04/2025
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51Sb1KRTc5L._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N14: When These Things Begin**
 
 René Girard
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 03/2025
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41yajhkUCTL._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N13: The Critique of Practical Reason**
 
 Immanuel Kant
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 03/2025
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/812F1fXCtbL._SL1500_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N12: The Undiscovered Self**
 
 Carl Jung
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 01/2025
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41Ljdh2R10L._SY445_SX342_PQ25_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N11: The Dawn of Day: Thoughts on the Prejudices of Morality**
 
 Friedrich Nietzsche
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 01/2025
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/7134slNBRKL._AC_UY218_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N10: Groundwork of the Metaphysics of Morals**
 
 Immanuel Kant
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 01/2025
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://assets.lulu.com/cover_thumbs/1/2/125ggy-front-shortedge-384.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N9: Industrial Society and its Future**
 
 Theodore Kacszynski
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 12/2025
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51oMlfPgTGL._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N8: The Future of an Illusion**
 
 Sigmund Freud
 
+Category: Anthropology and Moral Philosophy
+
 Date Read: 11/2024
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51yYOdbGjLL._AC_UY218_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N7: The Antichrist**
 
 Friedrich Nietzsche
 
+Category: Anthropology and Moral Philosophy
+
 Date Read: 11/2024
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/716huk49RJL._AC_UY436_FMwebp_QL65_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N6: The Gay Science**
 
 Friedrich Nietzsche
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 10/2024
 
 Rating: 7/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61MAIDlBseL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N5: Human, All Too Human**
 
 Friedrich Nietzsche
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 10/2024
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/81pjGZRGaeL._AC_UY436_FMwebp_QL65_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N4: The Genealogy of Morals**
 
 Friedrich Nietzsche
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 10/2024
 
 Rating: 10/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/51AdOCIDPjL._SY445_SX342_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N3: Twilight of the Idols**
 
 Friedrich Nietzsche
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 09/2024
 
 Rating: 8/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/41szolWxmgL._SY580_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N2: Beyond Good and Evil**
 
 Friedrich Nietzsche
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 08/2024
 
 Rating: 9/10
 
 :::
-::: {.g-col-12 .g-col-md-2}
+::: {.book}
 ![](https://m.media-amazon.com/images/I/61K0H9NMqDL._AC_UF1000,1000_QL80_.jpg)
-:::
-::: {.g-col-12 .g-col-md-10}
 
 **N1: Civilization and its Discontents**
 
 Sigmund Freud
+
+Category: Anthropology and Moral Philosophy
 
 Date Read: 07/2024
 
