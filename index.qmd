@@ -157,25 +157,29 @@ Previously, I was a researcher at the [Simons Institute for the Theory of Comput
 
 ## Research
 
+### Research Philosophy
+
 > We are not students of some subject matter but students of problems. And problems may cut right across the border of any subject matter or discipline.
 >
 > <cite>— Karl Popper, *Conjectures and Refutations: The Growth of Scientific Knowledge* (p. 141)</cite>
 
 My research involves the study of problems that cut sharply across disciplinary boundaries. I believe insights from evolutionary computation and psychology, philosophy of science, and cognitive science are integral to developing creative and open-ended AI systems.
 
-### Foundations of Creativity
+### Research Directions
+
+#### Foundations of Creativity
 **Goal:** To uncover fundamental principles of creativity governing minds and machines. Achieved through a combination of conceptual and theoretical work [1], and empirical study of LLMs [2, 3].
 
-#### Recent Papers
+##### Recent Papers
 
 1. **S. Schapiro**, J. Black, L. R. Varshney, [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687), in the Proceedings of the 16th International Conference on Computational Creativity, 2025. **[Best Short Paper Award]**
 3. **S. Schapiro**, A. Gladstone, J. Black, H. Ji. [Do Semantic Distance Tests _Actually_ Predict Creativity in LLMs?](files/SD_NIPS.pdf), Under Review at the 43rd International Conference on Machine Learning, 2026.
 4. **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney, [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043), Under Review at 16th International Conference on Learning Representations, 2026.
 
-### Creative AI Systems
+#### Creative AI Systems
 **Goal:** To develop methods that make AI models more creative [4], and to apply these techniques to scientific discovery [5].
 
-#### Recent Papers
+##### Recent Papers
 
 4. **S. Schapiro**, C. Francisco Park, F. Sosa, L. R. Varshney, [CreativityNeuro: Steering Large Language Weights to Improve Divergent Thinking](files/CN.pdf), Under Review at Third Conference on Language Modeling, 2026.
 5. A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur, [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090), in the Proceedings of the 16th International Conference on Computational Creativity, 2025.

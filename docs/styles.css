@@ -74,19 +74,6 @@ blockquote {
   color: var(--ink-soft);
   position: relative;
 }
-blockquote::before {
-  content: "“";
-  position: absolute;
-  left: 0.35rem;
-  top: -0.5rem;
-  font-family: 'Caveat', 'Crimson Pro', cursive;
-  font-style: normal;
-  font-size: 3rem;
-  color: var(--pencil-red);
-  line-height: 1;
-  opacity: 0.55;
-  pointer-events: none;
-}
 blockquote p {
   font-style: italic;
   font-size: 1.18rem;
