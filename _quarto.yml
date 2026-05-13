@@ -1,11 +1,10 @@
 project:
   type: website
   output-dir: docs
-  # Files at the source root that should be copied to docs/ verbatim
-  # during render. Without this, `quarto render` cleans docs/ and the
-  # creative-ai-index static export disappears.
+  # The creative-ai-index static export is committed directly to
+  # docs/creative-ai-index/ and is preserved across renders. We don't list
+  # it as a resource because copying 495 files makes every render take 60s+.
   resources:
-    - creative-ai-index/**
     - .nojekyll
 
 # Meta
