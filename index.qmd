@@ -175,7 +175,7 @@ I am an [interdisciplinary scholar](bookshelf.html) studying the science of inte
 
 ## Awards
 
-- **Lambda AI Research Grant** ($5,000), 2026
+- **Lambda AI Research Grant** ($500), 2026
 - **Best Short Paper Award**, Association for Computational Creativity (ICCC), 2025
 - **Edmund J. James Honor Scholar**, University of Illinois, Urbana-Champaign, 2023
 - **Cozad New Venture Challenge** ($35,000), 2022
