@@ -1,53 +1,35 @@
 /* =====================================================================
-   Lab Journal theme — Samuel Schapiro
-   Graph-paper background, serif body, handwritten accents.
+   Academic theme — Samuel Schapiro
+   Clean white background, Crimson Pro serif, minimal accents.
    ===================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --paper:        #fbf8ef;
-  --paper-card:   #fffef7;
-  --grid-line:    rgba(70, 100, 150, 0.045);
-  --ink:          #15233f;
-  --ink-soft:     #3a4a6b;
-  --ink-blue:     #1e3a8a;
-  --pencil-red:   #a8201a;
-  --margin-line:  #d4cdb8;
-  --rule:         #b8b09a;
+  --paper:        #ffffff;
+  --paper-card:   #fafafa;
+  --ink:          #1a1a1a;
+  --ink-soft:     #4a4a4a;
+  --ink-subtle:   #6e6e6e;
+  --link:         #1c3d6a;
+  --link-hover:   #4060a0;
+  --rule:         #e3e3e3;
+  --rule-strong:  #c8c8c8;
+  --warm-accent:  #a36b0f;   /* used sparingly: ratings, "Best Paper Award" */
 }
 
-/* ---------- Page / paper ---------- */
+/* ---------- Page ---------- */
 html, body {
   background-color: var(--paper);
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 22px 22px;
   color: var(--ink);
   font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
   font-size: 18px;
   line-height: 1.6;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 main, .page-columns {
   background: transparent;
-}
-
-/* Subtle red "margin rule" down the left of main content on wide screens */
-@media (min-width: 992px) {
-  main.content::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: calc(50% - 470px);
-    width: 1px;
-    background: var(--pencil-red);
-    opacity: 0.25;
-    pointer-events: none;
-  }
 }
 
 /* ---------- Typography ---------- */
@@ -56,27 +38,26 @@ p, li, dd, blockquote {
   font-size: 1.08rem;
   line-height: 1.65;
   color: var(--ink);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 strong, b { color: var(--ink); font-weight: 700; }
 em, i { color: var(--ink-soft); }
 
-/* ---------- Blockquote (pull-quote with hand-ruled left margin) ---------- */
+/* ---------- Blockquote ---------- */
 blockquote {
   margin: 1.4rem 0 1.6rem;
-  padding: 0.4rem 1.2rem 0.4rem 1.4rem;
-  border-left: 3px solid var(--pencil-red);
+  padding: 0.2rem 1.2rem 0.2rem 1.2rem;
+  border-left: 3px solid var(--rule-strong);
   font-family: 'Crimson Pro', Georgia, serif;
   font-style: italic;
-  font-size: 1.18rem;
+  font-size: 1.1rem;
   line-height: 1.55;
   color: var(--ink-soft);
-  position: relative;
 }
 blockquote p {
   font-style: italic;
-  font-size: 1.18rem;
+  font-size: 1.1rem;
   line-height: 1.55;
   color: var(--ink-soft);
   margin-bottom: 0.4rem;
@@ -86,132 +67,103 @@ blockquote cite {
   margin-top: 0.4rem;
   font-style: normal;
   font-size: 0.95rem;
-  color: var(--ink-soft);
+  color: var(--ink-subtle);
   font-family: 'Crimson Pro', serif;
-  letter-spacing: 0.2px;
 }
 blockquote cite em,
 blockquote cite i {
   font-style: italic;
-  color: var(--ink);
+  color: var(--ink-soft);
 }
 
-/* H1 — owner's name on the cover of the notebook */
+/* ---------- Headings ---------- */
 h1, .title {
-  font-family: 'Caveat', 'Crimson Pro', cursive;
+  font-family: 'Crimson Pro', Georgia, serif;
   font-weight: 700;
-  font-size: 3.4rem;
+  font-size: 2.3rem;
   color: var(--ink);
-  letter-spacing: 0.5px;
-  line-height: 1.1;
+  letter-spacing: 0;
+  line-height: 1.15;
   margin-top: 0.3rem;
   margin-bottom: 0.4rem;
 }
 
-/* H2 — section heads, serif with a hand-ruled underline */
 h2 {
   font-family: 'Crimson Pro', Georgia, serif;
   font-weight: 600;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   color: var(--ink);
-  margin-top: 2.4rem;
-  margin-bottom: 0.8rem;
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
   padding-bottom: 0.25rem;
-  border-bottom: 2px solid var(--ink);
-  border-image: repeating-linear-gradient(
-    90deg, var(--ink) 0 6px, transparent 6px 9px) 1;
+  border-bottom: 1px solid var(--rule-strong);
 }
 
-/* H3 — sub-entries */
 h3 {
   font-family: 'Crimson Pro', Georgia, serif;
   font-weight: 600;
-  font-style: italic;
-  font-size: 1.45rem;
-  color: var(--ink-soft);
-  margin-top: 1.8rem;
+  font-size: 1.3rem;
+  color: var(--ink);
+  margin-top: 1.6rem;
   margin-bottom: 0.4rem;
 }
 
-/* H3 marker — small Caveat "§" before the heading */
-h3::before {
-  content: "§ ";
-  font-family: 'Caveat', cursive;
-  color: var(--pencil-red);
-  font-weight: 700;
-  font-style: normal;
-  margin-right: 0.15rem;
-}
-
-/* H4 — list labels like "Recent Papers" */
 h4 {
-  font-family: 'Caveat', cursive;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: var(--pencil-red);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   margin-top: 1.2rem;
   margin-bottom: 0.4rem;
-  letter-spacing: 0.3px;
 }
 
-/* ---------- Links: ink-blue with hover to pencil-red ---------- */
+/* ---------- Links ---------- */
 a, a:visited {
-  color: var(--ink-blue);
+  color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2.5px;
-  text-decoration-color: rgba(30, 58, 138, 0.45);
+  text-decoration-color: rgba(28, 61, 106, 0.4);
   transition: color 0.12s ease, text-decoration-color 0.12s ease;
 }
 a:hover {
-  color: var(--pencil-red);
-  text-decoration-color: var(--pencil-red);
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
-/* ---------- Code & monospace ---------- */
+/* ---------- Code ---------- */
 code, pre, kbd, samp {
   font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
   font-size: 0.92em;
 }
 code {
-  background: rgba(30, 58, 138, 0.06);
+  background: #f3f3f3;
   padding: 1px 5px;
   border-radius: 2px;
 }
 
-/* ---------- Hero ordered lists: normal numbering, ink-red markers ---------- */
+/* ---------- Hero ordered/unordered lists ---------- */
 #hero-heading ol > li {
   margin-bottom: 0.85rem;
   padding-left: 0.3rem;
 }
 #hero-heading ol > li::marker {
-  color: var(--pencil-red);
+  color: var(--ink-soft);
   font-weight: 600;
 }
-
-/* Hero unordered lists get a pencil-red em-dash marker */
 #hero-heading ul {
-  list-style: none;
+  list-style: disc;
   padding-left: 1.4rem;
 }
 #hero-heading ul > li {
-  position: relative;
   margin-bottom: 0.4rem;
-}
-#hero-heading ul > li::before {
-  content: "—";
-  position: absolute;
-  left: -1.2rem;
-  color: var(--pencil-red);
-  font-weight: 700;
 }
 
 /* ---------- About / hero (trestles template) ---------- */
 
-/* Pin the headshot column while the bio scrolls past it. Releases when
-   the trestles container ends. Top offset = navbar height + breathing room.
-   Disabled on narrow viewports — trestles stacks vertically on mobile, so
-   sticky just makes the image lock at the top of the page. */
+/* Pin the headshot column while the bio scrolls past it. */
 @media (min-width: 768px) {
   .quarto-about-trestles .about-entity {
     position: sticky;
@@ -224,30 +176,26 @@ code {
   border-radius: 50% !important;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: 1px solid var(--margin-line);
-  box-shadow:
-    0 0 0 6px var(--paper-card),
-    0 0 0 7px var(--margin-line),
-    3px 3px 0 7px rgba(0,0,0,0.04);
+  border: 1px solid var(--rule-strong);
 }
 
 .quarto-about-trestles .about-entity .about-links .about-link {
   font-family: 'Crimson Pro', serif;
-  color: var(--ink-blue);
-  border: 1px solid var(--margin-line);
-  background: var(--paper-card);
+  color: var(--link);
+  border: 1px solid var(--rule);
+  background: var(--paper);
   padding: 0.25rem 0.6rem;
   margin: 0.25rem 0.3rem 0.25rem 0;
   border-radius: 2px;
   text-decoration: none;
-  transition: background 0.12s ease;
+  transition: background 0.12s ease, color 0.12s ease;
 }
 .quarto-about-trestles .about-entity .about-links .about-link:hover {
-  background: #fff;
-  color: var(--pencil-red);
+  background: var(--paper-card);
+  color: var(--link-hover);
 }
 
-/* ---------- Navbar — looks like a tab on the notebook ---------- */
+/* ---------- Navbar ---------- */
 .navbar {
   background-color: var(--paper) !important;
   border-bottom: 1px solid var(--rule);
@@ -263,7 +211,7 @@ code {
   letter-spacing: 0.2px;
 }
 .navbar .nav-link:hover {
-  color: var(--pencil-red) !important;
+  color: var(--link) !important;
 }
 
 /* ---------- Footer ---------- */
@@ -276,15 +224,13 @@ code {
 
 /* ---------- Listing cards (recent posts grid) ---------- */
 .quarto-grid-item, .card {
-  background: var(--paper-card) !important;
-  border: 1px solid var(--margin-line) !important;
-  border-radius: 2px !important;
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  background: var(--paper) !important;
+  border: 1px solid var(--rule) !important;
+  border-radius: 4px !important;
+  transition: border-color 0.12s ease;
 }
 .quarto-grid-item:hover, .card:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 rgba(0,0,0,0.06);
+  border-color: var(--rule-strong) !important;
 }
 .quarto-grid-item .listing-title {
   font-family: 'Crimson Pro', serif;
@@ -292,9 +238,9 @@ code {
   color: var(--ink);
 }
 .quarto-grid-item .listing-date {
-  font-family: 'Caveat', cursive;
-  color: var(--pencil-red);
-  font-size: 1.05rem;
+  font-family: 'Crimson Pro', serif;
+  color: var(--ink-subtle);
+  font-size: 0.92rem;
 }
 
 /* ---------- Inline block for altmetric badges (preserved) ---------- */
@@ -304,12 +250,14 @@ span.__dimensions_badge_embed__, div.altmetric-embed {
 
 /* ====================================================================
    Bookshelf page
+   The wooden-shelf metaphor is page-specific by design — kept distinct.
    ==================================================================== */
 
 body.bookshelf-page .quarto-title-block .subtitle {
-  font-family: 'Caveat', cursive;
-  font-size: 1.55rem;
-  color: var(--pencil-red);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
   margin-top: 0.15rem;
   font-weight: 500;
 }
@@ -330,19 +278,19 @@ body.bookshelf-page .shelf-controls-label {
 }
 body.bookshelf-page .shelf-controls button {
   font-family: 'Crimson Pro', serif;
-  background: var(--paper-card);
-  border: 1px solid var(--margin-line);
+  background: var(--paper);
+  border: 1px solid var(--rule);
   padding: 0.22rem 0.75rem;
   font-size: 0.95rem;
-  color: var(--ink-blue);
+  color: var(--link);
   cursor: pointer;
   border-radius: 2px;
   transition: background 0.12s ease, color 0.12s ease;
   letter-spacing: 0.3px;
 }
 body.bookshelf-page .shelf-controls button:hover {
-  background: #fff;
-  color: var(--pencil-red);
+  background: var(--paper-card);
+  color: var(--link-hover);
 }
 body.bookshelf-page .shelf-controls button.active {
   background: var(--ink);
@@ -419,7 +367,7 @@ body.bookshelf-page .book:hover img {
     -2px 0 0 rgba(0,0,0,0.2);
 }
 
-/* Title paragraph — clamp to 3 lines so it doesn't push other text out */
+/* Title paragraph — clamp to 3 lines */
 body.bookshelf-page .book p:has(strong) {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -442,7 +390,7 @@ body.bookshelf-page .book .book-meta {
   color: var(--ink-soft);
 }
 body.bookshelf-page .book .meta-rating {
-  color: var(--pencil-red);
+  color: var(--warm-accent);
   font-weight: 600;
 }
 body.bookshelf-page .book .meta-cat {
@@ -455,6 +403,7 @@ body.bookshelf-page .grid ol { padding-left: 0; }
 
 /* ====================================================================
    Home page background animation (knowledge network)
+   Lowered opacity for a more conventional look.
    ==================================================================== */
 
 body.home-page #bg-network {
@@ -464,7 +413,7 @@ body.home-page #bg-network {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.35;
 }
 
 /* Lift all content above the canvas. Exclude #bg-network (it stays at z=0)
@@ -482,7 +431,6 @@ body.home-page .about-contents {
   position: relative;
   z-index: 1;
 }
-/* .about-entity uses position: sticky — keep it but raise z-index */
 body.home-page .about-entity {
   z-index: 1;
 }
