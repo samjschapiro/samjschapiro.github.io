@@ -152,69 +152,111 @@ code {
   margin-bottom: 0.4rem;
 }
 
-/* ---------- Trestles two-column hero ---------- */
+/* ---------- Page layout (hand-written index.html) ---------- */
+
+.page {
+  margin-inline: auto;
+  max-width: 72rem;            /* max-w-6xl */
+  padding: 2.5rem 1.5rem;      /* px-6 py-10 */
+}
+@media (min-width: 640px) {
+  .page { padding: 2.5rem 2rem; }       /* sm:px-8 */
+}
 @media (min-width: 768px) {
-  .quarto-about-trestles .about-entity {
-    position: sticky;
-    top: 3rem;          /* top-12 */
-    align-self: start;
+  .page { padding: 4rem 2rem; }         /* md:py-16 */
+}
+
+.layout {
+  display: grid;
+  gap: 3rem;                   /* gap-12 */
+}
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 4rem;                 /* md:gap-16 */
   }
 }
 
-.quarto-about-trestles .about-entity .about-image {
-  border-radius: 2px !important;
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: sticky;
+    top: 3rem;
+    align-self: flex-start;
+  }
+}
+
+.headshot {
+  display: block;
+  width: 100%;
+  max-width: 220px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 1px solid var(--color-border);
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
 }
 
-.quarto-about-trestles .about-entity .about-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+.sidebar h1 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.875rem;         /* text-3xl */
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--color-text);
 }
-.quarto-about-trestles .about-entity .about-links .about-link {
-  font-family: var(--font-sans);
-  color: var(--color-link);
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
   font-size: 0.95rem;
+}
+.contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-link);
+  text-decoration: none;
+  width: fit-content;
   transition: color 0.15s ease;
 }
-.quarto-about-trestles .about-entity .about-links .about-link:hover {
-  color: var(--color-text);
-}
+.contact a:hover { color: var(--color-text); }
+.contact i { font-size: 1.05rem; width: 1.1rem; text-align: center; }
 
-/* ---------- Navbar ---------- */
-.navbar {
-  background-color: var(--color-bg) !important;
-  border-bottom: 1px solid var(--color-border);
-  font-family: var(--font-sans);
-  position: sticky;
-  top: 0;
-  z-index: 1030;
+.content {
+  display: flex;
+  flex-direction: column;
 }
-.navbar .navbar-brand,
-.navbar .nav-link {
-  color: var(--color-text) !important;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-.navbar .nav-link:hover {
-  color: var(--color-link) !important;
-}
+.content > section { margin: 0; }
+.content > section + section { margin-top: 3.5rem; }   /* space-y-14 */
 
-/* ---------- Footer ---------- */
-.nav-footer {
-  background-color: var(--color-bg) !important;
+.footer {
   border-top: 1px solid var(--color-border);
-  font-family: var(--font-sans);
+  background: var(--color-bg);
+  padding: 1.25rem 0;
+  margin-top: 4rem;
   color: var(--color-text);
 }
+.footer-inner {
+  margin-inline: auto;
+  max-width: 72rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+@media (min-width: 640px) {
+  .footer-inner { padding: 0 2rem; }
+}
+.footer-inner a { color: var(--color-link); }
+.footer-inner a:hover { color: var(--color-text); }
 
 /* ---------- News list (custom markup in qmd) ---------- */
 .news-list {
