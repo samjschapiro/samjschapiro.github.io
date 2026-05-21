@@ -444,16 +444,19 @@ body.bookshelf-page .shelf-controls button.active {
   border-color: var(--color-text);
 }
 
-body.bookshelf-page main.content {
+body.bookshelf-page #quarto-content,
+body.bookshelf-page main.content,
+body.bookshelf-page .column-page,
+body.bookshelf-page .quarto-title-meta {
   max-width: none !important;
   width: 100% !important;
-  margin-inline: auto;
-  padding-inline: 1rem;
+  margin-inline: auto !important;
+  padding-inline: 1rem !important;
 }
 
 body.bookshelf-page .grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 200px)) !important;
+  grid-template-columns: repeat(auto-fill, 180px) !important;
   justify-content: center;
   grid-auto-rows: 460px;
   gap: 0;
