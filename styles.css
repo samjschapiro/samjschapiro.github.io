@@ -210,24 +210,39 @@ code {
   color: var(--color-text);
 }
 
-.contact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
+.email {
+  margin: 1rem 0 0 0;
+  font-size: 0.875rem;
+  word-break: break-word;
 }
-.contact a {
+.email a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-faded);
+  text-underline-offset: 4px;
+}
+.email a:hover {
+  color: var(--color-text);
+  text-decoration-color: var(--color-text);
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+}
+.icons a {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  justify-content: center;
   color: var(--color-link);
   text-decoration: none;
-  width: fit-content;
   transition: color 0.15s ease;
 }
-.contact a:hover { color: var(--color-text); }
-.contact i { font-size: 1.05rem; width: 1.1rem; text-align: center; }
+.icons a:hover { color: var(--color-text); }
+.icons i { line-height: 1; }
 
 .content {
   display: flex;
