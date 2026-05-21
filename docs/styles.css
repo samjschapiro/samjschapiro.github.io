@@ -284,8 +284,8 @@ code {
   display: grid;
   gap: 0.25rem;
   font-size: 1rem;
-  line-height: 1.75rem;
-  margin: 0 0 1.25rem 0;
+  line-height: 1.5rem;
+  margin: 0 0 0.6rem 0;
 }
 @media (min-width: 640px) {
   .news-list > li {
@@ -300,12 +300,12 @@ code {
 }
 .news-list p {
   margin: 0;
-  line-height: 1.75rem;
+  line-height: 1.5rem;
 }
 
 /* ---------- Publications (custom markup in qmd) ---------- */
 .publication {
-  padding: 2rem 0;
+  padding: 0.9rem 0;
   border-bottom: 1px solid var(--color-border);
 }
 .publication:last-of-type { border-bottom: none; }
@@ -411,10 +411,17 @@ body.bookshelf-page .shelf-controls button.active {
   border-color: var(--color-text);
 }
 
+body.bookshelf-page main.content {
+  max-width: none !important;
+  width: 100% !important;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
 body.bookshelf-page .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
-  justify-content: space-evenly;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 200px)) !important;
+  justify-content: center;
   grid-auto-rows: 460px;
   gap: 0;
   margin: 0 auto 3rem;
