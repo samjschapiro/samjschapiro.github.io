@@ -463,7 +463,8 @@ body.bookshelf-page .grid {
   grid-template-columns: repeat(auto-fill, 180px) !important;
   justify-content: center !important;
   grid-auto-rows: 460px;
-  gap: 0;
+  column-gap: 0.75rem;
+  row-gap: 0;
   width: 100%;
   margin: 0 auto 3rem;
   padding-top: 8px;
