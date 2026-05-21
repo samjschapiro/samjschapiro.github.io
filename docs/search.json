@@ -32,49 +32,28 @@
     "href": "index.html",
     "title": "Samuel Schapiro",
     "section": "",
-    "text": "Bio\n  \n  \n    \n     E-mail\n  \n  \n    \n     LinkedIn\n  \n  \n      Google Scholar\n  \n\n  \n  \n\n\nI am an interdisciplinary scholar studying the science of intelligence. Previously, I was a researcher at the Simons Institute for the Theory of Computing, Berkeley, and did my undergrad at the University of Illinois, Urbana-Champaign, where I studied theoretical computer science.\n\n\n\n\nUncovering the fundamental, scientific principles of creativity governing minds and machines.\nDeveloping AI methods and systems that exhibit creative behavior.\n\n\nWe are not students of some subject matter but students of problems. And problems may cut right across the border of any subject matter or discipline.\n— Karl Popper, Conjectures and Refutations: The Growth of Scientific Knowledge (p. 141)\n\n\n\n\n\n\n\nS. Schapiro, A. Gladstone, J. Black, H. Ji. Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers. Preprint.\nS. Schapiro, C. Francisco Park, F. Sosa, L. R. Varshney. CreativityNeuro: Steering Large Language Model Weights to Improve Divergent Thinking. Under review, Third Conference on Language Modeling (COLM).\nS. Schapiro, A. Gladstone, J. Black, H. Ji. Do Semantic Distance Tests Actually Predict Creativity in Large Language Models? Under review, 40th Conference on Neural Information Processing Systems (NeurIPS).\nS. Schapiro, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney. Combinatorial Creativity: A New Frontier in Generalization Abilities. Under review, International Conference on Learning Representations (ICLR).\n\n\n\n\n\nS. Schapiro, J. Black, L. R. Varshney. Transformational Creativity in Science: A Graphical Theory. Proceedings of the 16th International Conference on Computational Creativity (ICCC). Best Short Paper Award.\nA. Sanyal, S. Schapiro, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur. Spark: A System for Scientifically Creative Idea Generation. Proceedings of the 16th International Conference on Computational Creativity (ICCC).\n\n\n\n\n\nS. Schapiro, H. Zhao. Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization. Undergraduate thesis, University of Illinois, Urbana-Champaign.\n\n\n\n\n\n\nLambda AI Research Grant ($500), 2026\nBest Short Paper Award, Association for Computational Creativity (ICCC), 2025\nEdmund J. James Honor Scholar, University of Illinois, Urbana-Champaign, 2023\nCozad New Venture Challenge ($35,000), 2022\n\n\n\n\nReviewer at ICML 2026 Workshop on Creativity & Generative AI, ICML 2026, COLM 2026, NeurIPS 2026, and the NeurIPS 2024 Workshop on Creativity & Generative AI."
+    "text": "PhD applicant · interdisciplinary researcher studying the science of intelligence\n \n  \n   \n  \n    \n     E-mail\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     GitHub\n  \n  \n      Google Scholar"
   },
   {
     "objectID": "index.html#about",
     "href": "index.html#about",
     "title": "Samuel Schapiro",
-    "section": "",
-    "text": "I am an interdisciplinary scholar studying the science of intelligence. Previously, I was a researcher at the Simons Institute for the Theory of Computing, Berkeley, and did my undergrad at the University of Illinois, Urbana-Champaign, where I studied theoretical computer science."
+    "section": "About",
+    "text": "About\nI am an interdisciplinary scholar studying the science of intelligence and the creativity of AI systems. I’m interested in uncovering the fundamental, scientific principles of creativity governing minds and machines, and in developing AI methods and systems that exhibit creative behavior.\nPreviously, I was a visiting graduate researcher at the Simons Institute for the Theory of Computing, Berkeley, and did my undergrad at the University of Illinois, Urbana-Champaign, where I studied theoretical computer science."
   },
   {
-    "objectID": "index.html#research-interests",
-    "href": "index.html#research-interests",
+    "objectID": "index.html#recent-news",
+    "href": "index.html#recent-news",
     "title": "Samuel Schapiro",
-    "section": "",
-    "text": "Uncovering the fundamental, scientific principles of creativity governing minds and machines.\nDeveloping AI methods and systems that exhibit creative behavior.\n\n\nWe are not students of some subject matter but students of problems. And problems may cut right across the border of any subject matter or discipline.\n— Karl Popper, Conjectures and Refutations: The Growth of Scientific Knowledge (p. 141)"
+    "section": "Recent news",
+    "text": "Recent news\n\nMay 2026 — New preprint: Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers introduces the DRAT, the first creativity test that significantly predicts LLM scientific ideation.\nMay 2026 — Launched the Creative AI Index, a community benchmark for AI creativity.\nApril 2026 — Received the Lambda AI Research Grant.\nSeptember 2025 — Best Short Paper Award at ICCC 2025 for Transformational Creativity in Science: A Graphical Theory.\nAugust 2024 — Started as a visiting graduate researcher at the Simons Institute, UC Berkeley."
   },
   {
-    "objectID": "index.html#publications",
-    "href": "index.html#publications",
+    "objectID": "index.html#selected-publications",
+    "href": "index.html#selected-publications",
     "title": "Samuel Schapiro",
-    "section": "",
-    "text": "S. Schapiro, A. Gladstone, J. Black, H. Ji. Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers. Preprint.\nS. Schapiro, C. Francisco Park, F. Sosa, L. R. Varshney. CreativityNeuro: Steering Large Language Model Weights to Improve Divergent Thinking. Under review, Third Conference on Language Modeling (COLM).\nS. Schapiro, A. Gladstone, J. Black, H. Ji. Do Semantic Distance Tests Actually Predict Creativity in Large Language Models? Under review, 40th Conference on Neural Information Processing Systems (NeurIPS).\nS. Schapiro, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney. Combinatorial Creativity: A New Frontier in Generalization Abilities. Under review, International Conference on Learning Representations (ICLR).\n\n\n\n\n\nS. Schapiro, J. Black, L. R. Varshney. Transformational Creativity in Science: A Graphical Theory. Proceedings of the 16th International Conference on Computational Creativity (ICCC). Best Short Paper Award.\nA. Sanyal, S. Schapiro, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur. Spark: A System for Scientifically Creative Idea Generation. Proceedings of the 16th International Conference on Computational Creativity (ICCC).\n\n\n\n\n\nS. Schapiro, H. Zhao. Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization. Undergraduate thesis, University of Illinois, Urbana-Champaign."
-  },
-  {
-    "objectID": "index.html#awards",
-    "href": "index.html#awards",
-    "title": "Samuel Schapiro",
-    "section": "",
-    "text": "Lambda AI Research Grant ($500), 2026\nBest Short Paper Award, Association for Computational Creativity (ICCC), 2025\nEdmund J. James Honor Scholar, University of Illinois, Urbana-Champaign, 2023\nCozad New Venture Challenge ($35,000), 2022"
-  },
-  {
-    "objectID": "index.html#service",
-    "href": "index.html#service",
-    "title": "Samuel Schapiro",
-    "section": "",
-    "text": "Reviewer at ICML 2026 Workshop on Creativity & Generative AI, ICML 2026, COLM 2026, NeurIPS 2026, and the NeurIPS 2024 Workshop on Creativity & Generative AI."
-  },
-  {
-    "objectID": "index.html#recent-posts",
-    "href": "index.html#recent-posts",
-    "title": "Samuel Schapiro",
-    "section": "Recent Posts",
-    "text": "Recent Posts\nCheck out the latest  Papers ,  News ,  Events , and  More »\n\n\n\n\n\n\n\n\n\n\nNew Preprint: Do Semantic Distance Tests Actually Predict Creativity in LLMs?\n\n\nDo Semantic Distance Tests Actually Predict Creativity in LLMs\n\n\n\nMay 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew Preprint: Steering LLMs to Improve Divergent Thinking\n\n\nCreativityNeuro: Steering Language Model Weights to Improve Divergent Thinking\n\n\n\nMar 31, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nBest Short Paper Award at ICCC 2025\n\n\nTransformational Creativity in Science: A Graphical Theory\n\n\n\nJun 28, 2025\n\n\n\n\n\n\nNo matching items\n\n\nAll Posts »"
+    "section": "Selected publications",
+    "text": "Selected publications\n\n2026\n\nS. Schapiro, A. Gladstone, J. Black, H. Ji. Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers. Preprint.\nS. Schapiro, C. Francisco Park, F. Sosa, L. R. Varshney. CreativityNeuro: Steering Large Language Model Weights to Improve Divergent Thinking. Under review, Third Conference on Language Modeling (COLM).\nS. Schapiro, A. Gladstone, J. Black, H. Ji. Do Semantic Distance Tests Actually Predict Creativity in Large Language Models? Under review, 40th Conference on Neural Information Processing Systems (NeurIPS).\nS. Schapiro, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney. Combinatorial Creativity: A New Frontier in Generalization Abilities. Under review, International Conference on Learning Representations (ICLR).\n\n\n\n2025\n\nS. Schapiro, J. Black, L. R. Varshney. Transformational Creativity in Science: A Graphical Theory. Proceedings of the 16th International Conference on Computational Creativity (ICCC). Best Short Paper Award.\nA. Sanyal, S. Schapiro, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur. Spark: A System for Scientifically Creative Idea Generation. Proceedings of the 16th International Conference on Computational Creativity (ICCC).\n\n\n\n2024\n\nS. Schapiro, H. Zhao. Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization. Undergraduate thesis, University of Illinois, Urbana-Champaign."
   },
   {
     "objectID": "posts/paper-title/trans.html#abstract",

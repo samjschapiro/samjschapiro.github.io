@@ -1,101 +1,17 @@
 ---
 title: "Samuel Schapiro"
-description-meta: "Quarto Academic Website Template adapted by Dr. Gang He"
+description-meta: "Interdisciplinary researcher studying the science of intelligence and the creativity of AI systems."
 image: "files/images/new_headshot.jpg"
 page-navigation: false
 toc: false
-#sidebar: false
 page-layout: full
-include-after-body:
-  text: |
-    <canvas id="bg-network" aria-hidden="true"></canvas>
-    <script>
-    (function() {
-      document.body.classList.add('home-page');
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      const canvas = document.getElementById('bg-network');
-      const ctx = canvas.getContext('2d');
-      let W, H, dpr, particles = [];
-      const N = 55;
-      const LINK_DIST = 150;
-
-      function resize() {
-        dpr = window.devicePixelRatio || 1;
-        W = window.innerWidth;
-        H = window.innerHeight;
-        canvas.width = W * dpr;
-        canvas.height = H * dpr;
-        canvas.style.width = W + 'px';
-        canvas.style.height = H + 'px';
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      for (let i = 0; i < N; i++) {
-        particles.push({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          vx: (Math.random() - 0.5) * 0.25,
-          vy: (Math.random() - 0.5) * 0.25,
-          r: 1.2 + Math.random() * 1.0,
-        });
-      }
-
-      function tick() {
-        ctx.clearRect(0, 0, W, H);
-
-        for (const p of particles) {
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < 0 || p.x > W) p.vx *= -1;
-          if (p.y < 0 || p.y > H) p.vy *= -1;
-        }
-
-        ctx.lineWidth = 0.7;
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const d = Math.hypot(dx, dy);
-            if (d < LINK_DIST) {
-              ctx.strokeStyle = 'rgba(30, 58, 138, ' + (0.18 * (1 - d / LINK_DIST)).toFixed(3) + ')';
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-
-        ctx.fillStyle = 'rgba(30, 58, 138, 0.55)';
-        for (const p of particles) {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fill();
-        }
-
-        requestAnimationFrame(tick);
-      }
-      tick();
-    })();
-    </script>
-
 
 about:
   id: hero-heading
-  template: trestles
-  image-width: 70%
+  template: jolla
+  image-width: 200px
+  image-shape: round
   links:
-    # - icon: sun
-    #   text: Group
-    #   href: https://spiralworks.ai
-    #   target: _blank
-    - icon: globe
-      text: Bio
-      href: https://simons.berkeley.edu/people/sam-schapiro
-      target: _blank
     - icon: envelope
       text: E-mail
       href: mailto:sam@priorcomputers.ai
@@ -103,59 +19,36 @@ about:
       text: LinkedIn
       href: https://linkedin.com/in/samuel-schapiro
       target: _blank
-    # - icon: youtube
-    #   text: YouTube
-    #   href: https://www.youtube.com     
-    #   target: _blank 
-    # - text: "{{< ai orcid >}} ORCID"   # use academic icons, "" are needed, you also need to install the fontawesome extension
-    #   href: https://orcid.org
-    #   target: _blank
-    # - text: "{{< ai clarivate >}} Web of Science"
-    #   href: https://www.webofscience.com  
-    #   target: _blank
-    # - text: "{{< ai scopus >}} Scopus"
-    #   href: https://www.scopus.com
-    #   target: _blank
+    - icon: github
+      text: GitHub
+      href: https://github.com/samjschapiro
+      target: _blank
     - text: "{{< ai google-scholar >}} Google Scholar"
       href: https://scholar.google.com/citations?user=B2UNU6EAAAAJ&hl=en
       target: _blank
-#    - text: "{{< ai researchgate >}} Research Gate"
-#      href: https://www.researchgate.net
-#      target: _blank
-
-listing:   # Comment the listing section and delete corresponding lines in the index.qmd file to remove the recent posts
-  - id: recent-posts
-    contents: 
-      - posts
-      - posts/post-links.yml
-    exclude:
-      title: ""
-    type: grid
-    max-items: 3
-#    image-height: 150px
-    page-size: 3 #set same as max-times to remove the page number setting
-    fields: [image, date, title, subtitle]
-    max-description-length: 75
-    sort: 
-      - "date desc"
-      - "title asc"
 ---
 
 :::{#hero-heading}
 
+PhD applicant · interdisciplinary researcher studying the science of intelligence
+
+:::
+
 ## About
-I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence. Previously, I was a researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage), and did my undergrad at the [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I studied theoretical computer science.
 
-## Research interests
+I am an [interdisciplinary scholar](bookshelf.html) studying the science of intelligence and the creativity of AI systems. I'm interested in uncovering the fundamental, scientific principles of creativity governing minds and machines, and in developing AI methods and systems that exhibit creative behavior.
 
-- Uncovering the **fundamental, scientific principles of creativity** governing minds and machines.
-- Developing **AI methods and systems** that exhibit creative behavior.
+Previously, I was a visiting graduate researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage), and did my undergrad at the [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I studied theoretical computer science.
 
-> *We are not students of some subject matter but students of problems. And problems may cut right across the border of any subject matter or discipline.*
->
-> <cite>— Karl Popper, *Conjectures and Refutations: The Growth of Scientific Knowledge* (p. 141)</cite>
+## Recent news
 
-## Publications
+- **May 2026** — New preprint: [_Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers_](https://arxiv.org/abs/2605.13450) introduces the DRAT, the first creativity test that significantly predicts LLM scientific ideation.
+- **May 2026** — Launched the [Creative AI Index](https://schapiro.ai/creative-ai-index/), a community benchmark for AI creativity.
+- **April 2026** — Received the Lambda AI Research Grant.
+- **September 2025** — Best Short Paper Award at ICCC 2025 for [_Transformational Creativity in Science: A Graphical Theory_](https://arxiv.org/abs/2504.18687).
+- **August 2024** — Started as a visiting graduate researcher at the Simons Institute, UC Berkeley.
+
+## Selected publications
 
 ### 2026
 
@@ -172,26 +65,3 @@ I am an [interdisciplinary scholar](bookshelf.html) studying the science of inte
 ### 2024
 
 - **S. Schapiro**, H. Zhao. [Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization](https://arxiv.org/abs/2412.05169). Undergraduate thesis, University of Illinois, Urbana-Champaign.
-
-## Awards
-
-- **Lambda AI Research Grant** ($500), 2026
-- **Best Short Paper Award**, Association for Computational Creativity (ICCC), 2025
-- **Edmund J. James Honor Scholar**, University of Illinois, Urbana-Champaign, 2023
-- **Cozad New Venture Challenge** ($35,000), 2022
-
-## Service
-
-Reviewer at ICML 2026 Workshop on Creativity & Generative AI, ICML 2026, COLM 2026, NeurIPS 2026, and the NeurIPS 2024 Workshop on Creativity & Generative AI.
-
-:::
-
-
-<!-- Delete the following section and delete corresponding lines in the yaml part to remove the recent posts -->
-## Recent Posts
-Check out the latest &nbsp;[Papers](posts.qmd#category=paper)&nbsp;, &nbsp;[News](posts.qmd#category=news)&nbsp;, &nbsp;[Events](posts.qmd#category=event)&nbsp;, and &nbsp;[More »](/posts.qmd)
-
-:::{#recent-posts}
-:::
-
-<p align="right">[All Posts »](/posts.qmd)</p>
