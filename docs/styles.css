@@ -248,6 +248,17 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+.about-interests {
+  list-style: disc;
+  padding-left: 1.3rem;
+  margin: 0.5rem 0 0 0;
+}
+.about-interests > li {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin-bottom: 0.25rem;
+}
 .content > section { margin: 0; }
 .content > section + section { margin-top: 3.5rem; }   /* space-y-14 */
 
