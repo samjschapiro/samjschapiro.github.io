@@ -68,6 +68,11 @@ Previously, I was a visiting graduate researcher at the [Simons Institute for th
 <p>Started as a visiting graduate researcher at the Simons Institute, UC Berkeley.</p>
 </li>
 
+<li>
+<time datetime="2024-05-01">May 2024</time>
+<p>Pivoted to cognitive science — <a href="https://x.com/samschapiro/status/2056088074707227092?s=20">writeup</a>.</p>
+</li>
+
 </ol>
 
 ## Selected Publications
