@@ -444,10 +444,14 @@ body.bookshelf-page .shelf-controls button.active {
   border-color: var(--color-text);
 }
 
+/* Break Quarto's column-page CSS grid so the bookshelf can use the full
+   viewport. Quarto turns .column-page into a grid where children land in
+   a constrained `page-start / page-end` track — that crushed the inner
+   .grid down to a narrow strip and forced single-column rendering. */
 body.bookshelf-page #quarto-content,
 body.bookshelf-page main.content,
-body.bookshelf-page .column-page,
-body.bookshelf-page .quarto-title-meta {
+body.bookshelf-page .column-page {
+  display: block !important;
   max-width: none !important;
   width: 100% !important;
   margin-inline: auto !important;
@@ -457,9 +461,10 @@ body.bookshelf-page .quarto-title-meta {
 body.bookshelf-page .grid {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, 180px) !important;
-  justify-content: center;
+  justify-content: center !important;
   grid-auto-rows: 460px;
   gap: 0;
+  width: 100%;
   margin: 0 auto 3rem;
   padding-top: 8px;
   background-image: repeating-linear-gradient(
