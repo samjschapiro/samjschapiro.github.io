@@ -29,9 +29,6 @@ about:
 ---
 
 :::{#hero-heading}
-
-PhD applicant · interdisciplinary researcher studying the science of intelligence
-
 :::
 
 ## About
