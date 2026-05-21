@@ -8,9 +8,9 @@ page-layout: full
 
 about:
   id: hero-heading
-  template: jolla
-  image-width: 200px
-  image-shape: round
+  template: trestles
+  image-width: 220px
+  image-shape: rounded
   links:
     - icon: envelope
       text: E-mail
