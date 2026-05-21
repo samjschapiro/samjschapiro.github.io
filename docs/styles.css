@@ -309,6 +309,28 @@ code {
   border-bottom: 1px solid var(--color-border);
 }
 .publication:last-of-type { border-bottom: none; }
+
+/* Two-column layout only when a thumbnail is present. */
+.publication:has(.publication-image) {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+@media (min-width: 640px) {
+  .publication:has(.publication-image) {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}
+.publication-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  display: block;
+}
+.publication-body > :first-child { margin-top: 0; }
 .publication-title {
   font-size: 1.25rem;
   line-height: 1.375;          /* leading-snug */
