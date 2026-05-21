@@ -29,7 +29,6 @@ about:
 ---
 
 :::{#hero-heading}
-:::
 
 ## About
 
@@ -37,28 +36,85 @@ I am an [interdisciplinary scholar](bookshelf.html) studying the science of inte
 
 Previously, I was a visiting graduate researcher at the [Simons Institute for the Theory of Computing, Berkeley](https://simons.berkeley.edu/homepage), and did my undergrad at the [University of Illinois, Urbana-Champaign](https://siebelschool.illinois.edu/), where I studied theoretical computer science.
 
-## Recent news
+## Recent News
 
-- **May 2026** — New preprint: [_Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers_](https://arxiv.org/abs/2605.13450) introduces the DRAT, the first creativity test that significantly predicts LLM scientific ideation.
-- **May 2026** — Launched the [Creative AI Index](https://schapiro.ai/creative-ai-index/), a community benchmark for AI creativity.
-- **April 2026** — Received the Lambda AI Research Grant.
-- **September 2025** — Best Short Paper Award at ICCC 2025 for [_Transformational Creativity in Science: A Graphical Theory_](https://arxiv.org/abs/2504.18687).
-- **August 2024** — Started as a visiting graduate researcher at the Simons Institute, UC Berkeley.
+<ol class="news-list">
 
-## Selected publications
+<li>
+<time datetime="2026-05-13">May 2026</time>
+<p>New preprint: <a href="https://arxiv.org/abs/2605.13450"><em>Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers</em></a> introduces the DRAT, the first creativity test that significantly predicts LLM scientific ideation.</p>
+</li>
+
+<li>
+<time datetime="2026-05-06">May 2026</time>
+<p>Launched the <a href="https://schapiro.ai/creative-ai-index/">Creative AI Index</a>, a community benchmark for AI creativity.</p>
+</li>
+
+<li>
+<time datetime="2026-04-01">April 2026</time>
+<p>Received the Lambda AI Research Grant.</p>
+</li>
+
+<li>
+<time datetime="2025-09-01">September 2025</time>
+<p>Best Short Paper Award at ICCC 2025 for <a href="https://arxiv.org/abs/2504.18687"><em>Transformational Creativity in Science: A Graphical Theory</em></a>.</p>
+</li>
+
+<li>
+<time datetime="2024-08-01">August 2024</time>
+<p>Started as a visiting graduate researcher at the Simons Institute, UC Berkeley.</p>
+</li>
+
+</ol>
+
+## Selected Publications
 
 ### 2026
 
-- **S. Schapiro**, A. Gladstone, J. Black, H. Ji. [Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers](https://arxiv.org/abs/2605.13450). Preprint.
-- **S. Schapiro**, C. Francisco Park, F. Sosa, L. R. Varshney. [CreativityNeuro: Steering Large Language Model Weights to Improve Divergent Thinking](files/CN.pdf). Under review, Third Conference on Language Modeling (COLM).
-- **S. Schapiro**, A. Gladstone, J. Black, H. Ji. [Do Semantic Distance Tests _Actually_ Predict Creativity in Large Language Models?](files/SD_NIPS.pdf) Under review, 40th Conference on Neural Information Processing Systems (NeurIPS).
-- **S. Schapiro**, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney. [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043). Under review, International Conference on Learning Representations (ICLR).
+::: {.publication}
+<p class="publication-title"><a href="https://arxiv.org/abs/2605.13450">Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers</a></p>
+<p class="publication-authors"><strong>S. Schapiro</strong>, A. Gladstone, J. Black, H. Ji</p>
+<p class="publication-venue">Preprint</p>
+:::
+
+::: {.publication}
+<p class="publication-title"><a href="files/CN.pdf">CreativityNeuro: Steering Large Language Model Weights to Improve Divergent Thinking</a></p>
+<p class="publication-authors"><strong>S. Schapiro</strong>, C. Francisco Park, F. Sosa, L. R. Varshney</p>
+<p class="publication-venue">Under review, Third Conference on Language Modeling (COLM)</p>
+:::
+
+::: {.publication}
+<p class="publication-title"><a href="files/SD_NIPS.pdf">Do Semantic Distance Tests <em>Actually</em> Predict Creativity in Large Language Models?</a></p>
+<p class="publication-authors"><strong>S. Schapiro</strong>, A. Gladstone, J. Black, H. Ji</p>
+<p class="publication-venue">Under review, 40th Conference on Neural Information Processing Systems (NeurIPS)</p>
+:::
+
+::: {.publication}
+<p class="publication-title"><a href="https://arxiv.org/abs/2509.21043">Combinatorial Creativity: A New Frontier in Generalization Abilities</a></p>
+<p class="publication-authors"><strong>S. Schapiro</strong>, S. Shashidhar, A. Gladstone, J. Black, R. Moon, D. Hakkani-Tur, L. R. Varshney</p>
+<p class="publication-venue">Under review, International Conference on Learning Representations (ICLR)</p>
+:::
 
 ### 2025
 
-- **S. Schapiro**, J. Black, L. R. Varshney. [Transformational Creativity in Science: A Graphical Theory](https://arxiv.org/abs/2504.18687). Proceedings of the 16th International Conference on Computational Creativity (ICCC). **Best Short Paper Award.**
-- A. Sanyal, **S. Schapiro**, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur. [Spark: A System for Scientifically Creative Idea Generation](https://arxiv.org/abs/2504.20090). Proceedings of the 16th International Conference on Computational Creativity (ICCC).
+::: {.publication}
+<p class="publication-title"><a href="https://arxiv.org/abs/2504.18687">Transformational Creativity in Science: A Graphical Theory</a></p>
+<p class="publication-authors"><strong>S. Schapiro</strong>, J. Black, L. R. Varshney</p>
+<p class="publication-venue">Proceedings of the 16th International Conference on Computational Creativity (ICCC) — <em>Best Short Paper Award</em></p>
+:::
+
+::: {.publication}
+<p class="publication-title"><a href="https://arxiv.org/abs/2504.20090">Spark: A System for Scientifically Creative Idea Generation</a></p>
+<p class="publication-authors">A. Sanyal, <strong>S. Schapiro</strong>, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur</p>
+<p class="publication-venue">Proceedings of the 16th International Conference on Computational Creativity (ICCC)</p>
+:::
 
 ### 2024
 
-- **S. Schapiro**, H. Zhao. [Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization](https://arxiv.org/abs/2412.05169). Undergraduate thesis, University of Illinois, Urbana-Champaign.
+::: {.publication}
+<p class="publication-title"><a href="https://arxiv.org/abs/2412.05169">Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization</a></p>
+<p class="publication-authors"><strong>S. Schapiro</strong>, H. Zhao</p>
+<p class="publication-venue">Undergraduate thesis, University of Illinois, Urbana-Champaign</p>
+:::
+
+:::
