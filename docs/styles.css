@@ -290,7 +290,14 @@ code {
   padding-left: 1.25rem;
   margin: 1.25rem 0 0 0;
   border-left: 2px solid var(--color-link);
+  max-height: 22rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
 }
+.news-list::-webkit-scrollbar { width: 6px; }
+.news-list::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+.news-list::-webkit-scrollbar-track { background: transparent; }
 .news-list > li {
   display: grid;
   gap: 0.25rem;
