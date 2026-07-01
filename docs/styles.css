@@ -202,12 +202,75 @@ code {
 }
 
 .sidebar h1 {
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.3rem 0;
   font-size: 1.875rem;         /* text-3xl */
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: 0;
   color: var(--color-text);
+}
+
+/* ---------- "Science of Creativity" name mark ---------- */
+/* The "Sc" in Schapiro doubles as the initials of "Science of Creativity".
+   Animation (shimmer + reveal) is desktop-only and respects reduced-motion;
+   on mobile / reduced-motion it degrades to a clean static state. */
+
+.namemark .surname { white-space: nowrap; }
+
+/* Shared gradient treatment for both "Sc" marks */
+.sc,
+.sc-tag-sc {
+  font-weight: 600;
+  background: linear-gradient(90deg,
+    var(--color-link) 0%,
+    var(--warm-accent) 50%,
+    var(--color-link) 100%);
+  background-size: 200% 100%;
+  background-position: 0% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.sc-tagline {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+.sc-tag-rest { display: inline-block; }
+
+@keyframes sc-shimmer {
+  0%   { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes sc-reveal {
+  from { max-width: 0;     opacity: 0; }
+  to   { max-width: 22ch;  opacity: 1; }
+}
+
+/* Animate only on desktop, and only when motion is welcome */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .sc,
+  .sc-tag-sc {
+    animation: sc-shimmer 7s linear infinite;
+  }
+  .sc-tag-rest {
+    overflow: hidden;
+    max-width: 0;
+    opacity: 0;
+    animation: sc-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+  }
+  /* Replay the reveal when hovering the name block */
+  .sidebar:hover .sc-tag-rest {
+    animation: sc-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
 }
 
 .email {
