@@ -344,6 +344,40 @@ html { scroll-behavior: smooth; }
 .news b,
 .service b { color: #222; }
 
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  /* Nav: smaller, tighter, horizontally scrollable so it never gets clipped */
+  .main-nav {
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar { display: none; }
+  .main-nav a { padding: 4px 6px; margin: 0 1px; }
+  .main-nav-dot { margin: 0; }
+
+  /* Hero: stack with the photo centered on top, text below */
+  .about-cols {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .about-text {
+    flex: 1 1 100%;
+    min-width: 0;
+    width: 100%;
+  }
+  .about-photo {
+    flex: 0 0 auto;
+    width: 150px;
+    max-width: 60%;
+  }
+  .name { font-size: 1.75rem; }
+}
+
 /* ---------- "Science of Creativity" name mark ---------- */
 /* The "Sc" in Schapiro doubles as the initials of "Science of Creativity".
    Animation (shimmer + reveal) is desktop-only and respects reduced-motion;
