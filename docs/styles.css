@@ -341,8 +341,91 @@ html { scroll-behavior: smooth; }
   line-height: 1.55;
   margin: 0;
 }
-.news b,
 .service b { color: #222; }
+
+/* News: italic entries with roomier spacing between them */
+.news {
+  font-style: italic;
+  line-height: 2.1;
+}
+.news b { color: #222; font-style: normal; }
+
+/* News beside embedded X/Twitter timeline (stacks on mobile) */
+.news-cols {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.news-panel {
+  position: relative;
+  flex: 1 1 55%;
+  min-width: 0;
+}
+.news-scroll {
+  height: 400px;
+  overflow-y: scroll;
+  padding-right: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.news-scroll::-webkit-scrollbar { width: 6px; }
+.news-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+.news-scroll::-webkit-scrollbar-track { background: transparent; }
+.news-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg));
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .news-scroll { max-height: 420px; }
+}
+.news-twitter {
+  position: relative;
+  flex: 0 0 330px;
+  max-width: 330px;
+  width: 100%;
+}
+/* Fixed-height scrollable feed of embedded tweets */
+.news-twitter-scroll {
+  height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.news-twitter-scroll::-webkit-scrollbar { width: 6px; }
+.news-twitter-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+.news-twitter-scroll::-webkit-scrollbar-track { background: transparent; }
+.news-twitter .twitter-tweet,
+.news-twitter .twitter-tweet-rendered {
+  margin: 0 auto !important;
+}
+/* Fade the bottom edge so cut-off tweets look intentional */
+.news-twitter-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 34px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg));
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .news-twitter-scroll { max-height: 420px; }
+}
+@media (max-width: 768px) {
+  .news-cols {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .news-twitter {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+}
 
 /* ---------- Mobile ---------- */
 @media (max-width: 640px) {
