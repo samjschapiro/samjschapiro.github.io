@@ -403,6 +403,21 @@ html { scroll-behavior: smooth; }
 .news-twitter .twitter-tweet-rendered {
   margin: 0 auto !important;
 }
+/* Loading placeholder: shown until the widget upgrades the blockquotes */
+.tweet-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.news-twitter.tweets-loaded .tweet-loading { display: none; }
+/* Hide the raw fallback links until each tweet renders */
+.news-twitter-scroll .twitter-tweet:not(.twitter-tweet-rendered) { visibility: hidden; }
 /* Fade the bottom edge so cut-off tweets look intentional */
 .news-twitter-fade {
   position: absolute;

@@ -7,6 +7,8 @@
   <meta name="description" content="Interdisciplinary researcher studying the science of intelligence and the creativity of AI systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://platform.twitter.com">
+  <link rel="preconnect" href="https://cdn.syndication.twimg.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -61,6 +63,7 @@
               <div class="news-fade"></div>
             </div>
             <div class="news-twitter">
+              <div class="tweet-loading" aria-hidden="true">Loading posts…</div>
               <div class="news-twitter-scroll">
                 <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none" data-width="330"><a href="https://twitter.com/samschapiro/status/2073078257075851462">A post by @samschapiro on X</a></blockquote>
                 <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none" data-width="330"><a href="https://twitter.com/samschapiro/status/2069765637606457805">A post by @samschapiro on X</a></blockquote>
@@ -160,5 +163,22 @@
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script>
+    (function () {
+      function rendered(box) { return box.querySelector('.twitter-tweet-rendered, iframe'); }
+      function init() {
+        document.querySelectorAll('.news-twitter').forEach(function (box) {
+          if (rendered(box)) { box.classList.add('tweets-loaded'); return; }
+          var obs = new MutationObserver(function () {
+            if (rendered(box)) { box.classList.add('tweets-loaded'); obs.disconnect(); }
+          });
+          obs.observe(box, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+          setTimeout(function () { box.classList.add('tweets-loaded'); obs.disconnect(); }, 8000);
+        });
+      }
+      if (document.readyState !== 'loading') init();
+      else window.addEventListener('DOMContentLoaded', init);
+    })();
+  </script>
 </body>
 </html>
