@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://platform.twitter.com">
   <link rel="preconnect" href="https://cdn.syndication.twimg.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Changa+One:ital@0;1&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -52,12 +52,11 @@
           <div class="news-cols">
             <div class="news-panel">
               <p class="news news-scroll">
-                <b>[Jul 2026]</b> 🎉 2/2 papers accepted at COLM 2026; 🏆 <a href="files/TwistBench.pdf">TwistBench</a> accepted as an <em>Oral</em> at the COLM 2026 Workshop on Scientific Understanding of Foundation Models.<br>
-                <b>[May 2026]</b> 🎉 2/2 papers accepted at the ICML 2026 Workshop on Generative AI &amp; Creativity.<br>
+                <b>[Jul 2026]</b> 2/2 papers accepted at COLM 2026; <a href="files/TwistBench.pdf">TwistBench</a> accepted as an <span class="award">Oral</span> at the COLM 2026 Workshop on Scientific Understanding of Foundation Models.<br>
+                <b>[May 2026]</b> 2/2 papers accepted at the ICML 2026 Workshop on Generative AI &amp; Creativity.<br>
                 <b>[Apr 2026]</b> Received the Lambda AI Research Grant.<br>
-                <b>[Jun 2025]</b> 🏆 Best Short Paper Award at ICCC 2025 for <a href="https://arxiv.org/abs/2504.18687" target="_blank" rel="noopener"><em>Transformational Creativity in Science: A Graphical Theory</em></a>.<br>
-                <b>[May 2025]</b> 🎉 2/2 papers accepted at ICCC 2025.<br>
-                <b>[May 2024]</b> Pivoted from <a href="https://x.com/samschapiro/status/2056088074707227092?s=20" target="_blank" rel="noopener">ML theory to cognitive science</a>.
+                <b>[Jun 2025]</b> <span class="award">Best Short Paper Award</span> at ICCC 2025 for <a href="https://arxiv.org/abs/2504.18687" target="_blank" rel="noopener"><em>Transformational Creativity in Science: A Graphical Theory</em></a>.<br>
+                <b>[May 2025]</b> 2/2 papers accepted at ICCC 2025.
               </p>
               <div class="news-fade"></div>
             </div>
@@ -75,17 +74,22 @@
         <section>
           <h2 id="research">Research Areas</h2>
 
-          <div class="areas-grid">
+          <p class="areas-lead">My work is organized around three interrelated topics. For a complete list of publications, see my <a href="https://scholar.google.com/citations?user=B2UNU6EAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
 
-            <article class="area-card">
+          <div class="areas-list">
+
+            <article class="area">
               <h3 class="area-title"><span class="area-num">I.</span> Measuring the Creativity of AI</h3>
-              <img class="area-image" src="files/papers/semantic_distance.png" alt="Measuring the creativity of AI" loading="lazy">
+              <div class="area-figures">
+                <img src="files/papers/semantic_distance.png" alt="Semantic distance tests plotted against creativity benchmarks" loading="lazy">
+                <img src="files/papers/plot_twist_clusters.png" alt="UMAP of literary plot-twist clusters from TwistBench" loading="lazy">
+              </div>
               <p class="area-goal">Benchmarks and tests of creativity, especially more complex forms such as transformational and scientific creativity.</p>
               <ul class="area-pubs">
                 <li class="area-pub">
                   <a class="area-pub-title" href="files/TwistBench.pdf">TwistBench: Benchmarking Transformational Creativity in LLMs via Literary Plot Twists</a>
                   <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. Gladstone, H. Ji, R. E. Beaty</span>
-                  <span class="area-pub-venue"><em>Oral</em>, COLM 2026 Workshop on Scientific Understanding of Foundation Models.</span>
+                  <span class="area-pub-venue"><span class="award">Oral</span>, COLM 2026 Workshop on Scientific Understanding of Foundation Models.</span>
                 </li>
                 <li class="area-pub">
                   <a class="area-pub-title" href="https://arxiv.org/abs/2605.13450" target="_blank" rel="noopener">Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers</a>
@@ -100,9 +104,12 @@
               </ul>
             </article>
 
-            <article class="area-card">
+            <article class="area">
               <h3 class="area-title"><span class="area-num">II.</span> Improving the Creativity of AI</h3>
-              <img class="area-image" src="files/papers/creativityneuro.png" alt="Improving the creativity of AI" loading="lazy">
+              <div class="area-figures">
+                <img src="files/papers/creativityneuro.png" alt="CreativityNeuro weight steering and its effect on generation diversity" loading="lazy">
+                <img src="files/papers/spark.png" alt="Spark system diagram: Xplor, idea generator, and filter stages" loading="lazy">
+              </div>
               <p class="area-goal">Methods and systems that make models more creative.</p>
               <ul class="area-pubs">
                 <li class="area-pub">
@@ -118,9 +125,12 @@
               </ul>
             </article>
 
-            <article class="area-card">
+            <article class="area">
               <h3 class="area-title"><span class="area-num">III.</span> Theories and Foundations of Creativity</h3>
-              <img class="area-image" src="files/papers/transformational.png" alt="Theories and foundations of creativity" loading="lazy">
+              <div class="area-figures">
+                <img src="files/papers/transformational.png" alt="Graphical theory of transformational creativity in science" loading="lazy">
+                <img src="files/papers/combinatorial.png" alt="Combinatorial creativity: conceptual graphs behind ordinary and extraordinary insight" loading="lazy">
+              </div>
               <p class="area-goal">Formal accounts of what creativity is and how it manifests in minds and machines.</p>
               <ul class="area-pubs">
                 <li class="area-pub">
@@ -148,7 +158,8 @@
         <section id="service">
           <h2>Service</h2>
           <p class="service">
-            <b>Conference Reviewer:</b> ICML 2026, COLM 2026, NeurIPS 2026<br>
+            <b>Conference Reviewer:</b> ICML 2026, COLM 2026, NeurIPS 2026, AAAI 2026<br>
+            <b>Journal Reviewer:</b> Proceedings of the National Academy of Sciences (PNAS)<br>
             <b>Workshop Reviewer:</b> NeurIPS 2024 Creativity &amp; Generative AI, ICML 2026 Creativity &amp; Generative AI
           </p>
         </section>
