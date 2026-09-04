@@ -32,6 +32,8 @@ function skipBox(name) { return `<label class="kb-skip"><input type="checkbox" n
 
 const EXAMPLES = {
   association: `<div style="max-width:520px;">
+      <div class="kb-triple kb-thead"><span class="tnum"></span>
+        <span class="thd">entity</span><span class="thd">relation</span><span class="thd">entity</span></div>
       <div class="kb-triple"><span class="tnum">1</span>
         <input type="text" value="rubber" readonly><input type="text" value="stores" readonly><input type="text" value="elastic energy" readonly></div>
       <div class="kb-triple"><span class="tnum">2</span>
@@ -100,7 +102,7 @@ function trialHTML(stim, index, total) {
   if (t === 'association') {
     body += `<div class="kb-pair"><span class="kb-chip a">${esc(stim.u)}</span>
         <span class="kb-tween">to</span><span class="kb-chip b">${esc(stim.v)}</span></div>
-      <p class="kb-ask">Build a path of <b>triples</b> (head, relation, tail) from <b>${esc(stim.u)}</b> to <b>${esc(stim.v)}</b>: start at <b>${esc(stim.u)}</b>, each triple's tail is the next triple's head, and the last triple ends at <b>${esc(stim.v)}</b>. Try to use surprising, original, and unusual relations and concepts in this chain, rather than generic ones that other participants would pick.</p>
+      <p class="kb-ask">Build a path of <b>triples</b> (entity, relation, entity) from <b>${esc(stim.u)}</b> to <b>${esc(stim.v)}</b>: start at <b>${esc(stim.u)}</b>, each triple's second entity is the next triple's first entity, and the last triple ends at <b>${esc(stim.v)}</b>. Try to use surprising, original, and unusual relations and concepts in this chain, rather than generic ones that other participants would pick.</p>
       <div class="kb-path" id="pathHost"></div>
       <div class="kb-add"><button type="button" id="addStep">+ add a triple</button></div>`;
   } else if (t === 'analogy') {
@@ -140,12 +142,16 @@ function wireAssociation(stim) {
     });
   }
   function draw() {
-    let h = '';
+    // persistent column labels so participants know which cell is entity / relation / entity even after
+    // the placeholders disappear on typing.
+    let h = `<div class="kb-triple kb-thead"><span class="tnum"></span>
+        <span class="thd">entity</span><span class="thd">relation</span><span class="thd">entity</span>
+        ${rows.length > 1 ? '<span class="thd-x"></span>' : ''}</div>`;
     rows.forEach((s, i) => {
       h += `<div class="kb-triple"><span class="tnum">${i + 1}</span>
-        <input type="text" name="tri_head_${i}" required placeholder="head" value="${esc(s.head || '')}">
+        <input type="text" name="tri_head_${i}" required placeholder="entity" value="${esc(s.head || '')}">
         <input type="text" name="tri_rel_${i}" required placeholder="relation" value="${esc(s.rel || '')}">
-        <input type="text" name="tri_tail_${i}" required placeholder="tail" value="${esc(s.tail || '')}">
+        <input type="text" name="tri_tail_${i}" required placeholder="entity" value="${esc(s.tail || '')}">
         ${rows.length > 1 ? `<button type="button" class="kb-x" data-rm="${i}">&times;</button>` : ''}</div>`;
     });
     host.innerHTML = h;
@@ -196,19 +202,22 @@ function wireAnalogyPaths(stim) {
     const k = side === 'a' ? ['ah', 'ar', 'at'] : ['bh', 'br', 'bt'];
     const attr = disabled ? ' disabled' : ' required';
     const cell = (kk, ph) => `<textarea rows="1" name="${prefix}_${kk}_${i}"${attr} placeholder="${ph}">${esc(s[kk])}</textarea>`;
-    return `<div class="an-tri ${side === 'a' ? 'aside' : 'bside'}">${cell(k[0], 'head')}${cell(k[1], 'relation')}${cell(k[2], 'tail')}</div>`;
+    return `<div class="an-tri ${side === 'a' ? 'aside' : 'bside'}">${cell(k[0], 'entity')}${cell(k[1], 'relation')}${cell(k[2], 'entity')}</div>`;
   }
   function row(prefix, i, s, arr, disabled) {
     const rm = arr.length > 1 ? `<button type="button" class="kb-x an-rmbtn" data-rm="${prefix}:${i}">&times;</button>` : '<span class="an-rmbtn"></span>';
     // map rows get a per-step "don't know" opt-out (this task is hard); the invention has its own skip below.
     const dk = prefix === 'map'
-      ? `<label class="kb-skip an-dk"><input type="checkbox" name="skip_map_${i}"${disabled ? ' checked' : ''}> I don&rsquo;t know this step</label>` : '';
+      ? `<label class="kb-skip an-dk"><input type="checkbox" name="skip_map_${i}"${disabled ? ' checked' : ''}> I can&rsquo;t think of an analogy</label>` : '';
     return `<div class="an-rowwrap"><div class="an-row">${tri(prefix, i, s, 'a', disabled)}${tri(prefix, i, s, 'b', disabled)}
       ${rm}</div>${dk}</div>`;
   }
   function draw() {
     let h = `<div class="an-colhead"><span class="col"><span class="kb-chip a">${esc(stim.u)}</span></span>
       <span class="col"><span class="kb-chip b">${esc(stim.v)}</span></span><span class="an-rmbtn"></span></div>`;
+    // persistent entity / relation / entity labels over each side's triple cells
+    h += `<div class="an-row an-subhead"><div class="an-tri anlbl"><span>entity</span><span>relation</span><span>entity</span></div>` +
+         `<div class="an-tri anlbl"><span>entity</span><span>relation</span><span>entity</span></div><span class="an-rmbtn"></span></div>`;
     map.forEach((s, i) => h += row('map', i, s, map, !!s.skip));
     h += `<div class="kb-add"><button type="button" id="addMapStep">+ add a step to both paths</button></div>`;
     h += `<hr class="an-divider">`;
@@ -248,18 +257,21 @@ function wireBlend(stim) {
   function ptri(i, s, which) {
     const cls = which === 'src' ? (s.from === 'u' ? 'aside' : 'bside') : 'newc';
     const keys = which === 'src' ? ['sh', 'sr', 'st'] : ['ih', 'ir', 'it'];
-    const ph = which === 'src' ? ['an input entity', 'relation', 'tail'] : ['the blend', 'relation', 'tail'];
+    const ph = which === 'src' ? ['an input entity', 'relation', 'entity'] : ['the blend', 'relation', 'entity'];
     const cell = (kk, p) => `<textarea rows="1" name="p_${kk}_${i}" required placeholder="${p}">${esc(s[kk])}</textarea>`;
     return `<div class="an-tri ${cls}">${cell(keys[0], ph[0])}${cell(keys[1], ph[1])}${cell(keys[2], ph[2])}</div>`;
   }
   function etri(i, s) {
     const attr = emerSkip ? ' disabled' : ' required';
     const cell = (kk, p) => `<textarea rows="1" name="e_${kk}_${i}"${attr} placeholder="${p}">${esc(s[kk])}</textarea>`;
-    return `<div class="an-tri emergent">${cell('h', 'the blend')}${cell('r', 'relation')}${cell('t', 'tail')}</div>`;
+    return `<div class="an-tri emergent">${cell('h', 'the blend')}${cell('r', 'relation')}${cell('t', 'entity')}</div>`;
   }
   function draw() {
     let h = `<p class="kb-ask" style="margin:14px 0 6px;">Project structure into the blend &mdash; each row: a triple true of an input, carried into the blend:</p>`;
     h += `<div class="an-colhead"><span class="col">true of an input</span><span class="bl-arrowhead"></span><span class="col">in the blend</span><span class="an-rmbtn"></span></div>`;
+    h += `<div class="an-row an-subhead"><div class="an-tri anlbl"><span>entity</span><span>relation</span><span>entity</span></div>` +
+         `<span class="bl-arrow" style="visibility:hidden">&rarr;</span>` +
+         `<div class="an-tri anlbl"><span>entity</span><span>relation</span><span>entity</span></div><span class="an-rmbtn"></span></div>`;
     proj.forEach((s, i) => {
       const rm = proj.length > 1 ? `<button type="button" class="kb-x an-rmbtn" data-rm="p:${i}">&times;</button>` : '<span class="an-rmbtn"></span>';
       h += `<div class="an-rowwrap"><div class="an-row">${ptri(i, s, 'src')}<span class="bl-arrow" title="projects to">&rarr;</span>${ptri(i, s, 'img')}${rm}
@@ -269,6 +281,7 @@ function wireBlend(stim) {
     h += `<div class="kb-add"><button type="button" id="addPU">+ project from ${esc(stim.u)}</button> <button type="button" id="addPV">+ project from ${esc(stim.v)}</button></div>`;
     h += `<hr class="an-divider">`;
     h += `<p class="kb-ask" style="margin:6px 0;">Emergent structure &mdash; true of the blend but of <b>neither</b> input alone:</p>`;
+    h += `<div class="an-row an-subhead"><div class="an-tri anlbl"><span>entity</span><span>relation</span><span>entity</span></div><span class="an-rmbtn"></span></div>`;
     emer.forEach((s, i) => {
       const rm = emer.length > 1 ? `<button type="button" class="kb-x an-rmbtn" data-rm="e:${i}">&times;</button>` : '<span class="an-rmbtn"></span>';
       h += `<div class="an-rowwrap"><div class="an-row">${etri(i, s)}${rm}</div></div>`;
@@ -481,7 +494,7 @@ function createConsentScreen() {
 
 const TASK_INTRO = {
   association: { color: '#1976d2', title: 'Association — build a chain',
-    desc: 'Connect two ideas with a chain of true links — reach across distant, non-obvious ideas.' },
+    desc: 'Build a path of <b>triples</b> (entity, relation, entity) from one entity to another. Try to use surprising, original, and unusual relations and concepts in this chain, rather than generic ones that other participants would pick.' },
   analogy: { color: '#f57c00', title: 'Analogy — find the parallel, then invent',
     desc: 'Name the relationship two ideas share and what each maps to, then use the analogy to invent a new idea in the other domain.' },
   blending: { color: '#388e3c', title: 'Blend — fuse two into one',

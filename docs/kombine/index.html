@@ -67,13 +67,21 @@
         .kb-skip input[type=checkbox] { width: auto; margin: 0; }
         .kb-field input:disabled { background: #f0f0f0; color: #aaa; }
 
-        /* association triples: head / relation / tail per row */
+        /* association triples: entity / relation / entity per row */
         .kb-triple { display: flex; gap: 6px; align-items: center; margin: 7px 0; }
         .kb-triple .tnum { color: #888; font-size: 13px; width: 16px; flex: none; text-align: right; }
         .kb-triple input { flex: 1; min-width: 0; font-family: inherit; font-size: 15px; color: #333; background: #fff;
             border: 1px solid #ccc; border-radius: 5px; padding: 8px 10px; box-sizing: border-box; }
         .kb-triple input:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 3px rgba(0,123,255,.15); }
         .kb-triple input[readonly] { background: #f5f5f5; }
+
+        /* persistent entity / relation / entity column labels (placeholders vanish once a cell is typed in) */
+        .kb-thead { margin: 10px 0 2px; align-items: flex-end; }
+        .kb-thead .thd { flex: 1; min-width: 0; font-size: 12px; font-weight: bold; color: #666; text-transform: uppercase; letter-spacing: .04em; padding-left: 10px; }
+        .kb-thead .thd-x { width: 28px; flex: none; }
+        .an-subhead { margin: 2px 0 0; }
+        .an-subhead .anlbl { display: flex; flex-wrap: wrap; gap: 5px; }
+        .an-subhead .anlbl span { flex: 1 1 120px; min-width: 96px; font-size: 12px; font-weight: bold; color: #666; text-transform: uppercase; letter-spacing: .04em; padding-left: 9px; }
 
         /* analogy: a full triple in each domain per row (u-triple left, v-triple right) */
         /* analogy trials get a wider canvas so long entries (e.g. "immune system") stay readable */
