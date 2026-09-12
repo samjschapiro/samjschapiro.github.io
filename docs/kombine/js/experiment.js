@@ -102,7 +102,7 @@ const EXAMPLES = {
         <div class="an-tri newc"><textarea rows="1" readonly>vote-shares</textarea><textarea rows="1" readonly>can be</textarea><textarea rows="1" readonly>traded</textarea></div>
       </div><div class="bl-tagrow"><span class="bl-tag v">from Banking</span></div></div>
       <hr class="an-divider">
-      <p class="kb-ask" style="margin:6px 0;">What is new &mdash; true of the new concept, of neither original concept on its own:</p>
+      <p class="kb-ask" style="margin:6px 0;">Describe something that is true of your new concept but of <b>neither</b> original concept on its own</p>
       <div class="an-rowwrap"><div class="an-row">
         <div class="an-tri emergent"><textarea rows="1" readonly>a citizen</textarea><textarea rows="1" readonly>can liquidate</textarea><textarea rows="1" readonly>their own political personhood</textarea></div>
       </div></div>
