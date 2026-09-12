@@ -70,7 +70,7 @@ const EXAMPLES = {
         <div class="an-tri bside"><textarea rows="1" readonly>dust mites</textarea><textarea rows="1" readonly>feed on</textarea><textarea rows="1" readonly>skin flakes</textarea></div>
       </div></div>
       <hr class="an-divider">
-      <p class="kb-ask" style="margin:6px 0;">Then <b>invent a new idea</b> by taking an entity and a relation from one side, and carrying them over to the other. The arrow shows the direction, and the <b>shaded</b> cells are the invented concept, which can be on either side.</p>
+      <p class="kb-ask" style="margin:6px 0;">Now that you have formed the analogy, use it to <b>invent a new idea</b> by taking a known entity and relation from one side, and carrying them over to their corresponding roles on the other side. Click the arrow that points to the direction of your new invention.</p>
       <div class="an-rowwrap"><div class="an-row">
         <div class="an-tri aside newc"><textarea rows="1" readonly>whale groomer drone</textarea><textarea rows="1" readonly>removes</textarea><textarea rows="1" readonly>barnacles</textarea></div>
         <span class="an-dirarrow" title="carried from the mattress side to the whale side">&larr;</span>
