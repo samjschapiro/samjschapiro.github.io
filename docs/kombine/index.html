@@ -102,8 +102,20 @@
         .an-rmbtn { flex: none; width: 26px; }
         .an-dk { margin: 3px 0 0 2px; font-size: 12px; }
         .an-divider { border: none; border-top: 2px solid #ce93d8; margin: 16px 0 8px; }
-        /* blend projection: input triple -> blended-space triple (newc = invented concept, emergent = purple) */
-        .an-tri.newc textarea, .an-tri.newc input { border-color: #c9a94a; }
+        /* the INVENTED concept (analogy invention side, blend's new concept) is shaded gold everywhere: examples and live cells */
+        .an-tri.newc textarea, .an-tri.newc input,
+        .an-tri.newc textarea[readonly], .an-tri.newc input[readonly] { border-color: #c9a94a; background: #fff3c4; }
+        .kb-legend { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #666; margin: 8px 0 0; }
+        .kb-legend .sw { width: 14px; height: 14px; border: 1px solid #c9a94a; background: #fff3c4; border-radius: 3px; }
+        /* direction of projection between the two sides of an invention row: static arrow in examples, radio toggle in trials */
+        .an-dirarrow { flex: none; align-self: center; color: #b08d2a; font-size: 22px; padding: 0 6px; }
+        .an-dir { flex: none; align-self: center; display: flex; flex-direction: column; gap: 3px; padding: 0 6px; }
+        .an-dir label { cursor: pointer; }
+        .an-dir input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .an-dir span { display: block; width: 34px; text-align: center; font-size: 18px; line-height: 26px; color: #b08d2a; border: 1px solid #c9a94a; border-radius: 5px; background: #fff; }
+        .an-dir input:checked + span { background: #c9a94a; color: #fff; }
+        .an-dir input:disabled + span { opacity: .4; cursor: default; }
+        .an-dir input:focus-visible + span { box-shadow: 0 0 0 3px rgba(0,123,255,.25); }
         .an-tri.emergent textarea, .an-tri.emergent input { border-color: #9a95d6; background: #f6f5fc; }
         .bl-arrow { flex: none; align-self: center; color: #999; font-size: 18px; padding: 0 2px; }
         .bl-arrowhead { flex: none; width: 22px; }
@@ -111,6 +123,31 @@
         .bl-tag { font-size: 12px; padding: 1px 8px; border-radius: 10px; white-space: nowrap; }
         .bl-tag.u { background: #e3f0f8; color: #33627e; }
         .bl-tag.v { background: #fbeadd; color: #8a4a1c; }
+        .bl-tag.uv { background: #efe9f7; color: #5b4a86; }
+        /* a "both" row stacks its two source links on the left, both projecting into one link in the new concept */
+        .bl-src { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+        .bl-src .an-tri { flex: none; }
+        /* per-row source selector: which concept the link comes from (radio pills) */
+        .bl-from { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0 0 2px; font-size: 12px; color: #666; }
+        .bl-from label { cursor: pointer; }
+        .bl-from input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .bl-from span { display: inline-block; padding: 1px 10px; border-radius: 10px; border: 1px solid #ccc; background: #fff; font-size: 12px; color: #666; }
+        .bl-from input:checked + span.u { background: #e3f0f8; color: #33627e; border-color: #90caf9; }
+        .bl-from input:checked + span.v { background: #fbeadd; color: #8a4a1c; border-color: #ffb74d; }
+        .bl-from input:checked + span.uv { background: #efe9f7; color: #5b4a86; border-color: #b39ddb; }
+        .bl-from input:disabled + span { opacity: .4; }
+        .bl-from input:focus-visible + span { box-shadow: 0 0 0 3px rgba(0,123,255,.25); }
+
+        /* LLM traps: present in the DOM (so a model reading or filling the page acts on them) but invisible to people.
+           Off-screen rather than display:none so the fields are still "real" form controls. */
+        .kb-hp { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; clip-path: inset(50%) !important; white-space: nowrap !important; border: 0 !important; }
+        /* notice shown when a paste or drop is blocked */
+        .kb-toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); background: #333; color: #fff; padding: 10px 16px; border-radius: 6px; font-size: 14px; z-index: 1000; opacity: 0; transition: opacity .2s; pointer-events: none; }
+        .kb-toast.show { opacity: 1; }
+
+        /* debug-only skip bar (never shown to Prolific participants) */
+        .kb-debugbar { position: fixed; top: 8px; right: 8px; z-index: 1000; display: flex; gap: 6px; align-items: center; background: #fff3cd; border: 1px solid #e0a800; border-radius: 6px; padding: 6px 8px; font-size: 12px; color: #664d03; }
+        .kb-debugbar button { font-size: 12px; padding: 4px 8px; border: 1px solid #b08d2a; border-radius: 4px; background: #fff; color: #664d03; cursor: pointer; }
 
         /* mobile */
         @media (max-width: 560px) {
