@@ -7,7 +7,8 @@
    ========================================================================== */
 
 // --- deployment constants (fill in after deploying the backend + Prolific study) ---
-const COMPLETION_URL = '';        // e.g. 'https://app.prolific.com/submissions/complete?cc=XXXXXXXX'
+const COMPLETION_CODE = 'XXXXXXXX';   // Prolific completion code — PLACEHOLDER, set from the Prolific study page before launch
+const COMPLETION_URL = `https://app.prolific.com/submissions/complete?cc=${COMPLETION_CODE}`;
 const DATA_SUBMISSION_URL = '';   // e.g. an API Gateway /submitData URL; '' => debug (show data, no POST)
 
 let jsPsych;
@@ -739,7 +740,10 @@ function createCompletionScreen() {
     button_label_next: isProlificParticipant ? 'Return to Prolific' : 'View data',
     pages: [`<div style="max-width:600px;margin:0 auto;text-align:center;"><h1>Thank you!</h1>
       <p>You've completed all ${(window.STIMULI || []).length} prompts.</p>
-      ${isProlificParticipant ? '<p>Click below to return to Prolific.</p>' : '<p><strong>Debug mode:</strong> your data is shown next.</p>'}</div>`],
+      <p style="margin:18px 0 6px;">Your Prolific completion code is</p>
+      <div style="display:inline-block;font:bold 28px ui-monospace,Menlo,monospace;letter-spacing:.12em;padding:12px 22px;border:2px dashed #007bff;border-radius:8px;background:#f0f8ff;color:#333;user-select:all;">${esc(COMPLETION_CODE)}</div>
+      <p style="color:#666;font-size:14px;margin-top:10px;">Copy this code into Prolific, or click the button below to return to Prolific with it filled in.</p>
+      ${isProlificParticipant ? '' : '<p><strong>Debug mode:</strong> your data is shown next.</p>'}</div>`],
     on_finish: () => { if (isProlificParticipant && prolificCompletionURL) setTimeout(() => { window.location.href = prolificCompletionURL; }, 1000); }
   };
 }
