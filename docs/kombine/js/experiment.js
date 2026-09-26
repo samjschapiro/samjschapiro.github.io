@@ -618,7 +618,7 @@ function tidy(stim, r) {
 /* ---------------------------------------------------------- consent / frames */
 // Princeton adult consent form (Computational Cognitive Science, PI Thomas Griffiths), reproduced verbatim from
 // the IRB-approved PDF. The one bracketed field is the payment amount the PI fills in per study.
-const CONSENT_PAYMENT = '[variable payment amount equivalent to $10-$15/hr for both online and in person participation]';   // PLACEHOLDER from the IRB template
+const CONSENT_PAYMENT = 'up to $15/hr for online participation';   // filled-in value of the IRB template's payment field
 
 function createConsentScreen() {
   const S = 'margin:14px 0;';
