@@ -14,6 +14,9 @@ const COMPLETION_URL = `https://app.prolific.com/submissions/complete?cc=${COMPL
 // here. '' => nothing is saved (preview).
 const DATAPIPE_EXPERIMENT_ID = '';
 const DATAPIPE_URL = 'https://pipe.jspsych.org/api/data/';
+// Preferred sink: the Google Apps Script web app in apps_script/Code.gs, which writes each file into a private
+// Google Drive folder. Paste its /exec URL here. When set, it is used instead of DataPipe.
+const COLLECTOR_URL = '';
 
 let jsPsych;
 // Three ways in, always explicit:
@@ -813,11 +816,16 @@ function exportExperimentData() {
 }
 
 async function pipe(filename, obj) {
-  const body = JSON.stringify({ experimentID: DATAPIPE_EXPERIMENT_ID, filename, data: JSON.stringify(obj) });
+  const [kind] = filename.split('/');
+  // Apps Script: a plain-text body keeps the request "simple" (no CORS preflight, which Apps Script cannot answer).
+  const req = COLLECTOR_URL
+    ? [COLLECTOR_URL, { method: 'POST', body: JSON.stringify({ experiment: (window.EXPERIMENT_CONFIG || {}).experiment_name, kind, session_id: sessionId, data: obj }) }]
+    : [DATAPIPE_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: '*/*' },
+                       body: JSON.stringify({ experimentID: DATAPIPE_EXPERIMENT_ID, filename, data: JSON.stringify(obj) }) }];
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      const res = await fetch(DATAPIPE_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: '*/*' }, body });
-      if (res.ok) return true;
+      const res = await fetch(...req);
+      if (res.ok && (!COLLECTOR_URL || (await res.json()).ok)) return true;
     } catch (e) { /* retry */ }
     await new Promise(r => setTimeout(r, 1500 * (attempt + 1)));
   }
@@ -825,7 +833,7 @@ async function pipe(filename, obj) {
 }
 
 async function saveData() {
-  if (isDebugMode || !DATAPIPE_EXPERIMENT_ID) return { status: 'skipped' };
+  if (isDebugMode || !(COLLECTOR_URL || DATAPIPE_EXPERIMENT_ID)) return { status: 'skipped' };
   const data = exportExperimentData();
   try { localStorage.setItem('kombine_backup', JSON.stringify(data)); } catch (e) {}   // participant's own browser, no Prolific ID
   const okResp = await pipe(`responses/${sessionId}.json`, data);
