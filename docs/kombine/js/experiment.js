@@ -16,7 +16,7 @@ const DATAPIPE_EXPERIMENT_ID = '';
 const DATAPIPE_URL = 'https://pipe.jspsych.org/api/data/';
 // Preferred sink: the Google Apps Script web app in apps_script/Code.gs, which writes each file into a private
 // Google Drive folder. Paste its /exec URL here. When set, it is used instead of DataPipe.
-const COLLECTOR_URL = '';
+const COLLECTOR_URL = 'https://script.google.com/macros/s/AKfycbzDhSMZwPlJ4fYSVAT0c0p99isUANKeRyyak7_Uug22-aHVKvknDxBnH1W3F_QpaoK8/exec';
 
 let jsPsych;
 // Three ways in, always explicit:
