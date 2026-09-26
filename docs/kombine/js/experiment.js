@@ -9,15 +9,39 @@
 // --- deployment constants (fill in after deploying the backend + Prolific study) ---
 const COMPLETION_CODE = 'XXXXXXXX';   // Prolific completion code — PLACEHOLDER, set from the Prolific study page before launch
 const COMPLETION_URL = `https://app.prolific.com/submissions/complete?cc=${COMPLETION_CODE}`;
-const DATA_SUBMISSION_URL = '';   // e.g. an API Gateway /submitData URL; '' => debug (show data, no POST)
+// Data are saved with DataPipe (https://pipe.jspsych.org), which writes each file into the lab's private OSF
+// project. Create an experiment there, link it to the OSF project, switch data collection on, and paste its ID
+// here. '' => nothing is saved (preview).
+const DATAPIPE_EXPERIMENT_ID = '';
+const DATAPIPE_URL = 'https://pipe.jspsych.org/api/data/';
 
 let jsPsych;
-let participantId, isProlificParticipant = false, isDebugMode = true, prolificCompletionURL = null;
+// Three ways in, always explicit:
+//   ?PROLIFIC_PID=...&STUDY_ID=...&SESSION_ID=...  -> a Prolific participant; data saved.
+//   ?PILOT=1                                       -> a lab pilot; data saved, flagged recruitment='pilot'.
+//   neither                                        -> preview/debug: nothing saved, debug bar, raw data shown.
+// Participants are never asked for an ID. Every session gets a random session_id; responses are stored under
+// it only. A Prolific ID is written to a SEPARATE identity file (session_id -> Prolific ID) used for payment and
+// bonuses, so the response data carry no Prolific ID and no IP address.
+let sessionId, recruitment = 'debug', isProlificParticipant = false, isDebugMode = true, prolificCompletionURL = null;
+let prolific = null;   // { prolific_pid, prolific_study_id, prolific_session_id } -- kept out of the response data
+
+function randomId() {
+  const a = new Uint8Array(12); crypto.getRandomValues(a);
+  return Array.from(a, b => b.toString(16).padStart(2, '0')).join('');
+}
 
 function initializeParticipant() {
-  const p = new URLSearchParams(window.location.search).get('PROLIFIC_PID');
-  if (p) { isProlificParticipant = true; participantId = p; prolificCompletionURL = COMPLETION_URL; isDebugMode = false; }
-  else { isDebugMode = true; participantId = `DEBUG_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`; }
+  const q = new URLSearchParams(window.location.search);
+  sessionId = randomId();
+  const pid = q.get('PROLIFIC_PID');
+  if (pid) {
+    isProlificParticipant = true; isDebugMode = false; recruitment = 'prolific';
+    prolificCompletionURL = COMPLETION_URL;
+    prolific = { prolific_pid: pid, prolific_study_id: q.get('STUDY_ID') || null, prolific_session_id: q.get('SESSION_ID') || null };
+  } else if (q.get('PILOT') === '1') {
+    isDebugMode = false; recruitment = 'pilot';
+  }
 }
 
 /* ------------------------------------------------------------------ helpers */
@@ -591,113 +615,73 @@ function tidy(stim, r) {
     generic_space: (r.generic_space || '').trim(), structure, skipped };
 }
 
-/* ------------------------------------------------------------------ ID screen */
-// Prolific participants are identified by the URL, so they never see this. Everyone else types an ID
-// (the only key their data is stored under), validated here rather than silently accepting a blank.
-function createIdScreen() {
-  return {
-    type: jsPsychSurveyHtmlForm,
-    html: `<div style="max-width:560px;margin:0 auto;text-align:left;">
-      <h1 style="text-align:center;color:#333;">Creativity Study</h1>
-      <p style="color:#555;">Before you begin, please enter the participant ID you were given.</p>
-      <div class="kb-field">
-        <label for="pid">Participant ID</label>
-        <input type="text" id="pid" name="participant_id" autocomplete="off" spellcheck="false"
-               placeholder="e.g. KB-014" value="${isDebugMode ? esc(debugId()) : ''}">
-        <span style="font-size:13px;color:#888;">Letters, numbers, hyphens and underscores; at least 3 characters. If you don't have one, ask the researcher &mdash; your data cannot be matched without it.</span>
-      </div>
-      <div class="kb-field">
-        <label for="pid2">Confirm participant ID</label>
-        <input type="text" id="pid2" name="participant_id_confirm" autocomplete="off" spellcheck="false"
-               value="${isDebugMode ? esc(debugId()) : ''}">
-      </div>
-      ${isDebugMode ? '<p style="color:#888;font-size:13px;font-style:italic;">Debug mode &mdash; your raw data is shown at the end.</p>' : ''}
-      <div id="idError" style="color:#c0392b;font-size:14px;min-height:18px;"></div>
-    </div>`,
-    button_label: 'Begin',
-    data: { phase: 'id' },
-    on_load: () => { window.scrollTo(0, 0); wireIdValidation(); },
-    on_finish: (data) => { participantId = (data.response.participant_id || '').trim(); data.participant_id = participantId; }
-  };
-}
-
-let _debugId = null;
-function debugId() {
-  if (!_debugId) _debugId = `DEBUG-${Date.now().toString(36)}`;
-  return _debugId;
-}
-
-function wireIdValidation() {
-  const form = document.querySelector('#jspsych-survey-html-form');
-  const error = document.getElementById('idError');
-  form.addEventListener('submit', (e) => {
-    const id = form.querySelector('#pid').value.trim();
-    const confirmed = form.querySelector('#pid2').value.trim();
-    let msg = '';
-    if (!/^[A-Za-z0-9_-]{3,64}$/.test(id)) {
-      msg = 'Please enter a valid participant ID (at least 3 characters: letters, numbers, hyphens, underscores).';
-    } else if (id !== confirmed) {
-      msg = 'The two IDs do not match. Please check and re-enter.';
-    }
-    if (!msg) return;
-    e.preventDefault(); e.stopPropagation();
-    error.textContent = msg;
-  }, true);
-}
-
 /* ---------------------------------------------------------- consent / frames */
+// Princeton adult consent form (Computational Cognitive Science, PI Thomas Griffiths), reproduced verbatim from
+// the IRB-approved PDF. The one bracketed field is the payment amount the PI fills in per study.
+const CONSENT_PAYMENT = '[variable payment amount equivalent to $10-$15/hr for both online and in person participation]';   // PLACEHOLDER from the IRB template
+
 function createConsentScreen() {
+  const S = 'margin:14px 0;';
   return {
     type: jsPsychInstructions,
     pages: [
-      `<div style="width: 800px; font-size: 16px; text-align: left; margin: 0 auto; padding: 40px 0;">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <h1 style="color: #333; font-size: 24px; margin-bottom: 10px;">Creativity Evaluation Study</h1>
-                    <p style="color: #666; font-size: 16px;">Research Consent Form</p>
-                </div>
-                ${BONUS_BANNER}
-                <p>Dear Participant,</p>
-                <p>Thank you for your interest in our research! We are researchers interested in understanding how people evaluate creative ideas.</p>
-                <p><strong>Study Purpose:</strong> We are conducting research on how people make creative connections between ideas — linking distant concepts, drawing analogies, and fusing ideas into new concepts. This helps us understand what makes ideas creative and how to measure creativity.</p>
-                <p><strong>What You Will Do:</strong> You will be shown ${(window.STIMULI || []).length} short prompts. For each, you will type a creative response — connecting two ideas with a chain, drawing an analogy, or fusing two ideas into a new concept. The study takes approximately 12-18 minutes.</p>
-                <p><strong>Data We Collect:</strong> We will collect the following data during this study:
-                <br>• Your typed responses for each prompt
-                <br>• Your Prolific ID for compensation and data management
-                <br>• Timestamps of your responses
-                <br>• Basic technical information (browser type, screen resolution)
-                <br>We do NOT collect any personally identifiable information beyond your Prolific ID.</p>
-                <p><strong>Data Use and Storage:</strong> Your data will be:
-                <br>• Stored securely on encrypted servers for up to 7 years for research purposes
-                <br>• Used to validate automated creativity scoring methods
-                <br>• Potentially shared in anonymized form with other researchers or made publicly available for scientific transparency
-                <br>• Processed under legitimate research interest as permitted by GDPR and data protection laws</p>
-                <p><strong>Your Rights:</strong> Your participation is completely voluntary. You may:
-                <br>• Refuse to participate without penalty
-                <br>• Withdraw from the study at any time by closing your browser
-                <br>• Request deletion of your data by contacting us via Prolific messaging with your Prolific ID within 30 days of participation
-                <br>• Contact your local data protection authority with any concerns</p>
-                <p><strong>Risks and Benefits:</strong> There are no risks beyond those of normal computer use. Your participation contributes to research on understanding creativity. You will be compensated according to Prolific's standard rate.</p>
-                <p><strong>Contact:</strong> For questions about this study, contact the research team via Prolific messaging. For questions about your rights as a participant, contact your local research ethics committee or data protection authority.</p>
-                <p style="margin-top: 30px; padding: 20px; background: #f0f8ff; border-left: 4px solid #007bff;">
-                    <strong>Informed Consent Statement:</strong><br>
-                    I understand the information provided above about this research study. I understand:
-                    <br>• The purpose of the study and what I will be asked to do
-                    <br>• What data will be collected and how it will be used
-                    <br>• My rights including the ability to withdraw at any time
-                    <br>• How my data will be stored and potentially shared
-                    <br><br>
-                    I am 18 years of age or older and voluntarily agree to participate in this study.
-                </p>
-            </div>`
+      `<div class="kb-consent" style="max-width: 800px; font-size: 15px; text-align: left; margin: 0 auto; padding: 30px 0; line-height: 1.5;">
+        ${BONUS_BANNER}
+        <div style="text-align: center; margin-bottom: 22px;">
+          <h1 style="color: #333; font-size: 22px; margin: 0;">ADULT CONSENT FORM</h1>
+          <p style="color: #e77500; font-weight: bold; margin: 4px 0 0;">PRINCETON</p>
+        </div>
+        <p style="${S}">TITLE OF RESEARCH: <em>Computational Cognitive Science</em></p>
+        <p style="${S}">PRINCIPAL INVESTIGATOR: Thomas Griffiths</p>
+        <p style="${S}">PRINCIPAL INVESTIGATOR&rsquo;S DEPARTMENT: <em>Psychology</em></p>
+        <p style="${S}">You are being invited to take part in a research study. Before you decide to participate in this study, it is important that you understand why the research is being done and what it will involve. Please take the time to read the following information carefully. Please ask the researcher if there is anything that is not clear or if you need more information.</p>
+        <p style="${S}"><strong><u>Purpose of the research:</u></strong><br>This project aims to collect data that can be used to evaluate formal accounts of causal learning, categorization, and language learning and to track how knowledge about these areas is transformed when passed from person to person.</p>
+        <p style="${S}"><strong><u>Study Procedures:</u></strong><br>You will be presented with some information (e.g., a written narrative, hypothetical scenarios, or scientific data) and will then be asked to make one or more judgments about that information, or decisions based upon it. In some cases you will be asked to provide explanations or justifications for your responses, typically in the form of a short paragraph. The task will not involve deception or emotionally disturbing materials - just simple questions about categories, causal relationships, and languages.<br>
+        The task you will perform will be one or more of the following:<br>
+        1. Being shown a set of members of a category, and then asked to indicate which other objects are likely to belong to the category.<br>
+        2. Being presented a sequence of pictures or sounds, and being asked to predict the next item in the sequence.<br>
+        3. Being told a set of words in a language, and then making judgments about whether other words belong to the language.<br>
+        4. Being shown statistical information about the interaction of causes and effects, and then making judgments about the causal relationships involved. 5. Observing a set of events or reading a description or information, and then evaluating the probability of events or statements. 6. Being presented with one or more visual puzzles and re-arranging elements on a screen to solve them. 7. Being presented with visual stimuli and making a quantitative or qualitative judgment on the basis of said stimuli. 8. Interacting with one or more participants or Large Language Models about shared stimuli using a chat box. 9. Making a decision about an action to take based on quantitative or qualitative information. 10. Interacting with other participants in a joint task, or solving a task, making a decision, or making a judgment that gets passed down to another participant. 11. Viewing a video and responding to it. 12. Being shown a grid, maze, or graph of edges and nodes containing objects that can be moved around with a mouse or the keyboard. 13. Being shown a list of words and/or pictures, and then being asked to recall them. 14. Being asked to solve one or more logic puzzles.</p>
+        <p style="${S}">The answers you provide in the task may be used as stimuli for future participants. However, data that would identify you will not be shared with other participants.</p>
+        <p style="${S}">The study duration will vary from 5 to 60 minutes.</p>
+        <p style="${S}"><strong><u>Benefits and Risks:</u></strong><br>There are no direct benefits to you as a participant; however, by furthering our understanding of human cognition, this research will benefit society by helping with the development of automated systems that can better solve problems that are computationally challenging, but that people can solve easily with little formal guidance.</p>
+        <p style="${S}">Risks associated with participation in this study are minimal. You may feel slight discomfort answering some questions, but you may refrain from answering any questions that make you uncomfortable and may withdraw your participation at any time even after completing the experiment without penalty. In studies where participants interact with large language models, we cannot verify precisely what the model will discuss with participants, though we have engineered our prompts to the model such that it generates highly topically relevant content in a friendly manner. We can be reasonably confident that the model will not generate inappropriate or harmful content, based both on our experience with the model and on the fact that the model has been extensively trained to prevent such outputs.</p>
+        <p style="${S}"><strong><u>Confidentiality:</u></strong><br>We will not be asking for any personally identifying information, and we will handle responses as confidentially as possible. Your name, or your Worker IDs will never be tied to your responses on this survey. However, we cannot guarantee the confidentiality of information transmitted over the Internet. To minimize this risk, data containing anything that might be personally identifiable (e.g. Worker IDs) will be encrypted on transfer and storage and will only be accessible to qualified lab personnel. We will be keeping data collected as part of this experiment indefinitely. This anonymized data (containing neither Worker IDs nor IP addresses) may be shared with the scientific community and corporate sponsors. At the end of the survey you may be asked if you would like to provide your email or MTurk ID to be contacted to participate in future studies., If you choose to provide this information, you may be contacted for participation in future studies.</p>
+        <p style="${S}"><strong><u>Compensation:</u></strong><br>For your participation, you will receive ${CONSENT_PAYMENT}. If you are on MTurk or Prolific and for any reason you do not complete the study (e.g. technical difficulties, or a desire to stop), we will only be able to pay you if you send an email through MTurk/Prolific, or by emailing the researcher, at <a href="mailto:cocosci-lab@princeton.edu">cocosci-lab@princeton.edu</a>. If you have any questions about the study, feel free to contact the researcher or the Principal Investigator, Thomas Griffiths, at <a href="mailto:tomg@princeton.edu">tomg@princeton.edu</a>.</p>
+        <p style="${S}"><strong><u>Who to contact with questions:</u></strong></p>
+        <ol style="margin:6px 0 14px 18px; padding-left: 12px;">
+          <li>PRINCIPAL INVESTIGATOR:<br><span style="margin-left:40px;">Dr. Thomas Griffiths</span><br><span style="margin-left:40px;"><a href="mailto:tomg@princeton.edu">tomg@princeton.edu</a></span></li>
+          <li style="margin-top:8px;">If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the Investigator, please contact the Institutional Review Board at:<br>
+            <span style="margin-left:40px;">Assistant Director, Research Integrity and Assurance</span><br>
+            <span style="margin-left:40px;">Phone: (609) 258-8543</span><br>
+            <span style="margin-left:40px;">Email: <a href="mailto:irb@princeton.edu">irb@princeton.edu</a></span></li>
+          <li style="margin-top:8px; border-top: 1px solid #e0a070; padding-top: 8px;">I understand the information that was presented and that:
+            <ol type="A" style="margin:6px 0 0 18px;">
+              <li>My participation is voluntary, and I may withdraw my consent and discontinue participation in the project at any time. My refusal to participate will not result in any penalty.</li>
+              <li style="margin-top:6px;">I do not waive any legal rights or release Princeton University, its agents, or you from liability for negligence.</li>
+            </ol></li>
+          <li style="margin-top:8px;">I hereby give my consent to be the subject of your research.</li>
+        </ol>
+        <p style="text-align:center; font-weight:bold; margin-top: 22px;">This study has been approved by the Institutional Review Board for Human Subjects</p>
+        <p style="text-align:center; font-size:14px; color:#666; margin-top: 18px;">If you do not wish to take part, <a href="#" id="kbDecline">click here to decline</a>.</p>
+      </div>`
     ],
     show_clickable_nav: true,
-    button_label_next: "I Consent and Agree to Participate",
+    button_label_next: "I Consent",
+    data: { phase: 'consent' },
+    on_load: () => {
+      const d = document.getElementById('kbDecline');
+      if (d) d.addEventListener('click', (e) => {
+        e.preventDefault();
+        jsPsych.endExperiment(`<div style="max-width:560px;margin:60px auto;text-align:center;"><h2>You have declined to take part.</h2>
+          <p>No responses were recorded. You may close this window${isProlificParticipant ? ' and return the study on Prolific' : ''}.</p></div>`);
+      });
+    },
     on_finish: function() {
       window.consentData = {
-        participant_id: participantId,
         consent_timestamp: new Date().toISOString(),
         consent_given: true,
-        consent_version: (window.EXPERIMENT_CONFIG || {}).consent_version || 'kombine_gen_v1'
+        consent_version: (window.EXPERIMENT_CONFIG || {}).consent_version
       };
     }
   };
@@ -734,16 +718,71 @@ function createTaskIntro(task, n) {
   };
 }
 
+// Demographics, after the last task. Every question is optional: the consent form says participants may
+// refrain from answering any question.
+function createDemographicsScreen() {
+  const opt = (name, vals) => vals.map(v => `<label style="display:block;margin:4px 0;font-weight:normal;"><input type="radio" name="${name}" value="${esc(v)}"> ${esc(v)}</label>`).join('');
+  return {
+    type: jsPsychSurveyHtmlForm,
+    html: `<div style="max-width:620px;margin:0 auto;text-align:left;">
+      <h2 style="color:#333;">A few questions about you</h2>
+      <p style="color:#666;">These questions are optional. You can leave any of them blank.</p>
+      <div class="kb-field"><label for="demo_age">What is your age (in years)?</label>
+        <input type="number" id="demo_age" name="age" min="18" max="120" step="1" style="max-width:140px;"></div>
+      <div class="kb-field"><label>What is your gender?</label>
+        ${opt('gender', ['Woman', 'Man', 'Non-binary'])}
+        <label style="display:block;margin:4px 0;font-weight:normal;"><input type="radio" name="gender" value="Self-described"> Prefer to self-describe:
+          <input type="text" name="gender_self" style="max-width:260px;display:inline-block;margin-left:6px;"></label>
+        ${opt('gender', ['Prefer not to say'])}</div>
+      <div class="kb-field"><label>What is the highest level of education you have completed?</label>
+        ${opt('education', ['Less than high school', 'High school diploma or equivalent', 'Some college, no degree', 'Associate degree',
+                            "Bachelor's degree", "Master's degree", 'Doctoral or professional degree (e.g., PhD, MD, JD)', 'Prefer not to say'])}</div>
+    </div>`,
+    button_label: 'Continue',
+    data: { phase: 'demographics' },
+    on_load: () => { window.scrollTo(0, 0); },
+    on_finish: (data) => {
+      const r = data.response || {};
+      const age = parseInt(r.age, 10);
+      data.demographics = {
+        age: Number.isFinite(age) ? age : null,
+        gender: r.gender === 'Self-described' ? ((r.gender_self || '').trim() || 'Self-described') : (r.gender || null),
+        education: r.education || null
+      };
+    }
+  };
+}
+
+// Saves before the completion page, so the code is shown only after the save has been attempted and the redirect
+// cannot race the upload. Two files per session, both in the lab's private OSF project via DataPipe:
+//   responses/<session_id>.json   -- everything analysed; no Prolific ID, no IP address
+//   identity/<session_id>.json    -- Prolific only: session_id -> Prolific IDs, for payment and bonuses
+let saveResult = { status: 'skipped' };
+function createSaveScreen() {
+  return {
+    type: jsPsychCallFunction,
+    async: true,
+    func: async (done) => {
+      const el = document.getElementById('jspsych-content');
+      if (el) el.innerHTML = '<p style="font-size:18px;color:#555;">Saving your responses&hellip; please do not close this window.</p>';
+      saveResult = await saveData();
+      done({ save_status: saveResult.status });
+    },
+    data: { phase: 'save' }
+  };
+}
+
 function createCompletionScreen() {
   return {
     type: jsPsychInstructions, show_clickable_nav: true,
     button_label_next: isProlificParticipant ? 'Return to Prolific' : 'View data',
-    pages: [`<div style="max-width:600px;margin:0 auto;text-align:center;"><h1>Thank you!</h1>
+    pages: [() => `<div style="max-width:600px;margin:0 auto;text-align:center;"><h1>Thank you!</h1>
       <p>You've completed all ${(window.STIMULI || []).length} prompts.</p>
+      ${saveResult.status === 'error' ? `<p style="color:#c0392b;">We could not save your responses automatically. Please still submit the code below, and email <a href="mailto:cocosci-lab@princeton.edu">cocosci-lab@princeton.edu</a> so we can make sure you are paid.</p>` : ''}
       <p style="margin:18px 0 6px;">Your Prolific completion code is</p>
       <div style="display:inline-block;font:bold 28px ui-monospace,Menlo,monospace;letter-spacing:.12em;padding:12px 22px;border:2px dashed #007bff;border-radius:8px;background:#f0f8ff;color:#333;user-select:all;">${esc(COMPLETION_CODE)}</div>
       <p style="color:#666;font-size:14px;margin-top:10px;">Copy this code into Prolific, or click the button below to return to Prolific with it filled in.</p>
-      ${isProlificParticipant ? '' : '<p><strong>Debug mode:</strong> your data is shown next.</p>'}</div>`],
+      ${isDebugMode ? '<p><strong>Debug mode:</strong> nothing was saved; your data is shown next.</p>' : ''}</div>`],
     on_finish: () => { if (isProlificParticipant && prolificCompletionURL) setTimeout(() => { window.location.href = prolificCompletionURL; }, 1000); }
   };
 }
@@ -759,26 +798,38 @@ function createDataDisplayScreen() {
 /* ------------------------------------------------------------- data plumbing */
 function exportExperimentData() {
   const trials = jsPsych.data.get().filter({ phase: 'task' }).values();
+  const demo = jsPsych.data.get().filter({ phase: 'demographics' }).values()[0];
   return {
     experiment: (window.EXPERIMENT_CONFIG || {}).experiment_name || 'kombine_generation',
-    participant_id: participantId,
-    is_prolific: isProlificParticipant,
-    consent_version: (window.EXPERIMENT_CONFIG || {}).consent_version,
+    session_id: sessionId,             // random; the only key the responses carry
+    recruitment,                       // 'prolific' | 'pilot' | 'debug'
+    consent: window.consentData || null,
     submitted_at: new Date().toISOString(),
+    demographics: demo ? demo.demographics : null,
     responses: trials.map(t => ({ ...t.clean, rt: t.rt, stimulus_id: t.stimulus_id, is_control: t.is_control, position: t.position, paste_attempts: t.paste_attempts || 0, typing: t.typing || null, trap_word: t.trap_word, debug_skipped: !!t.debug_skipped }))
   };
 }
 
-async function submitDataToServer(data) {
-  if (!DATA_SUBMISSION_URL) return { status: 'skipped' };
-  try {
-    const res = await fetch(DATA_SUBMISSION_URL, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ experiment: data.experiment, participantId, data })
-    });
-    return { status: res.ok ? 'ok' : 'error' };
-  } catch (e) { return { status: 'error', error: String(e) }; }
-  finally { try { localStorage.setItem('kombine_' + participantId, JSON.stringify(data)); } catch (e) {} }
+async function pipe(filename, obj) {
+  const body = JSON.stringify({ experimentID: DATAPIPE_EXPERIMENT_ID, filename, data: JSON.stringify(obj) });
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(DATAPIPE_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: '*/*' }, body });
+      if (res.ok) return true;
+    } catch (e) { /* retry */ }
+    await new Promise(r => setTimeout(r, 1500 * (attempt + 1)));
+  }
+  return false;
+}
+
+async function saveData() {
+  if (isDebugMode || !DATAPIPE_EXPERIMENT_ID) return { status: 'skipped' };
+  const data = exportExperimentData();
+  try { localStorage.setItem('kombine_backup', JSON.stringify(data)); } catch (e) {}   // participant's own browser, no Prolific ID
+  const okResp = await pipe(`responses/${sessionId}.json`, data);
+  let okId = true;
+  if (prolific) okId = await pipe(`identity/${sessionId}.json`, { ...prolific, session_id: sessionId, saved_at: new Date().toISOString() });
+  return { status: okResp && okId ? 'ok' : 'error' };
 }
 
 /* ------------------------------------------------------------ debug skipping */
@@ -807,7 +858,6 @@ async function runExperiment() {
     const stimuli = window.STIMULI || [];
     const total = stimuli.length;
     const timeline = [];
-    if (!isProlificParticipant) timeline.push(createIdScreen());   // ID page first (non-Prolific only)
     timeline.push(createConsentScreen());
     // Group by task so each task's description appears right before its own block
     // (association -> analogy -> blending), rather than all three up front.
@@ -823,14 +873,13 @@ async function runExperiment() {
         timeline.push({ timeline: [trial], conditional_function: () => !debugSkipTask[stim.task] });
       });
     });
+    timeline.push(createDemographicsScreen());
+    timeline.push(createSaveScreen());
     timeline.push(createCompletionScreen());
     if (isDebugMode) timeline.push(createDataDisplayScreen());
     if (isDebugMode) createDebugBar();
 
-    jsPsych = initJsPsych({
-      display_element: 'jspsych-target',
-      on_finish: async () => { await submitDataToServer(exportExperimentData()); }
-    });
+    jsPsych = initJsPsych({ display_element: 'jspsych-target' });
     await jsPsych.run(timeline);
   } catch (error) {
     console.error(error);

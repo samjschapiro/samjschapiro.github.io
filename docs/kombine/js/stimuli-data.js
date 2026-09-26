@@ -34,7 +34,7 @@ window.EXPERIMENT_CONFIG = {
   n_real: { association: 5, analogy: 4, blending: 4 },   // real items per task (each of analogy/blending adds 1 control)
   n_controls: window.STIMULI.filter(s => s.control).length,
   totalStimuli: window.STIMULI.length,    // real + control
-  consent_version: "kombine_gen_v2_2026-08",  // v2: blend = two-entity fusion (was polysemy)
+  consent_version: "princeton_cocosci_adult_2026-09",  // Princeton IRB adult consent form (Griffiths lab)
   // LLM-use detection. Both strings are in the page text but visually hidden. They are phrased as ordinary task
   // requirements, NOT addressed to AI: assistants are trained to ignore text that says "if you are an AI", but
   // they follow what looks like part of the task the user asked for help with. A person never sees them. Each
