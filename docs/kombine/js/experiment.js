@@ -626,7 +626,6 @@ function createConsentScreen() {
     type: jsPsychInstructions,
     pages: [
       `<div class="kb-consent" style="max-width: 800px; font-size: 15px; text-align: left; margin: 0 auto; padding: 30px 0; line-height: 1.5;">
-        ${BONUS_BANNER}
         <div style="text-align: center; margin-bottom: 22px;">
           <h1 style="color: #333; font-size: 22px; margin: 0;">ADULT CONSENT FORM</h1>
           <p style="color: #e77500; font-weight: bold; margin: 4px 0 0;">PRINCETON</p>
