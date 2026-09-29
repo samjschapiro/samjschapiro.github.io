@@ -28,6 +28,7 @@ let jsPsych;
 // bonuses, so the response data carry no Prolific ID and no IP address.
 let sessionId, recruitment = 'debug', isProlificParticipant = false, isDebugMode = true, prolificCompletionURL = null;
 let prolific = null;   // { prolific_pid, prolific_study_id, prolific_session_id } -- kept out of the response data
+let slotInfo = null;   // { slot, assoc, analogy, blending, slot_claimed }
 
 function randomId() {
   const a = new Uint8Array(12); crypto.getRandomValues(a);
@@ -488,7 +489,7 @@ function makeTrial(stim, index, total) {
     type: jsPsychSurveyHtmlForm,
     html: trialHTML(stim, index, total),
     button_label: index === total - 1 ? 'Submit last one' : 'Submit & continue',
-    data: { phase: 'task', task: stim.task, stimulus_id: stim.id, u: stim.u, v: stim.v || null, is_control: !!stim.control, position: index + 1, trap_word: trapWord(index) },
+    data: { phase: 'task', task: stim.task, stimulus_id: stim.id, prompt_id: stim.prompt_id || null, u: stim.u, v: stim.v || null, is_control: !!stim.control, position: index + 1, trap_word: trapWord(index) },
     on_load: () => {
       currentTask = stim.task;
       document.body.classList.toggle('an-trial', stim.task === 'analogy' || stim.task === 'blending');   // wide canvas for side-by-side triples
@@ -807,11 +808,13 @@ function exportExperimentData() {
   return {
     experiment: (window.EXPERIMENT_CONFIG || {}).experiment_name || 'kombine_generation',
     session_id: sessionId,             // random; the only key the responses carry
+    slot: slotInfo ? slotInfo.slot : null, slot_claimed: slotInfo ? slotInfo.slot_claimed : false,
+    bundles: slotInfo ? { association: slotInfo.assoc, analogy: slotInfo.analogy, blending: slotInfo.blending } : null,
     recruitment,                       // 'prolific' | 'pilot' | 'debug'
     consent: window.consentData || null,
     submitted_at: new Date().toISOString(),
     demographics: demo ? demo.demographics : null,
-    responses: trials.map(t => ({ ...t.clean, rt: t.rt, stimulus_id: t.stimulus_id, is_control: t.is_control, position: t.position, paste_attempts: t.paste_attempts || 0, typing: t.typing || null, trap_word: t.trap_word, debug_skipped: !!t.debug_skipped }))
+    responses: trials.map(t => ({ ...t.clean, rt: t.rt, stimulus_id: t.stimulus_id, prompt_id: t.prompt_id, is_control: t.is_control, position: t.position, paste_attempts: t.paste_attempts || 0, typing: t.typing || null, trap_word: t.trap_word, debug_skipped: !!t.debug_skipped }))
   };
 }
 
@@ -861,11 +864,39 @@ function orderBlock(items) {
   return [...items.filter(s => s.control), ...items.filter(s => !s.control)];
 }
 
+/* ------------------------------------------------------------ slot allocation */
+// Prolific sessions ask the Apps Script collector for a slot (balanced over the 120-slot plan; a reload of the
+// same Prolific attempt gets the same slot back). Pilot and debug sessions take a random slot and claim nothing.
+// If the claim cannot be reached, a random slot is used and recorded with slot_claimed: false.
+async function assignSlot() {
+  const random = () => window.SLOTS[Math.floor(Math.random() * window.SLOTS.length)];
+  if (!isProlificParticipant || !COLLECTOR_URL) return { ...random(), slot_claimed: false };
+  const holder = ((prolific && (prolific.prolific_session_id || prolific.prolific_pid)) || sessionId).replace(/[^A-Za-z0-9_-]/g, '').slice(0, 64);
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(`${COLLECTOR_URL}?action=claim&holder=${encodeURIComponent(holder)}`);
+      const j = await res.json();
+      if (j.ok && j.full) return { full: true };
+      if (j.ok && Number.isInteger(j.slot)) return { ...window.SLOTS[j.slot], slot_claimed: true };
+    } catch (e) { /* retry */ }
+    await new Promise(r => setTimeout(r, 1500 * (attempt + 1)));
+  }
+  return { ...random(), slot_claimed: false };
+}
+
 /* ----------------------------------------------------------------- run it */
 async function runExperiment() {
   try {
     initializeParticipant();
-    const stimuli = window.STIMULI || [];
+    document.getElementById('jspsych-target').innerHTML = '<p style="text-align:center;margin-top:80px;color:#666;">Loading&hellip;</p>';
+    slotInfo = await assignSlot();
+    if (slotInfo.full) {
+      document.getElementById('jspsych-target').innerHTML = `<div style="max-width:560px;margin:80px auto;text-align:center;"><h2>This study is full.</h2>
+        <p>Thank you for your interest. All places have been taken, so please return the study on Prolific.</p></div>`;
+      return;
+    }
+    window.STIMULI = window.buildStimuli(slotInfo);
+    const stimuli = window.STIMULI;
     const total = stimuli.length;
     const timeline = [];
     timeline.push(createConsentScreen());
