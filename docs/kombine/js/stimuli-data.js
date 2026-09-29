@@ -166,12 +166,6 @@ window.ASSOC_BUNDLES = [
 window.PAIR_BUNDLES = [
  [
   {
-   "prompt_id_analogy": "E0",
-   "prompt_id_blending": "F0",
-   "u": "Democracy",
-   "v": "Banking"
-  },
-  {
    "prompt_id_analogy": "E1",
    "prompt_id_blending": "F1",
    "u": "The blues",
@@ -194,15 +188,15 @@ window.PAIR_BUNDLES = [
    "prompt_id_blending": "F4",
    "u": "Photosynthesis",
    "v": "Bread"
-  }
- ],
- [
+  },
   {
    "prompt_id_analogy": "E5",
    "prompt_id_blending": "F5",
    "u": "The immune system",
    "v": "Black holes"
-  },
+  }
+ ],
+ [
   {
    "prompt_id_analogy": "E6",
    "prompt_id_blending": "F6",
@@ -226,15 +220,15 @@ window.PAIR_BUNDLES = [
    "prompt_id_blending": "F9",
    "u": "Networks",
    "v": "Salt"
-  }
- ],
- [
+  },
   {
    "prompt_id_analogy": "E10",
    "prompt_id_blending": "F10",
    "u": "Language",
    "v": "The French Revolution"
-  },
+  }
+ ],
+ [
   {
    "prompt_id_analogy": "E11",
    "prompt_id_blending": "F11",
@@ -258,15 +252,15 @@ window.PAIR_BUNDLES = [
    "prompt_id_blending": "F14",
    "u": "Constellations",
    "v": "Cricket"
-  }
- ],
- [
+  },
   {
    "prompt_id_analogy": "E15",
    "prompt_id_blending": "F15",
    "u": "Inflation",
    "v": "The Constitution"
-  },
+  }
+ ],
+ [
   {
    "prompt_id_analogy": "E16",
    "prompt_id_blending": "F16",
@@ -290,15 +284,15 @@ window.PAIR_BUNDLES = [
    "prompt_id_blending": "F19",
    "u": "The steam engine",
    "v": "Buddhism"
-  }
- ],
- [
+  },
   {
    "prompt_id_analogy": "E20",
    "prompt_id_blending": "F20",
    "u": "Charlie Chaplin",
    "v": "Surrealism"
-  },
+  }
+ ],
+ [
   {
    "prompt_id_analogy": "E21",
    "prompt_id_blending": "F21",
@@ -330,12 +324,6 @@ window.PAIR_BUNDLES = [
    "prompt_id_blending": "F25",
    "u": "The Ten Commandments",
    "v": "Free will"
-  },
-  {
-   "prompt_id_analogy": "E26",
-   "prompt_id_blending": "F26",
-   "u": "The blue whale",
-   "v": "The mattress"
   },
   {
    "prompt_id_analogy": "E27",
@@ -386,7 +374,7 @@ window.STIMULI = [];   // filled by runExperiment once the slot is known
 window.EXPERIMENT_CONFIG = {
   experiment_name: "kombine_generation",
   tasks: ["association", "analogy", "blending"],
-  n_real: { association: 5, analogy: 5, blending: 5 },   // benchmark items per task per session; analogy/blending each add 1 warm-up
+  n_real: { association: 5, analogy: "4-5", blending: "4-5" },   // per session; 28 analogy/blending pairs in bundles of 5,5,5,5,4,4; each adds 1 warm-up
   n_slots: window.SLOTS.length,           // 120 = 6 bundles x K = 20 responses per item
   consent_version: "princeton_cocosci_adult_2026-09",  // Princeton IRB adult consent form (Griffiths lab)
   // LLM-use detection. Both strings are in the page text but visually hidden. They are phrased as ordinary task
