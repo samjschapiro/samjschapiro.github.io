@@ -85,51 +85,55 @@ const EXAMPLES = {
         <input type="text" value="a spring" readonly><input type="text" value="is inside" readonly><input type="text" value="a pogo stick" readonly></div>
     </div>`,
   analogy: `<div style="max-width:880px;">
-      <div class="an-colhead"><span class="col"><span class="kb-chip a">Chocolate</span></span><span class="col"><span class="kb-chip b">A volcano</span></span></div>
+      <div class="an-colhead"><span class="col"><span class="kb-chip a">The blue whale</span></span><span class="col"><span class="kb-chip b">The mattress</span></span></div>
       <div class="an-rowwrap"><div class="an-row">
-        <div class="an-tri aside"><textarea rows="1" readonly>Chocolate</textarea><textarea rows="1" readonly>releases</textarea><textarea rows="1" readonly>flavor</textarea></div>
-        <div class="an-tri bside"><textarea rows="1" readonly>A volcano</textarea><textarea rows="1" readonly>releases</textarea><textarea rows="1" readonly>lava</textarea></div>
+        <div class="an-tri aside"><textarea rows="1" readonly>The blue whale</textarea><textarea rows="1" readonly>is covered by</textarea><textarea rows="1" readonly>skin</textarea></div>
+        <div class="an-tri bside"><textarea rows="1" readonly>The mattress</textarea><textarea rows="1" readonly>is covered by</textarea><textarea rows="1" readonly>sheets</textarea></div>
       </div></div>
       <div class="an-rowwrap"><div class="an-row">
-        <div class="an-tri aside"><textarea rows="1" readonly>flavor</textarea><textarea rows="1" readonly>spreads across</textarea><textarea rows="1" readonly>the palate</textarea></div>
-        <div class="an-tri bside"><textarea rows="1" readonly>lava</textarea><textarea rows="1" readonly>spreads across</textarea><textarea rows="1" readonly>the land</textarea></div>
+        <div class="an-tri aside"><textarea rows="1" readonly>skin</textarea><textarea rows="1" readonly>hosts</textarea><textarea rows="1" readonly>barnacles</textarea></div>
+        <div class="an-tri bside"><textarea rows="1" readonly>sheets</textarea><textarea rows="1" readonly>hosts</textarea><textarea rows="1" readonly>dust mites</textarea></div>
+      </div></div>
+      <div class="an-rowwrap"><div class="an-row">
+        <div class="an-tri aside"><textarea rows="1" readonly>barnacles</textarea><textarea rows="1" readonly>feed on</textarea><textarea rows="1" readonly>plankton</textarea></div>
+        <div class="an-tri bside"><textarea rows="1" readonly>dust mites</textarea><textarea rows="1" readonly>feed on</textarea><textarea rows="1" readonly>skin flakes</textarea></div>
       </div></div>
       <hr class="an-divider">
       <p class="kb-ask" style="margin:6px 0;">Now that you have formed the analogy, use it to <b>invent a new idea</b> by taking a known entity and relation from one side, and carrying them over to their corresponding roles on the other side. Click the arrow that points to the direction of your new invention.</p>
       <div class="an-rowwrap"><div class="an-row">
-        <div class="an-tri aside newc"><textarea rows="1" readonly>a flavor channel</textarea><textarea rows="1" readonly>directs</textarea><textarea rows="1" readonly>liquid filling</textarea></div>
-        <span class="an-dirarrow" title="carried from the volcano side to the chocolate side">&larr;</span>
-        <div class="an-tri bside"><textarea rows="1" readonly>a lava tube</textarea><textarea rows="1" readonly>directs</textarea><textarea rows="1" readonly>molten rock</textarea></div>
+        <div class="an-tri aside newc"><textarea rows="1" readonly>whale groomer drone</textarea><textarea rows="1" readonly>removes</textarea><textarea rows="1" readonly>barnacles</textarea></div>
+        <span class="an-dirarrow" title="carried from the mattress side to the whale side">&larr;</span>
+        <div class="an-tri bside"><textarea rows="1" readonly>vacuum cleaner</textarea><textarea rows="1" readonly>removes</textarea><textarea rows="1" readonly>dust mites</textarea></div>
       </div></div>
       <div class="an-rowwrap"><div class="an-row">
-        <div class="an-tri aside newc"><textarea rows="1" readonly>a flavor channel</textarea><textarea rows="1" readonly>is formed by</textarea><textarea rows="1" readonly>a cooling outer surface</textarea></div>
+        <div class="an-tri aside newc"><textarea rows="1" readonly>whale groomer drone</textarea><textarea rows="1" readonly>cleans</textarea><textarea rows="1" readonly>skin</textarea></div>
         <span class="an-dirarrow">&larr;</span>
-        <div class="an-tri bside"><textarea rows="1" readonly>a lava tube</textarea><textarea rows="1" readonly>is formed by</textarea><textarea rows="1" readonly>a cooling outer surface</textarea></div>
+        <div class="an-tri bside"><textarea rows="1" readonly>vacuum cleaner</textarea><textarea rows="1" readonly>cleans</textarea><textarea rows="1" readonly>sheets</textarea></div>
       </div></div>
       <div class="kb-legend"><span class="sw"></span> invented concept</div>
     </div>`,
   blending: `<div style="max-width:860px;">
-      <div class="kb-pair"><span class="kb-chip a">An organism</span><span class="kb-tween">+</span><span class="kb-chip b">A machine</span></div>
-      <div class="kb-field"><label>The abstract structure that both share</label><input type="text" value="a self-regulating system whose parts can fail and be replaced" readonly></div>
-      <div class="kb-field"><label>New concept</label><input type="text" value="Cyborg" readonly></div>
+      <div class="kb-pair"><span class="kb-chip a">Democracy</span><span class="kb-tween">+</span><span class="kb-chip b">Banking</span></div>
+      <div class="kb-field"><label>The abstract structure that both share</label><input type="text" value="a system that allocates fungible units of power" readonly></div>
+      <div class="kb-field"><label>New concept</label><input type="text" value="Liquid Franchise" readonly></div>
       <div class="an-colhead"><span class="col">true of one of the two concepts, or of both</span><span class="bl-arrowhead"></span><span class="col">in the new concept</span></div>
       <div class="an-rowwrap"><div class="an-row">
         <div class="bl-src">
-          <div class="an-tri aside"><textarea rows="1" readonly>An organism</textarea><textarea rows="1" readonly>regulates itself through</textarea><textarea rows="1" readonly>homeostasis</textarea></div>
-          <div class="an-tri bside"><textarea rows="1" readonly>A machine</textarea><textarea rows="1" readonly>regulates itself through</textarea><textarea rows="1" readonly>feedback control</textarea></div>
+          <div class="an-tri aside"><textarea rows="1" readonly>Democracy</textarea><textarea rows="1" readonly>allocates</textarea><textarea rows="1" readonly>votes</textarea></div>
+          <div class="an-tri bside"><textarea rows="1" readonly>Banking</textarea><textarea rows="1" readonly>allocates</textarea><textarea rows="1" readonly>credit</textarea></div>
         </div>
         <span class="bl-arrow">&rarr;</span>
-        <div class="an-tri newc"><textarea rows="1" readonly>A cyborg</textarea><textarea rows="1" readonly>regulates itself through</textarea><textarea rows="1" readonly>sensor feedback</textarea></div>
-      </div><div class="bl-tagrow"><span class="bl-tag uv">from both the organism and the machine</span></div></div>
+        <div class="an-tri newc"><textarea rows="1" readonly>Liquid Franchise</textarea><textarea rows="1" readonly>allocates</textarea><textarea rows="1" readonly>vote-shares</textarea></div>
+      </div><div class="bl-tagrow"><span class="bl-tag uv">from both Democracy and Banking</span></div></div>
       <div class="an-rowwrap"><div class="an-row">
-        <div class="an-tri bside"><textarea rows="1" readonly>A machine</textarea><textarea rows="1" readonly>has</textarea><textarea rows="1" readonly>replaceable parts</textarea></div>
+        <div class="an-tri bside"><textarea rows="1" readonly>credit</textarea><textarea rows="1" readonly>can be</textarea><textarea rows="1" readonly>traded</textarea></div>
         <span class="bl-arrow">&rarr;</span>
-        <div class="an-tri newc"><textarea rows="1" readonly>A cyborg</textarea><textarea rows="1" readonly>has</textarea><textarea rows="1" readonly>replaceable limbs</textarea></div>
-      </div><div class="bl-tagrow"><span class="bl-tag v">from the machine</span></div></div>
+        <div class="an-tri newc"><textarea rows="1" readonly>vote-shares</textarea><textarea rows="1" readonly>can be</textarea><textarea rows="1" readonly>traded</textarea></div>
+      </div><div class="bl-tagrow"><span class="bl-tag v">from Banking</span></div></div>
       <hr class="an-divider">
       <p class="kb-ask" style="margin:6px 0;">Describe something that is true of your new concept but of <b>neither</b> original concept on its own</p>
       <div class="an-rowwrap"><div class="an-row">
-        <div class="an-tri emergent"><textarea rows="1" readonly>A cyborg</textarea><textarea rows="1" readonly>can swap</textarea><textarea rows="1" readonly>a damaged limb without waiting to heal</textarea></div>
+        <div class="an-tri emergent"><textarea rows="1" readonly>a citizen</textarea><textarea rows="1" readonly>can liquidate</textarea><textarea rows="1" readonly>their own political personhood</textarea></div>
       </div></div>
       <div class="kb-legend"><span class="sw"></span> the new concept</div>
     </div>`
@@ -190,7 +194,7 @@ function trialHTML(stim, index, total) {
       <p class="kb-ask">Blend <b>${esc(stim.u)}</b> and <b>${esc(stim.v)}</b> into one new concept. First, describe the abstract structure that both <b>${esc(stim.u)}</b> and <b>${esc(stim.v)}</b> share, which is what lets them be blended. Be specific: &ldquo;both exist&rdquo; or &ldquo;both involve change&rdquo; does not count. Then, give your new concept a name. Next, in each row, take a relationship that is true of <b>${esc(stim.u)}</b> and/or of <b>${esc(stim.v)}</b> on the left, and write what it becomes in your new concept on the right. Try to have at least one link in your new concept that comes from both. Once you finish that, the final step will appear below the line asking you to add links that are true of your new concept but of neither <b>${esc(stim.u)}</b> nor <b>${esc(stim.v)}</b> on its own. Try to make a blend that is surprising and original rather than one that other participants would pick.${trapInline(index)}</p>
       <label class="kb-skip" style="margin:0 0 10px;"><input type="checkbox" name="skip_blend"> I can't think of a blend</label>
       <div class="kb-field"><label>The abstract structure that <b>both</b> ${esc(stim.u)} and ${esc(stim.v)} share</label>
-        <input type="text" name="generic_space" required placeholder="e.g. a self-regulating system whose parts can fail and be replaced"></div>
+        <input type="text" name="generic_space" required placeholder="e.g. a system that allocates fungible units of power"></div>
       <div class="kb-field"><label>Name your new concept</label>
         <input type="text" name="blend_name" required placeholder="a short name for the new concept"></div>
       <div id="blendHost"></div>`;
@@ -699,9 +703,9 @@ const TASK_INTRO = {
   association: { color: '#1976d2', title: 'Association Task',
     desc: 'In this task, you will build up chains of associations. To build your chain you will begin with one thing (called an &ldquo;entity&rdquo;) and then link it to another, and then likewise link that entity to another one. For each link you should specify what the link corresponds to: the &ldquo;relation&rdquo; that connects the two entities. Each row in the example below is one link: an entity, the relation, and the entity it links to. The last entity of one row is the first entity of the next, so the rows form a chain. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.' },
   analogy: { color: '#f57c00', title: 'Analogy Task',
-    desc: 'In this task, you are going to form an analogy. You will be presented with two concepts, highlighted at the top of the two columns (in the example below, <b>chocolate</b> and <b>a volcano</b>). You should identify relationships that these two concepts share and what maps to what: in the first row, write a link from the first concept on the left and the matching link from the second concept on the right, using the <b>same relation</b> on both sides (chocolate <i>releases</i> flavor; a volcano <i>releases</i> lava). Then extend the analogy to a related idea by adding another row that again uses the same relation on both sides (flavor <i>spreads across</i> the palate; lava <i>spreads across</i> the land). Finally, once you find an analogy, you should <b>invent a new idea</b> by taking an entity and a relation from the concept on one side and projecting them over to the other side, replacing each entity with what it maps to (for example, a lava tube <i>directs</i> molten rock through a volcano, so a chocolate could have a flavor channel that <i>directs</i> its liquid filling). You can choose the direction with the arrow between the two sides, and the invented concept, which can be on either side, is shaded. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.' },
+    desc: 'In this task, you are going to form an analogy. You will be presented with two concepts, highlighted at the top of the two columns (in the example below, <b>the blue whale</b> and <b>the mattress</b>). You should identify relationships that these two concepts share and what maps to what: in the first row, write a link from the first concept on the left and the matching link from the second concept on the right, using the <b>same relation</b> on both sides (the blue whale <i>is covered by</i> skin; the mattress <i>is covered by</i> sheets). Then extend the analogy to a related idea by adding another row that again uses the same relation on both sides (skin <i>hosts</i> barnacles; sheets <i>hosts</i> dust mites). Finally, once you find an analogy, you should <b>invent a new idea</b> by taking an entity and a relation from the concept on one side and projecting them over to the other side, replacing each entity with what it maps to (for example, a vacuum cleaner <i>removes</i> dust mites from a mattress, so a whale could have a whale groomer drone that <i>removes</i> barnacles). You can choose the direction with the arrow between the two sides, and the invented concept, which can be on either side, is shaded. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.' },
   blending: { color: '#388e3c', title: 'Blending Task',
-    desc: 'In this task, you are going to blend two concepts into one new concept. You will be shown two concepts, highlighted at the top (in the example below, <b>an organism</b> and <b>a machine</b>). First, describe the <b>abstract structure that both concepts share</b>, which is what lets them be blended (here, a self-regulating system whose parts can fail and be replaced). Be specific: &ldquo;both exist&rdquo; or &ldquo;both involve change&rdquo; does not count. Then give your new concept a name. Next, in each row, take a relationship that is true of one or both of the two concepts, and write what it becomes in your new concept on the right (an organism <i>regulates itself through</i> homeostasis and a machine through feedback control, so a cyborg <i>regulates itself through</i> sensor feedback). Try to have at least one link in your new concept that comes from <b>both</b> concepts, as in the first row of the example. Finally, below the line, add links that are true of your new concept but of neither of the original concepts on its own (a cyborg can swap a damaged limb without waiting to heal). Try to make a blend that is surprising and original rather than one that other participants would pick.' }
+    desc: 'In this task, you are going to blend two concepts into one new concept. You will be shown two concepts, highlighted at the top (in the example below, <b>Democracy</b> and <b>Banking</b>). First, describe the <b>abstract structure that both concepts share</b>, which is what lets them be blended (here, a system that allocates fungible units of power). Be specific: &ldquo;both exist&rdquo; or &ldquo;both involve change&rdquo; does not count. Then give your new concept a name. Next, in each row, take a relationship that is true of one or both of the two concepts, and write what it becomes in your new concept on the right (Democracy <i>allocates</i> votes, so a Liquid Franchise <i>allocates</i> vote-shares). Try to have at least one link in your new concept that comes from <b>both</b> concepts, as in the first row of the example. Finally, below the line, add links that are true of your new concept but of neither of the original concepts on its own (a citizen can liquidate their own political personhood). Try to make a blend that is surprising and original rather than one that other participants would pick.' }
 };
 
 // The description for a task, shown immediately before that task's block of items (not all up front).
