@@ -7,7 +7,7 @@
    ========================================================================== */
 
 // --- deployment constants (fill in after deploying the backend + Prolific study) ---
-const COMPLETION_CODE = 'XXXXXXXX';   // Prolific completion code — PLACEHOLDER, set from the Prolific study page before launch
+const COMPLETION_CODE = 'CB1MHNP6';   // Prolific study 6abd23503d9299654c1d658e (comb-creativity-0, Cocosci Lab account)
 const COMPLETION_URL = `https://app.prolific.com/submissions/complete?cc=${COMPLETION_CODE}`;
 // Data are saved with DataPipe (https://pipe.jspsych.org), which writes each file into the lab's private OSF
 // project. Create an experiment there, link it to the OSF project, switch data collection on, and paste its ID
