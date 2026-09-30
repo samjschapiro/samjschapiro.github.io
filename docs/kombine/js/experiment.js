@@ -824,6 +824,14 @@ function exportExperimentData() {
   };
 }
 
+// Apps Script web apps answer slowly now and then and fail about 1 request in 20 (measured 2026-09-30: median
+// 2 s, p90 12 s, occasional hangs over 40 s, sporadic 404s). Every call therefore has a time limit and is retried.
+async function fetchWithTimeout(url, opts, ms) {
+  const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), ms);
+  try { return await fetch(url, { ...(opts || {}), signal: ctl.signal }); }
+  finally { clearTimeout(timer); }
+}
+
 async function pipe(filename, obj) {
   const [kind] = filename.split('/');
   // Apps Script: a plain-text body keeps the request "simple" (no CORS preflight, which Apps Script cannot answer).
@@ -831,9 +839,11 @@ async function pipe(filename, obj) {
     ? [COLLECTOR_URL, { method: 'POST', body: JSON.stringify({ experiment: (window.EXPERIMENT_CONFIG || {}).experiment_name, kind, session_id: sessionId, data: obj }) }]
     : [DATAPIPE_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: '*/*' },
                        body: JSON.stringify({ experimentID: DATAPIPE_EXPERIMENT_ID, filename, data: JSON.stringify(obj) }) }];
-  for (let attempt = 0; attempt < 3; attempt++) {
+  // A retry after a timeout can store the same file twice (the first attempt may have landed); the copies are
+  // identical and share the session id, so analysis keeps one per session.
+  for (let attempt = 0; attempt < 5; attempt++) {
     try {
-      const res = await fetch(...req);
+      const res = await fetchWithTimeout(req[0], req[1], 30000);
       if (res.ok && (!COLLECTOR_URL || (await res.json()).ok)) return true;
     } catch (e) { /* retry */ }
     await new Promise(r => setTimeout(r, 1500 * (attempt + 1)));
@@ -878,9 +888,9 @@ async function assignSlot() {
   const random = () => window.SLOTS[Math.floor(Math.random() * window.SLOTS.length)];
   if (!isProlificParticipant || !COLLECTOR_URL) return { ...random(), slot_claimed: false };
   const holder = ((prolific && (prolific.prolific_session_id || prolific.prolific_pid)) || sessionId).replace(/[^A-Za-z0-9_-]/g, '').slice(0, 64);
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     try {
-      const res = await fetch(`${COLLECTOR_URL}?action=claim&holder=${encodeURIComponent(holder)}`);
+      const res = await fetchWithTimeout(`${COLLECTOR_URL}?action=claim&holder=${encodeURIComponent(holder)}`, {}, 15000);
       const j = await res.json();
       if (j.ok && j.full) return { full: true };
       if (j.ok && Number.isInteger(j.slot)) return { ...window.SLOTS[j.slot], slot_claimed: true };
