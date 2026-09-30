@@ -320,7 +320,13 @@ function wireAnalogyPaths(stim) {
     host.querySelectorAll('[data-rm]').forEach(b => b.addEventListener('click', () => {
       sync(); const [pre, idx] = b.dataset.rm.split(':'); (pre === 'map' ? map : inv).splice(+idx, 1); draw();
     }));
-    host.querySelector('#addMapStep').addEventListener('click', () => { sync(); map.push({ ah: '', ar: '', at: '', bh: '', br: '', bt: '' }); draw(); });
+    host.querySelector('#addMapStep').addEventListener('click', () => {
+      sync();
+      // chain: each side's new row starts at the last entity of that side's previous row (still editable)
+      const prev = map[map.length - 1] || {};
+      map.push({ ah: prev.skip ? '' : (prev.at || ''), ar: '', at: '', bh: prev.skip ? '' : (prev.bt || ''), br: '', bt: '' });
+      draw();
+    });
     host.querySelector('#addInv').addEventListener('click', () => { sync(); inv.push({ ah: '', ar: '', at: '', bh: '', br: '', bt: '', dir: '' }); draw(); });
     host.querySelector('[name="skip_invention"]').addEventListener('change', () => { sync(); draw(); });
     host.querySelectorAll('[name^="skip_map_"]').forEach(cb => cb.addEventListener('change', () => { sync(); draw(); }));
