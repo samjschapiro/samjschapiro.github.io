@@ -180,13 +180,13 @@ function trialHTML(stim, index, total) {
   if (t === 'association') {
     body += `<div class="kb-pair"><span class="kb-chip a">${esc(stim.u)}</span>
         <span class="kb-tween">to</span><span class="kb-chip b">${esc(stim.v)}</span></div>
-      <p class="kb-ask">Build a chain of associations from <b>${esc(stim.u)}</b> to <b>${esc(stim.v)}</b>. Start at <b>${esc(stim.u)}</b> and add links, one row at a time, until the last link ends at <b>${esc(stim.v)}</b>. For each link, write the entity you are linking to and the relation that connects the two entities. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.${trapInline(index)}</p>
+      <p class="kb-ask">Build a chain of associations from <b>${esc(stim.u)}</b> to <b>${esc(stim.v)}</b>. Start at <b>${esc(stim.u)}</b> and add links, one row at a time, until the last link ends at <b>${esc(stim.v)}</b>, then stop. For each link, write the entity you are linking to and the relation that connects the two entities (an action or connection, not a describing word). Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.${trapInline(index)}</p>
       <div class="kb-path" id="pathHost"></div>
       <div class="kb-add"><button type="button" id="addStep">+ add a link</button></div>`;
   } else if (t === 'analogy') {
     body += `<div class="kb-pair"><span class="kb-chip a">${esc(stim.u)}</span>
         <span class="kb-tween">::</span><span class="kb-chip b">${esc(stim.v)}</span></div>
-      <p class="kb-ask">Form an analogy between <b>${esc(stim.u)}</b> and <b>${esc(stim.v)}</b>. In each row, write a link about <b>${esc(stim.u)}</b> on the left and the matching link about <b>${esc(stim.v)}</b> on the right, using the <b>same relation</b> on both sides, so that the entities on the left map to the entities on the right. Add rows to extend the analogy. The last entity of one row is the first entity of the next, so the rows form a chain. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.${trapInline(index)}</p>
+      <p class="kb-ask">Form an analogy between <b>${esc(stim.u)}</b> and <b>${esc(stim.v)}</b>. In each row, write a link about <b>${esc(stim.u)}</b> on the left and the matching link about <b>${esc(stim.v)}</b> on the right, using the <b>same relation</b> on both sides, so that the entities on the left map to the entities on the right. The left side is only about <b>${esc(stim.u)}</b> and the right side is only about <b>${esc(stim.v)}</b>. Add rows to extend the analogy. The last entity of one row is the first entity of the next, so the rows form a chain. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.${trapInline(index)}</p>
       <div id="mapHost"></div>`;
   } else { // blending — fuse two entities into one new concept by projecting structure from each input
     body += `<div class="kb-pair"><span class="kb-chip a">${esc(stim.u)}</span>
@@ -308,6 +308,7 @@ function wireAnalogyPaths(stim) {
     h += `<div class="an-row an-subhead"><div class="an-tri anlbl"><span>entity</span><span>relation</span><span>entity</span></div>` +
          `<div class="an-tri anlbl"><span>entity</span><span>relation</span><span>entity</span></div><span class="an-rmbtn"></span></div>`;
     map.forEach((s, i) => h += row('map', i, s, map, !!s.skip));
+    h += `<p class="an-warn" id="anWarn" hidden></p>`;
     h += `<div class="kb-add"><button type="button" id="addMapStep">+ add a row to extend the analogy</button></div>`;
     h += GATE_HINT('the invention step');
     h += `<div id="invSection" hidden><hr class="an-divider">`;
@@ -354,7 +355,17 @@ function wireAnalogyPaths(stim) {
   const rowFilled = (i) => F.every(f => { const el = host.querySelector(`[name="map_${f}_${i}"]`); return el && el.value.trim(); });
   function noAnalogy() { return map.every((s, i) => rowSkipped(i)); }
   function mappingDone() { return !noAnalogy() && map.every((s, i) => rowSkipped(i) || rowFilled(i)); }
+  // Pilot participants often wrote the same link on both sides; flag a row whose two sides share both entities
+  // (a warning only: it does not block submitting).
+  function mirrorWarn() {
+    const v = (f, i) => { const el = host.querySelector(`[name="map_${f}_${i}"]`); return el ? el.value.trim().toLowerCase() : ''; };
+    const bad = map.map((s, i) => i).filter(i => !rowSkipped(i) && v('ah', i) && v('at', i) && v('ah', i) === v('bh', i) && v('at', i) === v('bt', i));
+    const w = host.querySelector('#anWarn'); if (!w) return;
+    w.hidden = !bad.length;
+    w.textContent = bad.length ? `Row ${bad.map(i => i + 1).join(', ')} uses the same entities on both sides. The left side should be about ${stim.u} and the right side about ${stim.v}.` : '';
+  }
   function gate() {
+    mirrorWarn();
     const sec = host.querySelector('#invSection');
     // when revealed, invention cells follow the skip box; the skip box itself is always enabled
     gateSection(sec, mappingDone, el => el.name === 'skip_invention' || !invSkip);
@@ -444,8 +455,8 @@ function wireBlend(stim) {
     host.querySelectorAll('[data-rm]').forEach(b => b.addEventListener('click', () => {
       sync(); const [p, idx] = b.dataset.rm.split(':'); (p === 'p' ? proj : emer).splice(+idx, 1); draw();
     }));
-    host.querySelector('#addP').addEventListener('click', () => { sync(); proj.push(blank('')); draw(); });
-    host.querySelector('#addE').addEventListener('click', () => { sync(); emer.push({ h: '', r: '', t: '' }); draw(); });
+    host.querySelector('#addP').addEventListener('click', () => { sync(); proj.push(blankNamed('')); draw(); });
+    host.querySelector('#addE').addEventListener('click', () => { sync(); emer.push({ h: nameEl.value, r: '', t: '' }); draw(); });
     host.querySelector('[name="skip_emergent"]').addEventListener('change', () => { sync(); draw(); });
     host.querySelectorAll('[name^="p_from_"]').forEach(rb => rb.addEventListener('change', () => { sync(); draw(); }));
     growAnalogyCells(host);
@@ -479,6 +490,21 @@ function wireBlend(stim) {
       : 'Once you have filled in the rows above, the last step will appear here.';
   }
   form.addEventListener('input', gate);
+  // The head of each link in the new concept starts as the blend's name (editable): every right-hand link is about
+  // the new concept. A head the participant has not typed over follows the name as it is typed.
+  let lastName = '';
+  const nameEl = form.querySelector('[name="blend_name"]');
+  nameEl.addEventListener('input', () => {
+    sync();
+    proj.forEach(s => { if (!s.ih || s.ih === lastName) s.ih = nameEl.value; });
+    emer.forEach(s => { if (!s.h || s.h === lastName) s.h = nameEl.value; });
+    lastName = nameEl.value;
+    host.querySelectorAll('textarea[name^="p_ih_"], textarea[name^="e_h_"]').forEach(t => {
+      const i = +t.name.match(/_(\d+)$/)[1]; const want = t.name.startsWith('p_') ? proj[i].ih : emer[i].h;
+      if (t.value !== want) t.value = want;
+    });
+  });
+  const blankNamed = (from) => ({ ...blank(from), ih: nameEl.value });
   // "I can't think of a blend": the name, the abstract structure and every link row are disabled (their text is
   // kept in case the box is unticked), and the last step never appears.
   const skipBlend = form.querySelector('[name="skip_blend"]');
@@ -707,9 +733,9 @@ const BONUS_BANNER = `<p style="margin: 0 0 24px; padding: 16px 20px; background
 
 const TASK_INTRO = {
   association: { color: '#1976d2', title: 'Association Task',
-    desc: 'In this task, you will build up chains of associations. To build your chain you will begin with one thing (called an &ldquo;entity&rdquo;) and then link it to another, and then likewise link that entity to another one. For each link you should specify what the link corresponds to: the &ldquo;relation&rdquo; that connects the two entities. Each row in the example below is one link: an entity, the relation, and the entity it links to. The last entity of one row is the first entity of the next, so the rows form a chain. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.' },
+    desc: 'In this task, you will build up chains of associations. To build your chain you will begin with one thing (called an &ldquo;entity&rdquo;) and then link it to another, and then likewise link that entity to another one. For each link you should specify what the link corresponds to: the &ldquo;relation&rdquo; that connects the two entities. A relation is an action or connection, like <i>stores</i>, <i>is inside</i> or <i>feeds on</i>, not a describing word like <i>bitter</i>. Each row in the example below is one link: an entity, the relation, and the entity it links to. The last entity of one row is the first entity of the next, so the rows form a chain. Stop as soon as your chain reaches the second entity you were given. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.' },
   analogy: { color: '#f57c00', title: 'Analogy Task',
-    desc: 'In this task, you are going to form an analogy. You will be presented with two concepts, highlighted at the top of the two columns (in the example below, <b>the blue whale</b> and <b>the mattress</b>). You should identify relationships that these two concepts share and what maps to what: in the first row, write a link from the first concept on the left and the matching link from the second concept on the right, using the <b>same relation</b> on both sides (the blue whale <i>is covered by</i> skin; the mattress <i>is covered by</i> sheets). Then extend the analogy to a related idea by adding another row that again uses the same relation on both sides (skin <i>hosts</i> barnacles; sheets <i>hosts</i> dust mites). The last entity of one row is the first entity of the next, so the rows form a chain. Finally, once you find an analogy, you should <b>invent a new idea</b> by taking an entity and a relation from the concept on one side and projecting them over to the other side, replacing each entity with what it maps to (for example, a vacuum cleaner <i>removes</i> dust mites from a mattress, so a whale could have a whale groomer drone that <i>removes</i> barnacles). You can choose the direction with the arrow between the two sides, and the invented concept, which can be on either side, is shaded. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.' },
+    desc: 'In this task, you are going to form an analogy. You will be presented with two concepts, highlighted at the top of the two columns (in the example below, <b>the blue whale</b> and <b>the mattress</b>). Everything on the left is about the first concept and everything on the right is about the second. You should identify relationships that these two concepts share and what maps to what: in the first row, write a link from the first concept on the left and the matching link from the second concept on the right, using the <b>same relation</b> on both sides (the blue whale <i>is covered by</i> skin; the mattress <i>is covered by</i> sheets). Then extend the analogy to a related idea by adding another row that again uses the same relation on both sides (skin <i>hosts</i> barnacles; sheets <i>hosts</i> dust mites). The last entity of one row is the first entity of the next, so the rows form a chain. Finally, once you find an analogy, you should <b>invent a new idea</b> by taking an entity and a relation from the concept on one side and projecting them over to the other side, replacing each entity with what it maps to (for example, a vacuum cleaner <i>removes</i> dust mites from a mattress, so a whale could have a whale groomer drone that <i>removes</i> barnacles). You can choose the direction with the arrow between the two sides, and the invented concept, which can be on either side, is shaded. Try to use surprising, original, and unusual relations and entities rather than generic ones that other participants would pick.' },
   blending: { color: '#388e3c', title: 'Blending Task',
     desc: 'In this task, you are going to blend two concepts into one new concept. You will be shown two concepts, highlighted at the top (in the example below, <b>Democracy</b> and <b>Banking</b>). First, describe the <b>abstract structure that both concepts share</b>, which is what lets them be blended (here, a system that allocates fungible units of power). Be specific: &ldquo;both exist&rdquo; or &ldquo;both involve change&rdquo; does not count. Then give your new concept a name. Next, in each row, take a relationship that is true of one or both of the two concepts, and write what it becomes in your new concept on the right (Democracy <i>allocates</i> votes, so a Liquid Franchise <i>allocates</i> vote-shares). Try to have at least one link in your new concept that comes from <b>both</b> concepts, as in the first row of the example. Finally, below the line, add links that are true of your new concept but of neither of the original concepts on its own (a citizen can liquidate their own political personhood). Try to make a blend that is surprising and original rather than one that other participants would pick.' }
 };
@@ -718,15 +744,117 @@ const TASK_INTRO = {
 function createTaskIntro(task, n) {
   const t = TASK_INTRO[task];
   return {
-    type: jsPsychInstructions, show_clickable_nav: true, button_label_next: `Start the ${task} prompts`,
+    type: jsPsychInstructions, show_clickable_nav: true, button_label_next: 'Next: a quick check',
     pages: [
       `<div style="max-width:${task === 'association' ? 720 : 900}px;margin:0 auto;text-align:left;"><h3 style="color:${t.color}">${t.title}</h3>
         ${BONUS_BANNER}
         <p>${t.desc}</p>
         <div style="color:#666;margin-top:8px;">${EXAMPLES[task]}</div>
-        <p style="margin-top:16px;color:#888;font-size:14px;">Next: ${n} ${task} ${n === 1 ? 'prompt' : 'prompts'}.</p></div>`
+        <p style="margin-top:16px;color:#888;font-size:14px;">Next: a few quick questions about this task, then ${n} ${task} ${n === 1 ? 'prompt' : 'prompts'}.</p></div>`
     ],
-    on_load: () => growAnalogyCells()   // size the worked-example cells shown on this intro page
+    on_load: () => { currentTask = task; growAnalogyCells(); }   // debug bar's task; size the worked-example cells shown on this intro page
+  };
+}
+
+/* ------------------------------------------------------- comprehension check */
+// Right after each task is introduced, a short multiple-choice quiz on new pairs (not the worked examples, so the
+// answer cannot be matched by eye) checks that the instructions were understood. Each wrong option is a mistake
+// seen in the pilot. A wrong answer shows why it is wrong and the participant tries again until every answer is
+// right; failing never ends the study. The answers on each try are recorded, for screening in analysis.
+const qTri = (h, r, t) => `<span class="qz-tri"><span>${h}</span><span class="r">${r}</span><span>${t}</span></span>`;
+const qPair = (a, b) => `${a}<span class="qz-sep">&#8214;</span>${b}`;
+const qChain = (...xs) => xs.map((x, i) => i % 2 ? `<i>${x}</i>` : x).join(' &rarr; ');
+const QUIZ = {
+  association: [
+    { id: 'assoc_link', prompt: 'You are building a chain from <b>Coffee</b> to <b>The Moon</b>. Which row is a correct link?', options: [
+      { html: qTri('coffee', 'is grown on', 'mountain slopes'), correct: true },
+      { html: qTri('coffee', 'bitter', 'mountain slopes'), why: 'The relation must be an action or connection between the two entities (like <i>is grown on</i>), not a describing word.' },
+      { html: '&ldquo;I drink coffee every morning before work&rdquo;', why: 'Each link is three parts: an entity, a relation, and another entity. A sentence is not a link.' }] },
+    { id: 'assoc_end', prompt: 'Which chain from <b>Coffee</b> to <b>The Moon</b> is finished?', options: [
+      { html: qChain('coffee', 'is grown on', 'mountain slopes', 'are lit at night by', 'the Moon'), correct: true },
+      { html: qChain('coffee', 'is grown on', 'mountain slopes', 'are lit at night by', 'the Moon', 'pulls', 'the tides'), why: 'The chain should stop as soon as it reaches The Moon.' },
+      { html: qChain('coffee', 'is grown on', 'mountain slopes', 'reach toward', 'the sky'), why: 'This chain never reaches The Moon. The last entity must be The Moon.' }] }
+  ],
+  analogy: [
+    { id: 'analogy_row', prompt: 'You are forming an analogy between <b>A tree</b> (left) and <b>A city</b> (right). Which row is correct?', options: [
+      { html: qPair(qTri('a tree', 'carries water through', 'its trunk'), qTri('a city', 'carries water through', 'its pipes')), correct: true },
+      { html: qPair(qTri('a tree', 'carries water through', 'its trunk'), qTri('a tree', 'carries sap through', 'its branches')), why: 'Both sides are about the tree. The left side is about A tree and the right side is about A city.' },
+      { html: qPair(qTri('a tree', 'has', 'leaves'), qTri('a city', 'is full of', 'people')), why: 'The two sides use different relations. Each row uses the same relation on both sides.' }] },
+    { id: 'analogy_chain', prompt: 'The first row is <i>a tree carries water through its trunk</i> &#8214; <i>a city carries water through its pipes</i>. Which second row continues the analogy?', options: [
+      { html: qPair(qTri('its trunk', 'can be blocked by', 'fungus'), qTri('its pipes', 'can be blocked by', 'grease')), correct: true },
+      { html: qPair(qTri('a tree', 'grows', 'fruit'), qTri('a city', 'grows', 'food')), why: 'This row starts over. The next row should start from where the last one ended (its trunk, its pipes), so the rows form a chain.' }] },
+    { id: 'analogy_invent', prompt: 'In a city, a drain cleaner removes grease from the pipes. Which is a new invention carried over to the tree?', options: [
+      { html: qTri('a trunk-flush injection', 'removes', 'fungus'), correct: true },
+      { html: qTri('a plumber', 'removes', 'grease'), why: 'This already exists in a city. An invention carries an idea from one side over to the other side.' },
+      { html: qTri('a tree', 'grows', 'taller'), why: 'Nothing is carried over from the city here. An invention takes an idea from one side to the other.' }] }
+  ],
+  blending: [
+    { id: 'blend_structure', prompt: 'You are blending <b>A library</b> and <b>A gym</b>. Which is the best abstract structure that both share?', options: [
+      { html: 'a members&rsquo; space where you use shared equipment to train an ability', correct: true },
+      { html: 'both are buildings', why: 'This is too vague. The structure should be specific enough to explain how the two could be blended.' },
+      { html: 'books', why: 'This is true of the library only. The structure must be shared by both.' }] },
+    { id: 'blend_link', prompt: 'You named the blend <b>Mind Gym</b>. On the left is the link <i>library lends books</i>. What should go on the right?', options: [
+      { html: qTri('Mind Gym', 'lends', 'reading workouts'), correct: true },
+      { html: qTri('library', 'lends', 'books'), why: 'This repeats the original link. The right side says what the link becomes in your new concept.' },
+      { html: '&ldquo;a place for getting smarter and fitter&rdquo;', why: 'Each link is three parts: an entity, a relation, and another entity. A sentence is not a link.' }] }
+  ]
+};
+
+function shuffled(a) { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; }
+
+function createQuiz(task) {
+  const t = TASK_INTRO[task];
+  const qs = QUIZ[task].map(q => ({ ...q, order: shuffled(q.options.map((o, i) => i)) }));   // option order shuffled per participant
+  let attempts = 0, log = [], passed = false, handler = null;
+  const html = `<div style="max-width:900px;margin:0 auto;text-align:left;"><h3 style="color:${t.color}">${t.title}: quick check</h3>
+    <p>Please answer these questions about the ${task} task. Each one has a single best answer.</p>
+    <p class="qz-banner" id="qzBanner" hidden></p>
+    ${qs.map(q => `<div class="qz-q" data-q="${q.id}"><p class="qz-prompt">${q.prompt}</p>
+      ${q.order.map(i => `<label class="qz-opt"><input type="radio" name="${q.id}" value="${i}" required> <span>${q.options[i].html}</span></label>`).join('')}
+      <p class="qz-fb" hidden></p></div>`).join('')}</div>`;
+  return {
+    type: jsPsychSurveyHtmlForm, html, button_label: 'Check my answers',
+    data: { phase: 'quiz', task },
+    on_load: () => {
+      currentTask = task; attempts = 0; log = []; passed = false;
+      const form = document.getElementById('jspsych-survey-html-form');
+      // capture phase on the display element runs before the plugin's own submit listener, so a failed check can stop it
+      handler = (e) => {
+        if (e.target !== form || passed) return;   // once passed, the next click goes on to the task
+        attempts++;
+        const chosen = {}; qs.forEach(q => { const el = form.querySelector(`[name="${q.id}"]:checked`); chosen[q.id] = el ? +el.value : null; });
+        log.push(chosen);
+        const wrong = qs.filter(q => !(q.options[chosen[q.id]] || {}).correct);
+        e.preventDefault(); e.stopImmediatePropagation();
+        // tell the participant which answers are right (green) and which are not (red, with why)
+        form.querySelectorAll('.qz-q').forEach(box => {
+          box.classList.remove('wrong'); box.classList.add('right');
+          const fb = box.querySelector('.qz-fb'); fb.className = 'qz-fb ok'; fb.textContent = 'Correct.'; fb.hidden = false;
+        });
+        const b = document.getElementById('qzBanner');
+        if (!wrong.length) {
+          passed = true;
+          form.querySelectorAll('input[type=radio]').forEach(r => { r.disabled = !r.checked; });
+          b.className = 'qz-banner ok'; b.textContent = `All correct. You are ready to start the ${task} prompts.`; b.hidden = false;
+          document.getElementById('jspsych-survey-html-form-next').value = `Start the ${task} prompts`;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        wrong.forEach(q => {
+          const box = form.querySelector(`.qz-q[data-q="${q.id}"]`); box.classList.remove('right'); box.classList.add('wrong');
+          const fb = box.querySelector('.qz-fb'); fb.className = 'qz-fb'; fb.innerHTML = `Not quite. ${q.options[chosen[q.id]].why} Please choose again.`; fb.hidden = false;
+          box.querySelectorAll('input').forEach(r => { r.checked = false; });
+        });
+        b.className = 'qz-banner';
+        b.textContent = `${wrong.length === 1 ? 'One answer is' : 'Some answers are'} not right yet. Read the note${wrong.length === 1 ? '' : 's'} in red, then try again.`;
+        b.hidden = false; window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+      document.getElementById('jspsych-target').addEventListener('submit', handler, true);
+    },
+    on_finish: (data) => {
+      document.getElementById('jspsych-target').removeEventListener('submit', handler, true);
+      data.quiz = { attempts, passed, answers: log.map(c => Object.fromEntries(Object.entries(c).map(([k, i]) => [k, i === null ? null : (QUIZ[task].find(q => q.id === k).options[i].correct ? 'correct' : `wrong_${i}`)]))) };
+    }
   };
 }
 
@@ -820,6 +948,7 @@ function exportExperimentData() {
     consent: window.consentData || null,
     submitted_at: new Date().toISOString(),
     demographics: demo ? demo.demographics : null,
+    quiz: jsPsych.data.get().filter({ phase: 'quiz' }).values().map(q => ({ task: q.task, ...(q.quiz || {}), rt: q.rt, debug_skipped: !!q.debug_skipped })),
     responses: trials.map(t => ({ ...t.clean, rt: t.rt, stimulus_id: t.stimulus_id, prompt_id: t.prompt_id, is_control: t.is_control, position: t.position, paste_attempts: t.paste_attempts || 0, typing: t.typing || null, trap_word: t.trap_word, debug_skipped: !!t.debug_skipped }))
   };
 }
@@ -924,6 +1053,7 @@ async function runExperiment() {
       const items = orderBlock(stimuli.filter(s => s.task === task));
       if (!items.length) return;
       timeline.push(createTaskIntro(task, items.length));
+      timeline.push(createQuiz(task));        // comprehension check right after the task is introduced (see QUIZ)
       items.forEach(stim => {
         const trial = makeTrial(stim, idx, total); idx++;
         // wrapped so "skip rest of task" (debug) can drop the block's remaining items

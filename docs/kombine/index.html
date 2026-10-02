@@ -149,6 +149,23 @@
         .kb-toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); background: #333; color: #fff; padding: 10px 16px; border-radius: 6px; font-size: 14px; z-index: 1000; opacity: 0; transition: opacity .2s; pointer-events: none; }
         .kb-toast.show { opacity: 1; }
 
+        /* comprehension check (one quiz per task, before any items) */
+        .qz-q { margin: 0 0 22px; padding: 14px 16px; background: #fff; border: 1px solid #e0dde6; border-radius: 8px; }
+        .qz-q.wrong { border-color: #c0392b; }
+        .qz-prompt { font-weight: bold; margin: 0 0 10px; }
+        .qz-opt { display: flex; align-items: center; gap: 10px; padding: 7px 8px; border-radius: 6px; cursor: pointer; }
+        .qz-opt:hover { background: #f3f6fb; }
+        .qz-opt input { flex: none; }
+        .qz-tri { display: inline-flex; gap: 4px; }
+        .qz-tri span { padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fafafa; }
+        .qz-tri span.r { font-style: italic; }
+        .qz-sep { color: #999; margin: 0 6px; }
+        .qz-fb { color: #c0392b; font-size: 14px; margin: 8px 0 0; }
+        .qz-banner { color: #c0392b; font-weight: bold; margin: 0 0 16px; }
+        .qz-q.right { border-color: #388e3c; }
+        .qz-fb.ok, .qz-banner.ok { color: #2e7d32; }
+        .an-warn { color: #c0392b; font-size: 14px; margin: 6px 0 0; }
+
         /* debug-only skip bar (never shown to Prolific participants) */
         .kb-debugbar { position: fixed; top: 8px; right: 8px; z-index: 1000; display: flex; gap: 6px; align-items: center; background: #fff3cd; border: 1px solid #e0a800; border-radius: 6px; padding: 6px 8px; font-size: 12px; color: #664d03; }
         .kb-debugbar button { font-size: 12px; padding: 4px 8px; border: 1px solid #b08d2a; border-radius: 4px; background: #fff; color: #664d03; cursor: pointer; }
