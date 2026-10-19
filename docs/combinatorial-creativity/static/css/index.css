@@ -1,0 +1,77 @@
+/* Kombine project page, in the style of the Academic Project Page Template (Bulma). */
+
+body { font-family: 'Noto Sans', sans-serif; }
+
+.publication-title, .publication-authors, .teaser { font-family: 'Google Sans', sans-serif; }
+.publication-title .brand { color: #0066cc; }
+.publication-authors a { color: hsl(204, 86%, 53%) !important; }
+.publication-authors a:hover { text-decoration: underline; }
+.publication-authors sup { font-size: .6em; color: #777; }
+.author-block { display: inline-block; }
+.publication-authors .author-block { margin: 0 .15em; }
+.publication-affiliations { color: #6b6b6b; margin-top: .6rem; max-width: 780px; margin-left: auto; margin-right: auto; }
+.publication-affiliations .author-block { margin: 0 .5em; }
+.publication-affiliations sup { margin-right: 1px; }
+.link-block a { margin-top: 5px; margin-bottom: 5px; }
+
+.teaser .hero-body { padding-top: 1.5rem; padding-bottom: 3rem; }
+.teaser-img { display: block; width: 100%; max-width: 860px; margin: 0 auto 1.5rem; }
+
+.section-lead { color: #555; max-width: 720px; margin: -.75rem auto 1.75rem; }
+
+/* ---------- examples ---------- */
+.u { color: #3F6F8E; font-weight: 600; }
+.v { color: #765030; font-weight: 600; }
+.inv { color: #22394F; font-weight: 700; }
+.em { color: #B74D34; font-weight: 600; }
+.example { height: 100%; font-size: .95rem; }
+.example img { display: block; width: 180px; height: 180px; object-fit: cover; border-radius: 8px; margin: .25rem auto 1rem; }
+.example p { margin-bottom: .6rem; }
+.example-head { font-family: 'Google Sans', sans-serif; font-size: 1.05rem; }
+.example-head .tag { margin-right: .4rem; vertical-align: 2px; }
+.example .who { display: block; font-size: .8rem; color: #888; margin-top: 2px; }
+.example .path { font-size: .93rem; line-height: 1.8; }
+
+/* ---------- results carousel ---------- */
+.carousel { overflow: hidden; position: relative; }
+.carousel-track { display: flex; transition: transform .45s ease; }
+.carousel .item { flex: 0 0 100%; padding: 10px 20px 0; min-width: 0; }
+.carousel .item img { display: block; width: 100%; max-height: 520px; object-fit: contain; margin: 0 auto 1rem;
+  background: #fff; border-radius: 8px; }
+.carousel .item img.narrow { max-width: 560px; }
+.carousel .item .pair img { max-height: 340px; }
+.carousel .item .subtitle { font-size: 1.05rem; max-width: 780px; margin: 0 auto; line-height: 1.55; }
+.carousel-nav { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 1.25rem; }
+.carousel-dots { display: flex; gap: 8px; }
+.carousel-dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 0; background: #c4c4c4; cursor: pointer; }
+.carousel-dots button[aria-selected="true"] { background: #363636; }
+@media (prefers-reduced-motion: reduce) { .carousel-track { transition: none; } }
+
+/* ---------- leaderboard ---------- */
+.lb-controls { margin-bottom: .5rem; }
+.tabs.is-toggle li.is-active a { background: #363636; border-color: #363636; }
+.lb-wrap { max-height: 560px; overflow: auto; border: 1px solid #ececec; border-radius: 8px; }
+#lb-table { font-size: .9rem; }
+#lb-table thead th { position: sticky; top: 0; z-index: 1; background: #fff; cursor: pointer; white-space: nowrap; user-select: none; }
+#lb-table thead th:hover { color: #0066cc; }
+#lb-table thead th.sorted::after { content: " \25BE"; color: #0066cc; }
+#lb-table thead th.sorted.asc::after { content: " \25B4"; }
+#lb-table td { vertical-align: middle; }
+#lb-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+#lb-table tr.human { background: #fdf3ea; font-weight: 600; }
+.src-cell { display: flex; align-items: center; gap: 9px; }
+.src-text .org { display: block; font-size: .78rem; color: #888; font-weight: 400; }
+.mark { flex: 0 0 auto; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; }
+.mark svg { width: 100%; height: 100%; }
+.mark-initial { border-radius: 50%; color: #fff; font-size: .68rem; font-weight: 700; }
+.bar { display: block; height: 3px; border-radius: 2px; margin: 3px 0 0 auto; max-width: 110px; }
+
+/* ---------- bibtex ---------- */
+#BibTeX pre { white-space: pre-wrap; word-break: break-word; font-size: .82rem; }
+
+@media (max-width: 768px) {
+  .publication-title.is-1 { font-size: 2rem; }
+  .content.has-text-justified { text-align: left !important; }
+  .carousel .item { padding: 6px 4px 0; }
+  .carousel .item .subtitle { font-size: .95rem; }
+}

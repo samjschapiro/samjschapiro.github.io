@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kombine: Measuring Combinatorial Creativity in Large Language Models and Humans</title>
+  <meta name="description" content="Kombine is a benchmark for combinatorial creativity: discovering associations, analogies, and blends between unrelated entities, and inventing new concepts from them. 35 LLMs and 75 human participants.">
+  <meta property="og:title" content="Kombine: Measuring Combinatorial Creativity in Large Language Models and Humans">
+  <meta property="og:description" content="A benchmark of association, analogy, and conceptual blending across 35 LLMs and 75 humans.">
+  <meta property="og:url" content="https://schapiro.ai/combinatorial-creativity/">
+  <meta property="og:image" content="https://schapiro.ai/combinatorial-creativity/static/figures/02_cc_overview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="combinatorial creativity, LLM benchmark, analogy, conceptual blending, association, creativity, large language models, human-AI comparison">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='11' cy='16' r='9' fill='%230066cc' fill-opacity='.85'/%3E%3Ccircle cx='21' cy='16' r='9' fill='%23e8743b' fill-opacity='.85'/%3E%3C/svg%3E">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span class="brand">Kombine</span>: Measuring Combinatorial Creativity in Large Language Models and Humans</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://schapiro.ai/">Samuel Schapiro</a><sup>1,3</sup>,</span>
+            <span class="author-block"><a href="https://akjagadish.github.io/" target="_blank">Akshay K. Jagadish</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://alexiglad.github.io/" target="_blank">Alexi Gladstone</a><sup>6</sup>,</span>
+            <span class="author-block"><a href="https://sites.google.com/view/ellaliu/bio" target="_blank">Qiawen Ella Liu</a><sup>8</sup>,</span>
+            <span class="author-block"><a href="https://sumuk.org/" target="_blank">Sumuk Shashidhar</a><sup>6</sup>,</span>
+            <span class="author-block">Jonah Black<sup>6</sup>,</span>
+            <span class="author-block">Royce Moon<sup>3,9</sup>,</span>
+            <span class="author-block"><a href="https://uiuc-conversational-ai-lab.github.io/" target="_blank">Dilek Hakkani-Tür</a><sup>6</sup>,</span>
+            <span class="author-block"><a href="https://blender.cs.illinois.edu/hengji.html" target="_blank">Heng Ji</a><sup>6</sup>,</span>
+            <span class="author-block"><a href="https://creai-lab.github.io/" target="_blank">Claire E. Stevenson</a><sup>7</sup>,</span>
+            <span class="author-block"><a href="https://ai.stonybrook.edu/people/faculty/lav-r-varshney" target="_blank">Lav R. Varshney</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="https://beatylab.la.psu.edu/" target="_blank">Roger E. Beaty</a><sup>5</sup>,</span>
+            <span class="author-block"><a href="https://cocosci.princeton.edu/" target="_blank">Thomas L. Griffiths</a><sup>2,8</sup>,</span>
+            <span class="author-block"><a href="https://knowledgelab.org/" target="_blank">James A. Evans</a><sup>1,4</sup></span>
+          </div>
+
+          <div class="is-size-6 publication-affiliations">
+            <span class="author-block"><sup>1</sup>Knowledge Lab, University of Chicago</span>
+            <span class="author-block"><sup>2</sup>Princeton AI Lab</span>
+            <span class="author-block"><sup>3</sup>AI Innovation Institute, Stony Brook University</span>
+            <span class="author-block"><sup>4</sup>Santa Fe Institute</span>
+            <span class="author-block"><sup>5</sup>Penn State</span>
+            <span class="author-block"><sup>6</sup>UIUC</span>
+            <span class="author-block"><sup>7</sup>University of Amsterdam</span>
+            <span class="author-block"><sup>8</sup>Princeton University</span>
+            <span class="author-block"><sup>9</sup>University of Michigan</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="../files/Kombine.pdf" target="_blank" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2509.21043" target="_blank" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="../files/kombine-slides/" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-person-chalkboard"></i></span><span>Slides</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#leaderboard" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-trophy"></i></span><span>Leaderboard</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TL;DR -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TL;DR</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Kombine</strong> is a benchmark for <strong>combinatorial creativity</strong>, the
+            ability to combine familiar ideas in unfamiliar ways. Models must <strong>discover</strong>
+            associations, analogies, and blends between random, unrelated entities, then use them to
+            <strong>invent new concepts</strong>. Across 35 LLMs, models are much worse at blending than
+            at association and analogy, because they struggle to find a shared abstraction between the
+            inputs (an <strong>abstraction bottleneck</strong>). They also show <strong>inventive
+            homogeneity</strong>: one in five invented concepts reuses properties another model invented
+            for the same inputs. In a study of 75 people, humans scored below nearly every LLM, but they
+            <strong>reach different regions of semantic space</strong>, which points to human&ndash;AI
+            collaboration.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser figure -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/figures/02_cc_overview.jpg" alt="Overview of Kombine: a space of entities, a semantic distance measure, the three tasks (association, analogy, blending), and concept formation from analogies and blends." class="teaser-img">
+      <h2 class="subtitle has-text-centered">
+        The three forms of combinatorial creativity in Kombine. <b>Association</b> connects distant
+        entities through a factual path. <b>Analogy</b> finds a structure mapping between two domains.
+        <b>Blending</b> fuses both inputs into a new concept. Analogies and blends then drive
+        <b>concept invention</b>, and every response is scored for utility, surprise, and originality.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Combinatorial creativity, the process of combining familiar ideas in unfamiliar ways, is one
+            of the foremost engines of scientific, technological, and artistic progress. This work
+            introduces <strong>Kombine</strong>, an LLM benchmark for combinatorial creativity tasking
+            models to discover surprising, original, and useful associations, analogies, and blends
+            between unrelated entities, and to use those analogies and blends to invent novel concepts by
+            re-combining the parts of existing ones. In a large-scale study across 35 LLMs, we find that:
+            (1) LLMs are 10&ndash;16 percentage points better at discovering associations and analogies
+            than blends, and (2) exhibit an <strong>abstraction bottleneck</strong> on blending, in which
+            even frontier LLMs struggle to find a shared abstraction between inputs and instantiate a
+            coherent blended space. (3) LLMs also exhibit <strong>inventive homogeneity</strong>, in which
+            one in five concepts invented for a given item reuses properties invented by another model.
+            Moreover, (4) models are 14&times; more likely to reuse other invented properties on blends
+            than analogies, and (5) models from the same provider are 2.3&times; more likely to reuse
+            properties than those from different providers. Next, in a comparative study involving 75
+            humans on the same tasks, we find that (6) humans score below nearly every LLM on each task
+            and (7) both humans and LLMs find blending most difficult, but association is easier than
+            analogy for LLMs, while analogy is easier than association for humans. Lastly, (8) humans and
+            LLMs access <strong>distinct regions of semantic space</strong> on each task, suggesting that
+            combinatorial creativity could benefit from systematic human-AI collaboration to enhance
+            conceptual diversity. In summary, we provide a framework to assess progress towards LLMs, AI
+            systems, and human-AI collaborations more broadly, that can elicit combinatorial creativity
+            in a setting relevant to scientific and technological innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Examples -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Example Outputs</h2>
+    <p class="has-text-centered section-lead">
+      Each item gives two entities, sampled from Wikidata, with no known relationship. Colours mark
+      the two inputs (<span class="u">u</span>, <span class="v">v</span>), the
+      <span class="inv">invented concept</span>, and <span class="em">emergent structure</span>.
+    </p>
+
+    <div class="columns is-multiline example-cols">
+      <div class="column is-12">
+        <div class="box example">
+          <p class="example-head"><span class="tag is-dark">Association</span> <span class="u">Radio</span> &rarr; <span class="v">The Milky Way</span> <span class="who">claude-opus-5</span></p>
+          <p class="path">
+            (<span class="u">Radio</span>, aired hit, Vincent (song)) &rarr;
+            (Vincent (song), tribute to, Vincent van Gogh) &rarr;
+            (Vincent van Gogh, painted, The Starry Night) &rarr;
+            (The Starry Night, swirls depict, <span class="v">The Milky Way</span>)
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="box example">
+          <p class="example-head"><span class="tag is-dark">Analogy</span> <span class="u">The blue whale</span> :: <span class="v">The mattress</span> <span class="who">claude-fable-5</span></p>
+          <img src="static/figures/whale_groomer_drone.jpg" alt="Illustration of a whale groomer drone cleaning barnacles off a blue whale." loading="lazy">
+          <p><b>Shared structure:</b>
+            whale <i>covered by</i> epidermis, which <i>hosts</i> barnacles, which <i>feed on</i> plankton;
+            mattress <i>covered by</i> ticking, which <i>hosts</i> dust mites, which <i>feed on</i> skin flakes.</p>
+          <p><b>Invention:</b> the <span class="v">vacuum cleaner</span> is projected through the mapping to
+            give a <span class="inv">whale groomer drone</span>, which removes <span class="u">barnacles</span>,
+            cleans the <span class="u">epidermis</span>, and maintains <span class="u">the blue whale</span>.</p>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="box example">
+          <p class="example-head"><span class="tag is-dark">Blending</span> <span class="u">Adam Smith</span> + <span class="v">Bacteria</span> <span class="who">claude-opus-4.5</span></p>
+          <img src="static/figures/market_colony.jpg" alt="Illustration of a market colony: a bacterial colony organised like a marketplace." loading="lazy">
+          <p><b>Generic space:</b> autonomous agents whose local signals generate collective order
+            without central control.</p>
+          <p><b>Invention:</b> a <span class="inv">market colony</span>, which coordinates through local
+            signals, specializes via division of labor <span class="u">[u]</span>, adapts through
+            replication <span class="v">[v]</span>, and <span class="em">evolves its exchange protocols
+            [emergent]</span>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results carousel -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Key Results</h2>
+    <div class="carousel" id="results-carousel" aria-roledescription="carousel">
+      <div class="carousel-track">
+        <div class="item">
+          <img src="static/figures/04_abstraction_failures.jpg" alt="Grid of entity pairs by frontier model, with red cells marking invalid generic spaces on the blending task." loading="lazy">
+          <h2 class="subtitle has-text-centered"><b>The abstraction bottleneck.</b> Models find a valid
+            generic space for a blend only 43.4% of the time, but once they have one, they describe a
+            coherent blended concept 97.1% of the time. Red cells mark invalid generic spaces. No row is
+            entirely red, so every pair can be blended.</h2>
+        </div>
+        <div class="item">
+          <img src="static/figures/06_tau_multiples_b.png" alt="Inventive multiple rate for blends versus analogies at tau = 1, 2, 3." loading="lazy" class="narrow">
+          <h2 class="subtitle has-text-centered"><b>Inventive homogeneity.</b> 19.9% of the 2,070
+            invented concepts share two or more properties with another model's invention for the same
+            item. Blends are 14.3&times; more likely than analogies to be such a multiple.</h2>
+        </div>
+        <div class="item">
+          <img src="static/figures/08_family_multiples.png" alt="Within-provider inventive multiple rate for each provider compared with the cross-provider baseline." loading="lazy">
+          <h2 class="subtitle has-text-centered"><b>Models from the same family invent alike.</b>
+            Same-provider pairs are 2.3&times; more likely to produce multiples (9.3% vs. 4.1%), led by
+            DeepSeek and Anthropic. OpenAI models converge with each other <em>less</em> often than with
+            other providers.</h2>
+        </div>
+        <div class="item">
+          <img src="static/figures/07_facet_corr.png" alt="Correlation matrix of scoring facets across the 35 models." loading="lazy" class="narrow">
+          <h2 class="subtitle has-text-centered"><b>Association originality predicts everything
+            else.</b> Models that connect distant entities in original ways also make more original
+            analogies (<i>r</i> = 0.73) and better blends. It has the highest mean cross-task
+            correlation of any facet, as Mednick's associative theory of creativity predicts.</h2>
+        </div>
+        <div class="item">
+          <img src="static/figures/09_human_llm_space.jpg" alt="PCA projections of human and LLM responses on association, analogy, and blending." loading="lazy">
+          <h2 class="subtitle has-text-centered"><b>Humans and LLMs occupy different regions of
+            semantic space.</b> Humans score lower (e.g. 12.8% vs. 43.4% valid blends) but answer
+            differently, especially on analogy and blending.</h2>
+        </div>
+        <div class="item">
+          <div class="columns is-gapless pair">
+            <div class="column"><img src="static/figures/10_human_llm_wordcloud_a.jpg" alt="Word cloud of concepts used more by humans." loading="lazy"></div>
+            <div class="column"><img src="static/figures/10_human_llm_wordcloud_b.jpg" alt="Word cloud of concepts used more by LLMs." loading="lazy"></div>
+          </div>
+          <h2 class="subtitle has-text-centered"><b>Everyday objects vs. famous names.</b> Humans
+            (left) reach for everyday objects, states, and feelings (<em>rock, happiness, love</em>).
+            LLMs (right) name people and places (<em>Galileo, London</em>) and link them by authorship
+            and study (<em>wrote, studied by</em>).</h2>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="button is-rounded is-small carousel-prev" aria-label="Previous figure"><span class="icon"><i class="fas fa-chevron-left"></i></span></button>
+        <div class="carousel-dots" role="tablist"></div>
+        <button class="button is-rounded is-small carousel-next" aria-label="Next figure"><span class="icon"><i class="fas fa-chevron-right"></i></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leaderboard -->
+<section class="section" id="leaderboard">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Leaderboard</h2>
+    <p class="has-text-centered section-lead">
+      Scores are percentages of each dimension's maximum. A task's composite is the mean of its
+      dimensions, and Overall is the mean of the three tasks. Click a column to sort.
+    </p>
+    <div class="lb-controls">
+      <div class="tabs is-toggle is-small is-centered">
+        <ul>
+          <li class="is-active"><a data-view="overall">Overall</a></li>
+          <li><a data-view="association">Association</a></li>
+          <li><a data-view="analogy">Analogy</a></li>
+          <li><a data-view="blending">Blending</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="table-container lb-wrap">
+      <table class="table is-fullwidth is-hoverable is-narrow" id="lb-table">
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">For more information, see the <a href="../files/Kombine.pdf" target="_blank">paper</a> or the <a href="../files/kombine-slides/">slides</a>!</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">
+      BibTeX
+      <button id="copyBibtex" class="button is-small is-dark is-pulled-right">Copy</button>
+    </h2>
+    <pre><code id="bibtexCitation">@misc{schapiro2025kombine,
+  title={Measuring Combinatorial Creativity in Large Language Models and Humans},
+  author={Samuel Schapiro and Akshay K. Jagadish and Alexi Gladstone and Qiawen Ella Liu and Sumuk Shashidhar and Jonah Black and Royce Moon and Dilek Hakkani-T{\"u}r and Heng Ji and Claire E. Stevenson and Lav R. Varshney and Roger E. Beaty and Thomas L. Griffiths and James A. Evans},
+  year={2025},
+  eprint={2509.21043},
+  archivePrefix={arXiv},
+  url={https://arxiv.org/abs/2509.21043}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+            which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br><a href="../">&larr; Back to schapiro.ai</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="static/js/data.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+</html>
