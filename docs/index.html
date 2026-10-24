@@ -4,12 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samuel Schapiro</title>
-  <meta name="description" content="Interdisciplinary researcher studying the science of intelligence and the creativity of AI systems.">
+  <meta name="description" content="Research scientist and entrepreneur studying the science of intelligence and creativity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://platform.twitter.com">
-  <link rel="preconnect" href="https://cdn.syndication.twimg.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Changa+One:ital@0;1&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Changa+One:ital@0;1&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -18,8 +16,8 @@
 <body>
   <nav class="main-nav">
     <a href="#about">About</a><span class="main-nav-dot">·</span>
-    <a href="#news">News</a><span class="main-nav-dot">·</span>
     <a href="#research">Research</a><span class="main-nav-dot">·</span>
+    <a href="#publications">Publications</a><span class="main-nav-dot">·</span>
     <a href="#service">Service</a>
   </nav>
   <main class="page">
@@ -27,8 +25,8 @@
           <div class="about-cols">
             <div class="about-text">
               <p class="name-line"><span class="name">Samuel Schapiro</span></p>
-              <p>I am an <a href="bookshelf.html">interdisciplinary scholar</a> studying the <strong>science of intelligence</strong>, affiliated with the <a href="https://knowledgelab.org/" target="_blank" rel="noopener">Knowledge Lab</a> at the University of Chicago and the <a href="https://ai.stonybrook.edu/" target="_blank" rel="noopener">AI Innovation Institute (AI<sup>3</sup>)</a> at Stony Brook University, and closely collaborating with the <a href="https://psych.la.psu.edu/" target="_blank" rel="noopener">Department of Psychology</a> at Pennsylvania State University. My work bridges cognitive science, computer science, and the philosophy of science to advance our understanding of creativity, our ability to elicit it in intelligent machines, and its applications towards scientific, industrial, and artistic domains.</p>
-              <p>Previously, I was a visiting researcher at the <a href="https://simons.berkeley.edu/homepage" target="_blank" rel="noopener">Simons Institute for the Theory of Computing, UC Berkeley</a>. I did my undergrad at the <a href="https://siebelschool.illinois.edu/" target="_blank" rel="noopener">University of Illinois, Urbana-Champaign</a>, where I studied theoretical computer science.</p>
+              <p>I'm an <a href="bookshelf.html">interdisciplinary</a> scientist and entrepreneur studying the <strong>science of intelligence and creativity</strong>, affiliated with the <a href="https://knowledgelab.org/" target="_blank" rel="noopener">Knowledge Lab</a> at the University of Chicago and the <a href="https://ai.stonybrook.edu/" target="_blank" rel="noopener">AI Innovation Institute (AI<sup>3</sup>)</a> at Stony Brook University, and closely collaborating with the <a href="https://psych.la.psu.edu/" target="_blank" rel="noopener">Department of Psychology</a> at Pennsylvania State University. I am also currently a research scientist at a stealth startup.</p>
+              <p>My work has been featured in scientific venues such as NeurIPS, ICML, COLM, ICLR, and ICCC and bridges cognitive science, computer science, and the philosophy of science to advance our understanding of creativity, our ability to elicit it in intelligent machines, and its applications towards scientific, industrial, and artistic domains. My work has been recognized with various accolades, including <span class="award">Best Short Paper Award</span> at ICCC 2025, an <span class="award">Oral</span> talk at the Scientific Understanding of Foundation Models Workshop at COLM 2026, and an invited chapter in the <em>Cambridge Handbook of Creativity</em> (3rd Ed.).</p>
               <p class="contact-links">
                 <a href="mailto:schapironietzsche@gmail.com">Email</a> &nbsp;/&nbsp;
                 <a href="https://scholar.google.com/citations?user=B2UNU6EAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> &nbsp;/&nbsp;
@@ -43,120 +41,137 @@
           </div>
         </section>
 
-        <section id="news">
-          <h2>News</h2>
-          <div class="news-cols">
-            <div class="news-panel">
-              <p class="news news-scroll">
-                <b>[Oct 2026]</b> New preprint: <a href="https://arxiv.org/abs/2509.21043" target="_blank" rel="noopener">Measuring Combinatorial Creativity in Large Language Models and Humans</a> (<a href="combinatorial-creativity/">project page</a>).<br>
-                <b>[Sep 2026]</b> 1/1 papers accepted at NeurIPS 2026.<br>
-                <b>[Jul 2026]</b> 2/2 papers accepted at COLM 2026; <a href="files/TwistBench.pdf">TwistBench</a> accepted as an <span class="award">Oral</span> at the COLM 2026 Workshop on Scientific Understanding of Foundation Models.<br>
-                <b>[May 2026]</b> 2/2 papers accepted at the ICML 2026 Workshop on Generative AI &amp; Creativity.<br>
-                <b>[Apr 2026]</b> Received the Lambda AI Research Grant.<br>
-                <b>[Jun 2025]</b> <span class="award">Best Short Paper Award</span> at ICCC 2025 for <a href="https://arxiv.org/abs/2504.18687" target="_blank" rel="noopener"><em>Transformational Creativity in Science: A Graphical Theory</em></a>.<br>
-                <b>[May 2025]</b> 2/2 papers accepted at ICCC 2025.
-              </p>
-              <div class="news-fade"></div>
+        <section id="research">
+          <h2>Research</h2>
+
+          <p class="research-lead">My research seeks to advance our understanding of <strong>creativity in humans and intelligent machines</strong>: how we can measure it, how we can elicit it in AI systems, and what it fundamentally is. This work is organized around three interrelated areas:</p>
+
+          <div class="area-cards">
+            <div class="area-card-col">
+              <a href="#pubs-measuring" class="area-card">
+                <span class="area-card-image">
+                  <img src="files/papers/kombine_card.png" alt="Kombine: an expert and a novice combining concept structures" loading="lazy">
+                  <span class="area-card-overlay"><span class="area-card-btn">See Papers</span></span>
+                </span>
+                <span class="area-card-caption">Measuring Creativity in Humans and AI</span>
+                <span class="area-card-hint">Click to explore &rarr;</span>
+              </a>
+              <p class="area-card-desc">Benchmarks and tests of creativity, especially more complex forms such as <em>transformational</em> and <em>scientific</em> creativity.</p>
             </div>
-            <div class="news-twitter">
-              <div class="tweet-loading" aria-hidden="true">Loading posts…</div>
-              <div class="news-twitter-scroll">
-                <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none" data-width="330"><a href="https://twitter.com/samschapiro/status/2073078257075851462">A post by @samschapiro on X</a></blockquote>
-                <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none" data-width="330"><a href="https://twitter.com/samschapiro/status/2069765637606457805">A post by @samschapiro on X</a></blockquote>
-              </div>
-              <div class="news-twitter-fade"></div>
+            <div class="area-card-col">
+              <a href="#pubs-improving" class="area-card">
+                <span class="area-card-image">
+                  <img src="files/papers/creativityneuro_card.png" alt="CreativityNeuro: PCA of generations showing increased diversity" loading="lazy">
+                  <span class="area-card-overlay"><span class="area-card-btn">See Papers</span></span>
+                </span>
+                <span class="area-card-caption">Improving the Creativity of AI</span>
+                <span class="area-card-hint">Click to explore &rarr;</span>
+              </a>
+              <p class="area-card-desc"><em>Methods and systems</em> that make models more creative, from steering model weights to scientific idea generation.</p>
+            </div>
+            <div class="area-card-col">
+              <a href="#pubs-theories" class="area-card">
+                <span class="area-card-image">
+                  <img src="files/papers/transformational_card.png" alt="Conceptual-space DAG of geocentric astronomy" loading="lazy">
+                  <span class="area-card-overlay"><span class="area-card-btn">See Papers</span></span>
+                </span>
+                <span class="area-card-caption">Theories and Foundations of Creativity</span>
+                <span class="area-card-hint">Click to explore &rarr;</span>
+              </a>
+              <p class="area-card-desc"><em>Formal accounts</em> of what creativity is and how it manifests in minds and machines.</p>
             </div>
           </div>
         </section>
 
-        <section>
-          <h2 id="research">Research Areas</h2>
+        <section id="publications">
+          <h2>Publications</h2>
+          <p class="areas-lead">For a complete list, see my <a href="https://scholar.google.com/citations?user=B2UNU6EAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
 
-          <p class="areas-lead">My work is organized around three interrelated topics. For a complete list of publications, see my <a href="https://scholar.google.com/citations?user=B2UNU6EAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
-
-          <div class="areas-list">
-
-            <article class="area">
-              <h3 class="area-title"><span class="area-num">I.</span> Measuring the Creativity of AI</h3>
-              <div class="area-figures">
-                <img src="files/papers/semantic_distance.png" alt="Semantic distance tests plotted against creativity benchmarks" loading="lazy">
-                <img src="files/papers/plot_twist_clusters.png" alt="UMAP of literary plot-twist clusters from TwistBench" loading="lazy">
-                <img src="files/papers/kombine.png" alt="Kombine: an expert and a novice combining concept structures, illustrating combinatorial creativity" loading="lazy">
+          <h3 class="pub-group" id="pubs-measuring"><span class="area-num">I.</span> Measuring Creativity in Humans and AI</h3>
+          <ul class="pub-list">
+            <li class="pub">
+              <a class="pub-thumb" href="files/SD_NIPS.pdf"><img src="files/images/fig_overview.png" alt="Do semantic distance tests predict real-world creative task performance in LLMs?" loading="lazy"></a>
+              <div class="pub-body">
+                <a class="area-pub-title" href="files/SD_NIPS.pdf"><span class="pub-venue-tag">[NeurIPS 2026]</span> Do Semantic Distance Tests <em>Actually</em> Predict Creativity in Large Language Models?</a>
+                <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. Gladstone, J. Black, H. Ji</span>
+                <span class="area-pub-venue">Also at the ICML 2026 Workshop on Generative AI &amp; Creativity</span>
+                <span class="pub-links"><a href="files/SD_NIPS.pdf">paper</a></span>
               </div>
-              <p class="area-goal">Benchmarks and tests of creativity, especially more complex forms such as transformational and scientific creativity.</p>
-              <ul class="area-pubs">
-                <li class="area-pub">
-                  <a class="area-pub-title" href="files/TwistBench.pdf">TwistBench: Benchmarking Transformational Creativity in LLMs via Literary Plot Twists</a>
-                  <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. Gladstone, H. Ji, R. E. Beaty</span>
-                  <span class="area-pub-venue"><span class="award">Oral</span>, COLM 2026 Workshop on Scientific Understanding of Foundation Models. &middot; <a href="files/TwistBench_slides.pdf">Slides</a></span>
-                </li>
-                <li class="area-pub">
-                  <a class="area-pub-title" href="https://arxiv.org/abs/2605.13450" target="_blank" rel="noopener">Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers</a>
-                  <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. Gladstone, J. Black, H. Ji</span>
-                  <span class="area-pub-venue">Preprint</span>
-                </li>
-                <li class="area-pub">
-                  <a class="area-pub-title" href="https://arxiv.org/abs/2509.21043" target="_blank" rel="noopener">Measuring Combinatorial Creativity in Large Language Models and Humans</a>
-                  <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. K. Jagadish, A. Gladstone, Q. E. Liu, S. Shashidhar, J. Black, R. Moon, D. Hakkani-Tur, H. Ji, C. E. Stevenson, L. R. Varshney, R. E. Beaty, T. L. Griffiths, J. A. Evans</span>
-                  <span class="area-pub-venue">Preprint &middot; <a href="combinatorial-creativity/">Project page</a> &middot; <a href="files/kombine-slides/">Slides</a></span>
-                </li>
-                <li class="area-pub">
-                  <a class="area-pub-title" href="files/SD_NIPS.pdf">Do Semantic Distance Tests <em>Actually</em> Predict Creativity in Large Language Models?</a>
-                  <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. Gladstone, J. Black, H. Ji</span>
-                  <span class="area-pub-venue">Conference on Neural Information Processing Systems (NeurIPS 2026). <em>Accepted at the ICML 2026 Workshop on Generative AI &amp; Creativity.</em></span>
-                </li>
-              </ul>
-            </article>
-
-            <article class="area">
-              <h3 class="area-title"><span class="area-num">II.</span> Improving the Creativity of AI</h3>
-              <div class="area-figures">
-                <img src="files/papers/creativityneuro.png" alt="CreativityNeuro weight steering and its effect on generation diversity" loading="lazy">
-                <img src="files/papers/spark.png" alt="Spark system diagram: Xplor, idea generator, and filter stages" loading="lazy">
+            </li>
+            <li class="pub">
+              <a class="pub-thumb" href="files/TwistBench.pdf"><img src="files/papers/plot_twist_clusters.png" alt="UMAP of literary plot-twist clusters from TwistBench" loading="lazy"></a>
+              <div class="pub-body">
+                <a class="area-pub-title" href="files/TwistBench.pdf"><span class="pub-venue-tag">[COLM 2026 Workshop]</span> TwistBench: Benchmarking Transformational Creativity in LLMs via Literary Plot Twists</a>
+                <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. Gladstone, H. Ji, R. E. Beaty</span>
+                <span class="area-pub-venue"><span class="award">Oral</span>, Workshop on Scientific Understanding of Foundation Models</span>
+                <span class="pub-links"><a href="files/TwistBench.pdf">paper</a> / <a href="files/TwistBench_slides.pdf">slides</a></span>
               </div>
-              <p class="area-goal">Methods and systems that make models more creative.</p>
-              <ul class="area-pubs">
-                <li class="area-pub">
-                  <a class="area-pub-title" href="https://arxiv.org/abs/2607.01433" target="_blank" rel="noopener">CreativityNeuro: Steering Language Model Weights to Improve Divergent Thinking and Reduce Mode Collapse</a>
-                  <span class="area-pub-authors"><strong>S. Schapiro</strong>, C. Francisco Park, F. Sosa, L. R. Varshney</span>
-                  <span class="area-pub-venue">Third Conference on Language Modeling (COLM). <em>Accepted at the ICML 2026 Workshop on Generative AI &amp; Creativity.</em></span>
-                </li>
-                <li class="area-pub">
-                  <a class="area-pub-title" href="https://arxiv.org/abs/2504.20090" target="_blank" rel="noopener">Spark: A System for Scientifically Creative Idea Generation</a>
-                  <span class="area-pub-authors">A. Sanyal, <strong>S. Schapiro</strong>, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur</span>
-                  <span class="area-pub-venue">Proceedings of the 16th International Conference on Computational Creativity (ICCC)</span>
-                </li>
-              </ul>
-            </article>
-
-            <article class="area">
-              <h3 class="area-title"><span class="area-num">III.</span> Theories and Foundations of Creativity</h3>
-              <div class="area-figures">
-                <img src="files/papers/transformational.png" alt="Graphical theory of transformational creativity in science" loading="lazy">
+            </li>
+            <li class="pub">
+              <a class="pub-thumb" href="https://arxiv.org/abs/2605.13450" target="_blank" rel="noopener"><img src="files/papers/drat.png" alt="Poster: Assessing the Creativity of LLMs" loading="lazy"></a>
+              <div class="pub-body">
+                <a class="area-pub-title" href="https://arxiv.org/abs/2605.13450" target="_blank" rel="noopener"><span class="pub-venue-tag">[Preprint]</span> Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers</a>
+                <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. Gladstone, J. Black, H. Ji</span>
+                <span class="pub-links"><a href="https://arxiv.org/abs/2605.13450" target="_blank" rel="noopener">arXiv</a></span>
               </div>
-              <p class="area-goal">Formal accounts of what creativity is and how it manifests in minds and machines.</p>
-              <ul class="area-pubs">
-                <li class="area-pub">
-                  <span class="area-pub-title area-pub-title--plain">Artificial Creative Intelligence</span>
-                  <span class="area-pub-authors"><strong>S. Schapiro</strong>, R. E. Beaty</span>
-                  <span class="area-pub-venue">Invited Chapter, Cambridge Handbook of Creativity (3rd ed.), Cambridge University Press. Eds. J. C. Kaufman &amp; R. J. Sternberg. In preparation.</span>
-                </li>
-                <li class="area-pub">
-                  <a class="area-pub-title" href="https://arxiv.org/abs/2504.18687" target="_blank" rel="noopener">Transformational Creativity in Science: A Graphical Theory</a>
-                  <span class="area-pub-authors"><strong>S. Schapiro</strong>, J. Black, L. R. Varshney</span>
-                  <span class="area-pub-venue">Proceedings of the 16th ICCC &mdash; <em class="award">Best Short Paper Award</em></span>
-                </li>
-              </ul>
-            </article>
+            </li>
+            <li class="pub">
+              <a class="pub-thumb" href="combinatorial-creativity/"><img src="files/papers/kombine.png" alt="Kombine: an expert and a novice combining concept structures" loading="lazy"></a>
+              <div class="pub-body">
+                <a class="area-pub-title" href="https://arxiv.org/abs/2509.21043" target="_blank" rel="noopener"><span class="pub-venue-tag">[Preprint]</span> Measuring Combinatorial Creativity in Large Language Models and Humans</a>
+                <span class="area-pub-authors"><strong>S. Schapiro</strong>, A. K. Jagadish, A. Gladstone, Q. E. Liu, S. Shashidhar, J. Black, R. Moon, D. Hakkani-Tur, H. Ji, C. E. Stevenson, L. R. Varshney, R. E. Beaty, T. L. Griffiths, J. A. Evans</span>
+                <span class="pub-links"><a href="https://arxiv.org/abs/2509.21043" target="_blank" rel="noopener">arXiv</a> / <a href="combinatorial-creativity/">project page</a> / <a href="files/kombine-slides/">slides</a></span>
+              </div>
+            </li>
+          </ul>
 
-          </div>
+          <h3 class="pub-group" id="pubs-improving"><span class="area-num">II.</span> Improving the Creativity of AI</h3>
+          <ul class="pub-list">
+            <li class="pub">
+              <a class="pub-thumb" href="https://arxiv.org/abs/2607.01433" target="_blank" rel="noopener"><img src="files/papers/creativityneuro.png" alt="CreativityNeuro weight steering and its effect on generation diversity" loading="lazy"></a>
+              <div class="pub-body">
+                <a class="area-pub-title" href="https://arxiv.org/abs/2607.01433" target="_blank" rel="noopener"><span class="pub-venue-tag">[COLM 2026]</span> CreativityNeuro: Steering Language Model Weights to Improve Divergent Thinking and Reduce Mode Collapse</a>
+                <span class="area-pub-authors"><strong>S. Schapiro</strong>, C. Francisco Park, F. Sosa, L. R. Varshney</span>
+                <span class="area-pub-venue">Also at the ICML 2026 Workshop on Generative AI &amp; Creativity</span>
+                <span class="pub-links"><a href="https://arxiv.org/abs/2607.01433" target="_blank" rel="noopener">arXiv</a></span>
+              </div>
+            </li>
+            <li class="pub">
+              <a class="pub-thumb" href="https://arxiv.org/abs/2504.20090" target="_blank" rel="noopener"><img src="files/papers/spark.png" alt="Spark system diagram: Xplor, idea generator, and filter stages" loading="lazy"></a>
+              <div class="pub-body">
+                <a class="area-pub-title" href="https://arxiv.org/abs/2504.20090" target="_blank" rel="noopener"><span class="pub-venue-tag">[ICCC 2025]</span> Spark: A System for Scientifically Creative Idea Generation</a>
+                <span class="area-pub-authors">A. Sanyal, <strong>S. Schapiro</strong>, S. Shashidhar, R. Moon, L. R. Varshney, D. Hakkani-Tur</span>
+                <span class="pub-links"><a href="https://arxiv.org/abs/2504.20090" target="_blank" rel="noopener">arXiv</a></span>
+              </div>
+            </li>
+          </ul>
 
+          <h3 class="pub-group" id="pubs-theories"><span class="area-num">III.</span> Theories and Foundations of Creativity</h3>
+          <ul class="pub-list">
+            <li class="pub">
+              <a class="pub-thumb" href="https://arxiv.org/abs/2504.18687" target="_blank" rel="noopener"><img src="files/papers/transformational.png" alt="Graphical theory of transformational creativity in science" loading="lazy"></a>
+              <div class="pub-body">
+                <a class="area-pub-title" href="https://arxiv.org/abs/2504.18687" target="_blank" rel="noopener"><span class="pub-venue-tag">[ICCC 2025]</span> Transformational Creativity in Science: A Graphical Theory</a>
+                <span class="area-pub-authors"><strong>S. Schapiro</strong>, J. Black, L. R. Varshney</span>
+                <span class="area-pub-venue"><span class="award">Best Short Paper Award</span></span>
+                <span class="pub-links"><a href="https://arxiv.org/abs/2504.18687" target="_blank" rel="noopener">arXiv</a></span>
+              </div>
+            </li>
+            <li class="pub">
+              <span class="pub-thumb"><img src="files/ACI.png" alt="Artificial Creative Intelligence" loading="lazy"></span>
+              <div class="pub-body">
+                <span class="area-pub-title area-pub-title--plain"><span class="pub-venue-tag">[Cambridge Handbook of Creativity]</span> Artificial Creative Intelligence</span>
+                <span class="area-pub-authors"><strong>S. Schapiro</strong>, R. E. Beaty</span>
+                <span class="area-pub-venue">Invited chapter, 3rd ed., Cambridge University Press. Eds. J. C. Kaufman &amp; R. J. Sternberg. In preparation.</span>
+              </div>
+            </li>
+          </ul>
         </section>
 
         <section id="service">
           <h2>Service</h2>
           <p class="service">
-            <b>Conference Reviewer:</b> ICML 2026, COLM 2026, NeurIPS 2026, AAAI 2026<br>
+            <b>Conference Reviewer:</b> ICLR 2027, ICML 2026, COLM 2026, NeurIPS 2026, AAAI 2026<br>
             <b>Journal Reviewer:</b> Proceedings of the National Academy of Sciences (PNAS)<br>
             <b>Workshop Reviewer:</b> NeurIPS 2024 Creativity &amp; Generative AI, ICML 2026 Creativity &amp; Generative AI
           </p>
@@ -170,23 +185,5 @@
     </div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script>
-    (function () {
-      function rendered(box) { return box.querySelector('.twitter-tweet-rendered, iframe'); }
-      function init() {
-        document.querySelectorAll('.news-twitter').forEach(function (box) {
-          if (rendered(box)) { box.classList.add('tweets-loaded'); return; }
-          var obs = new MutationObserver(function () {
-            if (rendered(box)) { box.classList.add('tweets-loaded'); obs.disconnect(); }
-          });
-          obs.observe(box, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
-          setTimeout(function () { box.classList.add('tweets-loaded'); obs.disconnect(); }, 8000);
-        });
-      }
-      if (document.readyState !== 'loading') init();
-      else window.addEventListener('DOMContentLoaded', init);
-    })();
-  </script>
 </body>
 </html>
