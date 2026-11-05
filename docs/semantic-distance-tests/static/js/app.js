@@ -51,6 +51,57 @@ function initExplorer() {
   renderExplorer();
 }
 
+// ------------------------------------------------------------- per-model table
+
+let mSortCol = 1;      // 0 = model, 1.. = provider/test columns; default: DAT descending
+let mSortAsc = false;
+
+function renderModels() {
+  const q = ($("#model-filter").value || "").trim().toLowerCase();
+  const headers = ["Model", "Provider", ...MODEL_COLS];
+  $("#model-table thead").innerHTML = `<tr>${headers.map((h, i) => {
+    const key = i === 0 ? 0 : i === 1 ? -1 : i - 1;   // -1 = provider
+    const cls = key === mSortCol ? `sorted${mSortAsc ? " asc" : ""}` : "";
+    return `<th class="${cls}" data-k="${key}">${h}</th>`;
+  }).join("")}</tr>`;
+
+  const getKey = (r) => (mSortCol === 0 ? r.model : mSortCol === -1 ? r.provider
+    : (r.vals[mSortCol - 1] ? r.vals[mSortCol - 1][0] : null));
+  const rows = MODEL_ROWS
+    .filter((r) => !q || r.model.toLowerCase().includes(q) || r.provider.toLowerCase().includes(q))
+    .slice()
+    .sort((a, b) => {
+      const x = getKey(a), y = getKey(b);
+      if (x === null && y === null) return 0;
+      if (x === null) return 1;            // missing values always last
+      if (y === null) return -1;
+      const c = typeof x === "string" ? x.localeCompare(y) : x - y;
+      return mSortAsc ? c : -c;
+    });
+
+  const digits = [2, 2, 2, 2, 3, 1];
+  $("#model-table tbody").innerHTML = rows.map((r) => `<tr>
+    <td class="model">${r.model}</td><td class="prov">${r.provider}</td>
+    ${r.vals.map((v, j) => !v ? `<td class="num">&ndash;</td>`
+      : `<td class="num">${v[0].toFixed(digits[j])}${v[1] !== null
+          ? ` <span class="sem">&plusmn; ${v[1].toFixed(digits[j])}</span>` : ""}</td>`).join("")}
+  </tr>`).join("");
+
+  document.querySelectorAll("#model-table thead th").forEach((th) => {
+    th.addEventListener("click", () => {
+      const k = Number(th.dataset.k);
+      if (k === mSortCol) mSortAsc = !mSortAsc;
+      else { mSortCol = k; mSortAsc = k <= 0; }   // text columns sort A-Z first, scores high-first
+      renderModels();
+    });
+  });
+}
+
+function initModels() {
+  $("#model-filter").addEventListener("input", renderModels);
+  renderModels();
+}
+
 // --------------------------------------------------------------------- carousel
 
 function initCarousel(root) {
@@ -103,5 +154,6 @@ function initCopy() {
 }
 
 initExplorer();
+initModels();
 initCarousel($("#results-carousel"));
 initCopy();

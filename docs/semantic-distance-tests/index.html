@@ -60,6 +60,11 @@
                 </a>
               </span>
               <span class="link-block">
+                <a href="#models" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-list-ol"></i></span><span>All Models</span>
+                </a>
+              </span>
+              <span class="link-block">
                 <a href="#BibTeX" class="button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-quote-right"></i></span><span>BibTeX</span>
                 </a>
@@ -253,6 +258,31 @@
   </div>
 </section>
 
+<!-- Per-model scores -->
+<section class="section hero is-light" id="models">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Per-Model Test Scores</h2>
+    <p class="has-text-centered section-lead">
+      Mean &plusmn; SEM for every model on every test. DAT is scored under GloVe, the CDAT family under
+      Sentence-BERT, and PACE under FastText; the RAT is percent correct. CDAT is novelty at the
+      temperatures that pass the appropriateness gate (&ldquo;&ndash;&rdquo; if none did). Click a
+      column to sort.
+    </p>
+    <div class="field model-search">
+      <p class="control has-icons-left">
+        <input class="input is-small is-rounded" type="search" id="model-filter" placeholder="Filter by model or provider" aria-label="Filter models">
+        <span class="icon is-small is-left"><i class="fas fa-magnifying-glass"></i></span>
+      </p>
+    </div>
+    <div class="table-container lb-wrap models-wrap">
+      <table class="table is-fullwidth is-hoverable is-narrow" id="model-table">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- BibTeX -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -287,6 +317,7 @@
 </footer>
 
 <script src="static/js/data.js"></script>
+<script src="static/js/models.js"></script>
 <script src="static/js/app.js"></script>
 </body>
 </html>
