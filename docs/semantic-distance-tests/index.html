@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Semantic Distance Tests Actually Predict Creativity in Large Language Models?</title>
+  <meta name="description" content="A large-scale study of whether semantic distance tests (DAT, CDAT, PACE, RAT) predict the creative achievement of 54 LLMs across creative writing, output diversity, combinatorial creativity, and scientific ideation. NeurIPS 2026.">
+  <meta property="og:title" content="Do Semantic Distance Tests Actually Predict Creativity in LLMs?">
+  <meta property="og:description" content="Validity and specificity of semantic distance tests across 54 LLMs and four creative constructs. NeurIPS 2026.">
+  <meta property="og:url" content="https://schapiro.ai/semantic-distance-tests/">
+  <meta property="og:image" content="https://schapiro.ai/semantic-distance-tests/static/figures/overview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="semantic distance, divergent association task, DAT, remote associates test, LLM creativity, psychometrics, validity, specificity, jagged creativity">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='11' cy='16' r='9' fill='%23ABC0CB'/%3E%3Ccircle cx='21' cy='16' r='9' fill='%23F8C9CA' fill-opacity='.9'/%3E%3C/svg%3E">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <p class="venue"><span class="tag is-dark is-medium">NeurIPS 2026</span></p>
+          <h1 class="title is-1 publication-title">Do Semantic Distance Tests <em>Actually</em> Predict Creativity in Large Language Models?</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://schapiro.ai/">Samuel Schapiro</a><sup>1,2</sup>,</span>
+            <span class="author-block"><a href="https://alexiglad.github.io/" target="_blank">Alexi Gladstone</a><sup>3</sup>,</span>
+            <span class="author-block">Jonah Black<sup>3</sup>,</span>
+            <span class="author-block"><a href="https://blender.cs.illinois.edu/hengji.html" target="_blank">Heng Ji</a><sup>3</sup></span>
+          </div>
+
+          <div class="is-size-6 publication-affiliations">
+            <span class="author-block"><sup>1</sup>AI Innovation Institute, Stony Brook University</span>
+            <span class="author-block"><sup>2</sup>Knowledge Lab, University of Chicago</span>
+            <span class="author-block"><sup>3</sup>University of Illinois Urbana-Champaign</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://openreview.net/forum?id=VflIpUsCvC" target="_blank" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-lines"></i></span><span>OpenReview</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/samjschapiro/do-semantic-distance-tests-actually-predict-creativity-neurips-26" target="_blank" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span><span>Code &amp; Data</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#explorer" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-table-cells"></i></span><span>Results Explorer</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#BibTeX" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-quote-right"></i></span><span>BibTeX</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TL;DR -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TL;DR</h2>
+        <div class="content has-text-justified">
+          <p>
+            Psychological tests built on <strong>semantic distance</strong>, like the Divergent
+            Association Task (DAT), are now routinely given to LLMs to measure their
+            &ldquo;creativity.&rdquo; We test whether they actually predict creative achievement across
+            <strong>54 LLMs</strong> and <strong>four constructs</strong>, scoring each test on
+            <strong>validity</strong> (correlation with a benchmark) and <strong>specificity</strong>
+            (correlation after removing what general capability already predicts). No test predicts
+            <strong>output diversity</strong>: producing one highly divergent answer is not the same as
+            producing many distinct ones, a pattern we call <strong><em>jagged creativity</em></strong>.
+            The Remote Associates Test is valid only because it tracks general capability. The DAT is
+            the best predictor of creative writing, but no single test predicts every construct, and none
+            predicts scientific ideation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser figure -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/figures/overview.jpg" alt="Overview: semantic distance tests ask respondents to name maximally dissimilar words and score the answer by embedding distance; this work asks whether such tests actually predict creativity in LLMs." class="teaser-img">
+      <h2 class="subtitle has-text-centered">
+        Semantic distance tests score an answer by how far apart its words are in an embedding space.
+        Their validity among humans rests on modest correlations with ideation tasks, and their validity
+        for <em>machine</em> creativity has never been established.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Measuring the creativity of large language models (LLMs) is essential for designing methods
+            that can improve creativity and for enhancing our scientific understanding of this ability. To
+            accomplish this, it has become common in recent years to administer semantic distance tests of
+            human creativity to LLMs. Although these tests provide a convenient and fully automated way to
+            score aspects of &ldquo;creativity,&rdquo; their validity as measures of <em>machine</em>
+            creativity has not been established, and these tests already show limited external validity
+            among human populations. To address this problem, we conduct the first large-scale, systematic
+            study assessing the effectiveness of semantic distance tests for predicting the creative
+            achievement of LLMs across four target constructs: (a) creative writing, (b) output diversity
+            on open-ended prompts, (c) combinatorial creativity, and (d) scientific ideation. We score each
+            test on two criteria (<em>validity</em> and <em>specificity</em>), and derive a theoretical
+            limit for the maximum attainable specificity and validity a test can achieve. We find that:
+            <strong>(1)</strong> No test is a significant predictor of output diversity, suggesting that
+            <em>point creativity</em>, the ability to produce one highly divergent response, and
+            <em>distributional creativity</em>, the ability to produce distinct responses across repeated
+            samples, may dissociate in LLMs, a pattern we call <strong><em>jagged creativity</em></strong>.
+            <strong>(2)</strong> The Remote Associates Test is valid on creative writing only because it
+            loads on general capability, and is not a specific measure of creativity in LLMs.
+            <strong>(3)</strong> The Divergent Association Task best predicts creative writing, but no
+            single test predicts all constructs well, and none of the tests is a good predictor of
+            scientific ideation ability. In summary, our results prescribe caution when applying
+            psychometric tests and tasks validated among human populations to LLMs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The four tests -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">The Four Tests</h2>
+    <div class="columns is-vcentered tests-intro">
+      <div class="column is-5">
+        <img src="static/figures/divergent_convergent.png" alt="Venn diagram: DAT and PACE are divergent, the RAT is convergent, and the CDAT sits in the overlap." class="venn">
+      </div>
+      <div class="column is-7">
+        <p class="section-lead left">
+          The tests span the divergent&ndash;convergent axis. The <span class="k-div">DAT</span> and
+          <span class="k-div">PACE</span> reward reaching distant words; the <span class="k-conv">RAT</span>
+          asks for the one word that links three cues; the <span class="k-both">CDAT</span> asks for
+          distant words that must all stay relevant to a cue. Example prompts and responses:
+        </p>
+      </div>
+    </div>
+    <div class="box test-box">
+      <p><b>Divergent Association Task (DAT).</b> Generate 10 nouns maximally different from each other.</p>
+      <p class="resp div"><i>Response:</i> ocean, mathematics, hammer, justice, molecule, symphony, volcano, laughter, friction, taxonomy</p>
+      <p><b>Parallel Association Chain Evaluation (PACE).</b> Starting with the seed <b>&ldquo;rock&rdquo;</b>, produce three 20-word association chains in which each word associates only with the previous word.</p>
+      <p class="resp div"><i>Response (chain 1 of 3):</i> rock &rarr; stone &rarr; pebble &rarr; beach &rarr; sand &rarr; hourglass &rarr; time &rarr; clock &rarr; alarm &rarr; fire &rarr; smoke &rarr; cigarette &rarr; tobacco &rarr; leaf &rarr; tree &rarr; bark &rarr; dog &rarr; collar &rarr; shirt</p>
+      <p><b>Conditional Divergent Association Task (CDAT).</b> Generate 10 nouns associated with <b>&ldquo;rock&rdquo;</b> that are maximally different from each other.</p>
+      <p class="resp both"><i>Response:</i> stone, guitar, music, geology, cliff, mineral, foundation, cradle, concert, pebble</p>
+      <p><b>Remote Associates Test (RAT).</b> What single word can be combined with each of <b>&ldquo;cream&rdquo;</b>, <b>&ldquo;skate&rdquo;</b>, and <b>&ldquo;water&rdquo;</b> to form a compound word or common phrase?</p>
+      <p class="resp conv"><i>Response:</i> ice</p>
+    </div>
+  </div>
+</section>
+
+<!-- Results carousel -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Key Results</h2>
+    <div class="carousel" id="results-carousel" aria-roledescription="carousel" tabindex="0">
+      <div class="carousel-track">
+        <div class="item">
+          <img src="static/figures/jagged.png" alt="Schematic of jagged creativity: point creativity on the horizontal axis, distributional creativity on the vertical axis, with triangles of words for each response." loading="lazy" class="narrow">
+          <h2 class="subtitle has-text-centered"><b>Jagged creativity.</b> No test significantly
+            predicts output diversity, not even the DAT, which asks for maximally different words.
+            Producing one highly divergent answer (<em>point creativity</em>) is not the same as producing
+            distinct answers across samples (<em>distributional creativity</em>). The two may dissociate in
+            LLMs, echoing Mednick's steep-deviant associative hierarchies.</h2>
+        </div>
+        <div class="item">
+          <img src="static/figures/headline.png" alt="Validity versus specificity for each test, by construct (top) and by benchmark (bottom), with theoretical ceilings." loading="lazy">
+          <h2 class="subtitle has-text-centered"><b>Validity is not enough.</b> The DAT is the only test
+            with significant validity <em>and</em> specificity on all three creative-writing benchmarks.
+            The RAT is valid on creative writing (<i>r</i> = 0.44&ndash;0.62) but its specificity collapses
+            once capability (MMLU-Pro) is removed. No test keeps significant specificity on any other
+            construct.</h2>
+        </div>
+        <div class="item">
+          <img src="static/figures/correlations.png" alt="Correlation matrices among benchmarks and among tests." loading="lazy">
+          <h2 class="subtitle has-text-centered"><b>Constructs are local.</b> Creative-writing
+            benchmarks correlate strongly with each other and with MMLU-Pro, while scientific ideation
+            correlates with almost nothing. Values are shown only where <i>p</i> &lt; .05.</h2>
+        </div>
+        <div class="item">
+          <img src="static/figures/greedy.png" alt="DAT score distributions for humans, the 54-model LLM pool, and a greedy algorithm." loading="lazy" class="narrow">
+          <h2 class="subtitle has-text-centered"><b>The DAT can be gamed.</b> A simple greedy search
+            over embedding distances scores 94.1 on the DAT, well above the mean human (78.4) and LLM
+            (83.75) scores, without anything we would call creativity.</h2>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="button is-rounded is-small carousel-prev" aria-label="Previous figure"><span class="icon"><i class="fas fa-chevron-left"></i></span></button>
+        <div class="carousel-dots" role="tablist"></div>
+        <button class="button is-rounded is-small carousel-next" aria-label="Next figure"><span class="icon"><i class="fas fa-chevron-right"></i></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Explorer -->
+<section class="section" id="explorer">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results Explorer</h2>
+    <p class="has-text-centered section-lead">
+      <b>Validity</b> is the Pearson correlation <i>r</i> between a test and a benchmark across models.
+      <b>Specificity</b> is the semi-partial correlation <i>r</i>|<i>g</i> after removing what MMLU-Pro
+      already predicts. Bold cells are significant (<i>p</i> &lt; .05). Hover a cell for <i>p</i> and
+      <i>n</i>.
+    </p>
+    <div class="lb-controls">
+      <div class="tabs is-toggle is-small is-centered">
+        <ul>
+          <li class="is-active"><a data-metric="v">Validity</a></li>
+          <li><a data-metric="s">Specificity</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="table-container lb-wrap">
+      <table class="table is-fullwidth is-narrow" id="vs-table">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="has-text-centered note">Overall block: mean <i>z</i>-score across GloVe, FastText, and
+      Sentence-BERT. The RAT is scored by accuracy. Stars: * <i>p</i> &lt; .05, ** <i>p</i> &lt; .01,
+      *** <i>p</i> &lt; .001.</p>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">
+      BibTeX
+      <button id="copyBibtex" class="button is-small is-dark is-pulled-right">Copy</button>
+    </h2>
+    <pre><code id="bibtexCitation">@inproceedings{schapiro2026semantic,
+  title={Do Semantic Distance Tests Actually Predict Creativity in Large Language Models?},
+  author={Samuel Schapiro and Alexi Gladstone and Jonah Black and Heng Ji},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2026},
+  url={https://openreview.net/forum?id=VflIpUsCvC}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+            which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br><a href="../">&larr; Back to schapiro.ai</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="static/js/data.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+</html>

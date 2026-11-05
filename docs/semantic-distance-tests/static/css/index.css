@@ -1,0 +1,74 @@
+/* Semantic distance tests project page, in the style of the Academic Project Page Template (Bulma); shared base with the Kombine page. */
+
+body { font-family: 'Noto Sans', sans-serif; }
+
+.publication-title, .publication-authors, .teaser { font-family: 'Google Sans', sans-serif; }
+.publication-title .brand { color: #0066cc; }
+.publication-authors a { color: hsl(204, 86%, 53%) !important; }
+.publication-authors a:hover { text-decoration: underline; }
+.publication-authors sup { font-size: .6em; color: #777; }
+.author-block { display: inline-block; }
+.publication-authors .author-block { margin: 0 .15em; }
+.publication-affiliations { color: #6b6b6b; margin-top: .6rem; max-width: 780px; margin-left: auto; margin-right: auto; }
+.publication-affiliations .author-block { margin: 0 .5em; }
+.publication-affiliations sup { margin-right: 1px; }
+.link-block a { margin-top: 5px; margin-bottom: 5px; }
+
+.teaser .hero-body { padding-top: 1.5rem; padding-bottom: 3rem; }
+.teaser-img { display: block; width: 100%; max-width: 860px; margin: 0 auto 1.5rem; }
+
+.section-lead { color: #555; max-width: 720px; margin: -.75rem auto 1.75rem; }
+
+
+/* ---------- results carousel ---------- */
+.carousel { overflow: hidden; position: relative; }
+.carousel-track { display: flex; transition: transform .45s ease; }
+.carousel .item { flex: 0 0 100%; padding: 10px 20px 0; min-width: 0; }
+.carousel .item img { display: block; width: 100%; max-height: 520px; object-fit: contain; margin: 0 auto 1rem;
+  background: #fff; border-radius: 8px; }
+.carousel .item img.narrow { max-width: 560px; }
+.carousel .item .pair img { max-height: 340px; }
+.carousel .item .subtitle { font-size: 1.05rem; max-width: 780px; margin: 0 auto; line-height: 1.55; }
+.carousel-nav { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 1.25rem; }
+.carousel-dots { display: flex; gap: 8px; }
+.carousel-dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 0; background: #c4c4c4; cursor: pointer; }
+.carousel-dots button[aria-selected="true"] { background: #363636; }
+@media (prefers-reduced-motion: reduce) { .carousel-track { transition: none; } }
+
+
+/* ---------- bibtex ---------- */
+#BibTeX pre { white-space: pre-wrap; word-break: break-word; font-size: .82rem; }
+
+@media (max-width: 768px) {
+  .publication-title.is-1 { font-size: 2rem; }
+  .content.has-text-justified { text-align: left !important; }
+  .carousel .item { padding: 6px 4px 0; }
+  .carousel .item .subtitle { font-size: .95rem; }
+}
+
+/* ---------- venue + tests ---------- */
+.venue { margin-bottom: .9rem; }
+.publication-title em { font-style: italic; }
+.tests-intro { margin-bottom: .5rem; }
+.venn { display: block; width: 100%; max-width: 330px; margin: 0 auto; }
+.section-lead.left { margin: 0; text-align: left; }
+.k-div, .k-both, .k-conv { font-weight: 700; padding: 0 .3em; border-radius: 4px; }
+.k-div { background: #ABC0CB; } .k-both { background: #CEAAB0; } .k-conv { background: #F8C9CA; }
+.test-box { font-size: .95rem; }
+.test-box p { margin-bottom: .35rem; }
+.test-box .resp { padding: .35rem .6rem; border-radius: 4px; margin-bottom: .9rem; }
+.test-box .resp:last-child { margin-bottom: 0; }
+.resp.div { background: #ABC0CB; } .resp.both { background: #CEAAB0; } .resp.conv { background: #F8C9CA; }
+
+/* ---------- explorer ---------- */
+.lb-controls { margin-bottom: .5rem; }
+.tabs.is-toggle li.is-active a { background: #363636; border-color: #363636; }
+.lb-wrap { border: 1px solid #ececec; border-radius: 8px; overflow-x: auto; }
+#vs-table { font-size: .9rem; }
+#vs-table th, #vs-table td { text-align: center; vertical-align: middle; white-space: nowrap; }
+#vs-table thead tr.constructs th { font-style: italic; font-weight: 600; color: #555; border-bottom: 1px solid #ddd; }
+#vs-table td.test { text-align: left; font-weight: 700; }
+#vs-table td.cell { font-variant-numeric: tabular-nums; min-width: 78px; }
+#vs-table td.cell.sig { font-weight: 700; }
+#vs-table td.cell.na { color: #aaa; }
+.note { color: #777; font-size: .85rem; margin-top: .75rem; }
