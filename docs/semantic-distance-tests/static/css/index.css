@@ -95,3 +95,8 @@ body { font-family: 'Noto Sans', sans-serif; }
 .venue-logo { display: inline-block; margin-bottom: .6rem; }
 .venue-logo img { display: block; height: 96px; width: auto; }
 @media (max-width: 768px) { .venue-logo img { height: 64px; } }
+
+/* ---------- affiliation logos ---------- */
+.publication-affiliations .aff { display: inline-flex; align-items: center; gap: 6px; margin: .2rem .7em; }
+.aff-logo { height: 26px; width: auto; }
+.aff-logo.wide { height: 20px; }
