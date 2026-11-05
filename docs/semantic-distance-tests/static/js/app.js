@@ -53,6 +53,14 @@ function initExplorer() {
 
 // ------------------------------------------------------------- per-model table
 
+function orgMark(name) {
+  const o = (typeof ORG_MARKS !== "undefined" && ORG_MARKS[name]) || null;
+  if (!o) return "";
+  const rule = o.evenodd ? ` fill-rule="evenodd" clip-rule="evenodd"` : "";
+  return `<span class="mark" style="color:${o.color}" title="${name}">` +
+    `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path${rule} d="${o.path}"/></svg></span>`;
+}
+
 let mSortCol = 1;      // 0 = model, 1.. = provider/test columns; default: DAT descending
 let mSortAsc = false;
 
@@ -81,7 +89,7 @@ function renderModels() {
 
   const digits = [2, 2, 2, 2, 3, 1];
   $("#model-table tbody").innerHTML = rows.map((r) => `<tr>
-    <td class="model">${r.model}</td><td class="prov">${r.provider}</td>
+    <td class="model">${r.model}</td><td class="prov">${orgMark(r.provider)}${r.provider}</td>
     ${r.vals.map((v, j) => !v ? `<td class="num">&ndash;</td>`
       : `<td class="num">${v[0].toFixed(digits[j])}${v[1] !== null
           ? ` <span class="sem">&plusmn; ${v[1].toFixed(digits[j])}</span>` : ""}</td>`).join("")}

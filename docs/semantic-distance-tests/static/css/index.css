@@ -87,3 +87,6 @@ body { font-family: 'Noto Sans', sans-serif; }
 #model-table td.num .sem { color: #999; font-size: .8em; }
 #model-table td.model { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .82rem; }
 #model-table td.prov { color: #777; }
+#model-table td.prov { display: flex; align-items: center; gap: 7px; }
+.mark { flex: 0 0 auto; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; }
+.mark svg { width: 100%; height: 100%; }
