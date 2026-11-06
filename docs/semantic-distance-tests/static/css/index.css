@@ -114,3 +114,23 @@ body::before {
   pointer-events: none;
 }
 .hero.is-light, .footer { background-color: rgba(245, 245, 245, 0.72); }
+
+/* Jagged creativity section */
+.jagged-fig { display: block; width: 100%; max-width: 380px; margin: 0 auto; }
+.stat-tiles { display: grid; gap: .75rem; }
+.stat { display: flex; align-items: center; gap: 1rem; background: #fff; border: 1px solid #ececec; border-radius: 8px; padding: .75rem 1rem; }
+.stat .num { flex: 0 0 6.2rem; font-family: 'Google Sans', sans-serif; font-size: 1.75rem; font-weight: 700; color: #0066cc; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat .lbl { color: #4a4a4a; font-size: .95rem; line-height: 1.35; }
+.jagged-sub { margin-top: 2.25rem; text-align: center; }
+.runs { font-size: .9rem; height: 100%; }
+.runs-head { font-size: .85rem; color: #555; margin-bottom: .5rem; }
+.runs ol { margin-left: 1.25rem; }
+.runs li { margin-bottom: .35rem; line-height: 1.4; }
+mark.rep { background: #ffe08a; padding: 0 .15em; border-radius: 3px; font-weight: 600; }
+#bi-table { font-size: .9rem; }
+#bi-table th, #bi-table td { text-align: center; white-space: nowrap; font-variant-numeric: tabular-nums; }
+#bi-table th:first-child, #bi-table td:first-child { text-align: left; }
+#bi-table tr.grp th { font-weight: 600; color: #555; border-bottom: none; }
+#bi-table td.low { color: #b2182b; font-weight: 700; }
+#bi-table tr.mean td { font-weight: 700; border-top: 2px solid #dbdbdb; }
+@media (max-width: 768px) { .stat .num { flex-basis: 5rem; font-size: 1.4rem; } }
